@@ -1,6 +1,9 @@
 import spylizard as sp
 import numpy as np
-# extract from the code c++
+import VizData as vd
+
+vd.viz_convergence()
+
 vol = 1
 sur = 2
 loadpoint = 3
@@ -40,7 +43,7 @@ K = elasticity.K()  # Matrice de raideur
 M = elasticity.M()  # Matrice de masse
 C = elasticity.C()
 
-eig = sp.eigenvalue(K, C, M)
+eig = sp.eigenvalue(K, M)
 eig.compute(1)
 
 # Print the eigenfrequencies:

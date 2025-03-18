@@ -20,7 +20,7 @@ color_list = [
     "#005ca9", "#00843b", "#f8aa00", "#5b257d", "#8c8b82"
 ]
 
-def viz_convergence(path):
+def viz_convergence(path="figures/"):
     # Données à visualiser
 
     corrected_frequency_data = [
@@ -47,7 +47,15 @@ def viz_convergence(path):
     plt.xscale("log")
     plt.xlabel(r"Number of node [-]")
     plt.ylabel(r"Relative error [\%]")
-    plt.savefig(path, bbox_inches='tight', dpi=300)
+    plt.savefig(path+"convergence.pdf", bbox_inches='tight', dpi=300)
 
 
-viz_convergence("figures/convergence.pdf")
+# viz_convergence("figures/convergence.pdf")
+
+def viz_NLFR(freq, amplitude, path = 'figures/') :
+    plt.figure()
+    plt.plot(freq, amplitude, color = color_list[0], marker='o')
+    plt.xlabel(r"Frequency [Hz]")
+    plt.ylabel(r"Amplitude [m]")
+    plt.savefig(path+"NLFR.pdf", bbox_inches='tight', dpi=300)
+    

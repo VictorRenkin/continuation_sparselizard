@@ -61,7 +61,7 @@ while freq > 158:
     if numnlits < 20:
         qs.setoutputvalue("Max u f2 - arc "+str(arcindex), var.discrete, freq)
     else:
-        dir = -dir;
+        dir = -dir
         print("direction is changing",dir)
         arcindex = arcindex + 1
         # Help to jump to the curve arc with larger amplitude:

@@ -9,7 +9,7 @@ loadpoint = 3
 
 fd_rad = 700
 fd     = 30
-mesh = sp.mesh('geo_GMSH/ClampedBeam.msh', 1)
+mesh = sp.mesh('../geo_GMSH/ClampedBeam.msh', 1)
 # sp.setfundamentalfrequency(fd) # Set the fundamental frequency exitasion of the structure
 #  si 3 harmo c'est necesaire dans avoir 6 
 u = sp.field("h1xyz", [2,3])

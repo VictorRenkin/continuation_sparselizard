@@ -242,7 +242,6 @@ def get_predictor_corrector_NewtonSolve(elasticity, vol, u, fd, delta_u_pred, de
     delta_u = 1
     delta_w = 1
     while not (delta_u < tol and delta_w < tol) or max_iter > iter  :
-        # ici normalement tu dois bien mettre que chaque fois il redemare de son u je pense comme avec un setdata et je dois mettre aussi par rapport a la freq du coup comme elle a changer 
         elasticity.generate()
         Jac_2 = elasticity.A()
         b_2 = elasticity.b()
@@ -253,4 +252,4 @@ def get_predictor_corrector_NewtonSolve(elasticity, vol, u, fd, delta_u_pred, de
         print(delta_u, delta_w)
         sp.setfundamentalfrequency(delta_w + fd)
         iter += 1
-    return delta_u, delta_w + fd, iter
+    return u, delta_w + fd, iter

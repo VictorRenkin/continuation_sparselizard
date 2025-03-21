@@ -25,13 +25,19 @@ pip install -r requirements.txt
 ### Eigenfrequencies and Mode Shapes
 To compute the eigenfrequencies and mode shapes, run:
 ```bash
-python3 frequence_propre&Mode.py
+python3 src/frequence_propre&Mode.py
 ```
+The frequence will be find on the treminal and the mode shapes will be saved in the `data/` directory.
 
 ### Nonlinear Frequency Responses
 To compute the nonlinear frequency response (NLFR), run:
 ```bash
-python3 main.py
+python3 src/main.py
+```
+### Compute the FRF
+To compute the FRF, run:
+```bash
+python3 src/linear_FRF.py
 ```
 
 ## Project Structure

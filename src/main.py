@@ -60,7 +60,7 @@ while f_2 < fd_max and f_2 > fd_min :
     sp.setfundamentalfrequency(f_pred)
     if delta_w_pred + f_2 < fd_min or delta_w_pred + f_2> fd_max:
         break
-    u, freq, iter = se.get_predictor_corrector_NewtonSolve(elasticity, vol, u, f_2, delta_u_pred, delta_w_pred, tan_u, tan_w, Jac_2, b_2, tol = 1e-6, max_iter = max_iter)
+    max_u_point, freq, iter = se.get_predictor_corrector_NewtonSolve(elasticity, vol, u, f_2, delta_u_pred, delta_w_pred, tan_u, tan_w, Jac_2, b_2, tol = 1e-6, max_iter = max_iter)
     if iter == max_iter:
         length_s = length_s/2
     else:

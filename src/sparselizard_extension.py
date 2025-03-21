@@ -237,19 +237,62 @@ def get_newthon_raphson_without_predictor(fd_rad, elasticity, u, vol):
         umax = um
     return z, Jac, b
 
-def get_predictor_corrector_NewtonSolve(elasticity, vol, u, fd, delta_u_pred, delta_w_pred, tan_u, tan_w, Jac_2, b_2, tol = 1e-6, max_iter = 10):
+def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, physreg_measure, u, fd, delta_u_pred, delta_w_pred, tan_u, tan_w, tol=1e-6, max_iter=10):
+    """
+    Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
+    The algorithm is based on a bordering approach.
+
+    Parameters
+    ----------
+    elasticity : `formulation` object from Sparselizard
+        The formulation object representing the system of equations.
+    physreg_u : int
+        Physical region associated with the vector u.
+    physreg_measure : int
+        Physical region where the response is measured.
+    u : `field` object from Sparselizard
+        Field object representing the displacement.
+    fd : float
+        Fundamental frequency in Hz before convergence.
+    delta_u_pred : `vec` object from Sparselizard
+        Predicted displacement increment between the predictor and the previous point.
+    delta_w_pred : float
+        Predicted frequency increment between the predictor and the previous point.
+    tan_u : `vec` object from Sparselizard
+        Tangent vector in the direction of u.
+    tan_w : float
+        Tangent vector in the direction of w.
+    tol : float, optional
+        Tolerance value for convergence (default is 1e-6).
+    max_iter : int, optional
+        Maximum number of iterations allowed (default is 10).
+
+    Returns
+    -------
+    float
+        Maximum displacement at the specified physical measurement region.
+    float
+        Converged frequency.
+    int
+        Number of iterations performed.
+    """
     iter = 0
     delta_u = 1
     delta_w = 1
-    while not (delta_u < tol and delta_w < tol) or max_iter > iter  :
+
+    while (delta_u > tol or delta_w > tol) and iter < max_iter:
         elasticity.generate()
         Jac_2 = elasticity.A()
         b_2 = elasticity.b()
+
         fct_g = get_g(delta_u_pred, delta_w_pred, tan_u, tan_w)
         delta_u, delta_w = get_bordering_algorithm(tan_u, tan_w, Jac_2, b_2, fct_g)
-        u.setdata(vol, delta_u)
-        delta_u = sp.norm(u.harmonic(2)).max(2,3)[0]
+
+        u.setdata(physreg_u, delta_u)
+        delta_u = sp.norm(u.harmonic(2)).max(physreg_measure, 3)[0]
+
         print(delta_u, delta_w)
         sp.setfundamentalfrequency(delta_w + fd)
         iter += 1
-    return u, delta_w + fd, iter
+
+    return delta_u, delta_w + fd, iter

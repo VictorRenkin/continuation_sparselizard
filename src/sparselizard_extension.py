@@ -201,7 +201,7 @@ def PreDir(Jac_1, Jac_2, freq_step, z2) :
 
     return sp.solve(Jac_2, -grad_w_G), 1
 
-def get_newthon_raphson_without_predictor(fd_rad, elasticity, u, vol): 
+def get_newthon_raphson_without_predictor(fd_rad, elasticity, u, vol, tol=1e-6, max_iter=10): 
     """
     Compute the Newton-Raphson method without the predictor step. Goal is for the first approximation.
 
@@ -223,21 +223,34 @@ def get_newthon_raphson_without_predictor(fd_rad, elasticity, u, vol):
     `mat` object from Sparselizard
         The Jacobian matrix of the system.
     """
+    max_delta_u = 1
+    iter        = 0
     sp.setfundamentalfrequency(fd_rad)
-    umax = 0
-    relchange = 1
-    while relchange > 1e-6 :
+    vec_u_prev = sp.vec(elasticity)
+    vec_u_prev.setdata()
+    while max_delta_u > tol and  max_iter > iter:
+
         elasticity.generate()
         Jac = elasticity.A()
-        b = elasticity.b()
-        z = sp.solve(Jac, b)
-        u.setdata(vol, z)
-        um = sp.norm(u.harmonic(2)).max(vol,3)[0]
-        relchange = abs(um-umax)/um
-        umax = um
-    return z, Jac, b
+        b   = elasticity.b()
+        vec_delta_u = sp.solve(Jac, b)
+    
+        u.setdata(vol, vec_delta_u)
+        max_delta_u = sp.norm(u.harmonic(2)).max(vol,3)[0]
 
-def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, physreg_measure, u, fd, delta_u_pred, delta_w_pred, tan_u, tan_w, tol=1e-6, max_iter=10):
+        new_vec_u = vec_u_prev + vec_delta_u
+        u.setdata(vol, new_vec_u)
+        vec_u_prev = new_vec_u
+
+        print("Max delta u: ", max_delta_u, "iter :", iter)
+        iter += 1
+    
+    if iter == max_iter:
+        raise RuntimeError(f"Maximum number of iterations reached without convergence at f = {fd_rad} Hz.")
+
+    return vec_delta_u, Jac, b
+
+def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, delta_u_pred, delta_w_pred, tan_u, tan_w, tol=1e-6, max_iter=10):
     """
     Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
     The algorithm is based on a bordering approach.
@@ -248,8 +261,6 @@ def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, physreg_measure, 
         The formulation object representing the system of equations.
     physreg_u : int
         Physical region associated with the vector u.
-    physreg_measure : int
-        Physical region where the response is measured.
     u : `field` object from Sparselizard
         Field object representing the displacement.
     fd : float
@@ -286,13 +297,13 @@ def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, physreg_measure, 
         b_2 = elasticity.b()
 
         fct_g = get_g(delta_u_pred, delta_w_pred, tan_u, tan_w)
-        delta_u, delta_w = get_bordering_algorithm(tan_u, tan_w, Jac_2, b_2, fct_g)
+        print("fct_g",fct_g)
+        delta_u, delta_w = get_bordering_algorithm(tan_u, tan_w, Jac_2,- b_2, fct_g)
 
         u.setdata(physreg_u, delta_u)
-        delta_u = sp.norm(u.harmonic(2)).max(physreg_measure, 3)[0]
+        delta_u = sp.norm(u.harmonic(2))
 
-        print(delta_u, delta_w)
         sp.setfundamentalfrequency(delta_w + fd)
         iter += 1
 
-    return delta_u, delta_w + fd, iter
+    return u, delta_w + fd, iter

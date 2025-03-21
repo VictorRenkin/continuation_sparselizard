@@ -47,9 +47,7 @@ def viz_convergence(path="../figures/"):
     plt.xlabel(r"Number of node [-]")
     plt.ylabel(r"Relative error [\%]")
     plt.savefig(path+"convergence.pdf", bbox_inches='tight', dpi=300)
-
-
-# viz_convergence("figures/convergence.pdf")
+    plt.close()
 
 def viz_NLFR(freq, amplitude, path = '../figures/') :
     plt.figure()
@@ -57,6 +55,7 @@ def viz_NLFR(freq, amplitude, path = '../figures/') :
     plt.xlabel(r"Frequency [Hz]")
     plt.ylabel(r"Amplitude [m]")
     plt.savefig(path+"NLFR.pdf", bbox_inches='tight', dpi=300)
+    plt.close()
 
 def real_time_plot_data_FRF(path, csv_path):
     df = pd.read_csv(csv_path)

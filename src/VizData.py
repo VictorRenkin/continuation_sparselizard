@@ -1,5 +1,4 @@
-import matplotlib.pyplot as plt
-import numpy as np
+from imports import *
 
 # Définition globale des paramètres de police et de taille pour tous les graphiques
 plt.rc('font', family='serif')  # Police avec empattements, comme Times
@@ -20,7 +19,7 @@ color_list = [
     "#005ca9", "#00843b", "#f8aa00", "#5b257d", "#8c8b82"
 ]
 
-def viz_convergence(path="figures/"):
+def viz_convergence(path="../figures/"):
     # Données à visualiser
 
     corrected_frequency_data = [
@@ -52,10 +51,19 @@ def viz_convergence(path="figures/"):
 
 # viz_convergence("figures/convergence.pdf")
 
-def viz_NLFR(freq, amplitude, path = 'figures/') :
+def viz_NLFR(freq, amplitude, path = '../figures/') :
     plt.figure()
     plt.plot(freq, amplitude, color = color_list[0], marker='o')
     plt.xlabel(r"Frequency [Hz]")
     plt.ylabel(r"Amplitude [m]")
     plt.savefig(path+"NLFR.pdf", bbox_inches='tight', dpi=300)
+
+def real_time_plot_data_FRF(path, csv_path):
+    df = pd.read_csv(csv_path)
+    plt.figure(figsize=(8, 6))
+    plt.plot(df["u"], df["freq"], color = color_list[0], marker='o')
+    plt.xlabel(r"Frequency [Hz]")
+    plt.ylabel(r"Amplitude [m]")
+    plt.savefig(path)  # Save the updated figure
+    plt.close()  # Close the figure to free memory
     

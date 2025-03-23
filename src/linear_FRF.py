@@ -1,7 +1,7 @@
-from imports import *
-import sparselizard_extension as se
-import CreateData as cd
-import VizData as vd
+from   import_extension.imports import *
+import import_extension.sparselizard_extension as se
+import Viz_write.CreateData as cd
+import Viz_write.VizData as vd
 
 # cd.create_doc_csv('../data/FRF/linear_FRF.csv')
 path_store =  '../data/FRF/linear_FRF.csv'

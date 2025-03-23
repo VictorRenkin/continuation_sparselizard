@@ -1,4 +1,4 @@
-from imports import *
+from import_extension.imports import *
 
 def add_vector(vec, value):
     """
@@ -40,7 +40,7 @@ def add_vector(vec, value):
     vec_add = sp.vec(vec.size() + 1, tan_index, tan_val_all)
     return vec_add
 
-def compute_tan_predictor(length_s, tan_u, tan_w = 1):
+def compute_tan_predictor(length_s, tan_u, tan_w, u_prev, freq_prev):
     """
     Computes the tangent predictor for the continuation method.
 
@@ -58,15 +58,15 @@ def compute_tan_predictor(length_s, tan_u, tan_w = 1):
     ---------
     delta_u_pred : vec
         The delta u_pred - u_i predicted displacement in the u direction.
-    delta_w_pred : float
+    delta_f_pred : float
         The delta w_pred - w_i predicted frequenciel in the w direction.
     """
 
     tan_x        = add_vector(tan_u, tan_w)
     tan_norm     = tan_x.norm()
-    delta_u_pred = length_s * tan_u/tan_norm
-    delta_w_pred = length_s * tan_w/tan_norm
-    return delta_u_pred, delta_w_pred
+    u_pred = length_s * tan_u/tan_norm + u_prev
+    f_pred = length_s * tan_w/tan_norm + freq_prev
+    return u_pred, f_pred
 
 
 def compute_scalaire_product_vec(vec_1, vec_2) :
@@ -114,7 +114,7 @@ def get_G(Jac, B, z) :
     return Jac*z - B
 
 
-def get_bordering_algorithm(tan_u, tan_w, Jac, G, g) :
+def get_bordering_algorithm(tan_u, tan_w, Jac, grad_w_G, G, g) :
     """
     Computes the parameter update using the bordering algorithm, which is based on 
     the pseudo-arclength continuation method.
@@ -137,19 +137,19 @@ def get_bordering_algorithm(tan_u, tan_w, Jac, G, g) :
     -------
     delta_u : `vec` object from Sparselizard
         The computed displacement update in the parameter u.
-    delta_w : float
+    delta_f : float
         The computed update in the continuation parameter w.
     """
     x_1 = sp.solve(Jac, -G) 
     # x_2 = sp.solve(Q_u, Q_w)  # ici normalment c'est deja calculer j'ai bien l'impresion 
-    x_2 = - tan_u
+    x_2 = sp.solve(Jac, grad_w_G)
     first_therm = (-g - compute_scalaire_product_vec(tan_u, x_1))
     sec_therm   = (tan_w - compute_scalaire_product_vec(tan_u,x_2))
-    delta_w = first_therm/sec_therm
-    delta_u = x_1 - x_2 * delta_w
-    return delta_u, delta_w
+    delta_f = first_therm/sec_therm
+    delta_u = x_1 - x_2 * delta_f
+    return delta_u, delta_f
 
-def get_g(delta_u_pred, delta_w_pred, tan_u, tan_w):
+def get_g(delta_u_pred, delta_f_pred, tan_u, tan_w):
     """
     Compute the psuedo-arclength corrector g enforce orthogonality 
     between search space of the Newton iteratin and the predictor vector.
@@ -158,7 +158,7 @@ def get_g(delta_u_pred, delta_w_pred, tan_u, tan_w):
     ----------
     delta_u_pred : `vec` object from Sparselizard
         The predicted displacement update in the parameter u.
-    delta_w_pred : float
+    delta_f_pred : float
         The predicted update in the continuation parameter w.
     tan_u : `vec` object from Sparselizard
         The derivative of g with respect to u, representing the tangent along the curve.
@@ -172,10 +172,10 @@ def get_g(delta_u_pred, delta_w_pred, tan_u, tan_w):
         The computed corrector value g.
     """
 
-    return compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_w_pred
+    return compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred
 
 
-def PreDir(Jac_1, Jac_2, freq_step, z2) :
+def prediction_direction(Jac_1, Jac_2, freq_step, vec_u) :
     """
     Compute the preidction durection i,e tangent vector in the u direction with the assumption  that the tangent of w is equal = 1.
 
@@ -187,7 +187,7 @@ def PreDir(Jac_1, Jac_2, freq_step, z2) :
         The Jacobian matrix of the system at the current frequency.
     freq_step : float
         The frequency step size.
-    z2 : `vec` object from Sparselizard
+    vec_u : `vec` object from Sparselizard
         The displacement value at the current frequency.
 
     Returns
@@ -197,9 +197,11 @@ def PreDir(Jac_1, Jac_2, freq_step, z2) :
     `float`
         The computed tangent vector in the w direction.
     """
-    grad_w_G = (Jac_2 - Jac_1)/freq_step * z2 
+    grad_w_G = (Jac_2 - Jac_1)/freq_step * vec_u 
+    tan_u    = sp.solve(Jac_2, -grad_w_G)
+    tan_w    = 1
 
-    return sp.solve(Jac_2, -grad_w_G), 1
+    return tan_u, tan_w
 
 def get_newthon_raphson_without_predictor(fd_rad, elasticity, u, vol, tol=1e-6, max_iter=10): 
     """
@@ -223,34 +225,29 @@ def get_newthon_raphson_without_predictor(fd_rad, elasticity, u, vol, tol=1e-6, 
     `mat` object from Sparselizard
         The Jacobian matrix of the system.
     """
-    max_delta_u = 1
-    iter        = 0
     sp.setfundamentalfrequency(fd_rad)
-    vec_u_prev = sp.vec(elasticity)
-    vec_u_prev.setdata()
-    while max_delta_u > tol and  max_iter > iter:
+    max_u_prev = 0; iter = 0; relchange = 1
+
+    while relchange > tol and  max_iter > iter:
 
         elasticity.generate()
         Jac = elasticity.A()
         b   = elasticity.b()
-        vec_delta_u = sp.solve(Jac, b)
-    
-        u.setdata(vol, vec_delta_u)
-        max_delta_u = sp.norm(u.harmonic(2)).max(vol,3)[0]
+        u_vec_new = sp.solve(Jac, b)
 
-        new_vec_u = vec_u_prev + vec_delta_u
-        u.setdata(vol, new_vec_u)
-        vec_u_prev = new_vec_u
+        u.setdata(vol, u_vec_new)
+        max_u = sp.norm(u.harmonic(2)).max(vol,3)[0]
 
-        print("Max delta u: ", max_delta_u, "iter :", iter)
+        relchange = abs(max_u-max_u_prev)/max_u
+        max_u_prev = max_u
         iter += 1
     
     if iter == max_iter:
         raise RuntimeError(f"Maximum number of iterations reached without convergence at f = {fd_rad} Hz.")
 
-    return vec_delta_u, Jac, b
+    return u_vec_new, Jac, b
 
-def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, delta_u_pred, delta_w_pred, tan_u, tan_w, tol=1e-6, max_iter=10):
+def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, u_pred, f_pred, tan_u, tan_w, tol=1e-6, max_iter=10):
     """
     Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
     The algorithm is based on a bordering approach.
@@ -265,10 +262,10 @@ def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, delta_u_pr
         Field object representing the displacement.
     fd : float
         Fundamental frequency in Hz before convergence.
-    delta_u_pred : `vec` object from Sparselizard
-        Predicted displacement increment between the predictor and the previous point.
-    delta_w_pred : float
-        Predicted frequency increment between the predictor and the previous point.
+    u_pred : `vec` object from Sparselizard
+        Predicted displacement.
+    delta_f_pred : float
+        Predicted frequency.
     tan_u : `vec` object from Sparselizard
         Tangent vector in the direction of u.
     tan_w : float
@@ -287,23 +284,51 @@ def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, delta_u_pr
     int
         Number of iterations performed.
     """
+
     iter = 0
-    delta_u = 1
-    delta_w = 1
+    relative_error_u_max = 1
+    relative_error_freq = 1
+    u_max = 0
+    delta_f = 1
 
-    while (delta_u > tol or delta_w > tol) and iter < max_iter:
+    elasticity.generate()
+    Jac_1          = 0
+    while (relative_error_u_max > tol or relative_error_freq > tol) and iter < max_iter:
         elasticity.generate()
-        Jac_2 = elasticity.A()
-        b_2 = elasticity.b()
+        Jac_2          = elasticity.A()
+        b_2            = elasticity.b()
+        u_displacement = sp.solve(Jac_2, b_2)
+        fct_Q          = b_2 - Jac_2 * u_displacement
 
-        fct_g = get_g(delta_u_pred, delta_w_pred, tan_u, tan_w)
-        print("fct_g",fct_g)
-        delta_u, delta_w = get_bordering_algorithm(tan_u, tan_w, Jac_2,- b_2, fct_g)
+        if iter == 0 :
+            grad_w_G       = (Jac_2)/delta_f * u_displacement
+        else :
+            grad_w_G       = (Jac_2 - Jac_1)/delta_f * u_displacement 
+
+        delta_u_pred = u_pred - u_displacement
+        delta_f_pred = f_pred - fd
+        fct_g        = get_g(delta_u_pred, delta_f_pred, tan_u, tan_w)
+
+        delta_u, delta_f = get_bordering_algorithm(tan_u, tan_w, Jac_2, grad_w_G, fct_Q, fct_g)
 
         u.setdata(physreg_u, delta_u)
-        delta_u = sp.norm(u.harmonic(2))
+        delta_u_max = sp.norm(u.harmonic(2)).max(physreg_u, 3)[0]
+        u_vec_new = u_displacement + delta_u
+        u.setdata(physreg_u, u_vec_new)
+        u_max = sp.norm(u.harmonic(2)).max(physreg_u, 3)[0]
+        relative_error_u_max = delta_u_max/u_max
 
-        sp.setfundamentalfrequency(delta_w + fd)
+        new_freq = delta_f + fd
+        relative_error_freq = delta_f/new_freq
+        fd = new_freq
+        u.setdata(physreg_u, fct_Q)
+        u_max = sp.norm(u.harmonic(2)).max(physreg_u, 3)[0]
+        print("Residue max \t",u_max)
+        Jac_1 = Jac_2
+        sp.setfundamentalfrequency(new_freq)
+        u.setdata(physreg_u, u_vec_new)
+
+        print("relarive error u : \t", relative_error_u_max, "relatove error f: \t",relative_error_freq)
         iter += 1
 
-    return u, delta_w + fd, iter
+    return u_vec_new, fd, iter

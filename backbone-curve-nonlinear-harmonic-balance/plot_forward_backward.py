@@ -4,11 +4,11 @@ import numpy as np
 
 backward = pd.read_csv("data/backward.csv")
 forward = pd.read_csv("data/forward.csv")
-freq_backward = backward["u"]
-amp_backward = backward["w"]
+freq_backward = backward["w"]
+amp_backward = backward["u"]
 
-freq_forward = forward["u"]
-amp_forward = forward["w"]
+freq_forward = forward["w"]
+amp_forward = forward["u"]
 
 # Tracé du graphe
 plt.figure(figsize=(10, 6))

@@ -1,4 +1,4 @@
-from imports import *
+from import_extension.imports import *
 
 def create_doc_csv(path):
     """

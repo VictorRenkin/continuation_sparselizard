@@ -1,6 +1,6 @@
 import spylizard as sp
 import numpy as np
-import VizData as vd
+import Viz_write.VizData as vd
 
 vd.viz_convergence()
 

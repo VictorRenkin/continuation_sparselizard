@@ -35,3 +35,15 @@ def add_data_to_csv(u_max, freq, path):
     """
     df = pd.DataFrame({"freq": [freq], "u": [u_max]})
     df.to_csv(path, mode='a', header=False, index=False)
+
+def remove_last_row_from_csv(path):
+    """
+    Removes the last row from the CSV file at the given path.
+    
+    Parameters:
+    path (str): 
+        The path to the CSV file.
+    """
+    df = pd.read_csv(path)
+    df = df.iloc[:-1]  # enlève la dernière ligne
+    df.to_csv(path, index=False)

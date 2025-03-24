@@ -1,4 +1,6 @@
 from import_extension.imports import *
+import Viz_write.VizData as vd
+import Viz_write.CreateData as cd
 
 def add_vector(vec, value):
     """
@@ -40,32 +42,43 @@ def add_vector(vec, value):
     vec_add = sp.vec(vec.size() + 1, tan_index, tan_val_all)
     return vec_add
 
-def compute_tan_predictor(length_s, tan_u, tan_w, u_prev, freq_prev):
+def compute_tan_predictor(length_s, tan_u, tan_w, u_prev, freq_prev, TYPE_WARD):
     """
     Computes the tangent predictor for the continuation method.
 
-    Parameters:
-    ---------
+    Parameters
+    ----------
     length_s : float
-        The step length acrros the tangent.
+        The step length across the tangent.
     tan_u : vec
         The tangent vector in the u direction.
     tan_w : float
-        The tangent vector in the w direction. 
-        Default is 1 on the assumption that the tangent vector would be vertical is equal to 0.
+        The tangent vector in the w direction.
+    u_prev : vec
+        The displacement vector at the previous step.
+    freq_prev : float
+        The frequency at the previous step.
+    TYPE_WARD : str
+        Direction of continuation, must be either 'Forward' or 'Backward'.
 
-    Returns:
-    ---------
+    Returns
+    -------
     delta_u_pred : vec
-        The delta u_pred - u_i predicted displacement in the u direction.
+        The predicted displacement vector in the u direction.
     delta_f_pred : float
-        The delta w_pred - w_i predicted frequenciel in the w direction.
+        The predicted frequency step in the w direction.
     """
+
 
     tan_x        = add_vector(tan_u, tan_w)
     tan_norm     = tan_x.norm()
-    u_pred = length_s * tan_u/tan_norm + u_prev
-    f_pred = length_s * tan_w/tan_norm + freq_prev
+    if TYPE_WARD == "Forward" :
+        u_pred = length_s * tan_u/tan_norm + u_prev
+        f_pred = length_s * tan_w/tan_norm + freq_prev
+    
+    if TYPE_WARD == "Backward" :
+        u_pred = - length_s * tan_u/tan_norm + u_prev
+        f_pred = - length_s * tan_w/tan_norm + freq_prev
     return u_pred, f_pred
 
 
@@ -245,9 +258,9 @@ def get_newthon_raphson_without_predictor(fd_rad, elasticity, u, vol, tol=1e-6, 
     if iter == max_iter:
         raise RuntimeError(f"Maximum number of iterations reached without convergence at f = {fd_rad} Hz.")
 
-    return u_vec_new, Jac, b
+    return u_vec_new, Jac
 
-def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, u_pred, f_pred, tan_u, tan_w, tol=1e-6, max_iter=10):
+def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, u_pred, f_pred, tan_u, tan_w, tol=1e-6, max_iter=10):
     """
     Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
     The algorithm is based on a bordering approach.
@@ -260,8 +273,6 @@ def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, u_pred, f_
         Physical region associated with the vector u.
     u : `field` object from Sparselizard
         Field object representing the displacement.
-    fd : float
-        Fundamental frequency in Hz before convergence.
     u_pred : `vec` object from Sparselizard
         Predicted displacement.
     delta_f_pred : float
@@ -292,7 +303,8 @@ def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, u_pred, f_
     delta_f = 1
 
     elasticity.generate()
-    Jac_1          = 0
+    Jac_1 = 0
+    fd = f_pred
     while (relative_error_u_max > tol or relative_error_freq > tol) and iter < max_iter:
         elasticity.generate()
         Jac_2          = elasticity.A()
@@ -321,9 +333,13 @@ def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, u_pred, f_
         new_freq = delta_f + fd
         relative_error_freq = delta_f/new_freq
         fd = new_freq
+
+        # goal is just to print the maximum of the residual over the field.
         u.setdata(physreg_u, fct_Q)
         u_max = sp.norm(u.harmonic(2)).max(physreg_u, 3)[0]
         print("Residue max \t",u_max)
+        
+        # Instore the data for the next step
         Jac_1 = Jac_2
         sp.setfundamentalfrequency(new_freq)
         u.setdata(physreg_u, u_vec_new)
@@ -332,3 +348,147 @@ def get_predictor_corrector_NewtonSolve(elasticity, physreg_u, u, fd, u_pred, f_
         iter += 1
 
     return u_vec_new, fd, iter
+
+def solve_one_point_NLRF_and_store(freq, elasticity, u, PHYSREG_U, PHYSREG_MEASURED, PATH_STORE_DATA, PATH_FIGURE):
+    """
+    Solves the nonlinear frequency response (NLFR) at a single frequency point using Newton-Raphson without predictor,
+    updates the displacement field `u`, and stores the results.
+
+    Parameters
+    ----------
+    freq : float
+        The excitation frequency at which the system is solved.
+    elasticity : `formulation` object from Sparselizard
+        The formulation object representing the system of equations.
+    u : `field` object from Sparselizard
+        The displacement field. This field is updated with the solution obtained at the current frequency.
+    PHYSREG_U : int
+        Physical region associated with the displacement vector `u`.
+    PHYSREG_MEASURED : int
+        Physical region associated with the point to be measured.
+    PATH_STORE_DATA : str
+        Path where the output data is stored (CSV).
+    PATH_FIGURE : str
+        Path where the FRF figure is saved or updated.
+
+    Returns
+    -------
+    vec_u :  `vec` object from Sparselizard
+        Displacement vecteur.
+    Jac : np.ndarray
+        The Jacobian matrix computed at the solution point.
+    """
+
+    vec_u, Jac = get_newthon_raphson_without_predictor(freq, elasticity, u, PHYSREG_U)
+    u.setdata(PHYSREG_U, vec_u)  # Mise à jour du champ avec la solution
+    um = sp.norm(u.harmonic(2)).max(PHYSREG_MEASURED, 3)[0]
+    cd.add_data_to_csv(um, freq, PATH_STORE_DATA)
+    vd.real_time_plot_data_FRF(PATH_FIGURE, PATH_STORE_DATA)
+    return vec_u, Jac
+
+    
+def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, PHYSREG_MEASURED, TYPE_WARD, PATH_STORE_DATA, PATH_STORE_PREDICTOR, PATH_FIGURE, 
+                               FREQ_START, FD_MIN, FD_MAX, MAX_ITER=10,
+                               MIN_LENGTH_S=1e-4, MAX_LENGTH_S=5e-1, START_LENGTH_S=5e-2):
+    """
+    Goal is to solve the NLFRs and store the result at PATH_STORE_DATA and show them at PATH_FIGURE, this is done at each frequency step.
+
+    Parameters
+    ----------
+    elasticity : `formulation` object from Sparselizard
+        The formulation object representing the system of equations.
+    u : `field` object from Sparselizard
+        Field object representing the displacement.
+    PHYSREG_U : int
+        Physical region associated with the vector u.
+    PHYSREG_MEASURED : int
+        Physical region associated with the point to be measured.
+    TYPE_WARD : str
+        Must be either 'Forward' or 'Backward'. Defines the direction of continuation.
+    PATH_STORE_DATA : str
+        Path where to store the output data.
+    PATH_STORE_PREDICTOR : str
+        Path where to store the predictor data.
+    PATH_FIGURE : str
+        Path where to save the figures.
+    FREQ_START : float
+        Starting frequency for the continuation process.
+    FD_MIN : float
+        Minimum frequency limit of the continuation.
+    FD_MAX : float
+        Maximum frequency limit of the continuation.
+    MAX_ITER : int, optional
+        Maximum number of iterations for Newton solver (default is 10).
+    MIN_LENGTH_S : float, optional
+        Minimum arc length step size (default is 1e-4).
+    MAX_LENGTH_S : float, optional
+        Maximum arc length step size (default is 0.5).
+    START_LENGTH_S : float, optional
+        Initial arc length step size (default is 0.05).
+
+    Raises
+    ------
+    ValueError
+        If TYPE_WARD is not 'Forward' or 'Backward'.
+    """
+
+    if TYPE_WARD not in ["Forward", "Backward"]:
+        raise ValueError("TYPE_WARD must be either 'Forward' or 'Backward'.")
+
+    _, Jac_1 = solve_one_point_NLRF_and_store(FREQ_START, elasticity, u, PHYSREG_U, PHYSREG_MEASURED, PATH_STORE_DATA, PATH_FIGURE)
+
+    FIRST_STEP_FREQ = 0.05
+    if TYPE_WARD == "Forward":
+        freq = FREQ_START + FIRST_STEP_FREQ
+    else:  # Must be "Backward" due to previous check
+        freq = FREQ_START - FIRST_STEP_FREQ
+
+    vec_u_2, Jac_2 = solve_one_point_NLRF_and_store(freq, elasticity, u, PHYSREG_U, PHYSREG_MEASURED, PATH_STORE_DATA, PATH_FIGURE)
+
+    f_1 = FREQ_START
+    f_2 = freq
+    length_s = START_LENGTH_S
+
+    while FD_MIN <= f_2 <= FD_MAX:
+        print("################## New Iteration ##################")
+        print("length_s:\t", length_s, "freq:\t", f_2)
+
+        tan_u, tan_w = prediction_direction(Jac_1, Jac_2, f_2 - f_1, vec_u_2)
+        vec_u_pred, f_pred = compute_tan_predictor(length_s, tan_u, tan_w, vec_u_2, f_2, TYPE_WARD)
+        u.setdata(PHYSREG_U, vec_u_pred)
+        u_pred = sp.norm(u.harmonic(2)).max(PHYSREG_MEASURED, 3)[0]
+        cd.add_data_to_csv(u_pred, f_pred, PATH_STORE_PREDICTOR)
+        vd.real_time_plot_data_FRF(PATH_FIGURE, PATH_STORE_DATA, PATH_STORE_PREDICTOR)
+        sp.setfundamentalfrequency(f_pred)
+        break
+        
+
+        if not (FD_MIN <= f_pred <= FD_MAX):
+            break
+
+        vec_u, freq, iter_newthon = get_predictor_corrector_NewtonSolve(
+            elasticity, PHYSREG_U, u, vec_u_pred,
+            f_pred, tan_u, tan_w, tol=1e-6, max_iter=MAX_ITER
+        )
+
+        if iter_newthon == MAX_ITER:
+            length_s /= 2
+            cd.remove_last_row_from_csv(PATH_STORE_PREDICTOR)
+        else:
+            f_1 = f_2
+            vec_u_2 = vec_u
+            f_2 = freq
+            # Jac_1 = Jac_2
+            # elasticity.generate()
+            # Jac_2 = elasticity.A()
+        
+            u_PHYSREG_LOAD_POINT = sp.norm(u.harmonic(2)).max(PHYSREG_MEASURED, 3)[0]
+            cd.add_data_to_csv(u_PHYSREG_LOAD_POINT, freq, PATH_STORE_DATA)
+            # vd.real_time_plot_data_FRF(PATH_FIGURE, PATH_STORE_DATA)
+
+            if length_s < MAX_LENGTH_S:
+                length_s *= 1.2
+
+        if length_s < MIN_LENGTH_S:
+            print("Convergence not reached")
+            break

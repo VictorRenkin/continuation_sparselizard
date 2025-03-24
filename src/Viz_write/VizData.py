@@ -57,12 +57,35 @@ def viz_NLFR(freq, amplitude, path = '../figures/') :
     plt.savefig(path+"NLFR.pdf", bbox_inches='tight', dpi=300)
     plt.close()
 
-def real_time_plot_data_FRF(path, csv_path):
+
+def real_time_plot_data_FRF(path, csv_path, csv_pred_path=None):
     df = pd.read_csv(csv_path)
     plt.figure(figsize=(8, 6))
-    plt.plot(df["u"], df["freq"], color = color_list[0], marker='o')
+    
+    # Trace les points NLFR
+    plt.plot(df["u"], df["freq"], color=color_list[0], marker='o', label=r'NLFR')
+    
+    if csv_pred_path:
+        try:
+            df_pred = pd.read_csv(csv_pred_path)
+            
+            # Trace seulement une ligne entre le dernier point NLFR et le dernier point prédictif
+            u_last = df["u"].iloc[-1]
+            f_last = df["freq"].iloc[-1]
+            u_pred = df_pred["u"].iloc[-1]
+            f_pred = df_pred["freq"].iloc[-1]
+            
+            plt.plot([u_last, u_pred], [f_last, f_pred], color=color_list[1], linestyle='--', marker='o', label=r'Prediction step')
+
+        except FileNotFoundError:
+            print(f"Fichier de prédiction non trouvé : {csv_pred_path}")
+    
     plt.xlabel(r"Frequency [Hz]")
     plt.ylabel(r"Amplitude [m]")
-    plt.savefig(path)  # Save the updated figure
-    plt.close()  # Close the figure to free memory
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(path)
+    plt.close()
+
+
     

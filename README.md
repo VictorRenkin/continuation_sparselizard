@@ -12,7 +12,7 @@
 - [AI](#ai)
 
 ## Introduction
-
+The objective of this project is to use *Sparselizard* to implement a parallel Harmonic Balance Method for the analysis of a nonlinear mechanical system. This approach aims to accurately follow the nonlinear frequency responses of the system by employing a continuation method based on a predictor–corrector scheme.
 ## Requirements  
 This repository works with **Sparselizard**. Follow the documentation available at [this link](https://github.com/halbux/sparselizard-users/tree/main/api/python) to install it properly. This project requires the packages listed in the `requirements.txt` file. To install these dependencies, ensure you have [Python](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/) installed, then run the following command:
 
@@ -32,7 +32,7 @@ The frequence will be find on the treminal and the mode shapes will be saved in 
 ### Nonlinear Frequency Responses
 To compute the nonlinear frequency response (NLFR), run:
 ```bash
-python3 src/main.py
+python3 src/NLFR.py
 ```
 ### Compute the FRF
 To compute the FRF, run:

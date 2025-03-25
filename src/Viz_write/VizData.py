@@ -58,34 +58,78 @@ def viz_NLFR(freq, amplitude, path = '../figures/') :
     plt.close()
 
 
-def real_time_plot_data_FRF(path, csv_path, csv_pred_path=None):
-    df = pd.read_csv(csv_path)
+def real_time_plot_data_FRF(path, csv_path_forward, csv_path_backward, csv_pred_path=None):
+    """
+    Plots the Frequency Response Function (FRF) using data from forward, backward, and prediction paths.
+
+    Parameters
+    ----------
+    path : str
+        Path where the resulting plot will be saved.
+    csv_path_forward : str
+        Path to the CSV file containing the forward path data (NLFR).
+    csv_path_backward : str
+        Path to the CSV file containing the backward path data. If empty, it is skipped.
+    csv_pred_path : str, optional
+        Path to the CSV file containing the prediction data. If not provided or empty, prediction is skipped.
+
+    Returns
+    -------
+    None
+        The function saves the plot at the specified path.
+    """
+
+    df_forward = pd.read_csv(csv_path_forward)
     plt.figure(figsize=(8, 6))
-    
-    # Trace les points NLFR
-    plt.plot(df["u"], df["freq"], color=color_list[0], marker='o', label=r'NLFR')
-    
+
+    # Plot forward path
+    plt.plot(df_forward['u'], df_forward['freq'], color=color_list[0], marker='o', label=r'NLFR forward')
+
+    # Initialise reference point for prediction line
+    last_u = df_forward['u'].iloc[-1]
+    last_f = df_forward['freq'].iloc[-1]
+
+    try:
+        df_backward = pd.read_csv(csv_path_backward)
+        if not df_backward.empty:
+            plt.plot(df_backward['u'], df_backward['freq'], color=color_list[1], marker='o', label=r'NLFR backward')
+            last_u = df_backward['u'].iloc[-1]
+            last_f = df_backward['freq'].iloc[-1]
+    except FileNotFoundError:
+        print(f"Backward file not found: {csv_path_backward}")
+
+    # Plot prediction step if available
     if csv_pred_path:
         try:
             df_pred = pd.read_csv(csv_pred_path)
-            
-            # Trace seulement une ligne entre le dernier point NLFR et le dernier point prédictif
-            u_last = df["u"].iloc[-1]
-            f_last = df["freq"].iloc[-1]
-            u_pred = df_pred["u"].iloc[-1]
-            f_pred = df_pred["freq"].iloc[-1]
-            
-            plt.plot([u_last, u_pred], [f_last, f_pred], color=color_list[1], linestyle='--', marker='o', label=r'Prediction step')
-
+            if not df_pred.empty:
+                u_pred = df_pred['u'].iloc[-1]
+                f_pred = df_pred['freq'].iloc[-1]
+                plt.plot([last_u, u_pred], [last_f, f_pred], color=color_list[2], linestyle='--', marker='o', label=r'Prediction step')
         except FileNotFoundError:
-            print(f"Fichier de prédiction non trouvé : {csv_pred_path}")
-    
+            print(f"Prediction file not found: {csv_pred_path}")
+
     plt.xlabel(r"Frequency [Hz]")
     plt.ylabel(r"Amplitude [m]")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(path)
+    plt.savefig(path, format='pdf', bbox_inches='tight', transparent=True)
+    plt.close()
+
+def viz_forward_and_backward(PATH_FORWARD, PATH_DOWNWARD, PATH_FIGURE) : 
+    df_forward = pd.read_csv(PATH_FORWARD)
+    df_downward = pd.read_csv(PATH_DOWNWARD)
+
+    plt.plot(df_forward['u'], df_forward['freq'], color=color_list[0], marker='o', label=r'NLFR forward')  
+    plt.plot(df_downward['u'], df_downward['freq'], color=color_list[1], marker='o', label=r'NLFR downward')  
+
+    plt.xlabel(r"Frequency [Hz]")
+    plt.ylabel(r"Amplitude [m]")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(PATH_FIGURE, format='pdf', bbox_inches='tight', transparent=True)
     plt.close()
 
 
-    
+
+

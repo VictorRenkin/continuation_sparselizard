@@ -1,4 +1,6 @@
-from import_extension.imports import *
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # Définition globale des paramètres de police et de taille pour tous les graphiques
 plt.rc('font', family='serif')  # Police avec empattements, comme Times

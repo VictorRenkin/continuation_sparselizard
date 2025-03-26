@@ -1,4 +1,6 @@
-from import_extension.imports import *
+import os
+import pandas as pd
+
 
 def create_doc_csv(path):
     """

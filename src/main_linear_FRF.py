@@ -1,5 +1,5 @@
-from   import_extension.imports import *
-import import_extension.sparselizard_extension as se
+
+import sparselizard as sp
 import Viz_write.CreateData as cd
 import Viz_write.VizData as vd
 

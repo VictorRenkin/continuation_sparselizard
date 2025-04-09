@@ -87,3 +87,4 @@ def get_norm_harmonique_measured(u, HARMONIQUE_MEASURED):
         u_harmo_measured_square += u.harmonic(harmo)*u.harmonic(harmo)
     norm_harmo_measured = sp.sqrt(u_harmo_measured_square)
     return norm_harmo_measured
+

@@ -2,31 +2,13 @@ import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
 import sparselizard as sp
 import import_extension.sparselizard_continuation as sc
-import import_extension.sparselizard_solveur as ss
+import import_extension.sparselizard_solver as ss
 import import_extension.sparselizard_vector as sv
-
-def get_G(Jac, B, z) :
-    """
-    Computes the residual of the system of equations A - bz = 0.  
-    
-    Parameters
-    ---------
-    Jac : `mat` object from Sparselizard
-        The Jacobian matrix of the system.
-    B : `vec` object from Sparselizard
-        The right-hand side of the system.
-    z : `vec` object from Sparselizard
-        The current solution of the system represent the coef harmonique.
-    
-    Returns
-    -------
-    `vec` object from Sparselizard
-        The residual of the system.
-    """ 
-    return Jac*z - B
+import shutil
+import os
 
 def solve_one_point_NLRF_and_store(freq, elasticity, u, PHYSREG_U, PHYSREG_MEASURED, HARMONIQUE_MEASURED, 
-                                   PATH_STORE_FORWARD, PATH_STORE_DOWNWARD, TYPE_WARD, PATH_FIGURE):
+                                   PATH, TYPE_WARD, START_U=None, TOL=1e-6, MAX_ITER=10):
     """
     Solves the nonlinear frequency response (NLFR) at a single frequency point using Newton-Raphson without predictor,
     updates the displacement field `u`, and stores the results.
@@ -62,23 +44,22 @@ def solve_one_point_NLRF_and_store(freq, elasticity, u, PHYSREG_U, PHYSREG_MEASU
         The Jacobian matrix computed at the solution point.
     """
     if TYPE_WARD == "Forward" :
-        PATH_STORE_DATA = PATH_STORE_FORWARD
-
+        PATH_STORE_DATA = PATH['PATH_STORE_DATA_FORWARD']
     else :
-        PATH_STORE_DATA = PATH_STORE_DOWNWARD
-    vec_u, Jac = ss.get_newthon_raphson_without_predictor(freq, elasticity, u, PHYSREG_U, HARMONIQUE_MEASURED)
+        PATH_STORE_DATA = PATH['PATH_STORE_DATA_DOWNWARD']
+    vec_u, Jac, residue_Q = ss.get_newthon_raphson_without_predictor(freq, elasticity, u, PHYSREG_U, HARMONIQUE_MEASURED, START_U=START_U, TOL=TOL, MAX_ITER=MAX_ITER)
     u.setdata(PHYSREG_U, vec_u)  # Mise à jour du champ avec la solution
     norm_harmo_measured_u = sv.get_norm_harmonique_measured(u, HARMONIQUE_MEASURED)
     u_measured = norm_harmo_measured_u.max(PHYSREG_MEASURED, 3)[0]
     cd.add_data_to_csv(u_measured, freq, PATH_STORE_DATA)
-    vd.real_time_plot_data_FRF(PATH_FIGURE, PATH_STORE_FORWARD, PATH_STORE_DOWNWARD)
-    return vec_u, Jac
+    vd.real_time_plot_data_FRF(PATH)
+    return vec_u, Jac, residue_Q
 
     
 def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_MEASURED, TYPE_WARD, 
-                               PATH_STORE_FORWARD, PATH_STORE_DOWNWARD, PATH_STORE_PREDICTOR, PATH_FIGURE, 
-                               FREQ_START, FD_MIN, FD_MAX, MAX_ITER=10, TOL = 1e-6,
-                               MIN_LENGTH_S=1e-4, MAX_LENGTH_S=5e-1, START_LENGTH_S=5e-2):
+                               PATH, FREQ_START, FD_MIN, FD_MAX, MAX_ITER=10, TOL = 1e-6,
+                               MIN_LENGTH_S=1e-4, MAX_LENGTH_S=5e-1, START_LENGTH_S=5e-2, 
+                               START_U=None, STORE_U_ALL=False, STORE_PREDICTOR=False):
     """
     Goal is to solve the NLFRs and store the result at PATH_STORE_DATA and show them at PATH_FIGURE, this is done at each frequency step.
 
@@ -92,6 +73,8 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         Physical region associated with the vector u.
     HARMONIC_MEASURED : [int]
         Vector of harmonics to measure.
+    NUMBER_HARMONIC : [int]
+        Vector of apply harmonics.
     PHYSREG_MEASURED : int
         Physical region associated with the point to be measured.
     TYPE_WARD : str
@@ -118,6 +101,14 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         Maximum arc length step size (default is 0.5).
     START_LENGTH_S : float, optional
         Initial arc length step size (default is 0.05).
+    TOL : float, optional
+        Tolerance for convergence (default is 1e-6).
+    START_U : `vec` object from Sparselizard, optional
+        Initial displacement vector (default is None).
+    STORE_PREDICTOR : bool, optional
+        If True, stores the predictor data (default is False).
+    STORE_U_ALL : bool, optional
+        If True, stores the displacement vector at each frequency (default is False).
 
     Raises
     ------
@@ -127,67 +118,86 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
 
     if TYPE_WARD not in ["Forward", "Backward"]:
         raise ValueError("TYPE_WARD must be either 'Forward' or 'Backward'.")
-    
+    f_1 = FREQ_START
+    length_s = START_LENGTH_S
+    if START_U :
+        START_U = START_U
+    else :
+        START_U = sp.vec(elasticity)
+        
+    vec_u_1, Jac_1, residue_G_1 = ss.get_newthon_raphson_without_predictor(f_1, elasticity, u, PHYSREG_U, HARMONIC_MEASURED, START_U, 
+                                                                           TOL=1e-4, MAX_ITER=20)
+    u.setdata(PHYSREG_U, vec_u_1)  
+    norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+    u_measured = norm_u.max(PHYSREG_MEASURED, 3)[0]
+
     if TYPE_WARD == "Forward" :
-        PATH_STORE_DATA = PATH_STORE_FORWARD
+        PATH_STORE_DATA = PATH['PATH_STORE_DATA_FORWARD']
+        if STORE_U_ALL :
+            PATH_ALL_U = "../data/FRF/forward/displacement_each_freq"
+            if os.path.exists(PATH_ALL_U):
+                shutil.rmtree(PATH_ALL_U)
+            os.makedirs(PATH_ALL_U)
+            vec_u_1.write(f"{PATH_ALL_U}/{str(f_1).replace('.', '_')}.txt")
 
     else :
-        PATH_STORE_DATA = PATH_STORE_DOWNWARD
+        PATH_STORE_DATA = PATH['PATH_STORE_DATA_DOWNWARD']
+        if STORE_U_ALL :
+            PATH_ALL_U = "../data/FRF/downward/displacement_each_freq"
+            if os.path.exists(PATH_ALL_U):
+                shutil.rmtree(PATH_ALL_U)
+            os.makedirs(PATH_ALL_U)
+            vec_u_1.write(f"{PATH_ALL_U}/{str(f_1).replace('.', '_')}.txt")
 
-    print("################## Initialisation ##################")
-    _, Jac_1 = solve_one_point_NLRF_and_store(FREQ_START, elasticity, u, PHYSREG_U, PHYSREG_MEASURED, HARMONIC_MEASURED, PATH_STORE_FORWARD, PATH_STORE_DOWNWARD, TYPE_WARD, PATH_FIGURE)
 
-    FIRST_STEP_FREQ = 0.05
-    if TYPE_WARD == "Forward":
-        freq = FREQ_START + FIRST_STEP_FREQ
-    else:  # Must be "Backward" due to previous check
-        freq = FREQ_START - FIRST_STEP_FREQ
-
-    vec_u_2, Jac_2 = solve_one_point_NLRF_and_store(freq, elasticity, u, PHYSREG_U, PHYSREG_MEASURED, HARMONIC_MEASURED, PATH_STORE_FORWARD, PATH_STORE_DOWNWARD, TYPE_WARD, PATH_FIGURE)
-    f_1 = FREQ_START
-    f_2 = freq
-    length_s = START_LENGTH_S
-
-    while FD_MIN <= f_2 <= FD_MAX:
+    cd.add_data_to_csv(u_measured, f_1, PATH_STORE_DATA)
+    vd.real_time_plot_data_FRF(PATH)
+    tan_u_1 = sp.vec(elasticity)
+    tan_w_1 = 1
+    # sv.hstack_vec(Jac_1, tan_w_1)
+    while FD_MIN <= f_1 <= FD_MAX:
         print("################## New Iteration ##################")
-        print(f"length_s: {length_s:.4f}, freq: {f_2:.2f}")
-
-        tan_u, tan_w = sc.prediction_direction(Jac_1, Jac_2, f_2 - f_1, vec_u_2)
-        vec_u_pred, f_pred = sc.compute_tan_predictor(length_s, tan_u, tan_w, vec_u_2, f_2, TYPE_WARD)
+        print(f"length_s: {length_s:.4f}, freq: {f_1:.2f}")
+        tan_u, tan_w = sc.prediction_direction(elasticity, u, PHYSREG_U, residue_G_1, vec_u_1, Jac_1, tan_u_1, tan_w_1, f_1)
+        vec_u_pred, f_pred = sc.compute_tan_predictor(length_s, tan_u, tan_w, vec_u_1, f_1, TYPE_WARD)
         u.setdata(PHYSREG_U, vec_u_pred)
         sp.setfundamentalfrequency(f_pred)
-
-
-        u_pred = sp.norm(u.harmonic(2)).max(PHYSREG_MEASURED, 3)[0]
-        cd.add_data_to_csv(u_pred, f_pred, PATH_STORE_PREDICTOR)
-        vd.real_time_plot_data_FRF(PATH_FIGURE, PATH_STORE_FORWARD, PATH_STORE_DOWNWARD, PATH_STORE_PREDICTOR)
-        
+        if STORE_PREDICTOR:
+            norm_harmo_measured_u_pred = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+            u_pred = norm_harmo_measured_u_pred.max(PHYSREG_MEASURED, 3)[0]
+            cd.add_data_to_csv(u_pred, f_pred, PATH['PATH_STORE_PREDICTOR'])
+            vd.real_time_plot_data_FRF(PATH)
         if not (FD_MIN <= f_pred <= FD_MAX):
             break
         print("################## Newthon predictor-corecteur solveur ##################")
-        vec_u, freq, iter_newthon = ss.get_predictor_corrector_NewtonSolve(
-            elasticity, PHYSREG_U, u, vec_u_pred,
-            f_pred, tan_u, tan_w, TOL=TOL, MAX_ITER=MAX_ITER
+        vec_u, freq, iter_newthon, residue_G, Jac = ss.get_predictor_corrector_NewtonSolve(
+            elasticity, PHYSREG_U, HARMONIC_MEASURED, u, vec_u_pred,
+            f_pred, tan_u, tan_w, PATH, TOL=TOL, MAX_ITER=MAX_ITER
         )
-
         if iter_newthon == MAX_ITER:
-            length_s /= 2
-            cd.remove_last_row_from_csv(PATH_STORE_PREDICTOR)
+            length_s = length_s * 0.4
+            if STORE_PREDICTOR:
+                cd.remove_last_row_from_csv(PATH['PATH_STORE_PREDICTOR'])
+            u.setdata(PHYSREG_U, vec_u_1)
+            sp.setfundamentalfrequency(f_1)
         else:
-            f_1 = f_2
-            vec_u_2 = vec_u
-            f_2 = freq
-            # Jac_1 = Jac_2
-            # elasticity.generate()
-            # Jac_2 = elasticity.A()
-        
-            u_PHYSREG_LOAD_POINT = sp.norm(u.harmonic(2)).max(PHYSREG_MEASURED, 3)[0]
-            cd.add_data_to_csv(u_PHYSREG_LOAD_POINT, freq, PATH_STORE_DATA)
-            # vd.real_time_plot_data_FRF(PATH_FIGURE, PATH_STORE_DATA)
-
+            vec_u_1 = vec_u
+            f_1 = freq
+            residue_G_1 = residue_G
+            Jac_1 = Jac
+            tan_u_1 = tan_u
+            tan_w_1 = tan_w
+            norm_u_i = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+            point_measured = norm_u_i.max(PHYSREG_MEASURED, 3)[0]
+            cd.add_data_to_csv(point_measured, f_1, PATH_STORE_DATA)
+            if STORE_PREDICTOR:
+                pass
+            else:
+                vd.real_time_plot_data_FRF(PATH)
+            if STORE_U_ALL :
+                vec_u.write(f"{PATH_ALL_U}/{str(f_1).replace('.', '_')}.txt")
             if length_s < MAX_LENGTH_S:
-                length_s *= 1.2
-
+                length_s *= 1.1
         if length_s < MIN_LENGTH_S:
             print("############### Convergence not reached #################")
             break

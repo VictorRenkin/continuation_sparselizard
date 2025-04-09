@@ -60,7 +60,7 @@ def viz_NLFR(freq, amplitude, path = '../figures/') :
     plt.close()
 
 
-def real_time_plot_data_FRF(path, csv_path_forward, csv_path_backward, csv_pred_path=None):
+def real_time_plot_data_FRF(PATH, PATH_NEWTHON=None):
     """
     Plots the Frequency Response Function (FRF) using data from forward, backward, and prediction paths.
 
@@ -80,50 +80,69 @@ def real_time_plot_data_FRF(path, csv_path_forward, csv_path_backward, csv_pred_
     None
         The function saves the plot at the specified path.
     """
-
-    df_forward = pd.read_csv(csv_path_forward)
     plt.figure(figsize=(8, 6))
-
-    # Plot forward path
-    plt.plot(df_forward['u'], df_forward['freq'], color=color_list[0], marker='o', label=r'NLFR forward')
-
-    # Initialise reference point for prediction line
-    last_u = df_forward['u'].iloc[-1]
-    last_f = df_forward['freq'].iloc[-1]
-
-    try:
-        df_backward = pd.read_csv(csv_path_backward)
-        if not df_backward.empty:
-            plt.plot(df_backward['u'], df_backward['freq'], color=color_list[1], marker='o', label=r'NLFR backward')
-            last_u = df_backward['u'].iloc[-1]
-            last_f = df_backward['freq'].iloc[-1]
-    except FileNotFoundError:
-        print(f"Backward file not found: {csv_path_backward}")
-
-    # Plot prediction step if available
-    if csv_pred_path:
+    path_forward = PATH.get('PATH_STORE_DATA_FORWARD')
+    if path_forward:
         try:
-            df_pred = pd.read_csv(csv_pred_path)
+            df_forward = pd.read_csv(path_forward)
+            if not df_forward.empty:
+                plt.plot(df_forward['freq'], df_forward['u'], color=color_list[0], marker='o', label=r'NLFR forward')
+                last_u = df_forward['u'].iloc[-1]
+                last_f = df_forward['freq'].iloc[-1]
+        except FileNotFoundError:
+            pass
+    else:
+        pass
+    # Bloc backward
+    path_backward = PATH.get('PATH_STORE_DATA_DOWNWARD')
+    if path_backward:
+        try:
+            df_backward = pd.read_csv(path_backward)
+            if not df_backward.empty:
+                plt.plot(df_backward['freq'], df_backward['u'], color=color_list[1], marker='o', label=r'NLFR backward')
+                last_u = df_backward['u'].iloc[-1]
+                last_f = df_backward['freq'].iloc[-1]
+        except FileNotFoundError:
+            pass
+    else:
+        pass
+
+    # Bloc predictor
+    path_predictor = PATH.get('PATH_STORE_PREDICTOR')
+    if path_predictor:
+        try:
+            df_pred = pd.read_csv(path_predictor)
             if not df_pred.empty:
                 u_pred = df_pred['u'].iloc[-1]
                 f_pred = df_pred['freq'].iloc[-1]
-                plt.plot([last_u, u_pred], [last_f, f_pred], color=color_list[2], linestyle='--', marker='o', label=r'Prediction step')
+                plt.plot([last_f, f_pred], [last_u, u_pred], color=color_list[2], linestyle='--', marker='o', label=r'Prediction step')
         except FileNotFoundError:
-            print(f"Prediction file not found: {csv_pred_path}")
+            pass
+    else:
+        pass
+
+        
+    if PATH_NEWTHON:
+        try:
+            df_newthon = pd.read_csv(PATH_NEWTHON)
+            plt.scatter(df_newthon['freq'], df_newthon['u'], facecolors='none', edgecolors=color_list[3], label = r'Newton iteration')
+        except FileNotFoundError:
+            print(f"Prediction file not found: {PATH['PATH_STORE_DATA_FORWARD']}")
+
 
     plt.xlabel(r"Frequency [Hz]")
     plt.ylabel(r"Amplitude [m]")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(path, format='pdf', bbox_inches='tight', transparent=True)
+    plt.savefig(PATH["PATH_FIGURE"], format='pdf', bbox_inches='tight', transparent=True)
     plt.close()
 
 def viz_forward_and_backward(PATH_FORWARD, PATH_DOWNWARD, PATH_FIGURE) : 
     df_forward = pd.read_csv(PATH_FORWARD)
     df_downward = pd.read_csv(PATH_DOWNWARD)
 
-    plt.plot(df_forward['u'], df_forward['freq'], color=color_list[0], marker='o', label=r'NLFR forward')  
-    plt.plot(df_downward['u'], df_downward['freq'], color=color_list[1], marker='o', label=r'NLFR downward')  
+    plt.plot(df_forward['freq'], df_forward['u'], color=color_list[0], marker='o', label=r'NLFR forward')  
+    plt.plot(df_downward['freq'], df_downward['u'], color=color_list[1], marker='o', label=r'NLFR downward')  
 
     plt.xlabel(r"Frequency [Hz]")
     plt.ylabel(r"Amplitude [m]")

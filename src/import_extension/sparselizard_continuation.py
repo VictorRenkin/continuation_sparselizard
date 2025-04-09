@@ -1,5 +1,6 @@
 import sparselizard as sp
 import import_extension.sparselizard_vector as sv
+import import_extension.sparselizard_solver as ss
 
 def compute_tan_predictor(length_s, tan_u, tan_w, u_prev, freq_prev, TYPE_WARD):
     """
@@ -29,12 +30,11 @@ def compute_tan_predictor(length_s, tan_u, tan_w, u_prev, freq_prev, TYPE_WARD):
     """
 
 
-    tan_x        = sv.add_vector(tan_u, tan_w)
-    tan_norm     = tan_x.norm()
+    tan_x = sv.add_vector(tan_u, tan_w)
+    tan_norm = tan_x.norm()
     if TYPE_WARD == "Forward" :
         u_pred = length_s * tan_u/tan_norm + u_prev
         f_pred = length_s * tan_w/tan_norm + freq_prev
-    
     if TYPE_WARD == "Backward" :
         u_pred = - length_s * tan_u/tan_norm + u_prev
         f_pred = - length_s * tan_w/tan_norm + freq_prev
@@ -65,29 +65,105 @@ def get_g(delta_u_pred, delta_f_pred, tan_u, tan_w):
 
     return sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred
 
-def prediction_direction(Jac_1, Jac_2, freq_step, vec_u) :
+
+# def prediction_direction(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, freq, h=0.005):
+#     """
+#     Computes the prediction direction for the continuation method.
+
+#     Parameters
+#     ----------
+#     elasticity : `formulation` object from Sparselizard
+#         The elasticity formulation.
+#     field_u : `field` object from Sparselizard
+#         The displacement field. This field is updated with the solution obtained at the current frequency.
+#     PHYSREG_U : int
+#         Physical region associated with the displacement vector `u`.
+#     residu_G : `vec` object from Sparselizard
+#         The residual vector at the current step.
+#     vec_u : `vec` object from Sparselizard
+#         The displacement vector at the current step.
+#     Jac : `mat` object from Sparselizard
+#         The Jacobian matrix of the system at the current step.
+#     freq : float
+#         The frequency at which the system is solved.
+#     h : float, optional
+#         The step size for finite difference approximation (default is 0.005).
+
+#     Returns
+#     -------
+#     tuple of `vec` and float
+#         The tangent vector in the u direction and the tangent vector in the w direction.
+#     """
+#     grad_w_G = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G, h)
+#     tan_u = sp.solve(Jac, -grad_w_G)
+#     tan_w = 1
+
+#     return tan_u, tan_w
+
+def prediction_direction(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, freq, h=0.005):
     """
-    Compute the preidction durection i,e tangent vector in the u direction with the assumption  that the tangent of w is equal = 1.
+    Computes the prediction direction for the continuation method.
 
     Parameters
     ----------
-    Jac_1 : `mat` object from Sparselizard
-        The Jacobian matrix of the system at the previous frequency.
-    Jac_2 : `mat` object from Sparselizard
-        The Jacobian matrix of the system at the current frequency.
-    freq_step : float
-        The frequency step size.
+    elasticity : `formulation` object from Sparselizard
+        The elasticity formulation.
+    field_u : `field` object from Sparselizard
+        The displacement field. This field is updated with the solution obtained at the current frequency.
+    PHYSREG_U : int
+        Physical region associated with the displacement vector `u`.
+    residu_G : `vec` object from Sparselizard
+        The residual vector at the current step.
     vec_u : `vec` object from Sparselizard
-        The displacement value at the current frequency.
+        The displacement vector at the current step.
+    Jac : `mat` object from Sparselizard
+        The Jacobian matrix of the system at the current step.
+    freq : float
+        The frequency at which the system is solved.
+    h : float, optional
+        The step size for finite difference approximation (default is 0.005).
 
     Returns
     -------
-    `vec` object from Sparselizard
-        The computed tangent vector in the u direction.
-    `float`
-        The computed tangent vector in the w direction.
+    tuple of `vec` and float
+        The tangent vector in the u direction and the tangent vector in the w direction.
     """
-    grad_w_G = (Jac_2 - Jac_1)/freq_step * vec_u 
-    tan_u    = sp.solve(Jac_2, -grad_w_G)
-    tan_w    = 1
+    vec_0 = sp.vec(elasticity)
+    grad_w_G = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G, h)
+    tan_u, tan_w = ss.get_bordering_algorithm(prev_tan_u, prev_tan_w, Jac, grad_w_G, -vec_0, -1)
     return tan_u, tan_w
+
+def get_derivatif_w_gradien(elasticity, freq, u, PHYSREG_U, vec_u, residu_G, h=0.005):
+    """
+    Compute the derivative of the gradient of the residual vector.
+
+    Parameters
+    ----------
+    elasticity : `formulation` object from Sparselizard
+        The elasticity formulation.
+    freq : float
+        The frequency at which the system is solved.
+    u : `field` object from Sparselizard
+        The displacement field. This field is updated with the solution obtained at the current frequency.
+    PHYSREG_U : int
+        Physical region associated with the displacement vector `u`.
+    vec_u : `vec` object from Sparselizard
+        The displacement vector at the current step.
+    residu_G : `vec` object from Sparselizard
+        The residual vector at the current step.
+    h : float, optional
+        The step size for finite difference approximation (default is 0.005).
+    Returns
+    -------
+    `vec` object from Sparselizard
+        The computed derivative of the gradient of the residual vector.
+    """
+    u.setdata(PHYSREG_U, vec_u)
+    sp.setfundamentalfrequency(freq-h)
+    elasticity.generate()
+    A = elasticity.A()
+    b = elasticity.b()
+    residue_G_prec = A * vec_u  - b
+    grad_w_G = (residu_G - residue_G_prec)/(h)
+    sp.setfundamentalfrequency(freq)
+    return grad_w_G

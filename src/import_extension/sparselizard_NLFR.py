@@ -128,11 +128,10 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
     vec_u_1, Jac_1, residue_G_1 = ss.get_newthon_raphson_without_predictor(f_1, elasticity, u, PHYSREG_U, HARMONIC_MEASURED, START_U, 
                                                                            TOL=1e-4, MAX_ITER=20)
     u.setdata(PHYSREG_U, vec_u_1)  
-    norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-    u_measured = norm_u.max(PHYSREG_MEASURED, 3)[0]
 
     if TYPE_WARD == "Forward" :
         PATH_STORE_DATA = PATH['PATH_STORE_DATA_FORWARD']
+        tan_w_1 = 1 
         if STORE_U_ALL :
             PATH_ALL_U = "../data/FRF/forward/displacement_each_freq"
             if os.path.exists(PATH_ALL_U):
@@ -142,24 +141,24 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
 
     else :
         PATH_STORE_DATA = PATH['PATH_STORE_DATA_DOWNWARD']
+        tan_w_1 = -1
         if STORE_U_ALL :
             PATH_ALL_U = "../data/FRF/downward/displacement_each_freq"
             if os.path.exists(PATH_ALL_U):
                 shutil.rmtree(PATH_ALL_U)
             os.makedirs(PATH_ALL_U)
             vec_u_1.write(f"{PATH_ALL_U}/{str(f_1).replace('.', '_')}.txt")
-
-
+    norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+    u_measured = norm_u.max(PHYSREG_MEASURED, 3)[0]
     cd.add_data_to_csv(u_measured, f_1, PATH_STORE_DATA)
     vd.real_time_plot_data_FRF(PATH)
     tan_u_1 = sp.vec(elasticity)
-    tan_w_1 = 1
     # sv.hstack_vec(Jac_1, tan_w_1)
     while FD_MIN <= f_1 <= FD_MAX:
         print("################## New Iteration ##################")
         print(f"length_s: {length_s:.4f}, freq: {f_1:.2f}")
         tan_u, tan_w = sc.prediction_direction(elasticity, u, PHYSREG_U, residue_G_1, vec_u_1, Jac_1, tan_u_1, tan_w_1, f_1)
-        vec_u_pred, f_pred = sc.compute_tan_predictor(length_s, tan_u, tan_w, vec_u_1, f_1, TYPE_WARD)
+        vec_u_pred, f_pred = sc.compute_tan_predictor(length_s, tan_u, tan_w, vec_u_1, f_1)
         u.setdata(PHYSREG_U, vec_u_pred)
         sp.setfundamentalfrequency(f_pred)
         if STORE_PREDICTOR:

@@ -15,7 +15,7 @@ PATH_FIGURE = '../figures/linear_FRF.pdf'
 
 PATH = {"PATH_STORE_DATA_FORWARD":PATH_STORE_DATA_FORWARD,
         "PATH_FIGURE":PATH_FIGURE,}
-mesh = sp.mesh('../geo_GMSH/ClampedBeam.msh', 1)
+mesh = sp.mesh('../geo_GMSH/2_element.msh', 1)
 
 u = sp.field("h1xyz", [2,3])
 u.setorder(vol, 2)

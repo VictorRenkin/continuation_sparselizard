@@ -103,39 +103,52 @@ def get_newthon_raphson_without_predictor(fd, elasticity, u, PHYSREG_U, HARMONIQ
         raise RuntimeError(f"Maximum number of iterations reached without convergence at f = {fd} Hz.")
 
 
-def get_bordering_algorithm(tan_u, tan_w, Jac, grad_w_G, G, g) :
+def get_bordering_algorithm(A, c, b, d, f, h):
     """
-    Computes the parameter update using the bordering algorithm, which is based on 
-    the pseudo-arclength continuation method.
+    Solve the bordered linear system:
+    
+        [ A   c ] [ x ] = [ f ]
+        [ bᵗ  d ] [ y ]   [ h ]
+    
+    using only two solves with A (Jacobian).
 
     Parameters
     ----------
-    tan_u : `vec` object from Sparselizard
-        The derivative of g with respect to u, representing the tangent along the curve.
-    tan_w : float
-        The derivative of g with respect to w. 
-        Note: The standard assumption is that this value is 1.
-    Jac : `mat` object from Sparselizard
-        The Jacobian matrix of the system, representing the derivative of G with respect to u.
-    G : `vec` object from Sparselizard
-        The fonction of G.
-    g : float
-        The continuation constraint value imposed by the corrector.
+    A : `mat` from Sparselizard
+        Main system matrix of size (n x n).
+    c : `vec` from Sparselizard
+        Extra column vector of size (n x 1).
+    b : `vec` from Sparselizard
+        Row vector (will be used as a scalar product).
+    d : float
+        Bottom-right scalar term.
+    f : `vec` from Sparselizard
+        Right-hand side vector (n x 1).
+    h : float
+        Scalar from the bottom right of the right-hand side.
 
     Returns
     -------
-    delta_u : `vec` object from Sparselizard
-        The computed displacement update in the parameter u.
-    delta_f : float
-        The computed update in the continuation parameter w.
+    x : `vec` from Sparselizard
+        Solution update of the main variable.
+    y : float
+        Update for the auxiliary parameter.
     """
-    x_1 = sp.solve(Jac, -G) 
-    x_2 = sp.solve(Jac, grad_w_G)
-    first_therm = (-g - sv.compute_scalaire_product_vec(tan_u, x_1))
-    sec_therm   = (tan_w - sv.compute_scalaire_product_vec(tan_u,x_2))
-    delta_f = first_therm/sec_therm
-    delta_u = x_1 - x_2 * delta_f
-    return delta_u, delta_f
+
+    x1 = sp.solve(A, f)  
+    x2 = sp.solve(A, c)
+
+    num = h - sv.compute_scalaire_product_vec(b, x1)
+    den = d - sv.compute_scalaire_product_vec(b, x2)
+
+    if abs(den) < 1e-12:
+        raise ValueError("Denominator too small. The bordered system may be ill-conditioned.")
+
+    y = num / den
+    x = x1 - x2 * y
+
+    return x, y
+
 
 def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                                         u_pred, f_pred, tan_u, tan_w, PATH, TOL=1e-6, MAX_ITER=10):
@@ -195,7 +208,7 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
         delta_f_pred = f_pred - fd
         fct_g        = sc.get_g(delta_u_pred, delta_f_pred, tan_u, tan_w)
 
-        delta_u, delta_f = get_bordering_algorithm(tan_u, tan_w, Jac_2, grad_w_G, fct_G, fct_g)
+        delta_u, delta_f = get_bordering_algorithm(Jac_2, grad_w_G, tan_u, tan_w, -fct_G, -fct_g)
 
 
         u.setdata(PHYSREG_U, delta_u)   
@@ -221,7 +234,7 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
             sp.setfundamentalfrequency(new_freq)
             u_1 = u_vec_new
     
-        cd.add_data_to_csv_Newthon(u_max[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
+        cd.add_data_to_csv_Newthon(norm_u.max(3, 3)[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
         vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
         print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
         # print(f"Iteration {iter}: Rel. error u: {relative_error_u_max:.2e}, Rel. error f: {relative_error_freq:.2e}, Residual max Q: {fct_G.norm():.2e}")

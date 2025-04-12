@@ -52,7 +52,7 @@ Kx_linear =  sp.predefinedelasticity(sp.dof(u), sp.tf(u), E, nu)
 elasticity += sp.integral(PHYSREG_VOLUME, FFT_point, Kx_non_linear)
 
 # Apply the force of -200 N in z direction at the middle of the beam on the second harmonic
-Force_apply = sp.array1x3(0,0,-200) * sp.tf(u.harmonic(2))
+Force_apply = sp.array1x3(0,0,-50) * sp.tf(u.harmonic(2))
 elasticity += sp.integral(PHYSREG_LOAD_POINT, FFT_point, Force_apply)
 
 Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
@@ -64,23 +64,27 @@ elasticity += sp.integral(PHYSREG_VOLUME, FFT_point, Cdotx)
 clk = sp.wallclock()
 print("############ Forward #############")
 # displacement_each_freq_175_87
-F_START = 156; FD_MIN = 155; FD_MAX = 205 # [Hz]
+F_START = 158; FD_MIN = 155; FD_MAX = 205 # [Hz]
 # START_U = sp.vec(elasticity)
 # START_U.load(f"../data/FRF/forward/displacement_each_freq/{str(F_START).replace('.', '_')}.txt")
 # u.setdata(PHYSREG_VOLUME, START_U)  
-sn.solve_NLFRs_store_and_show(
-    elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, "Forward", 
-    PATH, F_START, FD_MIN, FD_MAX, MAX_ITER=10,
-    MIN_LENGTH_S=1e-3, MAX_LENGTH_S=1e-0, START_LENGTH_S=5e-2, TOL=1e-5,
-    START_U = sp.vec(elasticity), STORE_U_ALL=True, STORE_PREDICTOR=True)
-
+# sn.solve_NLFRs_store_and_show(  
+#     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, "Forward", 
+#     PATH, F_START, FD_MIN, FD_MAX, MAX_ITER=10,
+#     MIN_LENGTH_S=1e-3, MAX_LENGTH_S=1e-0, START_LENGTH_S=5e-2, TOL=1e-5,
+#     START_U = sp.vec(elasticity), STORE_U_ALL=True, STORE_PREDICTOR=True)
+    
 # print("############ Backward #############")
 u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero
-F_START = 168; FD_MIN = 160; FD_MAX = 210 # [Hz]
+F_START = 164.0017202799233; FD_MIN = 158; FD_MAX = 210 # [Hz]
+START_U = sp.vec(elasticity)
+START_U.load(f"../data/FRF/downward/displacement_each_freq/{str(F_START).replace('.', '_')}.txt")
+
+u.setdata(PHYSREG_VOLUME, START_U)  
 sn.solve_NLFRs_store_and_show(
     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, "Backward", 
-    PATH, F_START, FD_MIN, FD_MAX, MAX_ITER=10,STORE_U_ALL=True, STORE_PREDICTOR=True)
+    PATH, F_START, FD_MIN, FD_MAX, MAX_ITER=5,STORE_U_ALL=True, STORE_PREDICTOR=True, START_U=START_U, START_LENGTH_S=5e-3, MIN_LENGTH_S=1e-6)
 
 
-vd.viz_forward_and_backward(PATH_STORE_DATA_FORWARD, PATH_STORE_DATA_DOWNWARD, PATH_FIGURE)
-clk.print("Total run time:")
+# vd.viz_forward_and_backward(PATH_STORE_DATA_FORWARD, PATH_STORE_DATA_DOWNWARD, PATH_FIGURE)
+# clk.print("Total run time:")

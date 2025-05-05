@@ -32,12 +32,8 @@ def compute_tan_predictor(length_s, tan_u, tan_w, u_prev, freq_prev):
 
     tan_x = sv.add_vector(tan_u, tan_w)
     tan_norm = tan_x.norm()
-    # if TYPE_WARD == "Forward" :
     u_pred = length_s * tan_u/tan_norm + u_prev
     f_pred = length_s * tan_w/tan_norm + freq_prev
-    # if TYPE_WARD == "Backward" :
-    #     u_pred = - length_s * tan_u/tan_norm + u_prev
-    #     f_pred = - length_s * tan_w/tan_norm + freq_prev
     return u_pred, f_pred
 
 def get_g(delta_u_pred, delta_f_pred, tan_u, tan_w):
@@ -66,12 +62,10 @@ def get_g(delta_u_pred, delta_f_pred, tan_u, tan_w):
     return sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred
 
 
-
-
-def prediction_direction(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, freq, h=0.005):
+def initial_prediction_tan_u(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, freq) :
     """
- 
-    
+    Compute the initial prediction of the tangente u with the tan w = 1,-1.
+
     Parameters
     ----------
     elasticity : `formulation` object from Sparselizard
@@ -86,6 +80,41 @@ def prediction_direction(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, p
         The displacement vector at the current step.
     Jac : `mat` object from Sparselizard
         The Jacobian matrix of the system at the current step.
+    freq : float
+        The frequency at which the system is solved.
+    Returns
+    -------
+    `vec` 
+        The tangent vector in the u direction.
+    """
+    grad_w_G = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G)
+    tan_u = sp.solve(Jac, -grad_w_G)
+    return tan_u
+
+
+
+def prediction_direction(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, freq, h=0.005):
+    """
+    Compute the tangent vector in the direction of the displacement and the frequency.
+    This function uses the bordered algorithm to compute the tangent vector.
+    Parameters
+    ----------
+    elasticity : `formulation` object from Sparselizard
+        The elasticity formulation.
+    field_u : `field` object from Sparselizard
+        The displacement field. This field is updated with the solution obtained at the current frequency.
+    PHYSREG_U : int
+        Physical region associated with the displacement vector `u`.
+    residu_G : `vec` object from Sparselizard
+        The residual vector at the current step.
+    vec_u : `vec` object from Sparselizard
+        The displacement vector at the current step.
+    Jac : `mat` object from Sparselizard
+        The Jacobian matrix of the system at the current step.
+    prev_tan_u : `vec` object from Sparselizard
+        The tangent vector in the u direction from the previous step.
+    prev_tan_w : float
+        The tangent vector in the w direction from the previous step.
     freq : float
         The frequency at which the system is solved.
     h : float, optional
@@ -103,7 +132,62 @@ def prediction_direction(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, p
     print("tan_w", tan_w)
     return tan_u, tan_w
 
-def get_derivatif_w_gradien(elasticity, freq, u, PHYSREG_U, vec_u, residu_G, h=0.005):
+def compute_tan_predictor_NNM(length_s, tan_u, tan_w, tan_mu, u_prev, freq_prev, mu_prev) :
+    """
+    Computes the tangent predictor for the continuation method.
+
+    Parameters
+    ----------
+    length_s : float
+        The step length across the tangent.
+    tan_u : vec
+        The tangent vector in the u direction.
+    tan_w : float
+        The tangent vector in the w direction.
+    tan_mu : float
+        The tangent vector in the mu direction.
+    u_prev : vec
+        The displacement vector at the previous step.
+    freq_prev : float
+        The frequency at the previous step.
+
+    Returns
+    -------
+    delta_u_pred : vec
+        The predicted displacement vector in the u direction.
+    delta_f_pred : float
+        The predicted frequency step in the w direction.
+    """
+    
+    tan_norm = (sv.compute_scalaire_product_vec(tan_u, tan_u) + tan_w*tan_w + tan_mu*tan_mu)**(1/2)
+    u_pred  = length_s * tan_u/tan_norm + u_prev
+    f_pred  = length_s * tan_w/tan_norm + freq_prev
+    mu_pred = length_s * tan_mu/tan_norm + mu_prev
+    return u_pred, f_pred, mu_pred
+
+
+def prediction_direction_NNM(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, prev_tan_mu, E_fic_formulation, freq, h=0.005):
+    grad_w_G = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G, 1e-5)
+    E_fic_vec =  get_E_fic_vec(E_fic_formulation, freq, field_u, PHYSREG_U, vec_u)
+    grad_mu_G = E_fic_vec
+    grad_u_p = E_fic_vec
+    vec_0 = sp.vec(elasticity)
+    print('prev_tan_u', prev_tan_u.norm())
+    print('prev_tan_w', prev_tan_w)
+    print('prev_tan_mu', prev_tan_mu)
+    exit()
+    tan_u, tan_w, tan_mu = ss.get_bordering_algorithm_3x3(Jac, grad_u_p, prev_tan_u, grad_w_G, 0, prev_tan_w, grad_mu_G, 0, prev_tan_mu, vec_0, 0, 1)
+    return tan_u, tan_w, tan_mu
+
+def get_E_fic_vec(E_fic, freq, u, PHYSREG_U, vec_u):
+    u.setdata(PHYSREG_U, vec_u)
+    sp.setfundamentalfrequency(freq)
+    E_fic.generate()
+    E_fic_math = E_fic.K()
+    E_fic_vec = E_fic_math * vec_u
+    return E_fic_vec
+
+def get_derivatif_w_gradien(elasticity, freq, u, PHYSREG_U, vec_u, residu_G, h=0.00005):
     """
     Compute the derivative of the gradient of the residual vector.
 

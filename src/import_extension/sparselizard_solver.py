@@ -3,7 +3,7 @@ import import_extension.sparselizard_vector as sv
 import import_extension.sparselizard_continuation as sc
 import Viz_write.CreateData as cd
 import Viz_write.VizData as vd
-
+import math
 
 def get_G(Jac, B, z) :
     """
@@ -85,7 +85,6 @@ def get_newthon_raphson_without_predictor(fd, elasticity, u, PHYSREG_U, HARMONIQ
         elasticity.generate()
         Jac = elasticity.A()
         b   = elasticity.b()
-
         residue_Q = (Jac * predecedent_vec_u - b )
         max_residue_Q = residue_Q.norm()
         if max_residue_Q < TOL :
@@ -150,6 +149,116 @@ def get_bordering_algorithm(A, c, b, d, f, h):
     return x, y
 
 
+def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
+    """
+    Solves the following bordered linear system using only three solves with matrix `A`:
+
+        [ A   D   G ] [x]   [J]
+        [ Bᵗ  e   h ] [y] = [k]
+        [ Cᵗ  f   i ] [z]   [l]
+
+    This method is based on the bordering algorithm, which avoids refactorising the full matrix `A`.
+
+    Parameters
+    ----------
+    A : ndarray (n x n)
+        Main system matrix (e.g. a Jacobian).
+    B : ndarray (n x 1)
+        Column vector corresponding to the second block row (Bᵗ is its transpose).
+    C : ndarray (n x 1)
+        Column vector corresponding to the third block row (Cᵗ is its transpose).
+    D : ndarray (n x 1)
+        Column vector corresponding to the second column of the main block.
+    e : float
+        Scalar at position (2nd row, 2nd column).
+    f : float
+        Scalar at position (3rd row, 2nd column).
+    G : ndarray (n x 1)
+        Column vector corresponding to the third column of the main block.
+    h : float
+        Scalar at position (2nd row, 3rd column).
+    i : float
+        Scalar at position (3rd row, 3rd column).
+    J : ndarray (n x 1)
+        Right-hand side vector for the main block equation.
+    k : float
+        Right-hand side scalar for the second block equation.
+    l : float
+        Right-hand side scalar for the third block equation.
+
+    Returns
+    -------
+    x : ndarray (n x 1)
+        Solution vector associated with the main system matrix `A`.
+    y : float
+        Solution scalar associated with the second block row.
+    z : float
+        Solution scalar associated with the third block row.
+
+    Notes
+    -----
+    This implementation only requires three linear solves with `A`, making it highly efficient for large, sparse, or expensive systems.
+    """
+
+    
+    X_1 = sp.solve(A, J)
+    X_2 = sp.solve(A, D)
+    X_3 = sp.solve(A, G)
+
+    a_11 = e - sv.compute_scalaire_product_vec(B, X_2)
+    a_12 = h - sv.compute_scalaire_product_vec(B, X_3)
+    a_21 = f - sv.compute_scalaire_product_vec(C, X_2)
+    a_22 = i - sv.compute_scalaire_product_vec(C, X_3)
+
+    b_1 = k - sv.compute_scalaire_product_vec(B, X_1)
+    b_2 = l - sv.compute_scalaire_product_vec(C, X_1)
+
+    y, z = cramer_2x2(a_11, a_12, a_21, a_22, b_1, b_2)
+    X = X_1 - X_2 * y - X_3 * z
+
+    return X, y, z
+
+
+
+
+def cramer_2x2(a11, a12, a21, a22, b1, b2):
+    """
+    Solves a 2x2 linear system using Cramer's rule:
+
+        [a11 a12] [x] = [b1]
+        [a21 a22] [y]   [b2]
+
+    Parameters
+    ----------
+    a11, a12, a21, a22 : float
+        Coefficients of the 2x2 matrix.
+    b1, b2 : float
+        Right-hand side values.
+
+    Returns
+    -------
+    x : float
+        Solution for the first variable.
+    y : float
+        Solution for the second variable.
+
+    Raises
+    ------
+    ValueError
+        If the system is singular (determinant is zero).
+    """
+    # Calculate the determinant
+    det = a11 * a22 - a12 * a21
+
+    if math.isclose(det, 0.0):
+        raise ValueError("The system has no unique solution (determinant is zero).")
+
+    # Apply Cramer's rule
+    x = (b1 * a22 - b2 * a12) / det
+    y = (a11 * b2 - a21 * b1) / det
+
+    return x, y
+
 def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                                         u_pred, f_pred, tan_u, tan_w, PATH, TOL=1e-6, MAX_ITER=10):
     """
@@ -189,7 +298,6 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
 
     iter = 0
     relative_error_u_max = 1
-    relative_error_freq = 1
     residual_max_G = 1  
     u_max = 0
     fd = f_pred
@@ -206,33 +314,17 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
 
         delta_u_pred = u_pred - u_1
         delta_f_pred = f_pred - fd
-        fct_g        = sc.get_g(delta_u_pred, delta_f_pred, tan_u, tan_w)
-
+        fct_g        = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred
+        if fct_G.norm() < TOL and fct_g.norm() < TOL:
+            break
         delta_u, delta_f = get_bordering_algorithm(Jac_2, grad_w_G, tan_u, tan_w, -fct_G, -fct_g)
 
+        u_1 = u_1 + delta_u
+        fd = delta_f + fd
 
-        u.setdata(PHYSREG_U, delta_u)   
-        norm_delta_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-        delta_u_max = norm_delta_u.max(PHYSREG_U, 3)
-        value_delta_u_max = delta_u_max[0]
-        coordinate_delta_u_max = delta_u_max[1:]
-        u_vec_new = u_1 + delta_u
-        u.setdata(PHYSREG_U, u_vec_new)
+        u.setdata(PHYSREG_U, u_1)
+        sp.setfundamentalfrequency(fd)
         norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-        u_max = norm_u.interpolate(PHYSREG_U, coordinate_delta_u_max)
-        relative_error_u_max = abs(value_delta_u_max/u_max[0])
-
-        new_freq = delta_f + fd
-        relative_error_freq = abs(delta_f/new_freq)
-
-        fd = new_freq
-        # if (relative_error_u_max < TOL and relative_error_freq < TOL and fct_G.norm() < TOL) :
-        if fct_G.norm() < TOL:
-            break
-        else:
-            u.setdata(PHYSREG_U, u_vec_new)
-            sp.setfundamentalfrequency(new_freq)
-            u_1 = u_vec_new
     
         cd.add_data_to_csv_Newthon(norm_u.max(3, 3)[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
         vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
@@ -241,3 +333,89 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
         iter += 1
 
     return u_1, fd, iter, fct_G, Jac_2
+
+
+def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, par_relaxation,
+                                        u_pred, f_pred, mu_pred, E_fic_formulation, tan_u, tan_w, tan_mu, PATH, TOL=1e-6, MAX_ITER=10):
+    """
+    Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
+    The algorithm is based on a bordering approach. At the end the frequence is set and the field u is set also.
+
+    Parameters
+    ----------
+    elasticity : `formulation` object from Sparselizard
+        The formulation object representing the system of equations.
+    HARMONIC_MEASURED : [int]
+        Vector of harmonics to measure.
+    u : `field` object from Sparselizard
+        Field object representing the displacement.
+    u_pred : `vec` object from Sparselizard
+        Predicted displacement.
+    delta_f_pred : float
+        Predicted frequency.
+    tan_u : `vec` object from Sparselizard
+        Tangent vector in the direction of u.
+    tan_w : float
+        Tangent vector in the direction of w.
+    tol : float, optional
+        Tolerance value for convergence (default is 1e-6).
+    max_iter : int, optional
+        Maximum number of iterations allowed (default is 10).
+
+    Returns
+    -------
+    float
+        Maximum displacement at the specified physical measurement region.
+    float
+        Converged frequency.
+    int
+        Number of iterations performed.
+    """
+
+    iter = 0
+    residual_max_G = 1  
+    fd = f_pred
+    u_1 = u_pred
+    mu_1 = mu_pred
+    PATH_ITERATION_NEWTHON = "../data/FRF/newthon_iteration.csv"
+    cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
+    E_fic_formulation.generate()
+    E_fic_math = E_fic_formulation.K()
+    while iter < MAX_ITER:
+
+        elasticity.generate()
+        Jac_2 = elasticity.A()
+        b_2 = elasticity.b()
+        fct_G = Jac_2 * u_1 - b_2 
+        grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd, u, PHYSREG_U, u_1, fct_G)
+
+        delta_u_pred = u_pred - u_1
+        delta_f_pred = f_pred - fd
+        delta_mu_pred = mu_pred - mu_1
+        fct_g = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred + delta_mu_pred * mu_1
+        E_fic_vec = sc.get_E_fic_vec(E_fic_formulation, fd, u, PHYSREG_U, u_1)
+        grad_p_u = E_fic_vec
+        grad_G_mu = E_fic_vec
+        fct_p  =  sv.compute_scalaire_product_vec(E_fic_math * u_pred, u_1)
+        print("fct_p", fct_p, "fct_g", fct_g)
+        if fct_G.norm() < TOL and fct_g < TOL and fct_p < TOL:
+            print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
+            break
+        delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, tan_u, grad_w_G, 0, tan_w, grad_G_mu, 0, tan_mu, - fct_G, - fct_p, - fct_g)
+
+        u_1 = u_1 + delta_u
+        fd = delta_f + fd
+        mu_1 = delta_mu + mu_1
+        print(f"mu_1: {mu_1:.2e}, fd: {fd:.2e}, u_1 norm: {u_1.norm():.2e}")
+        u.setdata(PHYSREG_U, u_1)
+        sp.setfundamentalfrequency(fd)
+        par_relaxation.setvalue(PHYSREG_U, mu_1)
+
+        norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+    
+        cd.add_data_to_csv_Newthon(norm_u.max(3, 3)[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
+        vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
+        print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
+        iter += 1
+
+    return u_1, fd, mu_1, iter, fct_G, Jac_2

@@ -60,7 +60,7 @@ def viz_NLFR(freq, amplitude, path = '../figures/') :
     plt.close()
 
 
-def real_time_plot_data_FRF(PATH, PATH_NEWTHON=None):
+def real_time_plot_data_FRF(PATH, PATH_NEWTHON=None, bifurcation=None):
     """
     Plots the Frequency Response Function (FRF) using data from forward, backward, and prediction paths.
 
@@ -81,31 +81,74 @@ def real_time_plot_data_FRF(PATH, PATH_NEWTHON=None):
         The function saves the plot at the specified path.
     """
     plt.figure(figsize=(8, 6))
+    # Bloc forward
     path_forward = PATH.get('PATH_STORE_DATA_FORWARD')
     if path_forward:
         try:
             df_forward = pd.read_csv(path_forward)
             if not df_forward.empty:
-                plt.plot(df_forward['freq'], df_forward['u'], color=color_list[0], marker='o', label=r'NLFR forward')
+                # Séparer les points normaux et les points de bifurcation
+                normal_pts = df_forward[df_forward['bifurcation'] == False]
+                bif_pts = df_forward[df_forward['bifurcation'] == True]
+
+                # Scatter des points normaux
+                plt.plot(
+                    df_forward['freq'],
+                    df_forward['u'],
+                    color=color_list[0],
+                    marker='o',
+                    label=r'NLFR forward'
+                )
+
+                # Scatter des bifurcations
+                plt.scatter(
+                    bif_pts['freq'],
+                    bif_pts['u'],
+                    color=color_list[0],
+                    marker='x',
+                    label=r'Bifurcation forward'
+                )
+
+                # Dernier point (optionnel)
                 last_u = df_forward['u'].iloc[-1]
                 last_f = df_forward['freq'].iloc[-1]
         except FileNotFoundError:
             pass
-    else:
-        pass
+
     # Bloc backward
     path_backward = PATH.get('PATH_STORE_DATA_DOWNWARD')
     if path_backward:
         try:
             df_backward = pd.read_csv(path_backward)
             if not df_backward.empty:
-                plt.plot(df_backward['freq'], df_backward['u'], color=color_list[1], marker='o', label=r'NLFR backward')
+                # Séparer les points normaux et les points de bifurcation
+                normal_pts_b = df_backward[df_backward['bifurcation'] == False]
+                bif_pts_b = df_backward[df_backward['bifurcation'] == True]
+
+                # Scatter des points normaux
+                plt.plot(
+                    normal_pts_b['freq'],
+                    normal_pts_b['u'],
+                    color=color_list[1],
+                    marker='o',
+                    label=r'NLFR backward'
+                )
+
+                # Scatter des bifurcations
+                plt.plot(
+                    bif_pts_b['freq'],
+                    bif_pts_b['u'],
+                    color=color_list[1],
+                    marker='x',
+                    label=r'Bifurcation backward'
+                )
+
+                # Dernier point (optionnel)
                 last_u = df_backward['u'].iloc[-1]
                 last_f = df_backward['freq'].iloc[-1]
         except FileNotFoundError:
             pass
-    else:
-        pass
+
 
     # Bloc predictor
     path_predictor = PATH.get('PATH_STORE_PREDICTOR')
@@ -128,8 +171,6 @@ def real_time_plot_data_FRF(PATH, PATH_NEWTHON=None):
             plt.scatter(df_newthon['freq'], df_newthon['u'], facecolors='none', edgecolors=color_list[3], label = r'Newton iteration')
         except FileNotFoundError:
             print(f"Prediction file not found: {PATH['PATH_STORE_DATA_FORWARD']}")
-
-
     plt.xlabel(r"Frequency [Hz]")
     plt.ylabel(r"Amplitude [m]")
     plt.legend()
@@ -151,6 +192,49 @@ def viz_forward_and_backward(PATH_FORWARD, PATH_DOWNWARD, PATH_FIGURE) :
     plt.savefig(PATH_FIGURE, format='pdf', bbox_inches='tight', transparent=True)
     plt.close()
 
+def plot_predictor_NLFRs(path_backward, path_predictor, paht_figure = 'figures/predictor_NLFRs.pdf'):
+    """
+    Plots the Frequency Response Function (FRF) using data from forward, backward, and prediction paths.
 
+    Parameters
+    ----------
+    path : str
+        Path where the resulting plot will be saved.
+    csv_path_forward : str
+        Path to the CSV file containing the forward path data (NLFR).
+    csv_path_backward : str
+        Path to the CSV file containing the backward path data. If empty, it is skipped.
+    csv_pred_path : str, optional
+        Path to the CSV file containing the prediction data. If not provided or empty, prediction is skipped.
+
+    Returns
+    -------
+    None
+        The function saves the plot at the specified path.
+    """
+    plt.figure(figsize=(8, 6))
+    df_downward = pd.read_csv(path_backward)
+    df_predictor = pd.read_csv(path_predictor)
+    # Tracer la courbe complète des données downward
+    plt.plot(df_downward['freq'], df_downward['u'], label=r'Downward', linewidth=2, color=color_list[0])
+
+    # Pour chaque point, tracer un segment entre downward[i] et predictor[i]
+    # Tracer les segments entre downward[i] et predictor[i] avec une seule légende pour "Predictor"
+    for i in range(len(df_downward)):
+        x_values = [df_downward['freq'][i], df_predictor['freq'][i]]
+        y_values = [df_downward['u'][i], df_predictor['u'][i]]
+        if i == 0:  # Ajouter une légende uniquement pour le premier segment
+            plt.plot(x_values, y_values, linestyle='--', marker='o', markersize=3, color=color_list[1], label=r'Predictor')
+        else:
+            plt.plot(x_values, y_values, linestyle='--', marker='o', markersize=3, color=color_list[1])
+
+    # Mise en forme du graphique
+    plt.xlim(200.5, 200.525)
+    plt.ylim(0.01888, 0.0189)
+    plt.xlabel('u')
+    plt.ylabel('Frequency')
+    plt.title('Downward Path and Predictor Segments')
+    plt.legend()
+    plt.savefig(paht_figure, format='pdf', bbox_inches='tight', transparent=True)
 
 

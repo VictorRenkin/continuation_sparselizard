@@ -4,6 +4,7 @@ import sparselizard as sp
 import import_extension.sparselizard_continuation as sc
 import import_extension.sparselizard_solver as ss
 import import_extension.sparselizard_vector as sv
+import numpy as np
 import shutil
 import os
 
@@ -57,8 +58,9 @@ def solve_one_point_NLRF_and_store(freq, elasticity, u, PHYSREG_U, PHYSREG_MEASU
 
     
 def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_MEASURED, TYPE_WARD, 
-                               PATH, FREQ_START, FD_MIN, FD_MAX, MAX_ITER=10, TOL = 1e-6,
-                               MIN_LENGTH_S=1e-4, MAX_LENGTH_S=5e-1, START_LENGTH_S=5e-2, 
+                               PATH, FREQ_START, FD_MIN, FD_MAX, MAX_ITER=10, TOL=1e-6,
+                               MIN_LENGTH_S=1e-4, MAX_LENGTH_S=5e-1, START_LENGTH_S=5e-2,
+                               S_UP = 1.1, S_DOWN=0.2, 
                                START_U=None, STORE_U_ALL=False, STORE_PREDICTOR=False):
     """
     Goal is to solve the NLFRs and store the result at PATH_STORE_DATA and show them at PATH_FIGURE, this is done at each frequency step.
@@ -126,7 +128,7 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         START_U = sp.vec(elasticity)
         
     vec_u_1, Jac_1, residue_G_1 = ss.get_newthon_raphson_without_predictor(f_1, elasticity, u, PHYSREG_U, HARMONIC_MEASURED, START_U, 
-                                                                           TOL=1e-4, MAX_ITER=20)
+                                                                           TOL=TOL, MAX_ITER=MAX_ITER)
     u.setdata(PHYSREG_U, vec_u_1)  
 
     if TYPE_WARD == "Forward" :
@@ -152,12 +154,28 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
     u_measured = norm_u.max(PHYSREG_MEASURED, 3)[0]
     cd.add_data_to_csv(u_measured, f_1, PATH_STORE_DATA)
     vd.real_time_plot_data_FRF(PATH)
-    tan_u_1 = sp.vec(elasticity)
+    tan_u_1 = sc.initial_prediction_tan_u(elasticity, u, PHYSREG_U, residue_G_1, vec_u_1, Jac_1, f_1)
     # sv.hstack_vec(Jac_1, tan_w_1)
+    ci_two_point = False
     while FD_MIN <= f_1 <= FD_MAX:
         print("################## New Iteration ##################")
-        print(f"length_s: {length_s:.4f}, freq: {f_1:.2f}")
+        print(f"length_s: {length_s:.6f}, freq: {f_1:.2f}")
         tan_u, tan_w = sc.prediction_direction(elasticity, u, PHYSREG_U, residue_G_1, vec_u_1, Jac_1, tan_u_1, tan_w_1, f_1)
+
+        if ci_two_point :
+            norm_tan_x = (tan_u.norm()**2 + tan_w**2)**(1/2)
+            norm_tan_previous = (vec_prev_point_u.norm()**2 + vec_prev_point_f**2)**(1/2)
+            cos_theta = (sv.compute_scalaire_product_vec(tan_u, vec_prev_point_u) + tan_w * vec_prev_point_f)/ (norm_tan_x * norm_tan_previous)
+            print(f"theta : {np.arccos(cos_theta) * 180 / np.pi:.2f}°")
+            print("##################################################")
+        else :
+            pass
+
+        if np.sign(tan_w) != np.sign(tan_w_1):
+            print("############### Bifurcation detected #################")
+            bifurcation = True
+        else :
+            bifurcation = False
         vec_u_pred, f_pred = sc.compute_tan_predictor(length_s, tan_u, tan_w, vec_u_1, f_1)
         u.setdata(PHYSREG_U, vec_u_pred)
         sp.setfundamentalfrequency(f_pred)
@@ -174,21 +192,21 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
             f_pred, tan_u, tan_w, PATH, TOL=TOL, MAX_ITER=MAX_ITER
         )
         if iter_newthon == MAX_ITER:
-            length_s = length_s * 0.4
+            length_s = length_s * S_DOWN
             if STORE_PREDICTOR:
                 cd.remove_last_row_from_csv(PATH['PATH_STORE_PREDICTOR'])
             u.setdata(PHYSREG_U, vec_u_1)
             sp.setfundamentalfrequency(f_1)
         else:
-            vec_u_1 = vec_u
-            f_1 = freq
-            residue_G_1 = residue_G
-            Jac_1 = Jac
-            tan_u_1 = tan_u
-            tan_w_1 = tan_w
+            vec_prev_point_u = vec_u   - vec_u_1
+            vec_prev_point_f = freq - f_1
+            ci_two_point = True
+            vec_u_1 = vec_u ; f_1 = freq
+            residue_G_1 = residue_G; Jac_1 = Jac
+            tan_u_1 = tan_u ; tan_w_1 = tan_w
             norm_u_i = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
             point_measured = norm_u_i.max(PHYSREG_MEASURED, 3)[0]
-            cd.add_data_to_csv(point_measured, f_1, PATH_STORE_DATA)
+            cd.add_data_to_csv(point_measured, f_1, PATH_STORE_DATA, bifurcation)
             if STORE_PREDICTOR:
                 pass
             else:
@@ -196,7 +214,7 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
             if STORE_U_ALL :
                 vec_u.write(f"{PATH_ALL_U}/{str(f_1).replace('.', '_')}.txt")
             if length_s < MAX_LENGTH_S:
-                length_s *= 1.1
+                length_s *= S_UP
         if length_s < MIN_LENGTH_S:
             print("############### Convergence not reached #################")
             break

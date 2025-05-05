@@ -22,7 +22,7 @@ def create_doc_csv(path):
     if os.path.exists(path):
         os.remove(path)  # Delete existing file
 
-    df = pd.DataFrame(columns=["u", "freq"])
+    df = pd.DataFrame(columns=["u", "freq","bifurcation"])
     df.to_csv(path, index=False)  # Create the new CSV f
 
 def create_doc_csv_newthon_iteration(path):
@@ -45,7 +45,7 @@ def create_doc_csv_newthon_iteration(path):
     df = pd.DataFrame(columns=["u", "freq", "residu Q", "relative error u", "relative error w"])
     df.to_csv(path, index=False)  
 
-def add_data_to_csv(u_max, freq, path):
+def add_data_to_csv(u_max, freq, path, bifurcation=False):
     """
     Appends a new row with 'u_max' and 'freq' values to the specified CSV file.
 
@@ -57,7 +57,7 @@ def add_data_to_csv(u_max, freq, path):
     path (str): 
         The path to the CSV file.
     """
-    df = pd.DataFrame({"u": [u_max], "freq": [freq]})
+    df = pd.DataFrame({"u": [u_max], "freq": [freq], "bifurcation" : [bifurcation]})
     df.to_csv(path, mode='a', header=False, index=False)
 
 def add_data_to_csv_Newthon(u_max, freq, residue_Q, relative_error_u, relative_error_w, path):

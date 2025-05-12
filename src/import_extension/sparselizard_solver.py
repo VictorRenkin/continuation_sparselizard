@@ -381,10 +381,10 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
     mu_1 = mu_pred
     PATH_ITERATION_NEWTHON = "../data/FRF/newthon_iteration.csv"
     cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
-    grad_p_u =  sc.get_E_fic_vec(E_fic_formulation, u_prev) # The E_fic  at the predictor is equal to the derivatif of the phase condition
+    # grad_p_u =  sc.get_E_fic_vec(E_fic_formulation, u_prev) # The E_fic  at the predictor is equal to the derivatif of the phase condition
     fixe_harmo = 2
     PHYSREG_LOAD_POINT = 3
-    # grad_p_u = sc.get_derivatif_u_phase_condition_i_null(elasticity, u, u_pred, PHYSREG_LOAD_POINT, fixe_harmo, PHYSREG_U)
+    grad_p_u = sc.get_derivatif_u_phase_condition_i_null(elasticity, u, u_pred, PHYSREG_LOAD_POINT, fixe_harmo, PHYSREG_U)
     while iter < MAX_ITER:
 
         elasticity.generate()
@@ -393,11 +393,11 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
         fct_G = Jac_2 * u_1 - b_2 
         grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd, u, PHYSREG_U, u_1, fct_G)
 
-        # delta_u_pred = u_pred - u_1
-        # delta_f_pred = f_pred - fd
-        # delta_mu_pred = mu_pred - mu_1
-        # fct_g = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred + delta_mu_pred * mu_1
-        fct_amplitude = 1/2 * sv.compute_scalaire_product_vec(u_1, u_1) - desire_ampltidue
+        delta_u_pred = u_pred - u_1
+        delta_f_pred = f_pred - fd
+        delta_mu_pred = mu_pred - mu_1
+        fct_g = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred + delta_mu_pred * mu_1
+        # fct_amplitude = 1/2 * sv.compute_scalaire_product_vec(u_1, u_1) - desire_ampltidue
         grad_u_ampltiude = u_1
         E_fic_vec = sc.get_E_fic_vec(E_fic_formulation, u_1)
         grad_G_mu = E_fic_vec
@@ -407,12 +407,12 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
         # test_vec = sp.vec(elasticity)
         # test_vec.setdata()
         # test_vec.write("test_vec.txt")
-        print("fct_p", fct_p, "fct_g", fct_amplitude, "fct_G", fct_G.norm())
-        if fct_G.norm() < TOL and fct_amplitude > TOL and abs(fct_p) < TOL:
+        print("fct_p", fct_p, "fct_g", fct_g, "fct_G", fct_G.norm())
+        if fct_G.norm() < TOL and fct_g > TOL and abs(fct_p) < TOL:
             print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
             break
         # delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, tan_u, grad_w_G, 0, tan_w, grad_G_mu, 0, tan_mu, - fct_G, - fct_p, - fct_g)
-        delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, grad_u_ampltiude, grad_w_G, 0, 0, grad_G_mu, 0, 0, - fct_G, - fct_p, - fct_amplitude)
+        delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, grad_u_ampltiude, grad_w_G, 0, 0, grad_G_mu, 0, 0, - fct_G, - fct_p, - fct_g)
         print("u_1",u_1.norm())
         print("delta_u", delta_u.norm(), "delta_f", delta_f, "delta_mu", delta_mu)
         u_1 = u_1 + delta_u

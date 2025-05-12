@@ -61,7 +61,6 @@ def compute_scalaire_product_vec(vec_1, vec_2) :
     if vec_1.size() != vec_2.size() :
         raise ValueError("Error : The vector is not the same size")
     sum = 0
-    nbr = 0
     for i in range(vec_1.size()) :
         sum += vec_1.getvalue(i) * vec_2.getvalue(i)
     return sum

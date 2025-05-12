@@ -74,10 +74,9 @@ def solve_NNM_store_and_show(elasticity, u, PHYSREG_U, par_relaxation, e_fic_for
     f_1 = FREQ_START
     length_s = START_LENGTH_S
     sp.setfundamentalfrequency(f_1)
-    
     u.setdata(PHYSREG_U, START_U)  
+
     PATH_STORE_DATA = PATH['PATH_STORE_DATA_FORWARD']
-    tan_w_1 = 0 
     if STORE_U_ALL :
         PATH_ALL_U = "../data/NNM/displacement_each_freq"
         if os.path.exists(PATH_ALL_U):
@@ -88,7 +87,6 @@ def solve_NNM_store_and_show(elasticity, u, PHYSREG_U, par_relaxation, e_fic_for
     # Beging by the LNM which is define in the make
     norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
     u_measured = norm_u.max(PHYSREG_MEASURED, 3)[0]
-    print("u_measured", u_measured)
     cd.add_data_to_csv(u_measured, f_1, PATH_STORE_DATA)
     vd.real_time_plot_data_FRF(PATH)
     ci_two_point = False
@@ -101,46 +99,49 @@ def solve_NNM_store_and_show(elasticity, u, PHYSREG_U, par_relaxation, e_fic_for
     tan_u_1 = sp.vec(elasticity)
     densemat_tan_u = sp.densemat(tan_u_1.size(), 1, 1)
     tan_u_1.setallvalues(densemat_tan_u)
-    print("tan_u_1 before", tan_u_1.norm())
+    # u_vec = sp.vec(elasticity)
+    # u_vec.setdata()
     vec_u_1 = START_U
-    tan_mu_1 = 0
-    mu_1 = 0
+    tan_mu_1 = 1
+    tan_w_1 = 1
+    mu_1 = par_relaxation.interpolate(PHYSREG_U, [0.5, 0.015, 0.015])[0]
+    h_ampltiude = START_U.norm()/10
+    amplitude_desired = START_U.norm() + h_ampltiude
+    print("amplitude_desired", amplitude_desired)
+    print("mu_1", mu_1)
     while FD_MIN <= f_1 <= FD_MAX:
-        print("################## New Iteration ##################")
-        print(f"length_s: {length_s:.6f}, freq: {f_1:.2f}")
-        tan_u, tan_w, tan_mu = sc.prediction_direction_NNM(
-            elasticity, u, PHYSREG_U, residue_G_1, vec_u_1, Jac_1, tan_u_1, tan_w_1, tan_mu_1, e_fic_formulation, f_1
-        )
-        print("tan_u", tan_u.norm())
-        print("tan_w", tan_w)
-        print("tan_mu", tan_mu)
-        # tan_u = tan_u_1
-        # tan_w = tan_w_1
-        # tan_mu = tan_mu_1
-        vec_u_pred, f_pred, mu_pred = sc.compute_tan_predictor_NNM(
-            length_s, tan_u, tan_w, tan_mu, vec_u_1, f_1, mu_1
-        )
-        par_relaxation.setvalue(PHYSREG_U, mu_pred)
-        u.setdata(PHYSREG_U, vec_u_pred)
-        sp.setfundamentalfrequency(f_pred)
-        if STORE_PREDICTOR:
-            norm_harmo_measured_u_pred = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-            u_pred = norm_harmo_measured_u_pred.max(PHYSREG_MEASURED, 3)[0]
-            cd.add_data_to_csv(u_pred, f_pred, PATH['PATH_STORE_PREDICTOR'])
-            vd.real_time_plot_data_FRF(PATH)
+        # print("################## New Iteration ##################")
+        # print(f"length_s: {length_s:.6f}, freq: {f_1:.2f}")
+        # tan_u, tan_w, tan_mu = sc.prediction_direction_NNM(
+        #     elasticity, u, PHYSREG_U, residue_G_1, vec_u_1, Jac_1, tan_u_1, tan_w_1, tan_mu_1, e_fic_formulation, f_1
+        # )
+        # print("tan_u", tan_u.norm())
+        # print("tan_w", tan_w)
+        # print("tan_mu", tan_mu)
+        # vec_u_pred, f_pred, mu_pred = sc.compute_tan_predictor_NNM(
+        #     length_s, tan_u, tan_w, tan_mu, vec_u_1, f_1, mu_1
+        # )
+        # par_relaxation.setvalue(PHYSREG_U, mu_pred)
+        # u.setdata(PHYSREG_U, vec_u_pred)
+        # sp.setfundamentalfrequency(f_pred)
+        # if STORE_PREDICTOR:
+        #     norm_harmo_measured_u_pred = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+        #     u_pred = norm_harmo_measured_u_pred.max(PHYSREG_MEASURED, 3)[0]
+        #     cd.add_data_to_csv(u_pred, f_pred, PATH['PATH_STORE_PREDICTOR'])
+        #     vd.real_time_plot_data_FRF(PATH)
 
         
-        if np.sign(tan_w) != np.sign(tan_w_1):
-            print("############### Bifurcation detected #################")
-            bifurcation = True
-        else :
-            bifurcation = False
-        if not (FD_MIN <= f_pred <= FD_MAX):
-            break
+        # if np.sign(tan_w) != np.sign(tan_w_1):
+        #     print("############### Bifurcation detected #################")
+        #     bifurcation = True
+        # else :
+        #     bifurcation = False
+        # if not (FD_MIN <= f_pred <= FD_MAX):
+        #     break
         print("################## Newthon predictor-corecteur solveur ##################")
         vec_u, freq, mu, iter_newthon, residue_G, Jac = ss.get_predictor_corrector_NewtonSolve_NNM(
-            elasticity, PHYSREG_U, HARMONIC_MEASURED, u, par_relaxation, vec_u_pred,
-            f_pred, mu_pred, e_fic_formulation,tan_u, tan_w, tan_mu, PATH, TOL=TOL, MAX_ITER=MAX_ITER
+            elasticity, PHYSREG_U, HARMONIC_MEASURED, u, par_relaxation, vec_u_1, vec_u_1,
+            f_1, mu_1, e_fic_formulation, 0, 0, 0, PATH, amplitude_desired, TOL=TOL, MAX_ITER=MAX_ITER
         )
         if iter_newthon == MAX_ITER:
             length_s = length_s * S_DOWN
@@ -155,9 +156,11 @@ def solve_NNM_store_and_show(elasticity, u, PHYSREG_U, par_relaxation, e_fic_for
             # ci_two_point = True
             vec_u_1 = vec_u ; f_1 = freq; mu_1 = mu
             residue_G_1 = residue_G; Jac_1 = Jac
-            tan_u_1 = tan_u ; tan_w_1 = tan_w
+            # tan_u_1 = tan_u ; tan_w_1 = tan_w ; tan_mu_1 = tan_mu
             norm_u_i = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
             point_measured = norm_u_i.max(PHYSREG_MEASURED, 3)[0]
+            amplitude_desired = vec_u_1.norm() + h_ampltiude
+            bifurcation = False
             cd.add_data_to_csv(point_measured, f_1, PATH_STORE_DATA, bifurcation)
             if STORE_PREDICTOR:
                 pass

@@ -167,21 +167,68 @@ def compute_tan_predictor_NNM(length_s, tan_u, tan_w, tan_mu, u_prev, freq_prev,
 
 
 def prediction_direction_NNM(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, prev_tan_mu, E_fic_formulation, freq, h=0.005):
-    grad_w_G = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G, 1e-5)
-    E_fic_vec =  get_E_fic_vec(E_fic_formulation, freq, field_u, PHYSREG_U, vec_u)
+    grad_w_G  = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G, 1e-5)
+    E_fic_vec =  get_E_fic_vec(E_fic_formulation, vec_u)
     grad_mu_G = E_fic_vec
-    grad_u_p = E_fic_vec
+    grad_u_p  = E_fic_vec
+    # print("grad_u_p", grad_u_p.norm()) 
+    # grad_u_p  = get_derivatif_u_phase_condition_i_null(elasticity, field_u, vec_u, 3, 2, PHYSREG_U)
+    # print("grad_u_p", grad_u_p.norm())
+    # exit()
     vec_0 = sp.vec(elasticity)
-    print('prev_tan_u', prev_tan_u.norm())
-    print('prev_tan_w', prev_tan_w)
-    print('prev_tan_mu', prev_tan_mu)
-    exit()
     tan_u, tan_w, tan_mu = ss.get_bordering_algorithm_3x3(Jac, grad_u_p, prev_tan_u, grad_w_G, 0, prev_tan_w, grad_mu_G, 0, prev_tan_mu, vec_0, 0, 1)
     return tan_u, tan_w, tan_mu
 
-def get_E_fic_vec(E_fic, freq, u, PHYSREG_U, vec_u):
+
+def get_phase_condition_i_null(elasticity, u, PHYSREG_i, vec_u, harmonic_fix, PHYSREG_U):
+    """
+    Compute the phase condition fixe the i-th harmonic of one node PHYSREG_i vector `u` to zero.
+
+    Parameters
+    ----------
+    u : `field` object from Sparselizard
+        The displacement field. This field is updated with the solution obtained at the current frequency.
+    PHYSREG_i : int
+        Physical region associated with the i-th harmonic of the displacement vector `u`.
+
+    Returns
+    -------
+    `vec` object from Sparselizard
+        The computed phase condition for the i-th harmonic of the displacement field.
+    """
+    expresion_0 = sp.expression(3, 1, [0, 0, 0])
+    u.harmonic(harmonic_fix).setvalue(PHYSREG_i, expresion_0)
+    phase_condition = sp.vec(elasticity)
+    phase_condition.setdata()
     u.setdata(PHYSREG_U, vec_u)
-    sp.setfundamentalfrequency(freq)
+    return phase_condition
+
+def get_derivatif_u_phase_condition_i_null(elasticity, field_u, vec_u, PHYSREG_i, harmonic_fix, PHYSREG_U):
+    """
+    Compute the derivative of the phase condition fixed to zero for the i-th harmonic of the displacement field.
+
+    Parameters
+    ----------
+    u : `field` object from Sparselizard
+        The displacement field. This field is updated with the solution obtained at the current frequency.
+    PHYSREG_i : int
+        Physical region associated with the i-th harmonic of the displacement vector `u`.
+
+    Returns
+    -------
+    `vec` object from Sparselizard
+        The computed derivative of the phase condition for the i-th harmonic of the displacement field.
+    """
+
+    field_u.setvalue(PHYSREG_U)
+    expresion_1 = sp.expression(3, 1, [1, 0, 0])
+    field_u.harmonic(harmonic_fix).setvalue(PHYSREG_i, expresion_1)
+    derivatif_u_phase = sp.vec(elasticity)
+    derivatif_u_phase.setdata()
+    field_u.setdata(PHYSREG_U, vec_u)
+    return derivatif_u_phase
+
+def get_E_fic_vec(E_fic, vec_u):
     E_fic.generate()
     E_fic_math = E_fic.K()
     E_fic_vec = E_fic_math * vec_u

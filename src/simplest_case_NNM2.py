@@ -1,17 +1,16 @@
 import sparselizard as sp
 import import_extension.sparselizard_NLFR as sn
-import import_extension.NNM as nnm
+import import_extension.sparselizard_NNM as nnm
 import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
 
 print("###################### Start Mesh #######################")
-mesh = sp.mesh('../geo_GMSH/ClampedBeam.msh', 1)
+mesh = sp.mesh('../geo_GMSH/simplest_clamped_clamped.msh', 1)
 print("###################### End Mesh #########################")
 
 PATH_STORE_DATA = '../data/FRF/NNMs.csv'
 PATH_FIGURE = '../figures/NNMs.pdf'
 PATH_STORE_PREDICTOR = '../data/FRF/NNMs_predictor.csv'
-
 PATH = {"PATH_STORE_DATA_FORWARD":PATH_STORE_DATA,
         "PATH_FIGURE":PATH_FIGURE,
         "PATH_STORE_PREDICTOR":PATH_STORE_PREDICTOR}
@@ -20,9 +19,9 @@ cd.create_doc_csv(PATH_STORE_DATA)
 cd.create_doc_csv(PATH_STORE_PREDICTOR)
 
 # Imposed by GMSH
-PHYSREG_VOLUME = 1
-PHYSREG_CONSTRAINT = 2
-PHYSREG_LOAD_POINT = 3 #  [0.5, 0.015, 0.015]
+PHYSREG_VOLUME = 104
+PHYSREG_CONSTRAINT = 102
+PHYSREG_LOAD_POINT = 101 #  [0.5, 0.015, 0.015]
 
 # Chosen by the user
 PHYSREG_MEASURE_POINT = PHYSREG_LOAD_POINT
@@ -48,7 +47,6 @@ u_LNM.setconstraint(PHYSREG_CONSTRAINT)
 LNM_formulation  = sp.formulation()
 Kx_linear_LNM =  sp.predefinedelasticity(sp.dof(u_LNM), sp.tf(u_LNM), E, nu) 
 LNM_formulation += sp.integral(PHYSREG_VOLUME, FFT_point, Kx_linear_LNM)
-
 Mddotx_LNM = -rho * sp.dtdt(sp.dof(u_LNM)) * sp.tf(u_LNM)
 LNM_formulation += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx_LNM)
 
@@ -79,22 +77,21 @@ Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 
 par_relaxation = sp.parameter()
-par_relaxation.setvalue(PHYSREG_VOLUME, 5)
+par_relaxation.setvalue(PHYSREG_VOLUME, 0)
 e_fic_mu =  par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, e_fic_mu)
 
 
 E_fic_formulation  = sp.formulation()
-E_fic_formulation += sp.integral(PHYSREG_VOLUME, FFT_point,  sp.dt(sp.dof(u)) * sp.tf(u))
+E_fic_formulation += sp.integral(PHYSREG_VOLUME,  sp.dt(sp.dof(u)) * sp.tf(u))
 
 # Initialisation with the LNM 
 u_LNM.setdata(PHYSREG_VOLUME, myrealeigenvectors[0])
-scaling_parameter = 1e-5
-
+scaling_parameter = 1e-4
 u.harmonic(3).setvalue(PHYSREG_VOLUME, u_LNM * scaling_parameter)
 
 max_u = sp.norm(u.harmonic(3)).max(PHYSREG_VOLUME, 3)[0]
-# print("max_u", max_u)
+print("max_u", max_u)
 # elasticity_2.generate()
 # K_2 = elasticity_2.K()
 # v_2 = sp.vec(elasticity_2)
@@ -105,10 +102,10 @@ F_START = (eig.geteigenvaluerealpart())
 F_START = 162.764; FD_MIN = 158; FD_MAX = 210 # [Hz]
 START_U = sp.vec(elasticityNNM)
 START_U.setdata()
-print("Start U.norm() :\t", START_U.norm())
+print("Number of unknowns is "+str(elasticityNNM.countdofs()))
 nnm.solve_NNM_store_and_show(elasticityNNM, u, PHYSREG_VOLUME, par_relaxation, E_fic_formulation, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, 
                                PATH, F_START, FD_MIN, FD_MAX, START_U,
-                               MAX_ITER=10, TOL=1e-4,
+                               MAX_ITER=10, TOL=1e-5,
                                MIN_LENGTH_S=1e-5, MAX_LENGTH_S=5e-1, START_LENGTH_S=5e-2,
                                S_UP = 1.1, S_DOWN=0.2,
                                STORE_U_ALL=True, STORE_PREDICTOR=True)

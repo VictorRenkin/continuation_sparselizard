@@ -4,6 +4,7 @@ import import_extension.sparselizard_continuation as sc
 import Viz_write.CreateData as cd
 import Viz_write.VizData as vd
 import math
+import numpy as np
 
 def get_G(Jac, B, z) :
     """
@@ -206,6 +207,9 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
     X_3 = sp.solve(A, G)
     print("e",e, "h", h, "f", f, "i", i)
     print("Norm B", B.norm(), "Norm C", C.norm())
+    print("X_1", X_1.norm(), "X_2", X_2.norm(), "X_3", X_3.norm())
+    X_1.write("X_1.txt")
+    # exit()
     a_11 = e - sv.compute_scalaire_product_vec(B, X_2)
     a_12 = h - sv.compute_scalaire_product_vec(B, X_3)
     a_21 = f - sv.compute_scalaire_product_vec(C, X_2)
@@ -251,7 +255,11 @@ def cramer_2x2(a11, a12, a21, a22, b1, b2):
     """
     # Calculate the determinant
     det = a11 * a22 - a12 * a21
-    print("det", det)
+    # print("det", det)
+    # A = np.array([[a11, a12], [a21, a22]])
+    # rank = np.linalg.matrix_rank(A)
+    # if rank < 2:
+    #     raise ValueError("Singular matrix")
     if abs(det) < 1e-8:
         raise ValueError(f"The system has no unique solution (determinant is zero : {det}).")
 
@@ -396,14 +404,14 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
         delta_u_pred = u_pred - u_1
         delta_f_pred = f_pred - fd
         delta_mu_pred = mu_pred - mu_1
-        fct_g = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred + delta_mu_pred * mu_1
+        fct_g = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred + tan_mu * delta_mu_pred
         # fct_amplitude = 1/2 * sv.compute_scalaire_product_vec(u_1, u_1) - desire_ampltidue
-        grad_u_ampltiude = u_1
+        # grad_u_ampltiude = u_1
         E_fic_vec = sc.get_E_fic_vec(E_fic_formulation, u_1)
         grad_G_mu = E_fic_vec
         print("grad_G_mu", grad_G_mu.norm())
-        fct_p  =  sv.compute_scalaire_product_vec(grad_p_u, u_1)
-        # fct_p = u.harmonic(fixe_harmo).interpolate(PHYSREG_U, [0.5, 0.015, 0.015])[0]
+        # fct_p  =  sv.compute_scalaire_product_vec(grad_p_u, u_1)
+        fct_p = u.harmonic(fixe_harmo).interpolate(PHYSREG_U, [0.5, 0.015, 0.015])[0]
         # test_vec = sp.vec(elasticity)
         # test_vec.setdata()
         # test_vec.write("test_vec.txt")
@@ -412,7 +420,7 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
             print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
             break
         # delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, tan_u, grad_w_G, 0, tan_w, grad_G_mu, 0, tan_mu, - fct_G, - fct_p, - fct_g)
-        delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, grad_u_ampltiude, grad_w_G, 0, 0, grad_G_mu, 0, 0, - fct_G, - fct_p, - fct_g)
+        delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, tan_u, grad_w_G, 0, tan_w, grad_G_mu, 0, tan_mu, - fct_G, - fct_p, - fct_g)
         print("u_1",u_1.norm())
         print("delta_u", delta_u.norm(), "delta_f", delta_f, "delta_mu", delta_mu)
         u_1 = u_1 + delta_u

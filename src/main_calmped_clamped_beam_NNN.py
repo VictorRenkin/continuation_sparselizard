@@ -81,11 +81,11 @@ elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 par_relaxation = sp.parameter()
 par_relaxation.setvalue(PHYSREG_VOLUME, 1)
 e_fic_mu =  par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
-elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, e_fic_mu)
+elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, -e_fic_mu)
 
 
 E_fic_formulation  = sp.formulation()
-E_fic_formulation += sp.integral(PHYSREG_VOLUME, FFT_point,  sp.dt(sp.dof(u)) * sp.tf(u))
+E_fic_formulation += sp.integral(PHYSREG_VOLUME, FFT_point,  -sp.dt(sp.dof(u)) * sp.tf(u))
 
 # Initialisation with the LNM 
 u_LNM.setdata(PHYSREG_VOLUME, myrealeigenvectors[0])

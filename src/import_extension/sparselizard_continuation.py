@@ -173,7 +173,8 @@ def prediction_direction_NNM(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Ja
     grad_u_p  = E_fic_vec
     # print("grad_u_p", grad_u_p.norm()) 
     # grad_u_p  = get_derivatif_u_phase_condition_i_null(elasticity, field_u, vec_u, 3, 2, PHYSREG_U)
-    # print("grad_u_p", grad_u_p.norm())
+    print("grad_u_p", grad_u_p.norm())
+    # grad_u_p.write("grad_u_p.txt")
     # exit()
     vec_0 = sp.vec(elasticity)
     tan_u, tan_w, tan_mu = ss.get_bordering_algorithm_3x3(Jac, grad_u_p, prev_tan_u, grad_w_G, 0, prev_tan_w, grad_mu_G, 0, prev_tan_mu, vec_0, 0, 1)

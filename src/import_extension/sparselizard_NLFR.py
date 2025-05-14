@@ -154,7 +154,8 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
     u_measured = norm_u.max(PHYSREG_MEASURED, 3)[0]
     cd.add_data_to_csv(u_measured, f_1, PATH_STORE_DATA)
     vd.real_time_plot_data_FRF(PATH)
-    tan_u_1 = sc.initial_prediction_tan_u(elasticity, u, PHYSREG_U, residue_G_1, vec_u_1, Jac_1, f_1)
+    # tan_u_1 = sc.initial_prediction_tan_u(elasticity, u, PHYSREG_U, residue_G_1, vec_u_1, Jac_1, f_1)
+    tan_u_1 = sp.vec(elasticity)
     # sv.hstack_vec(Jac_1, tan_w_1)
     ci_two_point = False
     while FD_MIN <= f_1 <= FD_MAX:

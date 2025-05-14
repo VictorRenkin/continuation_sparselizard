@@ -26,7 +26,7 @@ PHYSREG_LOAD_POINT = 3 #  [0.5, 0.015, 0.015]
 
 # Chosen by the user
 PHYSREG_MEASURE_POINT = PHYSREG_LOAD_POINT
-NUMBER_HARMONIC = [1, 2, 3]
+NUMBER_HARMONIC = [1, 2, 3, 4, 5]
 HARMONIC_MEASURED = NUMBER_HARMONIC
 
 
@@ -79,17 +79,17 @@ Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 
 par_relaxation = sp.parameter()
-par_relaxation.setvalue(PHYSREG_VOLUME, 5)
-e_fic_mu =  par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
+par_relaxation.setvalue(PHYSREG_VOLUME, 1500)
+e_fic_mu =  -par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, e_fic_mu)
 
 
 E_fic_formulation  = sp.formulation()
-E_fic_formulation += sp.integral(PHYSREG_VOLUME, FFT_point,  sp.dt(sp.dof(u)) * sp.tf(u))
+E_fic_formulation += sp.integral(PHYSREG_VOLUME, FFT_point,  -sp.dt(sp.dof(u)) * sp.tf(u))
 
 # Initialisation with the LNM 
 u_LNM.setdata(PHYSREG_VOLUME, myrealeigenvectors[0])
-scaling_parameter = 1e-5
+scaling_parameter = 1e-4
 
 u.harmonic(3).setvalue(PHYSREG_VOLUME, u_LNM * scaling_parameter)
 

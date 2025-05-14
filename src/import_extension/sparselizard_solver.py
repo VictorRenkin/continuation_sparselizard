@@ -206,6 +206,7 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
     X_3 = sp.solve(A, G)
     print("e",e, "h", h, "f", f, "i", i)
     print("Norm B", B.norm(), "Norm C", C.norm())
+    print("Norm X_1", X_1.norm(), "Norm X_2", X_2.norm(), "Norm X_3", X_3.norm())
     a_11 = e - sv.compute_scalaire_product_vec(B, X_2)
     a_12 = h - sv.compute_scalaire_product_vec(B, X_3)
     a_21 = f - sv.compute_scalaire_product_vec(C, X_2)
@@ -252,7 +253,7 @@ def cramer_2x2(a11, a12, a21, a22, b1, b2):
     # Calculate the determinant
     det = a11 * a22 - a12 * a21
     print("det", det)
-    if abs(det) < 1e-30:
+    if abs(det) < 1e-8:
         raise ValueError(f"The system has no unique solution (determinant is zero : {det}).")
 
     # Apply Cramer's rule
@@ -403,11 +404,13 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
         grad_G_mu = E_fic_vec
         print("grad_G_mu", grad_G_mu.norm())
         fct_p  =  sv.compute_scalaire_product_vec(grad_p_u, u_1)
+        grad_p_u.write("grad_p_u.txt")
+        u_1.write("u_1.txt")
         # fct_p = u.harmonic(fixe_harmo).interpolate(PHYSREG_U, [0.5, 0.015, 0.015])[0]
         # test_vec = sp.vec(elasticity)
         # test_vec.setdata()
         # test_vec.write("test_vec.txt")
-        print("fct_p", fct_p, "fct_g", fct_amplitude, "fct_G", fct_G.norm())
+        print("fct_p", fct_p, "fct_amplitude", fct_amplitude, "fct_G", fct_G.norm())
         if fct_G.norm() < TOL and fct_amplitude > TOL and abs(fct_p) < TOL:
             print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
             break

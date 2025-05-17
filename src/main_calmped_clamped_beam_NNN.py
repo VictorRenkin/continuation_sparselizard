@@ -26,7 +26,7 @@ PHYSREG_LOAD_POINT = 3 #  [0.5, 0.015, 0.015]
 
 # Chosen by the user
 PHYSREG_MEASURE_POINT = PHYSREG_LOAD_POINT
-NUMBER_HARMONIC = [1, 2, 3, 4, 5]
+NUMBER_HARMONIC = [1, 2, 3]
 HARMONIC_MEASURED = NUMBER_HARMONIC
 
 
@@ -79,9 +79,9 @@ Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 
 par_relaxation = sp.parameter()
-par_relaxation.setvalue(PHYSREG_VOLUME, 1500)
+par_relaxation.setvalue(PHYSREG_VOLUME, rho)
 e_fic_mu =  -par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
-elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, e_fic_mu)
+elasticityNNM += sp.integral(PHYSREG_VOLUME, e_fic_mu)
 
 
 E_fic_formulation  = sp.formulation()
@@ -93,6 +93,7 @@ scaling_parameter = 1e-4
 
 u.harmonic(3).setvalue(PHYSREG_VOLUME, u_LNM * scaling_parameter)
 
+
 max_u = sp.norm(u.harmonic(3)).max(PHYSREG_VOLUME, 3)[0]
 # print("max_u", max_u)
 # elasticity_2.generate()
@@ -101,7 +102,7 @@ max_u = sp.norm(u.harmonic(3)).max(PHYSREG_VOLUME, 3)[0]
 # v_2.setdata()
 # K_2 * v_2
 
-F_START = (eig.geteigenvaluerealpart())
+# F_START = (eig.geteigenvaluerealpart())
 F_START = 162.764; FD_MIN = 158; FD_MAX = 210 # [Hz]
 START_U = sp.vec(elasticityNNM)
 START_U.setdata()

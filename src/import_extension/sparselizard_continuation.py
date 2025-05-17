@@ -174,6 +174,8 @@ def prediction_direction_NNM(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Ja
     # print("grad_u_p", grad_u_p.norm()) 
     # grad_u_p  = get_derivatif_u_phase_condition_i_null(elasticity, field_u, vec_u, 3, 2, PHYSREG_U)
     print("grad_u_p", grad_u_p.norm())
+    print("grad_w_G", grad_w_G.norm())
+    print("grad_mu_G", grad_mu_G.norm())
     # grad_u_p.write("grad_u_p.txt")
     # exit()
     vec_0 = sp.vec(elasticity)

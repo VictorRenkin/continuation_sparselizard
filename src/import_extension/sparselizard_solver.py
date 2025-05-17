@@ -389,10 +389,10 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
     mu_1 = mu_pred
     PATH_ITERATION_NEWTHON = "../data/FRF/newthon_iteration.csv"
     cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
-    # grad_p_u =  sc.get_E_fic_vec(E_fic_formulation, u_prev) # The E_fic  at the predictor is equal to the derivatif of the phase condition
+    grad_p_u =  sc.get_E_fic_vec(E_fic_formulation, u_prev) # The E_fic  at the predictor is equal to the derivatif of the phase condition
     fixe_harmo = 2
     PHYSREG_LOAD_POINT = 3
-    grad_p_u = sc.get_derivatif_u_phase_condition_i_null(elasticity, u, u_pred, PHYSREG_LOAD_POINT, fixe_harmo, PHYSREG_U)
+    # grad_p_u = sc.get_derivatif_u_phase_condition_i_null(elasticity, u, u_pred, PHYSREG_LOAD_POINT, fixe_harmo, PHYSREG_U)
     while iter < MAX_ITER:
 
         elasticity.generate()
@@ -405,11 +405,11 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
         delta_f_pred = f_pred - fd
         delta_mu_pred = mu_pred - mu_1
         fct_g = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred + tan_mu * delta_mu_pred
-        # fct_amplitude = 1/2 * sv.compute_scalaire_product_vec(u_1, u_1) - desire_ampltidue
-        # grad_u_ampltiude = u_1
         E_fic_vec = sc.get_E_fic_vec(E_fic_formulation, u_1)
         grad_G_mu = E_fic_vec
         print("grad_G_mu", grad_G_mu.norm())
+        print("grad_p_u", grad_p_u.norm())
+        print("grad_w_G", grad_w_G.norm())
         # fct_p  =  sv.compute_scalaire_product_vec(grad_p_u, u_1)
         fct_p = u.harmonic(fixe_harmo).interpolate(PHYSREG_U, [0.5, 0.015, 0.015])[0]
         # test_vec = sp.vec(elasticity)

@@ -5,7 +5,7 @@ import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
 
 print("###################### Start Mesh #######################")
-mesh = sp.mesh('../geo_GMSH/ClampedBeam.msh', 1)
+mesh = sp.mesh('../GMSH_file/ClampedBeam.msh', 1)
 print("###################### End Mesh #########################")
 
 PATH_STORE_DATA = '../data/FRF/NNMs.csv'
@@ -79,9 +79,9 @@ Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 
 par_relaxation = sp.parameter()
-par_relaxation.setvalue(PHYSREG_VOLUME, 1)
-e_fic_mu =  par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
-elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, -e_fic_mu)
+par_relaxation.setvalue(PHYSREG_VOLUME, 3)
+e_fic_mu =  -par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
+elasticityNNM += sp.integral(PHYSREG_VOLUME, e_fic_mu)
 
 
 E_fic_formulation  = sp.formulation()
@@ -93,6 +93,7 @@ scaling_parameter = 1e-4
 
 u.harmonic(3).setvalue(PHYSREG_VOLUME, u_LNM * scaling_parameter)
 
+
 max_u = sp.norm(u.harmonic(3)).max(PHYSREG_VOLUME, 3)[0]
 # print("max_u", max_u)
 # elasticity_2.generate()
@@ -101,7 +102,7 @@ max_u = sp.norm(u.harmonic(3)).max(PHYSREG_VOLUME, 3)[0]
 # v_2.setdata()
 # K_2 * v_2
 
-F_START = (eig.geteigenvaluerealpart())
+# F_START = (eig.geteigenvaluerealpart())
 F_START = 162.764; FD_MIN = 158; FD_MAX = 210 # [Hz]
 START_U = sp.vec(elasticityNNM)
 START_U.setdata()

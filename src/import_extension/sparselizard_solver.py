@@ -389,10 +389,10 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
     mu_1 = mu_pred
     PATH_ITERATION_NEWTHON = "../data/FRF/newthon_iteration.csv"
     cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
-    grad_p_u =  sc.get_E_fic_vec(E_fic_formulation, u_prev) # The E_fic  at the predictor is equal to the derivatif of the phase condition
+    # grad_p_u =  sc.get_E_fic_vec(E_fic_formulation, u_prev) # The E_fic  at the predictor is equal to the derivatif of the phase condition
     fixe_harmo = 2
     PHYSREG_LOAD_POINT = 3
-    # grad_p_u = sc.get_derivatif_u_phase_condition_i_null(elasticity, u, u_pred, PHYSREG_LOAD_POINT, fixe_harmo, PHYSREG_U)
+    grad_p_u = sc.get_derivatif_u_phase_condition_i_null(elasticity, u, u_pred, PHYSREG_LOAD_POINT, fixe_harmo, PHYSREG_U)
     while iter < MAX_ITER:
 
         elasticity.generate()

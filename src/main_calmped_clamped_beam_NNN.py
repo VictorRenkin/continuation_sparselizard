@@ -79,7 +79,7 @@ Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 
 par_relaxation = sp.parameter()
-par_relaxation.setvalue(PHYSREG_VOLUME, 3)
+par_relaxation.setvalue(PHYSREG_VOLUME, rho)
 e_fic_mu =  -par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, e_fic_mu)
 

@@ -151,6 +151,7 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
             os.makedirs(PATH_ALL_U)
             vec_u_1.write(f"{PATH_ALL_U}/{str(f_1).replace('.', '_')}.txt")
     norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+    print("u_measured all", norm_u.max(PHYSREG_MEASURED, 3))
     u_measured = norm_u.max(PHYSREG_MEASURED, 3)[0]
     cd.add_data_to_csv(u_measured, f_1, PATH_STORE_DATA)
     vd.real_time_plot_data_FRF(PATH)

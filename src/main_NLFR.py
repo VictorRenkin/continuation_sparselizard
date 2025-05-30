@@ -67,14 +67,12 @@ u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero
 F_START = 158; FD_MIN = 158; FD_MAX = 210 # [Hz]
 START_U = sp.vec(elasticity)
 print("Number of unknowns is "+str(elasticity.countdofs()))
-print("Test :\t", 165 * 3 *3)
-print("Coef ", 8505/165)
 # START_U.load(f"../data/FRF/downward/displacement_each_freq/{str(F_START).replace('.', '_')}.txt")
-# sn.solve_NLFRs_store_and_show(  
-#     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, "Forward", 
-#     PATH, F_START, FD_MIN, FD_MAX, MAX_ITER=10,
-#     MIN_LENGTH_S=1e-6,MAX_LENGTH_S=1e-0, START_LENGTH_S=5e-1,TOL=1e-5,
-#     START_U = START_U, STORE_U_ALL=True, STORE_PREDICTOR=True)
+sn.solve_NLFRs_store_and_show(  
+    elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, "Forward", 
+    PATH, F_START, FD_MIN, FD_MAX, MAX_ITER=10,
+    MIN_LENGTH_S=1e-6,MAX_LENGTH_S=1e-0, START_LENGTH_S=5e-1,TOL=1e-5,
+    START_U = START_U, STORE_U_ALL=True, STORE_PREDICTOR=True)
 
 # print("############ Backward #############")
 # u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero

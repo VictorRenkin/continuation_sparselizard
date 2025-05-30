@@ -261,8 +261,38 @@ def cramer_2x2(a11, a12, a21, a22, b1, b2):
 
     return x, y
 
+def solve_quadratic_equation(a: float, b: float, c: float) -> tuple:
+    """
+    Solves a quadratic equation of the form ax^2 + bx + c = 0.
+    Only real roots are considered.
+
+    Parameters:
+    a (float): Quadratic coefficient
+    b (float): Linear coefficient
+    c (float): Constant term
+
+    Returns:
+    tuple: A tuple containing the two real roots in ascending order
+
+    Raises:
+    ValueError: If the equation has no real solutions
+    """
+    if a == 0:
+        raise ValueError("Coefficient 'a' must not be zero for a quadratic equation.")
+    
+    discriminant = b ** 2 - 4 * a * c
+
+    if discriminant < 0:
+        raise ValueError("The equation has no real roots (discriminant < 0).")
+
+    sqrt_discriminant = math.sqrt(discriminant)
+    root1 = (-b - sqrt_discriminant) / (2 * a)
+    root2 = (-b + sqrt_discriminant) / (2 * a)
+
+    return (min(root1, root2), max(root1, root2))
+
 def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
-                                        u_pred, f_pred, tan_u, tan_w, PATH, TOL=1e-6, MAX_ITER=10):
+                                        u_pred, f_pred, tan_u, tan_w, PATH, length_s, prev_u, prev_f, phi=1,TOL=1e-6, MAX_ITER=10):
     """
     Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
     The algorithm is based on a bordering approach. At the end the frequence is set and the field u is set also.
@@ -299,43 +329,89 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
     """
 
     iter = 0
-    relative_error_u_max = 1
-    residual_max_G = 1  
-    u_max = 0
-    fd = f_pred
+    u.setdata(PHYSREG_U, prev_u)
+    sp.setfundamentalfrequency(prev_f)
+    elasticity.generate()
+    Jac_2 = elasticity.A()
+    b_2 = elasticity.b()
+    fct_G = Jac_2 * prev_u - b_2 
+    
+    #grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd_1, u, PHYSREG_U, u_1, fct_G, clk_generate, tan_w)
+    #delta_u = delta_lamda * u_fix
+    #u.setdata(PHYSREG_U, delta_u + prev_u)
+    #u_1 = delta_u + prev_u
+    grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_f, u, PHYSREG_U, prev_u, fct_G)
+    u_fix = sp.solve(Jac_2, grad_w_G)
+    delta_lamda = +length_s/(sv.compute_scalaire_product_vec(u_fix, u_fix) + prev_f**2)**(0.5)
+    u.setdata(PHYSREG_U, u_pred)
+    sp.setfundamentalfrequency(f_pred)
+    fd_1 = f_pred
     u_1 = u_pred
+    lamda_prev = 1
+    lamda_1 = f_pred/prev_f
+    print("First lamda_1", lamda_1 - lamda_prev, "delta_lambda book", delta_lamda)
+    print("Delta u first", (u_1 - prev_u).norm(), "Delta u book", u_fix.norm() * delta_lamda)
     PATH_ITERATION_NEWTHON = "../data/FRF/newthon_iteration.csv"
     cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
     while iter < MAX_ITER:
-
         elasticity.generate()
         Jac_2 = elasticity.A()
         b_2 = elasticity.b()
         fct_G = Jac_2 * u_1 - b_2 
-        grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd, u, PHYSREG_U, u_1, fct_G)
-
-        delta_u_pred = u_pred - u_1
-        delta_f_pred = f_pred - fd
-        fct_g        = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred
-        if fct_G.norm() < TOL and fct_g.norm() < TOL:
+                
+        if fct_G.norm() < TOL:
             break
-        delta_u, delta_f = get_bordering_algorithm(Jac_2, grad_w_G, tan_u, tan_w, -fct_G, -fct_g)
 
-        u_1 = u_1 + delta_u
-        fd = delta_f + fd
+        delta_u = u_1 - prev_u
+        delta_lamda = lamda_1 - lamda_prev
+        #print("delta_lambda", delta_lamda)
+        #print("delta_x", delta_u.norm())
+        
+        u_tan_fix_w = sp.solve(Jac_2, - grad_w_G)
+        iter_newt_u = sp.solve(Jac_2, - fct_G)
+        
+        a = sv.compute_scalaire_product_vec(u_tan_fix_w, u_tan_fix_w) + phi**2 * prev_f**2
+        b = 2 * sv.compute_scalaire_product_vec(u_tan_fix_w, (delta_u + iter_newt_u)) + 2 * delta_lamda * phi**2 * prev_f**2
+        c = sv.compute_scalaire_product_vec(delta_u + iter_newt_u, delta_u + iter_newt_u) - length_s**2 + delta_lamda**2 * phi**2 * prev_f**2
+        
+        try:
+            dlanda_1, dlanda_2 = solve_quadratic_equation(a, b, c)
+            print("dlanda_1", dlanda_1, "dlanda_2", dlanda_2)
+        except ValueError:
+            iter = MAX_ITER
+            break
 
+        
+        delta_u_1 = delta_u + iter_newt_u + u_tan_fix_w * dlanda_1
+        delta_u_2 = delta_u + iter_newt_u + u_tan_fix_w * dlanda_2
+        
+        cos_theta_1 = sv.compute_scalaire_product_vec(delta_u_1, delta_u)/(length_s)**2
+        cos_theta_2 = sv.compute_scalaire_product_vec(delta_u_2, delta_u)/(length_s)**2
+        print("cos_theta_1", cos_theta_1, "cos_theta_2", cos_theta_2, "True or False", cos_theta_1 > cos_theta_2)
+        
+        if cos_theta_1 > cos_theta_2 : 
+            delta_u = delta_u_1
+            dlambda = dlanda_1
+            delta_lamda = delta_lamda + dlanda_1
+        else :
+            delta_u = delta_u_2
+            dlambda = dlanda_2
+            delta_lamda = delta_lamda + dlanda_2
+        
+        u_1 = delta_u + iter_newt_u + u_tan_fix_w * dlambda
+        lamda_1 = lamda_1 + dlambda
+        fd_1 = fd_1 * lamda_1
+        print("fd_1", fd_1, "u_1", u_1.norm(), "lamda_1", lamda_1)
         u.setdata(PHYSREG_U, u_1)
-        sp.setfundamentalfrequency(fd)
-        norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-    
-        cd.add_data_to_csv_Newthon(norm_u.max(3, 3)[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
-        vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
+        sp.setfundamentalfrequency(fd_1)
+
         print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
-        # print(f"Iteration {iter}: Rel. error u: {relative_error_u_max:.2e}, Rel. error f: {relative_error_freq:.2e}, Residual max Q: {fct_G.norm():.2e}")
+        norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+        cd.add_data_to_csv_Newthon(norm_u.max(3, 3)[0], fd_1, fct_G.norm(), 0, 0, PATH_ITERATION_NEWTHON)
+        vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
         iter += 1
 
-    return u_1, fd, iter, fct_G, Jac_2
-
+    return delta_u + prev_u , (delta_lamda + lamda_prev) * prev_f, iter, fct_G, Jac_2
 
 def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, par_relaxation, u_prev,
                                         u_pred, f_pred, mu_pred, E_fic_formulation, tan_u, tan_w, tan_mu, PATH, desire_ampltidue, TOL=1e-6, MAX_ITER=10):

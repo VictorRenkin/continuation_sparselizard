@@ -189,8 +189,9 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         print("################## Newthon predictor-corecteur solveur ##################")
         vec_u, freq, iter_newthon, residue_G, Jac = ss.get_predictor_corrector_NewtonSolve(
             elasticity, PHYSREG_U, HARMONIC_MEASURED, u, vec_u_pred,
-            f_pred, tan_u, tan_w, PATH, TOL=TOL, MAX_ITER=MAX_ITER
+            f_pred, tan_u, tan_w, PATH, length_s, vec_u_1, f_1 ,TOL=TOL, MAX_ITER=MAX_ITER
         )
+        exit()
         if iter_newthon == MAX_ITER:
             length_s = length_s * S_DOWN
             if STORE_PREDICTOR:

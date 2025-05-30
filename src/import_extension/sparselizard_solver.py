@@ -329,30 +329,10 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
     """
 
     iter = 0
-    u.setdata(PHYSREG_U, prev_u)
-    sp.setfundamentalfrequency(prev_f)
-    elasticity.generate()
-    Jac_2 = elasticity.A()
-    b_2 = elasticity.b()
-    fct_G = Jac_2 * prev_u - b_2 
-    
-    #grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd_1, u, PHYSREG_U, u_1, fct_G, clk_generate, tan_w)
-    #delta_u = delta_lamda * u_fix
-    #u.setdata(PHYSREG_U, delta_u + prev_u)
-    #u_1 = delta_u + prev_u
-    grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_f, u, PHYSREG_U, prev_u, fct_G)
-    u_fix = sp.solve(Jac_2, grad_w_G)
-    delta_lamda = +length_s/(sv.compute_scalaire_product_vec(u_fix, u_fix) + prev_f**2)**(0.5)
-    u.setdata(PHYSREG_U, u_pred)
-    sp.setfundamentalfrequency(f_pred)
-    fd_1 = f_pred
-    u_1 = u_pred
-    lamda_prev = 1
-    lamda_1 = f_pred/prev_f
-    print("First lamda_1", lamda_1 - lamda_prev, "delta_lambda book", delta_lamda)
-    print("Delta u first", (u_1 - prev_u).norm(), "Delta u book", u_fix.norm() * delta_lamda)
     PATH_ITERATION_NEWTHON = "../data/FRF/newthon_iteration.csv"
     cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
+    u_1 = u_pred
+    fd_1 = f_pred
     while iter < MAX_ITER:
         elasticity.generate()
         Jac_2 = elasticity.A()
@@ -363,45 +343,16 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
             break
 
         delta_u = u_1 - prev_u
-        delta_lamda = lamda_1 - lamda_prev
-        #print("delta_lambda", delta_lamda)
-        #print("delta_x", delta_u.norm())
-        
-        u_tan_fix_w = sp.solve(Jac_2, - grad_w_G)
-        iter_newt_u = sp.solve(Jac_2, - fct_G)
-        
-        a = sv.compute_scalaire_product_vec(u_tan_fix_w, u_tan_fix_w) + phi**2 * prev_f**2
-        b = 2 * sv.compute_scalaire_product_vec(u_tan_fix_w, (delta_u + iter_newt_u)) + 2 * delta_lamda * phi**2 * prev_f**2
-        c = sv.compute_scalaire_product_vec(delta_u + iter_newt_u, delta_u + iter_newt_u) - length_s**2 + delta_lamda**2 * phi**2 * prev_f**2
-        
-        try:
-            dlanda_1, dlanda_2 = solve_quadratic_equation(a, b, c)
-            print("dlanda_1", dlanda_1, "dlanda_2", dlanda_2)
-        except ValueError:
-            iter = MAX_ITER
-            break
+        delta_f = fd_1 - prev_f
 
+        fct_g = delta_u.norm()**2 + delta_f**2 - length_s**2
+        grad_w_g = 2 * delta_f
+        grad_u_g = 2 * delta_u
+        grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd_1, u, PHYSREG_U, u_1, fct_G)
+        delta_u, delta_w = get_bordering_algorithm(Jac_2, grad_w_G, grad_u_g, grad_w_g, -fct_G, -fct_g)
         
-        delta_u_1 = delta_u + iter_newt_u + u_tan_fix_w * dlanda_1
-        delta_u_2 = delta_u + iter_newt_u + u_tan_fix_w * dlanda_2
-        
-        cos_theta_1 = sv.compute_scalaire_product_vec(delta_u_1, delta_u)/(length_s)**2
-        cos_theta_2 = sv.compute_scalaire_product_vec(delta_u_2, delta_u)/(length_s)**2
-        print("cos_theta_1", cos_theta_1, "cos_theta_2", cos_theta_2, "True or False", cos_theta_1 > cos_theta_2)
-        
-        if cos_theta_1 > cos_theta_2 : 
-            delta_u = delta_u_1
-            dlambda = dlanda_1
-            delta_lamda = delta_lamda + dlanda_1
-        else :
-            delta_u = delta_u_2
-            dlambda = dlanda_2
-            delta_lamda = delta_lamda + dlanda_2
-        
-        u_1 = delta_u + iter_newt_u + u_tan_fix_w * dlambda
-        lamda_1 = lamda_1 + dlambda
-        fd_1 = fd_1 * lamda_1
-        print("fd_1", fd_1, "u_1", u_1.norm(), "lamda_1", lamda_1)
+        u_1 = u_1 + delta_u
+        fd_1 = fd_1 + delta_w
         u.setdata(PHYSREG_U, u_1)
         sp.setfundamentalfrequency(fd_1)
 
@@ -411,99 +362,4 @@ def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED
         vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
         iter += 1
 
-    return delta_u + prev_u , (delta_lamda + lamda_prev) * prev_f, iter, fct_G, Jac_2
-
-def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, par_relaxation, u_prev,
-                                        u_pred, f_pred, mu_pred, E_fic_formulation, tan_u, tan_w, tan_mu, PATH, desire_ampltidue, TOL=1e-6, MAX_ITER=10):
-    """
-    Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
-    The algorithm is based on a bordering approach. At the end the frequence is set and the field u is set also.
-
-    Parameters
-    ----------
-    elasticity : `formulation` object from Sparselizard
-        The formulation object representing the system of equations.
-    HARMONIC_MEASURED : [int]
-        Vector of harmonics to measure.
-    u : `field` object from Sparselizard
-        Field object representing the displacement.
-    u_pred : `vec` object from Sparselizard
-        Predicted displacement.
-    delta_f_pred : float
-        Predicted frequency.
-    tan_u : `vec` object from Sparselizard
-        Tangent vector in the direction of u.
-    tan_w : float
-        Tangent vector in the direction of w.
-    tol : float, optional
-        Tolerance value for convergence (default is 1e-6).
-    max_iter : int, optional
-        Maximum number of iterations allowed (default is 10).
-
-    Returns
-    -------
-    float
-        Maximum displacement at the specified physical measurement region.
-    float
-        Converged frequency.
-    int
-        Number of iterations performed.
-    """
-
-    iter = 0
-    residual_max_G = 1  
-    fd = f_pred
-    u_1 = u_pred
-    mu_1 = mu_pred
-    PATH_ITERATION_NEWTHON = "../data/FRF/newthon_iteration.csv"
-    cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
-    grad_p_u =  sc.get_E_fic_vec(E_fic_formulation, u_prev) # The E_fic  at the predictor is equal to the derivatif of the phase condition
-    fixe_harmo = 2
-    PHYSREG_LOAD_POINT = 3
-    # grad_p_u = sc.get_derivatif_u_phase_condition_i_null(elasticity, u, u_pred, PHYSREG_LOAD_POINT, fixe_harmo, PHYSREG_U)
-    while iter < MAX_ITER:
-
-        elasticity.generate()
-        Jac_2 = elasticity.A()
-        b_2 = elasticity.b()
-        fct_G = Jac_2 * u_1 - b_2 
-        grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd, u, PHYSREG_U, u_1, fct_G)
-
-        # delta_u_pred = u_pred - u_1
-        # delta_f_pred = f_pred - fd
-        # delta_mu_pred = mu_pred - mu_1
-        # fct_g = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred + delta_mu_pred * mu_1
-        fct_amplitude = 1/2 * sv.compute_scalaire_product_vec(u_1, u_1) - desire_ampltidue
-        grad_u_ampltiude = u_1
-        E_fic_vec = sc.get_E_fic_vec(E_fic_formulation, u_1)
-        grad_G_mu = E_fic_vec
-        print("grad_G_mu", grad_G_mu.norm())
-        fct_p  =  sv.compute_scalaire_product_vec(grad_p_u, u_1)
-        # fct_p = u.harmonic(fixe_harmo).interpolate(PHYSREG_U, [0.5, 0.015, 0.015])[0]
-        # test_vec = sp.vec(elasticity)
-        # test_vec.setdata()
-        # test_vec.write("test_vec.txt")
-        print("fct_p", fct_p, "fct_g", fct_amplitude, "fct_G", fct_G.norm())
-        if fct_G.norm() < TOL and fct_amplitude > TOL and abs(fct_p) < TOL:
-            print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
-            break
-        # delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, tan_u, grad_w_G, 0, tan_w, grad_G_mu, 0, tan_mu, - fct_G, - fct_p, - fct_g)
-        delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, grad_u_ampltiude, grad_w_G, 0, 0, grad_G_mu, 0, 0, - fct_G, - fct_p, - fct_amplitude)
-        print("u_1",u_1.norm())
-        print("delta_u", delta_u.norm(), "delta_f", delta_f, "delta_mu", delta_mu)
-        u_1 = u_1 + delta_u
-        fd = delta_f + fd
-        mu_1 = delta_mu + mu_1
-        print(f"mu_1: {mu_1:.2e}, fd: {fd:.2e}, u_1 norm: {u_1.norm():.2e}")
-        u.setdata(PHYSREG_U, u_1)
-        sp.setfundamentalfrequency(fd)
-        par_relaxation.setvalue(PHYSREG_U, mu_1)
-
-        norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-    
-        cd.add_data_to_csv_Newthon(norm_u.max(3, 3)[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
-        vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
-        print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
-        iter += 1
-
-    return u_1, fd, mu_1, iter, fct_G, Jac_2
+    return u_1 , fd_1, iter, fct_G, Jac_2

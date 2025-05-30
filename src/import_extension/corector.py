@@ -6,7 +6,7 @@ import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
 
 class PseudoArcLengthCorrector:
-
+    def orthognonality_condition(u_pred, f_pred, u_1, fd) : 
     def correct_step(self, elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                      Predictor, PATH, PATH_ITERATION_NEWTHON) :
         

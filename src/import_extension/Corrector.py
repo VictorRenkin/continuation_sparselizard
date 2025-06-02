@@ -196,10 +196,8 @@ class ArcLengthCorrector(AbstractCorrector):
             b_2 = elasticity.b()
             clk_generate.pause()
             residue_G = Jac_2 * u_k - b_2 
-            delta_u_pred = Predictor.u_pred - u_k
-            delta_f_pred = Predictor.f_pred - f_k
             fct_g        = self.corector_condition(Predictor, Prev_solution, u_k, f_k)
-            grad_w_g, grad_u_g = self.grad_corrector(Prev_solution, u_k, f_k)
+            grad_u_g, grad_w_g = self.grad_corrector(Prev_solution, u_k, f_k)
             if residue_G.norm() < self.TOL and fct_g < self.TOL:
                 break
             
@@ -207,7 +205,7 @@ class ArcLengthCorrector(AbstractCorrector):
                 iter = self.MAX_ITER
                 break
             grad_w_G = sc.get_derivatif_w_gradien(elasticity, f_k, u, PHYSREG_U, u_k, residue_G)
-            delta_u, delta_f = ss.get_bordering_algorithm(Jac_2, grad_w_G, Predictor.tan_u, Predictor.tan_w, -residue_G, -fct_g)
+            delta_u, delta_f = ss.get_bordering_algorithm(Jac_2, grad_w_G, grad_u_g, grad_w_g, -residue_G, -fct_g)
 
             u_k = u_k + delta_u
             f_k = delta_f + f_k

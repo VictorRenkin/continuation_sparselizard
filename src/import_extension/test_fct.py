@@ -11,7 +11,7 @@ import shutil
 import os
     
 def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_MEASURED, 
-                               PATH, FREQ_START, FD_MIN, FD_MAX, Corector, Predictor, 
+                               PATH, FREQ_START, FD_MIN, FD_MAX, Corector, Predictor, StepSize, 
                                START_U=None, STORE_U_ALL=False, STORE_PREDICTOR=False):
     """
     Goal is to solve the NLFRs and store the result at PATH_STORE_DATA and show them at PATH_FIGURE, this is done at each frequency step.
@@ -109,30 +109,34 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
 
     tan_u_i, tan_w_i = Predictor.set_initial_prediction_tan_w(Previous_point, elasticity, u, PHYSREG_U, h=0.005)
     Previous_point.add_solution(f_i, vec_u_i, tan_u_i, tan_w_i, Jac_i, residue_G_i)
-    ci_two_point = False
+    iter_newthon = 0
+
     while FD_MIN <= f_i <= FD_MAX:
         print("################## New Iteration ##################")
         print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f}")
-        Predictor.predict(Previous_point, elasticity, u, PHYSREG_U, h=0.005)
+        if iter_newthon != Corector.MAX_ITER: 
+           tan_u, tan_w =  Predictor.prediction_direction(Previous_point, elasticity, u, PHYSREG_U, h=0.005)
+        
+        StepSize.initialize(iter_newthon, length_s=Predictor.length_s)
+        try :
+            Predictor.length_s = StepSize.get_step_size(Previous_point, Predictor)
+        except ValueError as e:
+            print("Step size is less than minimum allowed length. Stopping the continuation.")
+            break
+        
+        u_pred, f_pred = Predictor.predict(Previous_point, u, PHYSREG_U)
 
-        if ci_two_point :
-            norm_tan_x = (Predictor.tan_u.norm()**2 + Predictor.tan_w**2)**(1/2)
-            norm_tan_previous = (vec_prev_point_u.norm()**2 + vec_prev_point_f**2)**(1/2)
-            cos_theta = (sv.compute_scalaire_product_vec(Predictor.tan_u, vec_prev_point_u) + Predictor.tan_w * vec_prev_point_f)/ (norm_tan_x * norm_tan_previous)
-            print(f"theta : {np.arccos(cos_theta) * 180 / np.pi:.2f}°")
-            print("##################################################")
-        else :
-            pass
 
         if np.sign(Predictor.tan_w) != np.sign(Previous_point.get_solution(-1)['tan_w']):
             print("############### Bifurcation detected #################")
             bifurcation = True
-        else :
+        if  np.sign(Predictor.tan_w) == np.sign(Previous_point.get_solution(-1)['tan_w']):
             bifurcation = False
+        
         if STORE_PREDICTOR:
             norm_harmo_measured_u_pred = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
             u_pred = norm_harmo_measured_u_pred.max(PHYSREG_MEASURED, 3)[0]
-            cd.add_data_to_csv(u_pred, Predictor.f_pred, PATH['PATH_STORE_PREDICTOR'])
+            cd.add_data_to_csv(u_pred, f_pred, PATH['PATH_STORE_PREDICTOR'])
             vd.real_time_plot_data_FRF(PATH)
         if not (FD_MIN <= Predictor.f_pred <= FD_MAX):
             break
@@ -140,16 +144,12 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         u_k, f_k, iter_newthon, residue_G, Jac = Corector.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                     Predictor, Previous_point, clk_generate, clk_solver)
         if iter_newthon == Corector.MAX_ITER:
-            Predictor.length_s = Predictor.length_s * Predictor.S_DOWN
             if STORE_PREDICTOR:
                 cd.remove_last_row_from_csv(PATH['PATH_STORE_PREDICTOR'])
             u.setdata(PHYSREG_U, vec_u_i)
             sp.setfundamentalfrequency(f_i)
-        else:
-            vec_prev_point_u = u_k - vec_u_i
-            vec_prev_point_f = f_k - f_i
+        if iter_newthon < Corector.MAX_ITER:
             f_i = f_k; vec_u_i = u_k
-            ci_two_point = True
             Previous_point.add_solution(f_i, vec_u_i, tan_u=Predictor.tan_u, 
                                         tan_w=Predictor.tan_w, Jac=Jac, 
                                         residue_G=residue_G)
@@ -162,8 +162,3 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
                 vd.real_time_plot_data_FRF(PATH)
             if STORE_U_ALL :
                 vec_u_i.write(f"{PATH_ALL_U}/{str(f_i).replace('.', '_')}.txt")
-            if Predictor.length_s < Predictor.MAX_LENGTH_S:
-                Predictor.length_s *= Predictor.S_UP
-        if Predictor.length_s < Predictor.MIN_LENGTH_S:
-            print("############### Convergence not reached #################")
-            break

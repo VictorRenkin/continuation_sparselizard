@@ -4,6 +4,7 @@ import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
 import import_extension.Corrector as cc
 import import_extension.Predictor as cp
+import import_extension.StepSizeRules as cs
 
 print("###################### Start Mesh #######################")
 mesh = sp.mesh('../geo_GMSH/ClampedBeam.msh', 1)
@@ -64,8 +65,8 @@ elasticity += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 Cdotx = -alpha * rho * sp.dt(sp.dof(u)) * sp.tf(u)
 elasticity += sp.integral(PHYSREG_VOLUME, FFT_point, Cdotx)
 
-clk = sp.wallclock()
 print("############ Forward #############")
+clk = sp.wallclock()
 u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero
 F_START = 158; FD_MIN = 158; FD_MAX = 210 # [Hz]
 START_U = sp.vec(elasticity)
@@ -73,11 +74,12 @@ print("Number of unknowns is "+str(elasticity.countdofs()))
 # START_U.load(f"../data/FRF/downward/displacement_each_freq/{str(F_START).replace('.', '_')}.txt")
 
 Corrector = cc.ArcLengthCorrector(10, 1e-5)
-Predictor = cp.PredictorSecant(5e-1, 1e-6, 1e-0, 1.1, 0.4, 1, 1)
+Predictor = cp.PredictorTangent(5e-1, 1, 1)
+StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-1, Corrector.MAX_ITER, 1.2, 0.4)
 
 sn.solve_NLFRs_store_and_show(  
     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT,  
-    PATH, F_START, FD_MIN, FD_MAX, Corrector, Predictor,
+    PATH, F_START, FD_MIN, FD_MAX, Corrector, Predictor, StepSize,
     START_U = START_U, STORE_U_ALL=True, STORE_PREDICTOR=True)
 
 # print("############ Backward #############")

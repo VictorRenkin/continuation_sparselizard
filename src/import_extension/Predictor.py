@@ -58,6 +58,31 @@ class AbstractPredictor(ABC):
         self.tan_w = tan_w
 
     @abstractmethod
+    def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005) :
+        """
+        Abstract method to be implemented by subclasses for computing the prediction direction.
+        
+        Parameters
+        ----------
+        PreviousPoint : Previous solution object
+            The previous solution point containing the last computed values.
+        elasticity : `formulation` object from Sparselizard
+            The elasticity formulation.
+        field_u : `field` object from Sparselizard
+            The displacement field. This field is updated with the solution obtained at the current frequency.
+        PHYSREG_U : int
+            Physical region associated with the displacement vector `u`.
+        h : float, optional
+            The step size for finite difference approximation (default is 0.005).
+        
+        Returns
+        -------
+        tuple of `vec` and float
+            The tangent vector in the u direction and the tangent vector in the w direction.
+        """
+        pass
+
+    @abstractmethod
     def predict(self, prev_point, elasticity, field_u, PHYSREG_U, h=0.005):
         """
         Abstract method to be implemented by subclasses for making predictions.
@@ -94,6 +119,14 @@ class PredictorPreviousSolution(AbstractPredictor):
     def __init__(self, length_s, tan_w, order=None):
         order = 0
         super().__init__(length_s, tan_w, order)
+
+    def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
+        
+        vec_u = sp.vec(elasticity)
+        self.tan_u = vec_u # initalise as 0
+        self.tan_w = self.tan_w
+        return self.tan_u, self.tan_w
+
     def predict(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
         """
         Predicts the next solution based on the previous solution point.
@@ -119,7 +152,14 @@ class PredictorPreviousSolution(AbstractPredictor):
         h : float, optional
             The step size for finite difference approximation (default is 0.005).
         """
-        self.set_predictor(field_u, PHYSREG_U, PreviousPoint.get_solution()['freq'] + self.length_s, PreviousPoint.get_solution()['u'])
+        if len(PreviousPoint) == 0:
+            raise ValueError("No previous solution point available for prediction.")
+        prev_sol = PreviousPoint.get_solution()
+        f_pred = prev_sol['freq'] + self.length_s
+        u_pred =prev_sol['u']
+
+        self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred)
+        return u_pred, f_pred
 
     
 class PredictorSecant(AbstractPredictor) :
@@ -144,10 +184,16 @@ class PredictorSecant(AbstractPredictor) :
         super().__init__(length_s, tan_w, order)
     
     def set_initial_prediction_tan_w(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005) :
+        
+        if len(PreviousPoint) == 0:
+            raise ValueError("No previous solution point available for prediction.")
+        
         prev_point = PreviousPoint.get_solution()
         grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
         tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
         tan_w = self.tan_w
+        self.tan_u = tan_u
+        self.tan_w = tan_w
         return tan_u, tan_w
     
     def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
@@ -155,36 +201,28 @@ class PredictorSecant(AbstractPredictor) :
             pred_tan = PredictorTangent(self.length_s, self.MIN_LENGTH_S, self.MAX_LENGTH_S, self.S_UP, self.S_DOWN, self.tan_w, order=self.order)
             tan_u, tan_w = pred_tan.prediction_direction(PreviousPoint, elasticity, field_u, PHYSREG_U, h)
             return tan_u, tan_w
+        elif len(PreviousPoint) == 0:
+            raise ValueError("No previous solution point available for prediction.")
         else:
             prev_point = PreviousPoint.get_solution()
             prev_point_1 = PreviousPoint.solution_history[-2]
             tan_u = (prev_point['u'] - prev_point_1['u']) 
             tan_w = (prev_point['freq'] - prev_point_1['freq']) 
+            self.tan_u = tan_u
+            self.tan_w = tan_w
             return tan_u, tan_w
 
-    def predict(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
-        """
-        Predict the next solution based on the previous two solution points.
-        
-        Parameters
-        ----------
-        PreviousPoint : Previous solution object
-            The previous solution point containing the last computed values.
-        elasticity : `formulation` object from Sparselizard
-            The elasticity formulation.
-        field_u : `field` object from Sparselizard
-            The displacement field. This field is updated with the solution obtained at the current frequency.
-        PHYSREG_U : int
-            Physical region associated with the displacement vector `u`.
-        h : float, optional
-            The step size for finite difference approximation (default is 0.005).
-        """
+    def predict(self, PreviousPoint, field_u, PHYSREG_U) :
+
+        if self.tan_u is None or self.tan_w is None:
+            raise ValueError("Tangent vectors are not initialized. Call prediction_direction first.")
         prev_point = PreviousPoint.get_solution()
-        tan_u, tan_w = self.prediction_direction(PreviousPoint, elasticity, field_u, PHYSREG_U, h)
-        tan_norm = (tan_u.norm() + tan_w**2)**0.5
-        u_pred = self.length_s * tan_u/tan_norm + prev_point['u']
-        f_pred = self.length_s * tan_w/tan_norm +  prev_point['freq']
-        self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, tan_u, tan_w)
+        tan_norm = (self.tan_u.norm() + self.tan_w**2)**0.5
+        u_pred = self.length_s * self.tan_u/tan_norm + prev_point['u']
+        f_pred = self.length_s * self.tan_w/tan_norm +  prev_point['freq']
+        self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, self.tan_u, self.tan_w)
+        return u_pred, f_pred
+    
 
 
     
@@ -210,10 +248,17 @@ class PredictorTangent(AbstractPredictor):
         super().__init__(length_s, tan_w, order)
         
     def set_initial_prediction_tan_w(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005) :
+
+
+        if len(PreviousPoint) == 0:
+            raise ValueError("No previous solution point available for prediction.")
+        
         prev_point = PreviousPoint.get_solution()
         grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
         tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
         tan_w = self.tan_w
+        self.tan_u = tan_u
+        self.tan_w = tan_w
         return tan_u, tan_w
     
     def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
@@ -248,18 +293,30 @@ class PredictorTangent(AbstractPredictor):
         tuple of `vec` and float
             The tangent vector in the u direction and the tangent vector in the w direction.
         """
+        if len(PreviousPoint) == 0:
+            raise ValueError("No previous solution point available for prediction.")
+        
         prev_point = PreviousPoint.get_solution()
         grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
         vec_0 = sp.vec(elasticity)
         tan_u, tan_w = ss.get_bordering_algorithm(prev_point['Jac'], grad_w_G, prev_point['tan_u'],  prev_point['tan_w'], vec_0, 1)
+        self.tan_u = tan_u
+        self.tan_w = tan_w
         return tan_u, tan_w
     
-    def predict(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005) :
+    def predict(self, PreviousPoint, field_u, PHYSREG_U) :
+
+        if len(PreviousPoint) == 0:
+            raise ValueError("No previous solution point available for prediction.")
         prev_point = PreviousPoint.get_solution()
-        tan_u, tan_w = self.prediction_direction(PreviousPoint, elasticity, field_u, PHYSREG_U, h)
-        tan_norm = (tan_u.norm() + tan_w**2)**0.5
-        u_pred = self.length_s * tan_u/tan_norm + prev_point['u']
-        f_pred = self.length_s * tan_w/tan_norm +  prev_point['freq']
-        self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, tan_u, tan_w)
+
+        if self.tan_u is None or self.tan_w is None:
+            raise ValueError("Tangent vectors are not initialized. Call prediction_direction first.")
+
+        tan_norm = (self.tan_u.norm() + self.tan_w**2)**0.5
+        u_pred = self.length_s * self.tan_u/tan_norm + prev_point['u']
+        f_pred = self.length_s * self.tan_w/tan_norm +  prev_point['freq']
+        self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, self.tan_u, self.tan_w)
+        return u_pred, f_pred
     
 

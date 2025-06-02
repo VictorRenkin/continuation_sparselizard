@@ -1,18 +1,18 @@
 from abc import ABC, abstractmethod
-import sparselizard_vector as sv
+import import_extension.sparselizard_vector as sv
 import math
 
 class AbstractStepSize(ABC) :
     """
     Abstract class for step size rules in continuation methods.
     """
-    def __init__(self, min_length_s, max_length_s, start_length_s, MAX_ITER, length_s=None):
-        self.MIN_LENGTH_S = min_length_s
-        self.MAX_LENGTH_S = max_length_s
-        self.START_LENGTH_S = start_length_s
+    def __init__(self, MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, length_s=None):
+        self.MIN_LENGTH_S = MIN_LENGTH_S
+        self.MAX_LENGTH_S = MAX_LENGTH_S
+        self.START_LENGTH_S = START_LENGTH_S
         self.MAX_ITER = MAX_ITER
         self.iter = None 
-        self.length_s = length_s if length_s is not None else start_length_s
+        self.length_s = length_s if length_s is not None else START_LENGTH_S
 
     def initialize(self, iter, length_s=None):
         """
@@ -46,15 +46,15 @@ class IterationBasedStepSizer(AbstractStepSize):
     Class for iteration-based step size rule.
     """
 
-    def __init__(self, min_length_s, max_length_s, start_length_s, MAX_ITER, S_UP, S_DOWN, length_s=None):
+    def __init__(self, MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, S_UP, S_DOWN, length_s=None):
         """
         Initialize the constant step size rule.
         """
-        super().__init__(min_length_s, max_length_s, start_length_s, MAX_ITER, length_s)
+        super().__init__(MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, length_s)
         self.S_UP = S_UP
         self.S_DOWN = S_DOWN
 
-    def get_step_size(self, previous_point, predictor, length_s):
+    def get_step_size(self, previous_point, predictor):
         """
         Returns a constant step size.
         """
@@ -78,16 +78,16 @@ class AngleBasedStepSizer(AbstractStepSize):
     Class for angle-based step size rule.
     """
 
-    def __init__(self, min_length_s, max_length_s, start_length_s, MAX_ITER, S_DOWN, ALPHA, ANLE_OPT, length_s=None):
+    def __init__(self, MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, S_DOWN, ALPHA, ANLE_OPT, length_s=None):
         """
         Initialize the angle-based step size rule.
         """
-        super().__init__(min_length_s, max_length_s, start_length_s, MAX_ITER, length_s)
+        super().__init__(MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, length_s)
         self.ALPHA = ALPHA
         self.ANLE_OPT = ANLE_OPT
         self.S_DOWN = S_DOWN
 
-    def get_step_size(self, Previous_point, Predictor, length_s):
+    def get_step_size(self, Previous_point, Predictor):
         """
         Returns a step size based on the angle between the previous point and the predictor.
         """
@@ -103,7 +103,7 @@ class AngleBasedStepSizer(AbstractStepSize):
             if len(Previous_point) < 2 :
                 S_UP = 1.2
                 SimpleIter = IterationBasedStepSizer(self.MIN_LENGTH_S, self.MAX_LENGTH_S, self.START_LENGTH_S, self.MAX_ITER, S_UP, self.S_DOWN)
-                self.length_s = SimpleIter.get_step_size(Previous_point, Predictor, length_s)
+                self.length_s = SimpleIter.get_step_size(Previous_point, Predictor,  self.length_s)
             else:
                 vec_prev_point_u = Previous_point.get_solution(-1)['u'] - Previous_point.get_solution(-2)['u']
                 vec_prev_point_f = Previous_point.get_solution(-1)['f'] - Previous_point.get_solution(-2)['f']

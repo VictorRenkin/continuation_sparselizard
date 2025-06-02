@@ -1,0 +1,265 @@
+from abc import ABC, abstractmethod
+import sparselizard as sp
+import import_extension.sparselizard_continuation as sc
+import import_extension.sparselizard_vector as sv
+import import_extension.sparselizard_solver as ss
+
+
+class AbstractPredictor(ABC):
+    """
+    Abstract base class for predictors in the predictor-corrector scheme.
+    This class defines the interface for all predictor types.
+    """
+    def __init__(self, length_s, tan_w, order=None):
+        self.length_s = length_s
+        self.order = order
+        self.tan_w = tan_w
+        self.tan_u = None
+        self.f_pred = None
+        self.u_pred = None
+
+    def __repr__(self):
+        return (
+            f"{self.__class__.__name__}(\n"
+            f"  length_s      = {self.length_s},\n"
+            f"  tan_w         = {self.tan_w},\n"
+            f"  order         = {self.order},\n"
+            f"  tan_u         = {self._format_norm(self.tan_u)},\n"
+            f"  f_pred        = {self._format_norm(self.f_pred)},\n"
+            f"  u_pred        = {self._format_norm(self.u_pred)}\n"
+            f")"
+        )
+
+    def summary(self):
+        return (
+            f"{self.__class__.__name__} Summary:\n"
+            f"  tan_w     = {self.tan_w}\n"
+            f"  tan_u.norm() = {self._norm_or_none(self.tan_u)}\n"
+            f"  f_pred.norm() = {self._norm_or_none(self.f_pred)}\n"
+            f"  u_pred.norm() = {self._norm_or_none(self.u_pred)}"
+        )
+
+    def set_predictor(self, field_u, PHYSERG_U, f_pred, u_pred, tan_u=None, tan_w=None):
+        """
+        Set the predictor values.
+        
+        Parameters
+        ----------
+        f_pred : float
+            The predicted frequency.
+        u_pred : `vec` object from Sparselizard
+            The predicted displacement vector.
+        """
+        field_u.setdata(PHYSERG_U, u_pred)
+        sp.setfundamentalfrequency(f_pred)
+        self.f_pred = f_pred
+        self.u_pred = u_pred
+        self.tan_u = tan_u
+        self.tan_w = tan_w
+
+    @abstractmethod
+    def predict(self, prev_point, elasticity, field_u, PHYSREG_U, h=0.005):
+        """
+        Abstract method to be implemented by subclasses for making predictions.
+        
+        Parameters
+        ----------
+        prev_point : Previous solution object
+            The previous solution point containing the last computed values.
+        elasticity : `formulation` object from Sparselizard
+            The elasticity formulation.
+        field_u : `field` object from Sparselizard
+            The displacement field. This field is updated with the solution obtained at the current frequency.
+        PHYSREG_U : int
+            Physical region associated with the displacement vector `u`.
+        residu_G : `vec` object from Sparselizard
+            The residual vector at the current step.
+        vec_u : `vec` object from Sparselizard
+            The displacement vector at the current step.
+        Jac : `mat` object from Sparselizard
+            The Jacobian matrix of the system at the current step.
+        freq : float
+            The frequency at which the system is solved.
+        h : float, optional
+            The step size for finite difference approximation (default is 0.005).
+        """
+        pass
+
+
+class PredictorPreviousSolution(AbstractPredictor):
+    """
+    Defines the previous solution type of predictor. Uses the previous solution for the displacement and puts the step purely on the angular frequency.
+    """
+
+    def __init__(self, length_s, tan_w, order=None):
+        order = 0
+        super().__init__(length_s, tan_w, order)
+    def predict(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
+        """
+        Predicts the next solution based on the previous solution point.
+        
+        Parameters
+        ----------
+        prev_point : Previous solution object
+            The previous solution point containing the last computed values.
+        elasticity : `formulation` object from Sparselizard
+            The elasticity formulation.
+        field_u : `field` object from Sparselizard
+            The displacement field. This field is updated with the solution obtained at the current frequency.
+        PHYSREG_U : int
+            Physical region associated with the displacement vector `u`.
+        residu_G : `vec` object from Sparselizard
+            The residual vector at the current step.
+        vec_u : `vec` object from Sparselizard
+            The displacement vector at the current step.
+        Jac : `mat` object from Sparselizard
+            The Jacobian matrix of the system at the current step.
+        freq : float
+            The frequency at which the system is solved.
+        h : float, optional
+            The step size for finite difference approximation (default is 0.005).
+        """
+        self.set_predictor(field_u, PHYSREG_U, PreviousPoint.get_solution()['freq'] + self.length_s, PreviousPoint.get_solution()['u'])
+
+    
+class PredictorSecant(AbstractPredictor) :
+    """
+    Define the Secant predictor. From the last two solution points, generates the adequate direction. When only one solution point is available, makes use of the tangent predictor.
+    """
+    def __init__(self, length_s, tan_w, order):
+        """
+        Initialize the Secant predictor with specified parameters.
+        
+        Parameters
+        ----------
+        length_s : float
+            The arc length step size.
+        MIN_LENGTH_S : float
+            The minimum arc length step size.
+        MAX_LENGTH_S : float
+            The maximum arc length step size.
+        order : int, optional
+            The order of the predictor (default is 2).
+        """
+        super().__init__(length_s, tan_w, order)
+    
+    def set_initial_prediction_tan_w(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005) :
+        prev_point = PreviousPoint.get_solution()
+        grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
+        tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
+        tan_w = self.tan_w
+        return tan_u, tan_w
+    
+    def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
+        if len(PreviousPoint) < 2 : 
+            pred_tan = PredictorTangent(self.length_s, self.MIN_LENGTH_S, self.MAX_LENGTH_S, self.S_UP, self.S_DOWN, self.tan_w, order=self.order)
+            tan_u, tan_w = pred_tan.prediction_direction(PreviousPoint, elasticity, field_u, PHYSREG_U, h)
+            return tan_u, tan_w
+        else:
+            prev_point = PreviousPoint.get_solution()
+            prev_point_1 = PreviousPoint.solution_history[-2]
+            tan_u = (prev_point['u'] - prev_point_1['u']) 
+            tan_w = (prev_point['freq'] - prev_point_1['freq']) 
+            return tan_u, tan_w
+
+    def predict(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
+        """
+        Predict the next solution based on the previous two solution points.
+        
+        Parameters
+        ----------
+        PreviousPoint : Previous solution object
+            The previous solution point containing the last computed values.
+        elasticity : `formulation` object from Sparselizard
+            The elasticity formulation.
+        field_u : `field` object from Sparselizard
+            The displacement field. This field is updated with the solution obtained at the current frequency.
+        PHYSREG_U : int
+            Physical region associated with the displacement vector `u`.
+        h : float, optional
+            The step size for finite difference approximation (default is 0.005).
+        """
+        prev_point = PreviousPoint.get_solution()
+        tan_u, tan_w = self.prediction_direction(PreviousPoint, elasticity, field_u, PHYSREG_U, h)
+        tan_norm = (tan_u.norm() + tan_w**2)**0.5
+        u_pred = self.length_s * tan_u/tan_norm + prev_point['u']
+        f_pred = self.length_s * tan_w/tan_norm +  prev_point['freq']
+        self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, tan_u, tan_w)
+
+
+    
+
+class PredictorTangent(AbstractPredictor):
+
+    def __init__(self, length_s, tan_w, order=None):
+        """
+        Initialize the Tangent predictor with specified parameters.
+        
+        Parameters
+        ----------
+        length_s : float
+            The arc length step size.
+        MIN_LENGTH_S : float
+            The minimum arc length step size.
+        MAX_LENGTH_S : float
+            The maximum arc length step size.
+        order : int, optional
+            The order of the predictor (default is 2).
+        """
+        order = 1
+        super().__init__(length_s, tan_w, order)
+        
+    def set_initial_prediction_tan_w(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005) :
+        prev_point = PreviousPoint.get_solution()
+        grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
+        tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
+        tan_w = self.tan_w
+        return tan_u, tan_w
+    
+    def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
+        """
+        Compute the tangent vector in the direction of the displacement and the frequency.
+        This function uses the bordered algorithm to compute the tangent vector.
+        Parameters
+        ----------
+        elasticity : `formulation` object from Sparselizard
+            The elasticity formulation.
+        field_u : `field` object from Sparselizard
+            The displacement field. This field is updated with the solution obtained at the current frequency.
+        PHYSREG_U : int
+            Physical region associated with the displacement vector `u`.
+        residu_G : `vec` object from Sparselizard
+            The residual vector at the current step.
+        vec_u : `vec` object from Sparselizard
+            The displacement vector at the current step.
+        Jac : `mat` object from Sparselizard
+            The Jacobian matrix of the system at the current step.
+        prev_tan_u : `vec` object from Sparselizard
+            The tangent vector in the u direction from the previous step.
+        prev_tan_w : float
+            The tangent vector in the w direction from the previous step.
+        freq : float
+            The frequency at which the system is solved.
+        h : float, optional
+            The step size for finite difference approximation (default is 0.005).
+
+        Returns
+        -------
+        tuple of `vec` and float
+            The tangent vector in the u direction and the tangent vector in the w direction.
+        """
+        prev_point = PreviousPoint.get_solution()
+        grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
+        vec_0 = sp.vec(elasticity)
+        tan_u, tan_w = ss.get_bordering_algorithm(prev_point['Jac'], grad_w_G, prev_point['tan_u'],  prev_point['tan_w'], vec_0, 1)
+        return tan_u, tan_w
+    
+    def predict(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005) :
+        prev_point = PreviousPoint.get_solution()
+        tan_u, tan_w = self.prediction_direction(PreviousPoint, elasticity, field_u, PHYSREG_U, h)
+        tan_norm = (tan_u.norm() + tan_w**2)**0.5
+        u_pred = self.length_s * tan_u/tan_norm + prev_point['u']
+        f_pred = self.length_s * tan_w/tan_norm +  prev_point['freq']
+        self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, tan_u, tan_w)
+    
+

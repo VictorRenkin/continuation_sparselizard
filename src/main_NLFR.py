@@ -1,7 +1,9 @@
 import sparselizard as sp
-import import_extension.sparselizard_NLFR as sn
+import import_extension.test_fct as sn
 import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
+import import_extension.Corrector as cc
+import import_extension.Predictor as cp
 
 print("###################### Start Mesh #######################")
 mesh = sp.mesh('../geo_GMSH/ClampedBeam.msh', 1)
@@ -20,6 +22,7 @@ PATH = {"PATH_STORE_DATA_FORWARD":PATH_STORE_DATA_FORWARD,
 cd.create_doc_csv(PATH_STORE_DATA_FORWARD)
 cd.create_doc_csv(PATH_STORE_DATA_DOWNWARD)
 cd.create_doc_csv(PATH_STORE_PREDICTOR)
+
 
 # Imposed by GMSH
 PHYSREG_VOLUME = 1
@@ -67,14 +70,15 @@ u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero
 F_START = 158; FD_MIN = 158; FD_MAX = 210 # [Hz]
 START_U = sp.vec(elasticity)
 print("Number of unknowns is "+str(elasticity.countdofs()))
-print("Test :\t", 165 * 3 *3)
-print("Coef ", 8505/165)
 # START_U.load(f"../data/FRF/downward/displacement_each_freq/{str(F_START).replace('.', '_')}.txt")
-# sn.solve_NLFRs_store_and_show(  
-#     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, "Forward", 
-#     PATH, F_START, FD_MIN, FD_MAX, MAX_ITER=10,
-#     MIN_LENGTH_S=1e-6,MAX_LENGTH_S=1e-0, START_LENGTH_S=5e-1,TOL=1e-5,
-#     START_U = START_U, STORE_U_ALL=True, STORE_PREDICTOR=True)
+
+Corrector = cc.ArcLengthCorrector(10, 1e-5)
+Predictor = cp.PredictorSecant(5e-1, 1e-6, 1e-0, 1.1, 0.4, 1, 1)
+
+sn.solve_NLFRs_store_and_show(  
+    elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT,  
+    PATH, F_START, FD_MIN, FD_MAX, Corrector, Predictor,
+    START_U = START_U, STORE_U_ALL=True, STORE_PREDICTOR=True)
 
 # print("############ Backward #############")
 # u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero

@@ -56,6 +56,31 @@ class AbstractPredictor(ABC):
         self.u_pred = u_pred
         self.tan_u = tan_u
         self.tan_w = tan_w
+    
+    @abstractmethod
+    def set_initial_prediction_tan_w(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
+        """
+        Abstract method to be implemented by subclasses for setting the initial prediction of the tangent vector.
+        
+        Parameters
+        ----------
+        PreviousPoint : Previous solution object
+            The previous solution point containing the last computed values.
+        elasticity : `formulation` object from Sparselizard
+            The elasticity formulation.
+        field_u : `field` object from Sparselizard
+            The displacement field. This field is updated with the solution obtained at the current frequency.
+        PHYSREG_U : int
+            Physical region associated with the displacement vector `u`.
+        h : float, optional
+            The step size for finite difference approximation (default is 0.005).
+        
+        Returns
+        -------
+        tuple of `vec` and float
+            The tangent vector in the u direction and the tangent vector in the w direction.
+        """
+        pass
 
     @abstractmethod
     def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005) :
@@ -198,7 +223,7 @@ class PredictorSecant(AbstractPredictor) :
     
     def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, h=0.005):
         if len(PreviousPoint) < 2 : 
-            pred_tan = PredictorTangent(self.length_s, self.MIN_LENGTH_S, self.MAX_LENGTH_S, self.S_UP, self.S_DOWN, self.tan_w, order=self.order)
+            pred_tan = PredictorTangent(self.length_s, self.tan_w, order=self.order)
             tan_u, tan_w = pred_tan.prediction_direction(PreviousPoint, elasticity, field_u, PHYSREG_U, h)
             return tan_u, tan_w
         elif len(PreviousPoint) == 0:

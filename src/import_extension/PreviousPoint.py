@@ -68,3 +68,15 @@ class PreviousPoint:
 
     def __len__(self):
         return len(self.solution_history)
+    def delete_solution(self, index=0):
+        """
+        Deletes a solution state at a given index.
+    
+        Parameters
+        ----------
+        index : int, optional
+            Index of the solution to delete (default is 0: the oldest).
+        """
+        if abs(index) >= len(self.solution_history):
+            raise IndexError("Index out of bounds for deletion")
+        del self.solution_history[index]

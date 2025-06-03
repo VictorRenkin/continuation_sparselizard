@@ -93,7 +93,7 @@ def initial_prediction_tan_u(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Ja
 
 
 
-def prediction_direction(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, freq, h=0.005):
+def prediction_direction(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, freq, h=1e-5):
     """
     Compute the tangent vector in the direction of the displacement and the frequency.
     This function uses the bordered algorithm to compute the tangent vector.
@@ -166,7 +166,7 @@ def compute_tan_predictor_NNM(length_s, tan_u, tan_w, tan_mu, u_prev, freq_prev,
     return u_pred, f_pred, mu_pred
 
 
-def prediction_direction_NNM(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, prev_tan_mu, E_fic_formulation, freq, h=0.005):
+def prediction_direction_NNM(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, prev_tan_mu, E_fic_formulation, freq, h=1e-5):
     grad_w_G  = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G, 1e-5)
     E_fic_vec =  get_E_fic_vec(E_fic_formulation, vec_u)
     grad_mu_G = E_fic_vec
@@ -237,7 +237,7 @@ def get_E_fic_vec(E_fic, vec_u):
     E_fic_vec = E_fic_math * vec_u
     return E_fic_vec
 
-def get_derivatif_w_gradien(elasticity, freq, u, PHYSREG_U, vec_u, residu_G, h=0.00005):
+def get_derivatif_w_gradien(elasticity, freq, u, PHYSREG_U, vec_u, residu_G, h=1e-5):
     """
     Compute the derivative of the gradient of the residual vector.
 

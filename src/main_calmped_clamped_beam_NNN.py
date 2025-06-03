@@ -35,8 +35,6 @@ E = 210e9       # Young's modulus [Pa]
 nu = 0.3        # Poisson's ratio [-]
 rho = 7800      # Density [kg/m³]
 
-alpha = 3.0 # coeffiicent damping
-
 # Define the elasticity problem 
 FFT_point = 6 # [-]
 u_LNM = sp.field("h1xyz")

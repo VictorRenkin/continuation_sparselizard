@@ -205,6 +205,8 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
     X_1 = sp.solve(A, J)
     X_2 = sp.solve(A, D)
     X_3 = sp.solve(A, G)
+
+    
     print("e",e, "h", h, "f", f, "i", i)
     print("Norm B", B.norm(), "Norm C", C.norm())
     print("X_1", X_1.norm(), "X_2", X_2.norm(), "X_3", X_3.norm())

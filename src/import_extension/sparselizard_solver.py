@@ -206,13 +206,17 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
     X_2 = sp.solve(A, D)
     X_3 = sp.solve(A, G)
 
-    
+    X_1.write("X_1.txt")
+    X_2.write("X_2.txt")
+    X_3.write("X_3.txt")
+    A.print()    
     print("e",e, "h", h, "f", f, "i", i)
     print("Norm B", B.norm(), "Norm C", C.norm())
     print("X_1", X_1.norm(), "X_2", X_2.norm(), "X_3", X_3.norm())
     X_1.write("X_1.txt")
     # exit()
     a_11 = e - sv.compute_scalaire_product_vec(B, X_2)
+
     a_12 = h - sv.compute_scalaire_product_vec(B, X_3)
     a_21 = f - sv.compute_scalaire_product_vec(C, X_2)
     a_22 = i - sv.compute_scalaire_product_vec(C, X_3)
@@ -393,7 +397,7 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
     cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
     grad_p_u =  sc.get_E_fic_vec(E_fic_formulation, u_prev) # The E_fic  at the predictor is equal to the derivatif of the phase condition
     fixe_harmo = 2
-    PHYSREG_LOAD_POINT = 3
+    PHYSREG_LOAD_POINT = 102
     # grad_p_u = sc.get_derivatif_u_phase_condition_i_null(elasticity, u, u_pred, PHYSREG_LOAD_POINT, fixe_harmo, PHYSREG_U)
     while iter < MAX_ITER:
 
@@ -417,6 +421,13 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
         # test_vec = sp.vec(elasticity)
         # test_vec.setdata()
         # test_vec.write("test_vec.txt")
+        u_1.write(f"u_{iter}.txt")
+        grad_w_G.write("grad_w_G.txt")
+        grad_G_mu.write("grad_mu_G.txt") 
+        grad_p_u.write("grad_u_phase.txt")
+        tan_u.write("grad_u_g.txt")
+        fct_G.write("residue_G.txt")
+        
         print("fct_p", fct_p, "fct_g", fct_g, "fct_G", fct_G.norm())
         if fct_G.norm() < TOL and fct_g > TOL and abs(fct_p) < TOL:
             print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
@@ -435,7 +446,7 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
 
         norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
     
-        cd.add_data_to_csv_Newthon(norm_u.max(3, 3)[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
+        cd.add_data_to_csv_Newthon(norm_u.max(PHYSREG_LOAD_POINT, 3)[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
         vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
         print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
         iter += 1

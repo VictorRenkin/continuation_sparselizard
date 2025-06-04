@@ -103,7 +103,7 @@ def solve_NNM_store_and_show(elasticity, u, PHYSREG_U, par_relaxation, e_fic_for
     # u_vec.setdata()
     vec_u_1 = START_U
     tan_mu_1 = 1
-    tan_w_1 = 1
+    tan_w_1 = 0
     mu_1 = par_relaxation.interpolate(PHYSREG_U, [0.5, 0.015, 0.015])[0]
     h_ampltiude = START_U.norm()/10
     amplitude_desired = START_U.norm() + h_ampltiude

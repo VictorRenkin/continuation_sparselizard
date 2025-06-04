@@ -167,12 +167,12 @@ def compute_tan_predictor_NNM(length_s, tan_u, tan_w, tan_mu, u_prev, freq_prev,
 
 
 def prediction_direction_NNM(elasticity, field_u, PHYSREG_U, residu_G, vec_u, Jac, prev_tan_u, prev_tan_w, prev_tan_mu, E_fic_formulation, freq, h=1e-5):
-    grad_w_G  = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G, 1e-5)
+    grad_w_G  = get_derivatif_w_gradien(elasticity, freq, field_u, PHYSREG_U, vec_u, residu_G)
     E_fic_vec =  get_E_fic_vec(E_fic_formulation, vec_u)
     grad_mu_G = E_fic_vec
     grad_u_p  = E_fic_vec
     # print("grad_u_p", grad_u_p.norm()) 
-    # grad_u_p  = get_derivatif_u_phase_condition_i_null(elasticity, field_u, vec_u, 3, 2, PHYSREG_U)
+    # grad_u_p  = get_derivatif_u_phase_condition_i_null(elasticity, field_u, vec_u, 102, 2, PHYSREG_U)
     print("grad_u_p", grad_u_p.norm())
     print("grad_w_G", grad_w_G.norm())
     print("grad_mu_G", grad_mu_G.norm())

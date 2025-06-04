@@ -5,7 +5,7 @@ import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
 
 print("###################### Start Mesh #######################")
-mesh = sp.mesh('../geo_GMSH/simplest_clamped_clamped.msh', 1)
+mesh = sp.mesh('../geo_GMSH/simplest_clamped_clamped_beam.msh', 1)
 print("###################### End Mesh #########################")
 
 PATH_STORE_DATA = '../data/FRF/NNMs.csv'
@@ -19,9 +19,9 @@ cd.create_doc_csv(PATH_STORE_DATA)
 cd.create_doc_csv(PATH_STORE_PREDICTOR)
 
 # Imposed by GMSH
-PHYSREG_VOLUME = 104
-PHYSREG_CONSTRAINT = 102
-PHYSREG_LOAD_POINT = 101 #  [0.5, 0.015, 0.015]
+PHYSREG_VOLUME = 103
+PHYSREG_CONSTRAINT = 101
+PHYSREG_LOAD_POINT = 102 #  [0.5, 0.015, 0.015]
 
 # Chosen by the user
 PHYSREG_MEASURE_POINT = PHYSREG_LOAD_POINT

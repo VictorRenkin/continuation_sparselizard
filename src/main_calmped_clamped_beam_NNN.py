@@ -95,14 +95,7 @@ u.harmonic(3).setvalue(PHYSREG_VOLUME, u_LNM * scaling_parameter)
 
 
 max_u = sp.norm(u.harmonic(3)).max(PHYSREG_VOLUME, 3)[0]
-# print("max_u", max_u)
-# elasticity_2.generate()
-# K_2 = elasticity_2.K()
-# v_2 = sp.vec(elasticity_2)
-# v_2.setdata()
-# K_2 * v_2
 
-# F_START = (eig.geteigenvaluerealpart())
 F_START = 162.764; FD_MIN = 158; FD_MAX = 210 # [Hz]
 START_U = sp.vec(elasticityNNM)
 START_U.setdata()

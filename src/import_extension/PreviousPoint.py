@@ -68,6 +68,7 @@ class PreviousPoint:
 
     def __len__(self):
         return len(self.solution_history)
+    
     def delete_solution(self, index=0):
         """
         Deletes a solution state at a given index.

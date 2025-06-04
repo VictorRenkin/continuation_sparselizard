@@ -214,7 +214,7 @@ class PredictorSecant(AbstractPredictor) :
             raise ValueError("No previous solution point available for prediction.")
         
         prev_point = PreviousPoint.get_solution()
-        grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
         tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
         tan_w = self.tan_w
         self.tan_u = tan_u
@@ -279,7 +279,7 @@ class PredictorTangent(AbstractPredictor):
             raise ValueError("No previous solution point available for prediction.")
         
         prev_point = PreviousPoint.get_solution()
-        grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
         tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
         tan_w = self.tan_w
         self.tan_u = tan_u
@@ -322,9 +322,9 @@ class PredictorTangent(AbstractPredictor):
             raise ValueError("No previous solution point available for prediction.")
         
         prev_point = PreviousPoint.get_solution()
-        grad_w_G = sc.get_derivatif_w_gradien(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], h)
         vec_0 = sp.vec(elasticity)
-        tan_u, tan_w = ss.get_bordering_algorithm(prev_point['Jac'], grad_w_G, prev_point['tan_u'],  prev_point['tan_w'], vec_0, 1)
+        tan_u, tan_w = ss.get_bordering_algorithm_2X2(prev_point['Jac'], grad_w_G, prev_point['tan_u'],  prev_point['tan_w'], vec_0, 1)
         self.tan_u = tan_u
         self.tan_w = tan_w
         return tan_u, tan_w

@@ -50,59 +50,9 @@ def get_max(u, measure_quantity, vec_u, PHYSREG_MEASURED, HARMONIQUE_MEASURED, s
     return max_u
 
 
-def get_newthon_raphson_without_predictor(fd, elasticity, u, PHYSREG_U, HARMONIQUE_MEASURED, START_U, TOL=1e-6, MAX_ITER=10): 
-    """
-    Compute the Newton-Raphson method without the predictor step. Goal is for the first approximation.
-
-    Parameters
-    ----------
-    fd : float
-        The fundamental frequency in Hz.
-    elasticity : `formulation` object from Sparselizard
-        The formulation object representing the system of equations.
-    u : `field` object from Sparselizard
-        The field object representing the displacement.
-    PHYSREG_U : int
-        The physical region where the fild is measured.
-    HARMONIQUE_MEASURED : [int]
-        The harmonics to measure.
-    TOl : float, optional
-        Tolerance value for convergence (default is 1e-6).
-    MAX_ITER : int, optional
-        Maximum number of iterations allowed (default is 10).
-
-    Returns
-    -------
-    float
-        The maximum displacement value at fd_rad.
-    `mat` object from Sparselizard
-        The Jacobian matrix of the system.
-    """
-    sp.setfundamentalfrequency(fd)
-    iter = 0
-    predecedent_vec_u = START_U
-    while MAX_ITER > iter:
-        elasticity.generate()
-        Jac = elasticity.A()
-        b   = elasticity.b()
-        residue_Q = (Jac * predecedent_vec_u - b )
-        max_residue_Q = residue_Q.norm()
-        if max_residue_Q < TOL :
-            print("Convergence reached")
-            return predecedent_vec_u, Jac, residue_Q
-        else :
-            u_vec_new = sp.solve(Jac, b)
-            u.setdata(PHYSREG_U, u_vec_new)
-            predecedent_vec_u = u_vec_new
-        iter += 1
-
-        print(f"Iteration {iter}:  Residual max Q: {max_residue_Q:.2e}")
-    
-    if iter == MAX_ITER:
-        raise RuntimeError(f"Maximum number of iterations reached without convergence at f = {fd} Hz.")
 
 
-def get_bordering_algorithm(A, c, b, d, f, h):
+def get_bordering_algorithm_2X2(A, c, b, d, f, h):
     """
     Solve the bordered linear system:
     
@@ -261,82 +211,6 @@ def cramer_2x2(a11, a12, a21, a22, b1, b2):
 
     return x, y
 
-def get_predictor_corrector_NewtonSolve(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
-                                        u_pred, f_pred, tan_u, tan_w, PATH, TOL=1e-6, MAX_ITER=10):
-    """
-    Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
-    The algorithm is based on a bordering approach. At the end the frequence is set and the field u is set also.
-
-    Parameters
-    ----------
-    elasticity : `formulation` object from Sparselizard
-        The formulation object representing the system of equations.
-    HARMONIC_MEASURED : [int]
-        Vector of harmonics to measure.
-    u : `field` object from Sparselizard
-        Field object representing the displacement.
-    u_pred : `vec` object from Sparselizard
-        Predicted displacement.
-    delta_f_pred : float
-        Predicted frequency.
-    tan_u : `vec` object from Sparselizard
-        Tangent vector in the direction of u.
-    tan_w : float
-        Tangent vector in the direction of w.
-    tol : float, optional
-        Tolerance value for convergence (default is 1e-6).
-    max_iter : int, optional
-        Maximum number of iterations allowed (default is 10).
-
-    Returns
-    -------
-    float
-        Maximum displacement at the specified physical measurement region.
-    float
-        Converged frequency.
-    int
-        Number of iterations performed.
-    """
-
-    iter = 0
-    relative_error_u_max = 1
-    residual_max_G = 1  
-    u_max = 0
-    fd = f_pred
-    u_1 = u_pred
-    PATH_ITERATION_NEWTHON = "../data/FRF/newthon_iteration.csv"
-    cd.create_doc_csv_newthon_iteration(PATH_ITERATION_NEWTHON)
-    while iter < MAX_ITER:
-
-        elasticity.generate()
-        Jac_2 = elasticity.A()
-        b_2 = elasticity.b()
-        fct_G = Jac_2 * u_1 - b_2 
-        grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd, u, PHYSREG_U, u_1, fct_G)
-
-        delta_u_pred = u_pred - u_1
-        delta_f_pred = f_pred - fd
-        fct_g        = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred
-        if fct_G.norm() < TOL and fct_g.norm() < TOL:
-            break
-        delta_u, delta_f = get_bordering_algorithm(Jac_2, grad_w_G, tan_u, tan_w, -fct_G, -fct_g)
-
-        u_1 = u_1 + delta_u
-        fd = delta_f + fd
-
-        u.setdata(PHYSREG_U, u_1)
-        sp.setfundamentalfrequency(fd)
-        norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-    
-        cd.add_data_to_csv_Newthon(norm_u.max(3, 3)[0], fd, residual_max_G, 0, 0, PATH_ITERATION_NEWTHON)
-        vd.real_time_plot_data_FRF(PATH, PATH_ITERATION_NEWTHON)
-        print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
-        # print(f"Iteration {iter}: Rel. error u: {relative_error_u_max:.2e}, Rel. error f: {relative_error_freq:.2e}, Residual max Q: {fct_G.norm():.2e}")
-        iter += 1
-
-    return u_1, fd, iter, fct_G, Jac_2
-
-
 def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, par_relaxation, u_prev,
                                         u_pred, f_pred, mu_pred, E_fic_formulation, tan_u, tan_w, tan_mu, PATH, desire_ampltidue, TOL=1e-6, MAX_ITER=10):
     """
@@ -391,7 +265,7 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
         Jac_2 = elasticity.A()
         b_2 = elasticity.b()
         fct_G = Jac_2 * u_1 - b_2 
-        grad_w_G = sc.get_derivatif_w_gradien(elasticity, fd, u, PHYSREG_U, u_1, fct_G)
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, fd, u, PHYSREG_U, u_1, fct_G)
 
         # delta_u_pred = u_pred - u_1
         # delta_f_pred = f_pred - fd

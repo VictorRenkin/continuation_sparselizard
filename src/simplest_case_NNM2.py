@@ -1,6 +1,6 @@
 import sparselizard as sp
 import import_extension.sparselizard_NLFR as sn
-import import_extension.sparselizard_NNM as nnm
+import import_extension.NNM as nnm
 import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
 
@@ -56,7 +56,7 @@ M = LNM_formulation.M()
 
 eig = sp.eigenvalue(K,M)
 eig.compute(1)
-
+eig.printeigenfrequencies()
 # The eigenvectors are real only in the undamped case:
 myrealeigenvectors = eig.geteigenvectorrealpart()
 myimageigenvectors = eig.geteigenvectorimaginarypart()

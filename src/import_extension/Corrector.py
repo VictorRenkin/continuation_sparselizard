@@ -14,13 +14,20 @@ class AbstractCorrector(ABC):
     @abstractmethod
     def correct_step(self, elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                      Predictor, Prev_solution, clk_generate, clk_solver):
+        
         pass
     
 class PseudoArcLengthCorrector(AbstractCorrector):  
     def __init__(self, MAX_ITER=10, TOL=1e-6):
+        """
+        Initializes the PseudoArcLengthCorrector with maximum iterations and tolerance.
+        """
         super().__init__(MAX_ITER=MAX_ITER, TOL=TOL)
 
-    def corector_condition(self, Predictor, u_k, f_1): 
+    def corrector_condition(self, Predictor, u_k, f_1): 
+        """
+        Computes the correction condition to see if the correction is well tangente to the predictor.
+        """
         delta_u_pred = Predictor.u_pred - u_k
         delta_f_pred = Predictor.f_pred - f_1
         return sv.compute_scalaire_product_vec(delta_u_pred, Predictor.tan_u) + Predictor.tan_w * delta_f_pred
@@ -60,6 +67,10 @@ class PseudoArcLengthCorrector(AbstractCorrector):
             Converged frequency.
         int
             Number of iterations performed.
+        `vec` object from Sparselizard
+            Residual vector of the system at the converged solution.
+        `mat` object from Sparselizard
+            Jacobian matrix of the system at the converged solution.
         """
 
         iter = 0
@@ -70,21 +81,22 @@ class PseudoArcLengthCorrector(AbstractCorrector):
             elasticity.generate()
             Jac_2 = elasticity.A()
             b_2 = elasticity.b()
+            
             clk_generate.pause()
             residue_G = Jac_2 * u_k - b_2 
-            delta_u_pred = Predictor.u_pred - u_k
-            delta_f_pred = Predictor.f_pred - f_k
-            fct_g        = self.corector_condition(Predictor, u_k, f_k)
+
+            fct_g        = self.corrector_condition(Predictor, u_k, f_k)
             grad_w_g = Predictor.tan_w
             grad_u_g = Predictor.tan_u
+
             if residue_G.norm() < self.TOL and fct_g < self.TOL:
                 break
             
             if residue_G.norm() > 1e5 :
                 iter = self.MAX_ITER
                 break
-            grad_w_G = sc.get_derivatif_w_gradien(elasticity, f_k, u, PHYSREG_U, u_k, residue_G)
-            delta_u, delta_f = ss.get_bordering_algorithm(Jac_2, grad_w_G, Predictor.tan_u, Predictor.tan_w, -residue_G, -fct_g)
+            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u, PHYSREG_U, u_k, residue_G)
+            delta_u, delta_f = ss.get_bordering_algorithm_2X2(Jac_2, grad_w_G, grad_u_g, grad_w_g, -residue_G, -fct_g)
 
             u_k = u_k + delta_u
             f_k = delta_f + f_k
@@ -104,6 +116,41 @@ class NoContinuationCorrector(AbstractCorrector):
 
     def correct_step(self, elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                     Predictor, Prev_solution, clk_generate, clk_solver):
+        """
+        Solves the system using the Newton-Raphson method without continuation constant frequency.
+
+        Parameters
+        ----------
+        elasticity : `formulation` object from Sparselizard
+            The formulation object representing the system of equations.
+        PHYSREG_U : `physreg` object from Sparselizard
+            Physical region where the displacement field is defined.
+        HARMONIC_MEASURED : [int]
+            Vector of harmonics to measure.
+        u : `field` object from Sparselizard
+            Field object representing the displacement.
+        Predictor : `Predictor` object
+            The predictor object containing the predicted displacement and frequency not use here.
+        Prev_solution : `PrevSolution` object
+            The previous solution object containing the last converged solution.
+        clk_generate : `clock` object
+            Clock object to measure the time taken for generating the system.
+        clk_solver : `clock` object
+            Clock object to measure the time taken for solving the system.
+        Returns
+        -------
+        u_k : `vec` object from Sparselizard
+            Converged displacement vector.
+        f_k : float
+            Converged frequency.
+        iter : int
+            Number of iterations performed.
+        residue_G : `vec` object from Sparselizard
+            Residual vector of the system at the converged solution.
+        Jac : `mat` object from Sparselizard
+            Jacobian matrix of the system at the converged solution.
+
+        """
         sp.setfundamentalfrequency(Predictor.f_pred)
         iter = 0
         u_k = Predictor.u_pred
@@ -143,13 +190,21 @@ class ArcLengthCorrector(AbstractCorrector):
         delta_f = f_k - prev_sol['freq']
         return  delta_u.norm()**2 + delta_f**2 - Predictor.length_s**2
     
-    def grad_corrector(self, Prev_solution, u_k, f_k) :
+    def grad_corrector(self, Prev_solution, u_k, f_k):
+        """
+        Compute the gradient of the quadratic corrector function defined by the squared differences
+        between the current solution (u_k, f_k) and the previous solution stored in Prev_solution.
+
+        Returns:
+            tuple: Gradients with respect to u_k and f_k, i.e.,
+                (2 * (u_k - u_prev), 2 * (f_k - f_prev))
+        """
         prev_sol = Prev_solution.get_solution()
         delta_u = u_k - prev_sol['u']
         delta_f = f_k - prev_sol['freq']
         return 2 * delta_u, 2 * delta_f
-    
-    def correct_step(self, elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
+
+    def correct_step(self, elasticity, PHYSREG_U, HARMONIC_MEASURED, u,
                     Predictor, Prev_solution, clk_generate, clk_solver):
         """
         Solves the system using the Newton-Raphson method with a predictor-corrector scheme.
@@ -204,8 +259,8 @@ class ArcLengthCorrector(AbstractCorrector):
             if residue_G.norm() > 1e5 :
                 iter = self.MAX_ITER
                 break
-            grad_w_G = sc.get_derivatif_w_gradien(elasticity, f_k, u, PHYSREG_U, u_k, residue_G)
-            delta_u, delta_f = ss.get_bordering_algorithm(Jac_2, grad_w_G, grad_u_g, grad_w_g, -residue_G, -fct_g)
+            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u, PHYSREG_U, u_k, residue_G)
+            delta_u, delta_f = ss.get_bordering_algorithm_2X2(Jac_2, grad_w_G, grad_u_g, grad_w_g, -residue_G, -fct_g)
 
             u_k = u_k + delta_u
             f_k = delta_f + f_k

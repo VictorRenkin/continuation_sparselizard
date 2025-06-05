@@ -204,6 +204,9 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
     X_1 = sp.solve(A, J)
     X_2 = sp.solve(A, D)
     X_3 = sp.solve(A, G)
+    X_1.write("X_1.txt")
+    X_2.write("X_2.txt")
+    X_3.write("X_3.txt")
     print("e",e, "h", h, "f", f, "i", i)
     print("Norm B", B.norm(), "Norm C", C.norm())
     print("Norm X_1", X_1.norm(), "Norm X_2", X_2.norm(), "Norm X_3", X_3.norm())
@@ -398,25 +401,28 @@ def get_predictor_corrector_NewtonSolve_NNM(elasticity, PHYSREG_U, HARMONIC_MEAS
         # delta_f_pred = f_pred - fd
         # delta_mu_pred = mu_pred - mu_1
         # fct_g = sv.compute_scalaire_product_vec(delta_u_pred, tan_u) + tan_w * delta_f_pred + delta_mu_pred * mu_1
-        fct_amplitude = 1/2 * sv.compute_scalaire_product_vec(u_1, u_1) - desire_ampltidue
-        grad_u_ampltiude = u_1
+        fct_amplitude = sv.compute_scalaire_product_vec(u_1, u_1) - desire_ampltidue
+        grad_u_ampltiude = 2 * u_1
         E_fic_vec = sc.get_E_fic_vec(E_fic_formulation, u_1)
         grad_G_mu = E_fic_vec
         print("grad_G_mu", grad_G_mu.norm())
         print("grad_u_ampltiude", grad_u_ampltiude.norm())
         print("grad_p_u", grad_p_u.norm())
         fct_p  =  sv.compute_scalaire_product_vec(grad_p_u, u_1)
-        # grad_p_u.write("grad_p_u.txt")
-        # u_1.write("u_1.txt")
-        # fct_p = u.harmonic(fixe_harmo).interpolate(PHYSREG_U, [0.5, 0.015, 0.015])[0]
-        # test_vec = sp.vec(elasticity)
-        # test_vec.setdata()
-        # test_vec.write("test_vec.txt")
-        print("fct_p", fct_p, "fct_amplitude", fct_amplitude, "fct_G", fct_G.norm())
+        
+        Jac_2.print()
+        u_1.write(f"u_k_{iter}.txt")
+        grad_p_u.write(f"matrices_csv/grad_p_u_{iter}.txt")
+        grad_u_ampltiude.write(f"matrices_csv/grad_u_ampltiude_{iter}.txt")
+        grad_w_G.write(f"matrices_csv/grad_w_G_{iter}.txt")
+        grad_G_mu.write(f"matrices_csv/grad_G_mu_{iter}.txt")
+        fct_G.write(f"matrices_csv/residue_G_{iter}.txt")
+
+        print("fct_p", fct_p, "fct_amplitude", fct_amplitude, "fct_G", fct_G.norm(), "iter", iter)
         if fct_G.norm() < TOL and fct_amplitude > TOL and abs(fct_p) < TOL:
             print(f"Iteration {iter}: Residual max G: {fct_G.norm():.2e}")
             break
-        # delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, tan_u, grad_w_G, 0, tan_w, grad_G_mu, 0, tan_mu, - fct_G, - fct_p, - fct_g)
+        # delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, tan_u, grad_w_G, 0, tan_w, grad_G_mu, 0, 0, - fct_G, - fct_p, - fct_g)
         delta_u, delta_f, delta_mu = get_bordering_algorithm_3x3(Jac_2, grad_p_u, grad_u_ampltiude, grad_w_G, 0, 0, grad_G_mu, 0, 0, - fct_G, - fct_p, - fct_amplitude)
         print("u_1",u_1.norm())
         print("delta_u", delta_u.norm(), "delta_f", delta_f, "delta_mu", delta_mu)

@@ -89,7 +89,7 @@ E_fic_formulation += sp.integral(PHYSREG_VOLUME, FFT_point,  -sp.dt(sp.dof(u)) *
 
 # Initialisation with the LNM 
 u_LNM.setdata(PHYSREG_VOLUME, myrealeigenvectors[0])
-scaling_parameter = 1e-4
+scaling_parameter = 1e-3
 
 u.harmonic(3).setvalue(PHYSREG_VOLUME, u_LNM * scaling_parameter)
 
@@ -100,6 +100,7 @@ F_START = 727.5 ; FD_MIN = 720; FD_MAX = 800 # [Hz]
 START_U = sp.vec(elasticityNNM)
 START_U.setdata()
 print("Start U.norm() :\t", START_U.norm())
+START_U.write(f"Start_U.txt")
 nnm.solve_NNM_store_and_show(elasticityNNM, u, PHYSREG_VOLUME, par_relaxation, E_fic_formulation, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, 
                                PATH, F_START, FD_MIN, FD_MAX, START_U,
                                MAX_ITER=10, TOL=1e-4,

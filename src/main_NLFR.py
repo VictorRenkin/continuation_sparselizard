@@ -2,8 +2,8 @@ import sparselizard as sp
 import import_extension.test_fct as sn
 import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
-import import_extension.Corrector as cc
-import import_extension.Predictor as cp
+import import_extension.NLFRS.Corrector as cc
+import import_extension.NLFRS.Predictor as cp
 import import_extension.StepSizeRules as cs
 
 print("###################### Start Mesh #######################")

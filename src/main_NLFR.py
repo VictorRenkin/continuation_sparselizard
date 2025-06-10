@@ -1,9 +1,10 @@
 import sparselizard as sp
-import import_extension.test_fct as sn
+
 import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
-import import_extension.NLFRS.Corrector as cc
-import import_extension.NLFRS.Predictor as cp
+import import_extension.NLFRS.Corrector_NLFR as cc
+import import_extension.NLFRS.Predictor_NLFR as cp
+import import_extension.NLFRS.continuation_loop_NLFR as sn
 import import_extension.StepSizeRules as cs
 
 print("###################### Start Mesh #######################")
@@ -71,34 +72,13 @@ u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero
 F_START = 158; FD_MIN = 158; FD_MAX = 210 # [Hz]
 START_U = sp.vec(elasticity)
 print("Number of unknowns is "+str(elasticity.countdofs()))
-# START_U.load(f"../data/FRF/downward/displacement_each_freq/{str(F_START).replace('.', '_')}.txt")
+
 
 Corrector = cc.ArcLengthCorrector(10, 1e-5)
-Predictor = cp.PredictorTangent(5e-1, 1, 1)
+Predictor = cp.PredictorTangent(5e-1, 1)
 StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-1, Corrector.MAX_ITER, 1.2, 0.4)
 
 sn.solve_NLFRs_store_and_show(  
     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT,  
     PATH, F_START, FD_MIN, FD_MAX, Corrector, Predictor, StepSize,
     START_U = START_U, STORE_U_ALL=True, STORE_PREDICTOR=True)
-
-# print("############ Backward #############")
-# u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero
-# F_START = 175.95885213672773; FD_MIN = 158; FD_MAX = 210 # [Hz]
-# START_U = sp.vec(elasticity)
-# START_U.load(f"../data/FRF/downward/displacement_each_freq/{str(F_START).replace('.', '_')}.txt")
-
-# u.setdata(PHYSREG_VOLUME, START_U)  
-# sn.solve_NLFRs_store_and_show(
-#     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, "Backward", 
-#     PATH, F_START, FD_MIN, FD_MAX, MAX_ITER=5,STORE_U_ALL=True, STORE_PREDICTOR=True, START_U=START_U, START_LENGTH_S=5e-3, MIN_LENGTH_S=1e-6)
-
-# F_START = 166.8210296029133; FD_MIN = 160; FD_MAX = 210 # [Hz]
-# START_U = sp.vec(elasticity)
-# # START_U.load(f"../data/FRF/downward/displacement_each_freq/{str(F_START).replace('.', '_')}.txt")
-# sn.solve_NLFRs_store_and_show(
-#     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, "Backward", PATH,
-#     F_START, FD_MIN, FD_MAX, MAX_ITER=5, TOL= 1e-5,
-#     MIN_LENGTH_S=1e-6, MAX_LENGTH_S=1e-1, START_LENGTH_S=1e-1, S_UP=1.1, S_DOWN= 0.2,START_U=START_U, STORE_U_ALL=True, STORE_PREDICTOR=True)
-# vd.viz_forward_and_backward(PATH_STORE_DATA_FORWARD, PATH_STORE_DATA_DOWNWARD, PATH_FIGURE)
-# clk.print("Total run time:")

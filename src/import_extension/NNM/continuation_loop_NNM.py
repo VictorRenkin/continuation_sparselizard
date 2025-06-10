@@ -4,15 +4,17 @@ import sparselizard as sp
 import import_extension.sparselizard_continuation as sc
 import import_extension.sparselizard_solver as ss
 import import_extension.sparselizard_vector as sv
-import import_extension.PreviousPoint as spv
-import import_extension.Corrector as cc
+import import_extension.NNM.PreviousPoint_NNM as spv
+import import_extension.NNM.Corrector_NNM as cc
 import numpy as np
 import shutil
 import os
-    
-def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_MEASURED, 
-                               PATH, FREQ_START, FD_MIN, FD_MAX, Corector, Predictor, StepSize, 
-                               START_U=None, STORE_U_ALL=False, STORE_PREDICTOR=False):
+
+
+def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_MEASURED, 
+                               PATH, FREQ_START, FD_MIN, FD_MAX, START_U, 
+                               Corrector, Predictor, StepSize, PhaseCondition,
+                               STORE_U_ALL=False, STORE_PREDICTOR=True):
     """
     Goal is to solve the NLFRs and store the result at PATH_STORE_DATA and show them at PATH_FIGURE, this is done at each frequency step.
 
@@ -24,7 +26,7 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         Field object representing the displacement.
     PHYSREG_U : int
         Physical region associated with the vector u.
-    HARMONIC_MEASURED : [int]MAX_ITER=10, TOL=1e-6,
+    HARMONIC_MEASURED : [int]
         Vector of harmonics to measure.
     NUMBER_HARMONIC : [int]
         Vector of apply harmonics.
@@ -69,91 +71,97 @@ def solve_NLFRs_store_and_show(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         If TYPE_WARD is not 'Forward' or 'Backward'.
     """
 
+
     f_i = FREQ_START
-    if START_U :
-        START_U = START_U
-    else :
-        START_U = sp.vec(elasticity)
+    vec_u_i = START_U
     Previous_point = spv.PreviousPoint(Predictor)
-    # def set_predictor(self, field_u, PHYSERG_U, f_pred, u_pred, tan_u=None, tan_w=None):
-    Predictor.set_predictor(u, PHYSREG_U, f_i, START_U, tan_w=Predictor.tan_w)
+    sp.setfundamentalfrequency(f_i)
+    field_u.setdata(PHYSREG_U, START_U)
+
     clk_generate = sp.wallclock()
     clk_generate.pause()
     clk_solver = sp.wallclock()
     clk_solver.pause()
-    clk_first_iteration = sp.wallclock()
-    first_point_correctr = cc.NoContinuationCorrector(MAX_ITER=Corector.MAX_ITER, TOL=Corector.TOL)
-    vec_u_i, Predictor.f_pred, iter, residue_G_i, Jac_i = first_point_correctr.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, Predictor, Previous_point, clk_generate, clk_solver)
-    u.setdata(PHYSREG_U, vec_u_i)  
-    Previous_point.add_solution(f_i, vec_u_i, Jac=Jac_i, residue_G=residue_G_i)
-    if Predictor.tan_w == 1 :
-        PATH_STORE_DATA = PATH['PATH_STORE_DATA_FORWARD']
-        if STORE_U_ALL :
-            PATH_ALL_U = "../data/FRF/forward/displacement_each_freq"
-            if os.path.exists(PATH_ALL_U):
-                shutil.rmtree(PATH_ALL_U)
-            os.makedirs(PATH_ALL_U)
-            vec_u_i.write(f"{PATH_ALL_U}/{str(f_i).replace('.', '_')}.txt")
-    else :
-        PATH_STORE_DATA = PATH['PATH_STORE_DATA_DOWNWARD']
-        if STORE_U_ALL :
-            PATH_ALL_U = "../data/FRF/downward/displacement_each_freq"
-            if os.path.exists(PATH_ALL_U):
-                shutil.rmtree(PATH_ALL_U)
-            os.makedirs(PATH_ALL_U)
-            vec_u_i.write(f"{PATH_ALL_U}/{str(f_i).replace('.', '_')}.txt")
-    norm_u = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+ 
+    PATH_STORE_DATA = PATH['PATH_STORE_DATA_FORWARD']
+    if STORE_U_ALL :
+        PATH_ALL_U = "../data/NNM/displacement_each_freq"
+        if os.path.exists(PATH_ALL_U):
+            shutil.rmtree(PATH_ALL_U)
+        os.makedirs(PATH_ALL_U)
+        START_U.write(f"{PATH_ALL_U}/{str(f_i).replace('.', '_')}.txt")
+    
+    # Beging by the LNM which is define in the make
+    norm_u = sv.get_norm_harmonique_measured(field_u, HARMONIC_MEASURED)
     u_measured = norm_u.max(PHYSREG_MEASURED, 3)[0]
     cd.add_data_to_csv(u_measured, f_i, PATH_STORE_DATA)
     vd.real_time_plot_data_FRF(PATH)
 
-    tan_u_i, tan_w_i = Predictor.set_initial_prediction_tan_w(Previous_point, elasticity, u, PHYSREG_U, h=0.005)
-    Previous_point.add_solution(f_i, vec_u_i, tan_u_i, tan_w_i, Jac_i, residue_G_i)
-    iter_newthon = 0
+    elasticity.generate()
+    Jac_i = elasticity.A()
+    b_i = elasticity.b()
 
+    residue_G_i = Jac_i * vec_u_i - b_i 
+    print("residue_G Start", residue_G_i.norm())
+    fictive_energy_i = PhaseCondition.get_energy_fictive(vec_u_i)
+    relaxation_factor = PhaseCondition.get_parameter_relaxation(PHYSREG_U)
+    print("Relaxation parameter:\t", relaxation_factor)
+    tan_u, tan_w, tan_mu = Predictor.set_initial_prediction(elasticity, tan_w=1, tan_mu=1)
+
+    Previous_point.add_solution(f_i, vec_u_i, relaxation_factor, tan_u, tan_w, tan_mu, Jac_i, residue_G_i, fictive_energy_i)
+    iter_newthon = 0
+    
     while FD_MIN <= f_i <= FD_MAX:
         print("################## New Iteration ##################")
         print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f}")
-        if iter_newthon != Corector.MAX_ITER: 
-           tan_u, tan_w =  Predictor.prediction_direction(Previous_point, elasticity, u, PHYSREG_U, h=0.005)
-        
+        if iter_newthon != Corrector.MAX_ITER: 
+           tan_u, tan_w, tan_mu =  Predictor.prediction_direction(Previous_point, PhaseCondition, elasticity, field_u, vec_u_i, PHYSREG_U, h=1e-5)
         StepSize.initialize(iter_newthon, length_s=Predictor.length_s)
+        print("tan_u", tan_u.norm())
+        print("tan_mu", tan_mu)
+        print("tan_w", tan_w)
         try :
             Predictor.length_s = StepSize.get_step_size(Previous_point, Predictor)
         except ValueError as e:
             print("Step size is less than minimum allowed length. Stopping the continuation.")
             break
         
-        u_pred, f_pred = Predictor.predict(Previous_point, u, PHYSREG_U)
+        u_pred, f_pred, mu_pred = Predictor.predict(Previous_point, PhaseCondition, elasticity, field_u, PHYSREG_U)
 
+        if not (FD_MIN <= Predictor.f_pred <= FD_MAX):
+            break
 
         if np.sign(Predictor.tan_w) != np.sign(Previous_point.get_solution(-1)['tan_w']):
             print("############### Bifurcation detected #################")
             bifurcation = True
         if  np.sign(Predictor.tan_w) == np.sign(Previous_point.get_solution(-1)['tan_w']):
             bifurcation = False
-        
         if STORE_PREDICTOR:
-            norm_harmo_measured_u_pred = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-            u_pred = norm_harmo_measured_u_pred.max(PHYSREG_MEASURED, 3)[0]
-            cd.add_data_to_csv(u_pred, f_pred, PATH['PATH_STORE_PREDICTOR'])
+            norm_harmo_measured_u_pred = sv.get_norm_harmonique_measured(field_u, HARMONIC_MEASURED)
+            u_pred_norm = norm_harmo_measured_u_pred.max(PHYSREG_MEASURED, 3)[0]
+            cd.add_data_to_csv(u_pred_norm, f_pred, PATH['PATH_STORE_PREDICTOR'])
             vd.real_time_plot_data_FRF(PATH)
-        if not (FD_MIN <= Predictor.f_pred <= FD_MAX):
-            break
+
+
+
         print("################## Newthon predictor-corecteur solveur ##################")
-        u_k, f_k, iter_newthon, residue_G, Jac = Corector.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
-                    Predictor, Previous_point, clk_generate, clk_solver)
-        if iter_newthon == Corector.MAX_ITER:
+        u_k, f_k, mu_k, iter_newthon, residue_G_k, Jac_k, fictive_energy_k = Corrector.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, field_u, Predictor, Previous_point, PhaseCondition,
+                                                                    clk_generate, clk_solver)
+        
+        exit()
+        if iter_newthon == Corrector.MAX_ITER:
             if STORE_PREDICTOR:
                 cd.remove_last_row_from_csv(PATH['PATH_STORE_PREDICTOR'])
-            u.setdata(PHYSREG_U, vec_u_i)
+            field_u.setdata(PHYSREG_U, vec_u_i)
             sp.setfundamentalfrequency(f_i)
-        if iter_newthon < Corector.MAX_ITER:
+        if iter_newthon < Corrector.MAX_ITER:
             f_i = f_k; vec_u_i = u_k
-            Previous_point.add_solution(f_i, vec_u_i, tan_u=Predictor.tan_u, 
-                                        tan_w=Predictor.tan_w, Jac=Jac, 
-                                        residue_G=residue_G)
-            norm_u_i = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
+            residue_G_i = residue_G_k; Jac_i = Jac_k
+            fictive_energy_i = fictive_energy_k
+            Previous_point.add_solution(f_i, vec_u_i, mu_k, tan_u=Predictor.tan_u, 
+                                        tan_w=Predictor.tan_w, Jac=Jac_k, 
+                                        residue_G=residue_G_i, fictive_energy=fictive_energy_i)
+            norm_u_i = sv.get_norm_harmonique_measured(field_u, HARMONIC_MEASURED)
             point_measured = norm_u_i.max(PHYSREG_MEASURED, 3)[0]
             cd.add_data_to_csv(point_measured, f_i, PATH_STORE_DATA, bifurcation)
             if STORE_PREDICTOR:

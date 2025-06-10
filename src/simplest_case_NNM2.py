@@ -1,8 +1,12 @@
 import sparselizard as sp
-import import_extension.sparselizard_NLFR as sn
-import import_extension.NNM as nnm
+import import_extension.NLFRS.continuation_loop_NLFR as sn
+import import_extension.NNM.continuation_loop_NNM as nnm
 import Viz_write.VizData as vd
 import Viz_write.CreateData as cd
+import import_extension.NNM.Predictor_NNM as pr
+import import_extension.NNM.Corrector_NNM as cc
+import import_extension.NNM.PhaseCondition as pc
+import import_extension.StepSizeRules as cs
 
 print("###################### Start Mesh #######################")
 mesh = sp.mesh('../geo_GMSH/simplest_clamped_clamped_beam.msh', 1)
@@ -77,7 +81,7 @@ Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 
 par_relaxation = sp.parameter()
-par_relaxation.setvalue(PHYSREG_VOLUME, 0)
+par_relaxation.setvalue(PHYSREG_VOLUME, rho)
 e_fic_mu =  par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, e_fic_mu)
 
@@ -99,13 +103,22 @@ print("max_u", max_u)
 # K_2 * v_2
 
 F_START = (eig.geteigenvaluerealpart())
-F_START = 162.764; FD_MIN = 158; FD_MAX = 210 # [Hz]
+F_START =  727.5 ; FD_MIN = 720; FD_MAX = 760 # [Hz]
 START_U = sp.vec(elasticityNNM)
 START_U.setdata()
 print("Number of unknowns is "+str(elasticityNNM.countdofs()))
-nnm.solve_NNM_store_and_show(elasticityNNM, u, PHYSREG_VOLUME, par_relaxation, E_fic_formulation, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT, 
+print("Start U.norm() :\t", START_U.norm())
+
+Corrector = cc.CorrectorPseudoArcLength(MAX_ITER=10, TOL=1e-4)
+StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-2, Corrector.MAX_ITER, 1.2, 0.4)
+Predictor = pr.PredictorTangent(StepSize.START_LENGTH_S)
+
+
+# PhaseCondition = pc.SimplePhaseCondition(par_relaxation, E_fic_formulation, FIX_HARMONIC=NUMBER_HARMONIC[1],
+#                                         FIX_PHYSEREG_NODE=PHYSREG_LOAD_POINT, LIBERTY_DEGREE_FIX=0)
+PhaseCondition = pc.StrongPhaseCondition(par_relaxation, E_fic_formulation)
+
+nnm.contination_loop_NNM(elasticityNNM, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_LOAD_POINT, 
                                PATH, F_START, FD_MIN, FD_MAX, START_U,
-                               MAX_ITER=10, TOL=1e-5,
-                               MIN_LENGTH_S=1e-5, MAX_LENGTH_S=5e-1, START_LENGTH_S=5e-2,
-                               S_UP = 1.1, S_DOWN=0.2,
-                               STORE_U_ALL=True, STORE_PREDICTOR=True)
+                               Corrector, Predictor, StepSize, PhaseCondition,
+                               STORE_U_ALL=False, STORE_PREDICTOR=False)

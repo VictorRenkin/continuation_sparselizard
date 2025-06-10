@@ -101,10 +101,6 @@ class CorrectorPseudoArcLength(AbstractCorrector):
         delta_u = Predictor.u_pred - u_k
         delta_f = Predictor.f_pred - f_k
         delta_mu = Predictor.mu_pred - mu_k
-        print("delta_f", delta_f)
-        print("delta_mu", delta_mu)
-        print("Predictor.tan_w", Predictor.tan_w)
-        print("Predictor.tan_mu", Predictor.tan_mu)
         return (
             sv.compute_scalaire_product_vec(delta_u, Predictor.tan_u)
             + Predictor.tan_w * delta_f
@@ -223,6 +219,7 @@ class CorrectorAmplitude(AbstractCorrector):
 
         grad_u_p = PhaseCondition.get_derivatif_u(elasticity, u, PHYSREG_U, u_k, PreviousSolution) 
         desired_amplitude = u_k.norm() + Predictor.length_s
+        print("desired_amplitude", desired_amplitude)
         while iter < self.MAX_ITER:
             clk_generate.resume()
             elasticity.generate()
@@ -252,7 +249,7 @@ class CorrectorAmplitude(AbstractCorrector):
 
             grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u, PHYSREG_U, u_k, residue_G)
             grad_mu_G = PhaseCondition.get_energy_fictive(u_k)
-
+            
             delta_u, delta_f, delta_mu = ss.get_bordering_algorithm_3x3(Jac_k, grad_u_p, grad_u_g, grad_w_G, grad_w_p, grad_w_g, grad_mu_G, grad_mu_p, grad_mu_g, - residue_G, - phase_condition, - fct_g)
 
             u_k = u_k + delta_u

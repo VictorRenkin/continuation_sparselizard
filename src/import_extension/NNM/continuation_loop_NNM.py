@@ -107,7 +107,7 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
     relaxation_factor = PhaseCondition.get_parameter_relaxation(PHYSREG_U)
     print("Relaxation parameter:\t", relaxation_factor)
     tan_u, tan_w, tan_mu = Predictor.set_initial_prediction(elasticity, tan_w=1, tan_mu=1)
-
+    print("fictive_energy_i", fictive_energy_i.norm())
     Previous_point.add_solution(f_i, vec_u_i, relaxation_factor, tan_u, tan_w, tan_mu, Jac_i, residue_G_i, fictive_energy_i)
     iter_newthon = 0
     
@@ -115,11 +115,11 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         print("################## New Iteration ##################")
         print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f}")
         if iter_newthon != Corrector.MAX_ITER: 
-           tan_u, tan_w, tan_mu =  Predictor.prediction_direction(Previous_point, PhaseCondition, elasticity, field_u, vec_u_i, PHYSREG_U, h=1e-5)
-        StepSize.initialize(iter_newthon, length_s=Predictor.length_s)
-        print("tan_u", tan_u.norm())
-        print("tan_mu", tan_mu)
+           tan_u, tan_w, tan_mu =  Predictor.prediction_direction(Previous_point, PhaseCondition, elasticity, field_u, vec_u_i, PHYSREG_U)
+        print("tan_u", tan_u)
         print("tan_w", tan_w)
+        print("tan_mu", tan_mu)
+        StepSize.initialize(iter_newthon, length_s=Predictor.length_s)
         try :
             Predictor.length_s = StepSize.get_step_size(Previous_point, Predictor)
         except ValueError as e:
@@ -127,7 +127,9 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
             break
         
         u_pred, f_pred, mu_pred = Predictor.predict(Previous_point, PhaseCondition, elasticity, field_u, PHYSREG_U)
-
+        print("u_pred", u_pred)
+        print("f_pred", f_pred)
+        print("mu_pred", mu_pred)
         if not (FD_MIN <= Predictor.f_pred <= FD_MAX):
             break
 

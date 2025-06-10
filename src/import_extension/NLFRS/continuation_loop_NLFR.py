@@ -107,7 +107,7 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
     cd.add_data_to_csv(u_measured, f_i, PATH_STORE_DATA)
     vd.real_time_plot_data_FRF(PATH)
 
-    tan_u_i, tan_w_i = Predictor.set_initial_prediction_tan_w(Previous_point, elasticity, u, PHYSREG_U, h=0.005)
+    tan_u_i, tan_w_i = Predictor.set_initial_prediction_tan_w(Previous_point, elasticity, u, PHYSREG_U)
     Previous_point.add_solution(f_i, vec_u_i, tan_u_i, tan_w_i, Jac_i, residue_G_i)
     iter_newthon = 0
 
@@ -115,7 +115,7 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
         print("################## New Iteration ##################")
         print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f}")
         if iter_newthon != Corector.MAX_ITER: 
-           tan_u, tan_w =  Predictor.prediction_direction(Previous_point, elasticity, u, PHYSREG_U, h=0.005)
+           tan_u, tan_w =  Predictor.prediction_direction(Previous_point, elasticity, u, PHYSREG_U)
         
         StepSize.initialize(iter_newthon, length_s=Predictor.length_s)
         try :

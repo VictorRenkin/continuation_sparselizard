@@ -159,6 +159,7 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
     print("Norm D", D.norm(), "Norm G", G.norm())
     print("Norm J", J.norm(), "Norm k", k, "Norm l", l)
     print("Norm X_1", X_1.norm(), "Norm X_2", X_2.norm(), "Norm X_3", X_3.norm())
+
     a_11 = e - sv.compute_scalaire_product_vec(B, X_2)
     a_12 = h - sv.compute_scalaire_product_vec(B, X_3)
     a_21 = f - sv.compute_scalaire_product_vec(C, X_2)

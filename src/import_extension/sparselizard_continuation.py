@@ -6,7 +6,7 @@ import import_extension.sparselizard_solver as ss
 
 def get_derivative_of_residual_wrt_frequency(elasticity, freq, u, PHYSREG_U, vec_u, residu_G, h=1e-5):
     """
-    Compute the numerical derivative of the residual vector with respect to the frequency (w).
+    Compute the numerical derivative of the residual vector with respect to the frequency (w) with a finite difference.
 
     Parameters
     ----------

@@ -21,6 +21,8 @@ class PseudoArcLengthCorrector(AbstractCorrector):
     def __init__(self, MAX_ITER=10, TOL=1e-6):
         """
         Initializes the PseudoArcLengthCorrector with maximum iterations and tolerance.
+        The PseudoArcLengthCorrector is based on the condition :
+            g(u^k, ω^k) = τ_uᵀ(u^k - uᵢᵖ) + τ_ω(ω^k - ωᵢᵖ)
         """
         super().__init__(MAX_ITER=MAX_ITER, TOL=TOL)
 

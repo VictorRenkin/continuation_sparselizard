@@ -153,30 +153,6 @@ class PredictorPreviousSolution(AbstractPredictor):
         return self.tan_u, self.tan_w
 
     def predict(self, PreviousPoint, elasticity, field_u, PHYSREG_U):
-        """
-        Predicts the next solution based on the previous solution point.
-        
-        Parameters
-        ----------
-        prev_point : Previous solution object
-            The previous solution point containing the last computed values.
-        elasticity : `formulation` object from Sparselizard
-            The elasticity formulation.
-        field_u : `field` object from Sparselizard
-            The displacement field. This field is updated with the solution obtained at the current frequency.
-        PHYSREG_U : int
-            Physical region associated with the displacement vector `u`.
-        residu_G : `vec` object from Sparselizard
-            The residual vector at the current step.
-        vec_u : `vec` object from Sparselizard
-            The displacement vector at the current step.
-        Jac : `mat` object from Sparselizard
-            The Jacobian matrix of the system at the current step.
-        freq : float
-            The frequency at which the system is solved.
-        h : float, optional
-            The step size for finite difference approximation (default is 0.005).
-        """
         if len(PreviousPoint) == 0:
             raise ValueError("No previous solution point available for prediction.")
         prev_sol = PreviousPoint.get_solution()
@@ -287,37 +263,6 @@ class PredictorTangent(AbstractPredictor):
         return tan_u, tan_w
     
     def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U):
-        """
-        Compute the tangent vector in the direction of the displacement and the frequency.
-        This function uses the bordered algorithm to compute the tangent vector.
-        Parameters
-        ----------
-        elasticity : `formulation` object from Sparselizard
-            The elasticity formulation.
-        field_u : `field` object from Sparselizard
-            The displacement field. This field is updated with the solution obtained at the current frequency.
-        PHYSREG_U : int
-            Physical region associated with the displacement vector `u`.
-        residu_G : `vec` object from Sparselizard
-            The residual vector at the current step.
-        vec_u : `vec` object from Sparselizard
-            The displacement vector at the current step.
-        Jac : `mat` object from Sparselizard
-            The Jacobian matrix of the system at the current step.
-        prev_tan_u : `vec` object from Sparselizard
-            The tangent vector in the u direction from the previous step.
-        prev_tan_w : float
-            The tangent vector in the w direction from the previous step.
-        freq : float
-            The frequency at which the system is solved.
-        h : float, optional
-            The step size for finite difference approximation (default is 0.005).
-
-        Returns
-        -------
-        tuple of `vec` and float
-            The tangent vector in the u direction and the tangent vector in the w direction.
-        """
         if len(PreviousPoint) == 0:
             raise ValueError("No previous solution point available for prediction.")
         

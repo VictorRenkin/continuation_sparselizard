@@ -23,7 +23,7 @@ def get_derivative_of_residual_wrt_frequency(elasticity, freq, u, PHYSREG_U, vec
     residu_G : Sparselizard vec object
         Residual vector at the current frequency.
     h : float, optional
-        Step size for finite difference approximation (default: 5e-5).
+        Step size for finite difference approximation (default: 1e-5).
 
     Returns
     -------

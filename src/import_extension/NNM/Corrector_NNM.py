@@ -64,7 +64,7 @@ class CorrectorPseudoArcLength(AbstractCorrector):
 
         This corrector enforces the tangente with the predictor:
 
-            g(u^k, ω^k) = τ_uᵀ(u^k - uᵢᵖ) + τ_ω(ω^k - ωᵢᵖ) = 0
+            g(u^k, ω^k) = τ_uᵀ(u^k - uᵢᵖ) + τ_ω(ω^k - ωᵢᵖ) + τ_μ(μ^k - μᵢᵖ)= 0
 
         where τ_u and τ_ω are components of the tangent vector from the previous step.
 
@@ -179,7 +179,7 @@ class CorrectorAmplitude(AbstractCorrector):
 
         This condition ensures that the norm of u_k matches the desired amplitude.
 
-            g(u) = ⟨u, u⟩ - A² = 0
+            g(u) = ⟨u_k, u_k⟩ - A² = 0
 
         Args:
             u_k: Current solution vector.

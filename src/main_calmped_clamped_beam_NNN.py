@@ -116,7 +116,7 @@ StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-1, Corrector.MAX_ITER, 1.2,
 Predictor = pr.PredictorTangent(StepSize.START_LENGTH_S)
 
 
-PhaseCondition = pc.BasicPhaseCondition(par_relaxation, E_fic_formulation, FIX_HARMONIC=NUMBER_HARMONIC[2],
+PhaseCondition = pc.SimplePhaseCondition(par_relaxation, E_fic_formulation, FIX_HARMONIC=NUMBER_HARMONIC[2],
                                         FIX_PHYSEREG_NODE=PHYSREG_LOAD_POINT, LIBERTY_DEGREE_FIX=0)
 # PhaseCondition = pc.StrongPhaseCondition(par_relaxation, E_fic_formulation)
 

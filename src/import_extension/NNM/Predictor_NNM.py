@@ -293,7 +293,7 @@ class PredictorTangent(AbstractPredictor):
             raise ValueError("No previous solution point available for prediction.")
         
         prev_point = PreviousPoint.get_solution()
-        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], clk_generate)
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], prev_point['u'], prev_point['residue_G'], clk_generate)
         grad_mu_G = prev_point['fictive_energy']
 
         grad_u_p = PhaseCondition.get_derivatif_u(elasticity, field_u, PHYSREG_U, vec_u, PreviousPoint)

@@ -95,7 +95,7 @@ class PseudoArcLengthCorrector(AbstractCorrector):
             if residue_G.norm() > 1e5 :
                 iter = self.MAX_ITER
                 break
-            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u, PHYSREG_U, u_k, residue_G, clk_generate)
+            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u_k, residue_G, clk_generate)
             delta_u, delta_f = ss.get_bordering_algorithm_2X2(Jac_2, grad_w_G, grad_u_g, grad_w_g, -residue_G, -fct_g, clk_solver)
 
             u_k = u_k + delta_u
@@ -197,7 +197,7 @@ class ArcLengthCorrector(AbstractCorrector):
             if residue_G.norm() > 1e5 :
                 iter = self.MAX_ITER
                 break
-            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u, PHYSREG_U, u_k, residue_G, clk_generate)
+            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u_k, residue_G, clk_generate)
             delta_u, delta_f = ss.get_bordering_algorithm_2X2(Jac_k, grad_w_G, grad_u_g, grad_w_g, -residue_G, -fct_g, clk_solver)
 
             u_k = u_k + delta_u

@@ -107,7 +107,7 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
     cd.add_data_to_csv(u_measured, f_i, PATH_STORE_DATA)
     vd.real_time_plot_data_FRF(PATH)
 
-    tan_u_i, tan_w_i = Predictor.set_initial_tan(Previous_point, elasticity, u, PHYSREG_U, clk_generate, clk_solver)
+    tan_u_i, tan_w_i = Predictor.set_initial_tan(Previous_point, elasticity, clk_generate, clk_solver)
     Previous_point.add_solution(f_i, vec_u_i, tan_u_i, tan_w_i, Jac_i, residue_G_i)
     Previous_point.delete_solution()
     iter_newthon = 0

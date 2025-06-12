@@ -86,7 +86,7 @@ class AbstractPredictor(ABC):
         """
         pass
     @abstractmethod
-    def set_initial_tan(self, PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver) :
+    def set_initial_tan(self, PreviousPoint, elasticity, clk_generate, clk_solver) :
         """
         Initalise the tan for the first iteration 
         Parameters
@@ -158,7 +158,7 @@ class PredictorPreviousSolution(AbstractPredictor):
         self.tan_w = self.tan_w
         return self.tan_u, self.tan_w
     
-    def set_initial_tan(self, PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver) :
+    def set_initial_tan(self, PreviousPoint, elasticity, clk_generate, clk_solver) :
         vec_u = sp.vec(elasticity)
         self.tan_u = vec_u # initalise as 0
         self.tan_w = self.tan_w
@@ -196,13 +196,13 @@ class PredictorSecant(AbstractPredictor) :
         """
         super().__init__(length_s, tan_w, order)
     
-    def set_initial_tan(self, PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver) :
+    def set_initial_tan(self, PreviousPoint, elasticity, clk_generate, clk_solver) :
         
         if len(PreviousPoint) == 0:
             raise ValueError("No previous solution point available for prediction.")
         
         prev_point = PreviousPoint.get_solution()
-        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], clk_generate)
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], prev_point['u'], prev_point['residue_G'], clk_generate)
         clk_solver.resume()
         tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
         clk_solver.pause()
@@ -263,13 +263,13 @@ class PredictorTangent(AbstractPredictor):
         order = 1
         super().__init__(length_s, tan_w, order)
         
-    def set_initial_tan(self, PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver) :
+    def set_initial_tan(self, PreviousPoint, elasticity, clk_generate, clk_solver) :
 
         if len(PreviousPoint) == 0:
             raise ValueError("No previous solution point available for prediction.")
         
         prev_point = PreviousPoint.get_solution()
-        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], clk_generate)
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], prev_point['u'], prev_point['residue_G'], clk_generate)
         clk_solver.resume()
         tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
         clk_solver.pause()
@@ -283,7 +283,7 @@ class PredictorTangent(AbstractPredictor):
             raise ValueError("No previous solution point available for prediction.")
         
         prev_point = PreviousPoint.get_solution()
-        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], clk_generate)
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], prev_point['u'], prev_point['residue_G'], clk_generate)
         vec_0 = sp.vec(elasticity)
         tan_u, tan_w = ss.get_bordering_algorithm_2X2(prev_point['Jac'], grad_w_G, prev_point['tan_u'],  prev_point['tan_w'], vec_0, 1, clk_solver)
         self.tan_u = tan_u

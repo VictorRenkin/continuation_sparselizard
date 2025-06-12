@@ -4,7 +4,7 @@ import import_extension.sparselizard_solver as ss
 
 
 
-def get_derivative_of_residual_wrt_frequency(elasticity, freq, u, PHYSREG_U, vec_u, residu_G, clk_generate, h=1e-5):
+def get_derivative_of_residual_wrt_frequency(elasticity, freq, vec_u, residu_G, clk_generate, h=1e-5):
     """
     Compute the numerical derivative of the residual vector with respect to the frequency (w) with a finite difference.
 
@@ -33,7 +33,7 @@ def get_derivative_of_residual_wrt_frequency(elasticity, freq, u, PHYSREG_U, vec
     Sparselizard vec object
         Approximate derivative of the residual vector with respect to frequency (d(residual)/dω).
     """
-    u.setdata(PHYSREG_U, vec_u)
+
     sp.setfundamentalfrequency(freq - h)
     clk_generate.resume()
     elasticity.generate()

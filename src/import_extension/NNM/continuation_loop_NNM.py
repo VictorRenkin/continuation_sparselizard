@@ -115,7 +115,7 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         print("################## New Iteration ##################")
         print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f}")
         if iter_newthon != Corrector.MAX_ITER: 
-           tan_u, tan_w, tan_mu =  Predictor.prediction_direction(Previous_point, PhaseCondition, elasticity, field_u, vec_u_i, PHYSREG_U)
+           tan_u, tan_w, tan_mu =  Predictor.prediction_direction(Previous_point, PhaseCondition, elasticity, field_u, vec_u_i, PHYSREG_U, clk_generate, clk_solver)
         print("tan_u", tan_u)
         print("tan_w", tan_w)
         print("tan_mu", tan_mu)

@@ -104,9 +104,9 @@ F_START = 727.5 ; FD_MIN = 720; FD_MAX = 800 # [Hz]
 START_U = sp.vec(elasticityNNM)
 START_U.setdata()
 print("Start U.norm() :\t", START_U.norm())
-Corrector = cc.CorrectorAmplitude(MAX_ITER=10, TOL=1e-4)
+Corrector = cc.CorrectorPseudoArcLength(MAX_ITER=10, TOL=1e-4)
 StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-2, Corrector.MAX_ITER, 1.2, 0.4)
-Predictor = pr.PredictorNoContinuation(StepSize.START_LENGTH_S)
+Predictor = pr.PredictorTangent(StepSize.START_LENGTH_S)
 
 
 # PhaseCondition = pc.SimplePhaseCondition(par_relaxation, E_fic_formulation, FIX_HARMONIC=NUMBER_HARMONIC[1],

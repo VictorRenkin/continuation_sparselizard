@@ -52,7 +52,7 @@ def get_max(u, measure_quantity, vec_u, PHYSREG_MEASURED, HARMONIQUE_MEASURED, s
 
 
 
-def get_bordering_algorithm_2X2(A, c, b, d, f, h):
+def get_bordering_algorithm_2X2(A, c, b, d, f, h, clk_solver):
     """
     Solve the bordered linear system:
     
@@ -75,6 +75,8 @@ def get_bordering_algorithm_2X2(A, c, b, d, f, h):
         Right-hand side vector (n x 1).
     h : float
         Scalar from the bottom right of the right-hand side.
+    clk_solver : `clock` object from Sparselizard
+        Clock object to measure the time taken for solving the system.
 
     Returns
     -------
@@ -99,7 +101,7 @@ def get_bordering_algorithm_2X2(A, c, b, d, f, h):
     return x, y
 
 
-def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
+def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l, clk_solver):
     """
     Solves the following bordered linear system using only three solves with matrix `A`:
 
@@ -150,10 +152,11 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l):
     This implementation only requires three linear solves with `A`, making it highly efficient for large, sparse, or expensive systems.
     """
 
-    
+    clk_solver.resume()
     X_1 = sp.solve(A, J)
     X_2 = sp.solve(A, D)
     X_3 = sp.solve(A, G)
+    clk_solver.pause()
     print("e",e, "h", h, "f", f, "i", i)
     print("Norm B", B.norm(), "Norm C", C.norm())
     print("Norm D", D.norm(), "Norm G", G.norm())
@@ -215,3 +218,34 @@ def cramer_2x2(a11, a12, a21, a22, b1, b2):
     y = (a11 * b2 - a21 * b1) / det
 
     return x, y
+
+
+def solve_quadratic_equation(a: float, b: float, c: float) -> tuple:
+    """
+    Solves a quadratic equation of the form ax^2 + bx + c = 0.
+    Only real roots are considered.
+
+    Parameters:
+    a (float): Quadratic coefficient
+    b (float): Linear coefficient
+    c (float): Constant term
+
+    Returns:
+    tuple: A tuple containing the two real roots in ascending order
+
+    Raises:
+    ValueError: If the equation has no real solutions
+    """
+    if a == 0:
+        raise ValueError("Coefficient 'a' must not be zero for a quadratic equation.")
+    
+    discriminant = b ** 2 - 4 * a * c
+
+    if discriminant < 0:
+        raise ValueError("The equation has no real roots (discriminant < 0).")
+
+    sqrt_discriminant = math.sqrt(discriminant)
+    root1 = (-b - sqrt_discriminant) / (2 * a)
+    root2 = (-b + sqrt_discriminant) / (2 * a)
+
+    return (min(root1, root2), max(root1, root2))

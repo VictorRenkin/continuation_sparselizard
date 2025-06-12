@@ -8,7 +8,7 @@ import import_extension.NLFRS.continuation_loop_NLFR as sn
 import import_extension.StepSizeRules as cs
 
 print("###################### Start Mesh #######################")
-mesh = sp.mesh('../geo_GMSH/ClampedBeam.msh', 1)
+mesh = sp.mesh('../GMSH_file/ClampedBeam.msh', 1)
 print("###################### End Mesh #########################")
 
 PATH_STORE_DATA_FORWARD = '../data/FRF/NLFR_forward.csv'
@@ -74,11 +74,11 @@ START_U = sp.vec(elasticity)
 print("Number of unknowns is "+str(elasticity.countdofs()))
 
 
-Corrector = cc.ArcLengthCorrector(10, 1e-5)
-Predictor = cp.PredictorTangent(5e-1, 1)
+Corrector = cc.PseudoArcLengthCorrector(10, 1e-5)
+Predictor = cp.PredictorSecant(5e-1, 1, 2)
 StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-1, Corrector.MAX_ITER, 1.2, 0.4)
 
-sn.solve_NLFRs_store_and_show(  
+sn.continuation_loop_NLFR(  
     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT,  
     PATH, F_START, FD_MIN, FD_MAX, Corrector, Predictor, StepSize,
     START_U = START_U, STORE_U_ALL=True, STORE_PREDICTOR=True)

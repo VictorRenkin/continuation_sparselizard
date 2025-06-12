@@ -75,7 +75,7 @@ class AbstractPredictor(ABC):
         pass
 
     @abstractmethod
-    def prediction_direction(self, PreviousPoint, PhaseCondition, elasticity, field_u, vec_u, PHYSREG_U) :
+    def prediction_direction(self, PreviousPoint, PhaseCondition, elasticity, field_u, vec_u, PHYSREG_U, clk_generate, clk_solver) :
         pass
 
     @abstractmethod
@@ -142,7 +142,7 @@ class PredictorNoContinuation(AbstractPredictor):
         self.tan_mu = 0
         return self.tan_u, self.tan_w, self.tan_mu
 
-    def prediction_direction(self, PreviousPoint, PhaseCondition, elasticity, field_u, vec_u, PHYSREG_U):
+    def prediction_direction(self, PreviousPoint, PhaseCondition, elasticity, field_u, vec_u, PHYSREG_U, clk_generate, clk_solver):
         
         vec_u_0 = sp.vec(elasticity)
         self.tan_u = vec_u_0 # initalise as 0
@@ -257,7 +257,7 @@ class PredictorTangent(AbstractPredictor):
         self.tan_mu = tan_mu
         return self.tan_u, self.tan_w, self.tan_mu
     
-    def prediction_direction(self, PreviousPoint, PhaseCondition, elasticity, field_u, vec_u, PHYSREG_U):
+    def prediction_direction(self, PreviousPoint, PhaseCondition, elasticity, field_u, vec_u, PHYSREG_U, clk_generate, clk_solver):
         """
         Compute the tangent vector in the direction of the displacement and the frequency.
         This function uses the bordered algorithm to compute the tangent vector.
@@ -293,7 +293,7 @@ class PredictorTangent(AbstractPredictor):
             raise ValueError("No previous solution point available for prediction.")
         
         prev_point = PreviousPoint.get_solution()
-        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'])
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], field_u, PHYSREG_U, prev_point['u'], prev_point['residue_G'], clk_generate)
         grad_mu_G = prev_point['fictive_energy']
 
         grad_u_p = PhaseCondition.get_derivatif_u(elasticity, field_u, PHYSREG_U, vec_u, PreviousPoint)
@@ -303,7 +303,7 @@ class PredictorTangent(AbstractPredictor):
         grad_mu_p = 0
 
         vec_0 = sp.vec(elasticity)
-        tan_u, tan_w, tan_mu = ss.get_bordering_algorithm_3x3(prev_point['Jac'], grad_u_p, self.tan_u, grad_w_G, grad_w_p, self.tan_w, grad_mu_G, grad_mu_p, self.tan_mu, vec_0, 0, 1)
+        tan_u, tan_w, tan_mu = ss.get_bordering_algorithm_3x3(prev_point['Jac'], grad_u_p, self.tan_u, grad_w_G, grad_w_p, self.tan_w, grad_mu_G, grad_mu_p, self.tan_mu, vec_0, 0, 1, clk_solver)
         
         self.tan_u = tan_u
         self.tan_w = tan_w

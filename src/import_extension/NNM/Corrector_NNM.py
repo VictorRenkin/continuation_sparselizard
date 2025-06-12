@@ -141,10 +141,10 @@ class CorrectorPseudoArcLength(AbstractCorrector):
                 iter = self.MAX_ITER
                 break
 
-            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, field_u, PHYSREG_U, u_k, residue_G)
+            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, field_u, PHYSREG_U, u_k, residue_G, clk_generate)
             grad_mu_G = PhaseCondition.get_energy_fictive(u_k)
 
-            delta_u, delta_f, delta_mu = ss.get_bordering_algorithm_3x3(Jac_k, grad_u_p, grad_u_g, grad_w_G, grad_w_p, grad_w_g, grad_mu_G, grad_mu_p, grad_mu_g, - residue_G, - phase_condition, - fct_g)
+            delta_u, delta_f, delta_mu = ss.get_bordering_algorithm_3x3(Jac_k, grad_u_p, grad_u_g, grad_w_G, grad_w_p, grad_w_g, grad_mu_G, grad_mu_p, grad_mu_g, - residue_G, - phase_condition, - fct_g, clk_solver)
 
             u_k = u_k + delta_u
             f_k = delta_f + f_k
@@ -247,10 +247,10 @@ class CorrectorAmplitude(AbstractCorrector):
                 iter = self.MAX_ITER
                 break
 
-            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u, PHYSREG_U, u_k, residue_G)
+            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u, PHYSREG_U, u_k, residue_G, clk_generate)
             grad_mu_G = PhaseCondition.get_energy_fictive(u_k)
             
-            delta_u, delta_f, delta_mu = ss.get_bordering_algorithm_3x3(Jac_k, grad_u_p, grad_u_g, grad_w_G, grad_w_p, grad_w_g, grad_mu_G, grad_mu_p, grad_mu_g, - residue_G, - phase_condition, - fct_g)
+            delta_u, delta_f, delta_mu = ss.get_bordering_algorithm_3x3(Jac_k, grad_u_p, grad_u_g, grad_w_G, grad_w_p, grad_w_g, grad_mu_G, grad_mu_p, grad_mu_g, - residue_G, - phase_condition, - fct_g, clk_solver)
 
             u_k = u_k + delta_u
             f_k = delta_f + f_k

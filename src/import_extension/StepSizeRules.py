@@ -72,6 +72,8 @@ class IterationBasedStepSizer(AbstractStepSize):
             else:
                 self.length_s = self.length_s * self.S_UP
             return self.length_s
+        else :
+            raise ValueError("Iter is greather that Iter max")
         
 class AngleBasedStepSizer(AbstractStepSize):
     """

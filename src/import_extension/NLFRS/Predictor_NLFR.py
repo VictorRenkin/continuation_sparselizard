@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import sparselizard as sp
+import math
 import import_extension.sparselizard_continuation as sc
 import import_extension.sparselizard_vector as sv
 import import_extension.sparselizard_solver as ss
@@ -169,7 +170,7 @@ class PredictorPreviousSolution(AbstractPredictor):
             raise ValueError("No previous solution point available for prediction.")
         prev_sol = PreviousPoint.get_solution()
         f_pred = prev_sol['freq'] + self.length_s
-        u_pred =prev_sol['u']
+        u_pred = prev_sol['u']
 
         self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred)
         return u_pred, f_pred
@@ -212,7 +213,7 @@ class PredictorSecant(AbstractPredictor) :
     
     def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver) :
 
-        if len(PreviousPoint) < 2 : 
+        if len(PreviousPoint) < self.order + 1 : 
             pred_tan = PredictorTangent(self.length_s, self.tan_w, order=self.order)
             tan_u, tan_w = pred_tan.prediction_direction( PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver)
             return tan_u, tan_w
@@ -239,7 +240,110 @@ class PredictorSecant(AbstractPredictor) :
         self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, self.tan_u, self.tan_w)
         return u_pred, f_pred
     
+class PredictorSecantNewthon(AbstractPredictor) :
+    """
+    Define the Secant predictor. From the last two solution points, generates the adequate direction. When only one solution point is available, makes use of the tangent predictor.
+    """
+    def __init__(self, length_s, tan_w, order):
+        """
+        Initialize the Secant predictor with specified parameters.
+        
+        Parameters
+        ----------
+        length_s : float
+            The arc length step size.
+        MIN_LENGTH_S : float
+            The minimum arc length step size.
+        MAX_LENGTH_S : float
+            The maximum arc length step size.
+        order : int, optional
+            The order of the predictor (default is 2).
+        """
+        super().__init__(length_s, tan_w, order)
+    
+    def set_initial_tan(self, PreviousPoint, elasticity, clk_generate, clk_solver) :
+        
+        if len(PreviousPoint) == 0:
+            raise ValueError("No previous solution point available for prediction.")
+        
+        prev_point = PreviousPoint.get_solution()
+        grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], prev_point['u'], prev_point['residue_G'], clk_generate)
+        clk_solver.resume()
+        tan_u = sp.solve(prev_point['Jac'], -grad_w_G)
+        clk_solver.pause()
+        tan_w = self.tan_w
+        self.tan_u = tan_u
+        return tan_u, tan_w
+    
+    def forward_difference(self, z_vals, order):
+        """
+        Computes the forward finite difference of a given order using z_vals.
+        z_vals[-1] = z_j, z_vals[-2] = z_{j-1}, etc.
 
+        Parameters:
+            z_vals (list of floats): List of values at equally spaced steps.
+            order (int): The order of the difference to compute.
+
+        Returns:
+            float: The forward difference of the given order.
+        """
+        if order == 0:
+            return z_vals[-1]
+        else:
+            return self.forward_difference(z_vals, order - 1) - self.forward_difference(z_vals[:-1], order - 1)
+
+    def predict_order_p(self, z_vals, order, elasticity, set_frequency=True):
+        """
+        Predicts z_{j+1} using a forward Newton interpolation of specified order and step size sigma.
+
+        Parameters:
+            z_vals (list of floats): The last (order + 1) known values of z, from z_{j - order} to z_j.
+            order (int): The order of the predictor (degree of interpolation).
+            sigma (float): The step size used in continuation ().
+
+        Returns:
+            float: The predicted value z_{j+1}.
+        """
+        if len(z_vals) != order + 1:
+            raise ValueError(f"Exactly {order + 1} points are required for a predictor of order {order}.")
+        if set_frequency :
+            z_pred = 0.0
+        else :
+            z_pred = sp.vec(elasticity)
+        for k in range(order + 1):
+            delta_k = self.forward_difference(z_vals, k)
+            z_pred += (self.length_s ** k) * delta_k / math.factorial(k)
+        
+        return z_pred
+    
+    def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver) :
+
+        if len(PreviousPoint) < self.order + 1 : 
+            pred_tan = PredictorTangent(self.length_s, self.tan_w, order=self.order)
+            tan_u, tan_w = pred_tan.prediction_direction( PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver)
+            return tan_u, tan_w
+        elif len(PreviousPoint) == 0:
+            raise ValueError("No previous solution point available for prediction.")
+        else:
+            prev_point = PreviousPoint.get_solution()
+            prev_point_1 = PreviousPoint.solution_history[-2]
+            tan_u = (prev_point['u'] - prev_point_1['u']) 
+            tan_w = (prev_point['freq'] - prev_point_1['freq']) 
+            self.tan_u = tan_u
+            self.tan_w = tan_w
+            return tan_u, tan_w
+
+    def predict(self, PreviousPoint, field_u, PHYSREG_U) :
+
+        if self.tan_u is None or self.tan_w is None:
+            raise ValueError("Tangent vectors are not initialized. Call prediction_direction first.")
+        prev_point = PreviousPoint.get_solution()
+        print("self.tan_w", self.tan_w)
+        tan_norm = (self.tan_u.norm() + self.tan_w**2)**0.5
+        u_pred = self.length_s * self.tan_u/tan_norm + prev_point['u']
+        f_pred = self.length_s * self.tan_w/tan_norm +  prev_point['freq']
+        self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, self.tan_u, self.tan_w)
+        return u_pred, f_pred
 
     
 

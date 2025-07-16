@@ -74,9 +74,9 @@ START_U = sp.vec(elasticity)
 print("Number of unknowns is "+str(elasticity.countdofs()))
 
 
-Corrector = cc.ArcLengthCorrector(10, 1e-5)
-Predictor = cp.PredictorSecant(5e-1, 1, 1)
-StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-1, Corrector.MAX_ITER, 1.2, 0.4)
+Corrector = cc.PseudoArcLengthCorrector(10, 1e-5)
+Predictor = cp.PredictorTangent(5e-1, 1, 1)
+StepSize  = cs.IterationBasedStepSizer(1e-6, 1, 5e-1, Corrector.MAX_ITER, 1.1, 0.2)
 
 sn.continuation_loop_NLFR(  
     elasticity, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_MEASURE_POINT,  

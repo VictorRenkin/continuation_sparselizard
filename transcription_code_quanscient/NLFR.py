@@ -125,7 +125,7 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
         
         if not (FD_MIN <= Predictor.f_pred <= FD_MAX):
             break
-        print("################## Newthon predictor-corecteur solveur ##################")
+        qs.printonrank(0,"################## Newthon predictor-corecteur solveur ##################")
         u_k, f_k, iter_newthon, residue_G, Jac = Corector.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                     Predictor, Previous_point, clk_generate, clk_solver)
         number_newthon_iteration += iter
@@ -140,7 +140,7 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
                                         tan_w=Predictor.tan_w, Jac=Jac, 
                                         residue_G=residue_G)
             norm_u_i = sv.get_norm_harmonique_measured(u, HARMONIC_MEASURED)
-            point_measured = norm_u_i.max(PHYSREG_MEASURED, 3)[0]
+            point_measured = norm_u_i.allmax(PHYSREG_MEASURED, 3)[0]
             qs.printonrank(0,f"Second value f:{f_i},u:{point_measured}")
             if type_ward == "Forward" :
                 qs.setoutputvalue(f"Forward-{type_arc}", point_measured, f_i)

@@ -44,7 +44,7 @@ def get_max(u, measure_quantity, vec_u, PHYSREG_MEASURED, HARMONIQUE_MEASURED, s
     """
     u.setdata(PHYSREG_MEASURED, measure_quantity)
     norm_harmo_measured_u = sv.get_norm_harmonique_measured(u, HARMONIQUE_MEASURED)
-    max_u = norm_harmo_measured_u.max(PHYSREG_MEASURED, 3)[0]
+    max_u = norm_harmo_measured_u.allmax(PHYSREG_MEASURED, 3)[0]
     u.setdata(PHYSREG_MEASURED, vec_u)
     return max_u
 

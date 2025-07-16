@@ -83,9 +83,11 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
     clk_solver.pause()
     clk_first_iteration = sp.wallclock()
     first_point_correctr = cc.NoContinuationCorrector(MAX_ITER=Corector.MAX_ITER, TOL=Corector.TOL)
+    
     vec_u_i, Predictor.f_pred, iter, residue_G_i, Jac_i = first_point_correctr.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, Predictor, Previous_point, clk_generate, clk_solver)
     u.setdata(PHYSREG_U, vec_u_i)  
     Previous_point.add_solution(f_i, vec_u_i, Jac=Jac_i, residue_G=residue_G_i)
+
     if Predictor.tan_w == 1 :
         PATH_STORE_DATA = PATH['PATH_STORE_DATA_FORWARD']
         if STORE_U_ALL :
@@ -111,23 +113,28 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
     Previous_point.add_solution(f_i, vec_u_i, tan_u_i, tan_w_i, Jac_i, residue_G_i)
     Previous_point.delete_solution()
     iter_newthon = 0
-
+    first_point = True
+    nbr_point = 1
     while FD_MIN <= f_i <= FD_MAX:
         print("################## New Iteration ##################")
-        print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f}")
         if iter_newthon != Corector.MAX_ITER: 
            tan_u, tan_w = Predictor.prediction_direction(Previous_point, elasticity, u, PHYSREG_U, clk_generate, clk_solver)
         
         StepSize.initialize(iter_newthon, length_s=Predictor.length_s)
         try :
-            Predictor.length_s = StepSize.get_step_size(Previous_point, Predictor)
+            if nbr_point == 1 :
+                pass
+            else :
+                Predictor.length_s = StepSize.get_step_size(Previous_point, Predictor)
+            # Predictor.length_s = 0.5
         except ValueError as e:
             print("Step size is less than minimum allowed length. Stopping the continuation.")
             break
         
+        print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f} nbr point : {nbr_point}")
         u_pred, f_pred = Predictor.predict(Previous_point, u, PHYSREG_U)
-
-
+        print(f"tan_u : {tan_u.norm()}, tan_w : {tan_w}")
+        print(f"u_pred : {u_pred.norm()}, f_pred : {f_pred}")
         if np.sign(Predictor.tan_w) != np.sign(Previous_point.get_solution(-1)['tan_w']):
             print("############### Bifurcation detected #################")
             bifurcation = True
@@ -144,6 +151,9 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
         print("################## Newthon predictor-corecteur solveur ##################")
         u_k, f_k, iter_newthon, residue_G, Jac = Corector.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                     Predictor, Previous_point, clk_generate, clk_solver)
+        nbr_point += 1
+        if nbr_point == 5 : 
+            exit()
         if iter_newthon == Corector.MAX_ITER:
             if STORE_PREDICTOR:
                 cd.remove_last_row_from_csv(PATH['PATH_STORE_PREDICTOR'])

@@ -153,14 +153,14 @@ class PredictorPreviousSolution(AbstractPredictor):
 
     def prediction_direction(self, PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver) :
         
-        vec_u = qs.vec(elasticity)
-        self.tan_u = vec_u # initalise as 0
+        vec_u_0 = qs.vec(elasticity)
+        self.tan_u = vec_u_0 # initalise as 0
         self.tan_w = self.tan_w
         return self.tan_u, self.tan_w
     
     def set_initial_tan(self, PreviousPoint, elasticity, clk_generate, clk_solver) :
-        vec_u = qs.vec(elasticity)
-        self.tan_u = vec_u # initalise as 0
+        vec_u_0 = qs.vec(elasticity)
+        self.tan_u = vec_u_0 # initalise as 0
         self.tan_w = self.tan_w
         return self.tan_u, self.tan_w
 
@@ -204,7 +204,7 @@ class PredictorSecant(AbstractPredictor) :
         prev_point = PreviousPoint.get_solution()
         grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], prev_point['u'], prev_point['residue_G'], clk_generate)
         clk_solver.resume()
-        tan_u = qs.solve(prev_point['Jac'], -grad_w_G)
+        tan_u = qs.solve(prev_point['Jac'], -self.tan_w *grad_w_G)
         clk_solver.pause()
         tan_w = self.tan_w
         self.tan_u = tan_u
@@ -232,7 +232,7 @@ class PredictorSecant(AbstractPredictor) :
         if self.tan_u is None or self.tan_w is None:
             raise ValueError("Tangent vectors are not initialized. Call prediction_direction first.")
         prev_point = PreviousPoint.get_solution()
-        tan_norm = (self.tan_u.norm() + self.tan_w**2)**0.5
+        tan_norm = (self.tan_u * self.tan_u + self.tan_w**2)**0.5
         u_pred = self.length_s * self.tan_u/tan_norm + prev_point['u']
         f_pred = self.length_s * self.tan_w/tan_norm +  prev_point['freq']
         self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, self.tan_u, self.tan_w)
@@ -270,7 +270,7 @@ class PredictorTangent(AbstractPredictor):
         prev_point = PreviousPoint.get_solution()
         grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, prev_point['freq'], prev_point['u'], prev_point['residue_G'], clk_generate)
         clk_solver.resume()
-        tan_u = qs.solve(prev_point['Jac'], -grad_w_G)
+        tan_u = qs.solve(prev_point['Jac'], -self.tan_w * grad_w_G)
         clk_solver.pause()
         tan_w = self.tan_w
         self.tan_u = tan_u
@@ -298,7 +298,7 @@ class PredictorTangent(AbstractPredictor):
         if self.tan_u is None or self.tan_w is None:
             raise ValueError("Tangent vectors are not initialized. Call prediction_direction first.")
 
-        tan_norm = (self.tan_u.norm() + self.tan_w**2)**0.5
+        tan_norm = (self.tan_u * self.tan_u + self.tan_w**2)**0.5
         u_pred = self.length_s * self.tan_u/tan_norm + prev_point['u']
         f_pred = self.length_s * self.tan_w/tan_norm +  prev_point['freq']
         self.set_predictor(field_u, PHYSREG_U, f_pred, u_pred, self.tan_u, self.tan_w)

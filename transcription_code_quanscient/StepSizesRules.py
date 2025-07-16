@@ -109,8 +109,8 @@ class AngleBasedStepSizer(AbstractStepSize):
             else:
                 vec_prev_point_u = Previous_point.get_solution(-1)['u'] - Previous_point.get_solution(-2)['u']
                 vec_prev_point_f = Previous_point.get_solution(-1)['f'] - Previous_point.get_solution(-2)['f']
-                norm_tan_x = (Predictor.tan_u.norm()**2 + Predictor.tan_w**2)**(1/2)
-                norm_tan_previous = (vec_prev_point_u.norm()**2 + vec_prev_point_f**2)**(1/2)
+                norm_tan_x = (Predictor.tan_u * Predictor.tan_u  + Predictor.tan_w**2)**(1/2)
+                norm_tan_previous = (vec_prev_point_u * vec_prev_point_u + vec_prev_point_f**2)**(1/2)
                 cos_theta = (Predictor.tan_u * vec_prev_point_u + Predictor.tan_w * vec_prev_point_f)/ (norm_tan_x * norm_tan_previous)
                 factor_step_size = ((cos_theta + 1) /(math.cos(self.ANLE_OPT) + 1))**self.ALPHA
                 self.length_s = self.START_LENGTH_S * factor_step_size  

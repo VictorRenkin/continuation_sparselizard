@@ -92,6 +92,7 @@ class PseudoArcLengthCorrector(AbstractCorrector):
             if residue_G.norm() < self.TOL and fct_g < self.TOL:
                 break
             
+            print(f"Iteration {iter}: Residual max G: {residue_G.norm()}, frequence: {f_k}")
             if residue_G.norm() > 1e5 :
                 iter = self.MAX_ITER
                 break
@@ -100,7 +101,6 @@ class PseudoArcLengthCorrector(AbstractCorrector):
 
             u_k = u_k + delta_u
             f_k = delta_f + f_k
-            print(f"Iteration {iter}: Residual max G: {residue_G.norm():.2e}, frequence: {f_k}")
             u.setdata(PHYSREG_U, u_k)
             sp.setfundamentalfrequency(f_k)
             # print(f"Iteration {iter}: Rel. error u: {relative_error_u_max:.2e}, Rel. error f: {relative_error_freq:.2e}, Residual max Q: {fct_G.norm():.2e}")
@@ -128,6 +128,7 @@ class NoContinuationCorrector(AbstractCorrector):
 
             residue_G = (Jac * u_k - b)
             norm_residue = residue_G.norm()
+            print(f"Iteration {iter}:  Residual max G: {norm_residue}")
             if norm_residue < self.TOL :
                 print("Convergence reached")
                 return u_k, Predictor.f_pred, iter, residue_G, Jac            
@@ -139,7 +140,6 @@ class NoContinuationCorrector(AbstractCorrector):
                 u_k = u_vec_new
             iter += 1
 
-            print(f"Iteration {iter}:  Residual max G: {norm_residue:.2e}")
         
         if iter == self.MAX_ITER:
             raise RuntimeError(f"Maximum number of iterations reached without convergence at f = {Predictor.f_pred} Hz.")
@@ -277,7 +277,7 @@ class CrisfildArclengthCorrector(AbstractCorrector) :
             b_k = elasticity.b()
             clk_generate.pause()
             residue_G_k = Jac_k * u_k - b_k 
-            print(f"Iteration {iter}: Residual max G: {residue_G_k.norm():.2e}, frequence: {f_k}")
+            print(f"Iteration {iter}: Residual max G: {residue_G_k.norm()}, frequence: {f_k}")
             if residue_G_k.norm() < self.TOL:
                 break
             

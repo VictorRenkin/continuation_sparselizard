@@ -61,6 +61,9 @@ forward_1, frequency_1 = extract_value_and_time(df, "Forward-1")
 forward_2, frequency_2 = extract_value_and_time(df, "Forward-2")
 forward_3, frequency_3 = extract_value_and_time(df, "Forward-3")
 
+predictor_forward_1, predictor_frequency_1 = extract_value_and_time(df, "Predictor-1")
+predictor_forward_2, predictor_frequency_2 = extract_value_and_time(df, "Predictor-2")
+predictor_forward_3, predictor_frequency_3 = extract_value_and_time(df, "Predictor-3")
 # Application au vecteur fréquence
 frequency = smart_concatenate(frequency_1, frequency_2)
 frequency = smart_concatenate(frequency, frequency_3)
@@ -70,6 +73,13 @@ forward = smart_concatenate(forward_1, forward_2)
 forward = smart_concatenate(forward, forward_3)
 bifurcation, frequency_bif = extract_value_and_time(df, "Bifurcation")
 
+predictor_frequency = smart_concatenate(predictor_frequency_1, predictor_frequency_2)
+predictor_frequency = smart_concatenate(predictor_frequency, predictor_frequency_3)
+
+predictor_forward = smart_concatenate(predictor_forward_1, predictor_forward_2)
+predictor_forward = smart_concatenate(predictor_forward, predictor_forward_3)
+print("Len predictor", len(predictor_forward))
+print("Len normal", len(forward))
 
 
 
@@ -98,15 +108,24 @@ bifurcation, frequency_bif = extract_value_and_time(df, "Bifurcation")
 # ]
 plt.figure(figsize=(12, 8))  # Augmenter la taille de la figure pour une meilleure visibilité
 plt.scatter(frequency_bif, bifurcation, color=color_list[1], label=r'Bifurcation', marker='x', s=60, zorder=3)  # Augmenter la taille des marqueurs
+for i in range(len(predictor_forward)):
+    x = [frequency[i], predictor_frequency[i]]
+    y = [forward[i], predictor_forward[i]]
+    plt.plot(x, y, color=color_list[3], linestyle='-', marker='o',
+         linewidth=1, markersize=4)
+plt.plot(forward[i]+1000, predictor_forward[i]+10000, color=color_list[3], label=r'Predictor')
 plt.plot(frequency, forward, color=color_list[0], linestyle='-', marker='o',
-         linewidth=1, markersize=4 ,label=r'Forward', zorder=1)
+         linewidth=1, markersize=4 ,label=r'Forward', zorder=2)
+
+
+
 plt.xlabel(r"Frequency [Hz]")
 plt.ylabel(r"Max displacement [m]")
 plt.xlim(np.min(frequency), 185)  # Ajouter une marge pour mieux voir les extrémités
 plt.ylim(0, np.max(forward) * 1.2)  # Ajouter une marge pour mieux voir les données
 plt.legend(loc='best')  # Ajuster la taille de la légende
 plt.tight_layout()  # Optimiser l'agencement des éléments
-plt.savefig("NLFR_enhanced.pdf", bbox_inches='tight', dpi=300)
+plt.savefig("NLFR_enhanced.png", bbox_inches='tight', dpi=300)
 
 
 

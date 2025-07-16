@@ -94,7 +94,7 @@ class PseudoArcLengthCorrector(AbstractCorrector):
             if norm_residue_G < self.TOL and fct_g < self.TOL:
                 break
             
-            if norm_residue_G > 1e5 :
+            if norm_residue_G > 1e8 :
                 iter = self.MAX_ITER
                 break
             grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u_k, residue_G, clk_generate)
@@ -198,7 +198,7 @@ class ArcLengthCorrector(AbstractCorrector):
             if norm_residue_G < self.TOL and fct_g < self.TOL:
                 break
             
-            if norm_residue_G > 1e5 :
+            if norm_residue_G > 1e8 :
                 iter = self.MAX_ITER
                 break
             grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u_k, residue_G, clk_generate)
@@ -285,7 +285,7 @@ class CrisfildArclengthCorrector(AbstractCorrector) :
             if residue_norm < self.TOL:
                 break
             
-            if residue_norm > 1e5 :
+            if residue_norm > 1e8 :
                 iter = self.MAX_ITER
                 break
             grad_lambda_G = sc.get_derivative_of_residual_wrt_lambda(elasticity, prev_sol["freq"], u, PHYSREG_U, u_k, residue_G_k, lambda_k, clk_generate)

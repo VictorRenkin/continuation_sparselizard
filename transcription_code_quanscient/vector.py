@@ -36,5 +36,8 @@ def get_norm_harmonique_measured(u, HARMONIQUE_MEASURED):
     'vec' object from Quascient
         The norm of the harmonique that we want to measure of the displacement field.
     """
-    
-    return qs.norm(HARMONIQUE_MEASURED, u)
+    norm_harmo = 0
+    for harmo in HARMONIQUE_MEASURED :
+        norm_harmo += u.harmonic(harmo) * u.harmonic(harmo) 
+    norm_harmo = qs.sqrt(norm_harmo)
+    return norm_harmo

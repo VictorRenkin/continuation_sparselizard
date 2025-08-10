@@ -9,7 +9,7 @@ import import_extension.NNM.PhaseCondition as pc
 import import_extension.StepSizeRules as cs
 
 print("###################### Start Mesh #######################")
-mesh = sp.mesh('../geo_GMSH/ClampedBeam.msh', 1)
+mesh = sp.mesh('../GMSH_file/ClampedBeam.msh', 1)
 print("###################### End Mesh #########################")
 
 PATH_STORE_DATA = '../data/FRF/NNMs.csv'
@@ -30,7 +30,7 @@ PHYSREG_LOAD_POINT = 3 #  [0.5, 0.015, 0.015]
 
 # Chosen by the user
 PHYSREG_MEASURE_POINT = PHYSREG_LOAD_POINT
-NUMBER_HARMONIC = [1, 2, 3]
+NUMBER_HARMONIC = [1, 2, 3, 4, 5]
 HARMONIC_MEASURED = NUMBER_HARMONIC
 
 
@@ -62,6 +62,7 @@ M = LNM_formulation.M()
 
 eig = sp.eigenvalue(K,M)
 eig.compute(1)
+eig.printeigenfrequencies()
 
 # The eigenvectors are real only in the undamped case:
 myrealeigenvectors = eig.geteigenvectorrealpart()
@@ -76,14 +77,16 @@ u.setconstraint(PHYSREG_CONSTRAINT)
 
 
 elasticityNNM = sp.formulation()
-Kx_non_linear =  sp.predefinedelasticity(sp.dof(u), sp.tf(u), u, E, nu, 0) # non-liear term
+Kx_non_linear =  sp.predefinedelasticity(sp.dof(u), sp.tf(u), u, E, nu, 0) 
+# Kx_non_linear =  sp.predefinedelasticity(sp.dof(u), sp.tf(u), E, nu) # non-liear term
+# non-liear term
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Kx_non_linear)
 
 Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, Mddotx)
 
 par_relaxation = sp.parameter()
-par_relaxation.setvalue(PHYSREG_VOLUME, 5)
+par_relaxation.setvalue(PHYSREG_VOLUME, 0)
 e_fic_mu =  par_relaxation * sp.dt(sp.dof(u)) * sp.tf(u)
 elasticityNNM += sp.integral(PHYSREG_VOLUME, FFT_point, e_fic_mu)
 
@@ -93,17 +96,11 @@ E_fic_formulation += sp.integral(PHYSREG_VOLUME, FFT_point,  sp.dt(sp.dof(u)) * 
 
 # Initialisation with the LNM 
 u_LNM.setdata(PHYSREG_VOLUME, myrealeigenvectors[0])
-scaling_parameter = 1e-5
+scaling_parameter = 1e-3
 
 u.harmonic(3).setvalue(PHYSREG_VOLUME, u_LNM * scaling_parameter)
 
 max_u = sp.norm(u.harmonic(3)).max(PHYSREG_VOLUME, 3)[0]
-# print("max_u", max_u)
-# elasticity_2.generate()
-# K_2 = elasticity_2.K()
-# v_2 = sp.vec(elasticity_2)
-# v_2.setdata()
-# K_2 * v_2
 
 F_START = (eig.geteigenvaluerealpart())
 F_START = 162.764; FD_MIN = 158; FD_MAX = 210 # [Hz]
@@ -112,13 +109,13 @@ START_U.setdata()
 print("Start U.norm() :\t", START_U.norm())
 
 Corrector = cc.CorrectorPseudoArcLength(MAX_ITER=10, TOL=1e-4)
-StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-1, Corrector.MAX_ITER, 1.2, 0.4)
+StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 5e-4, Corrector.MAX_ITER, 1.2, 0.4)
 Predictor = pr.PredictorTangent(StepSize.START_LENGTH_S)
 
 
-PhaseCondition = pc.SimplePhaseCondition(par_relaxation, E_fic_formulation, FIX_HARMONIC=NUMBER_HARMONIC[2],
-                                        FIX_PHYSEREG_NODE=PHYSREG_LOAD_POINT, LIBERTY_DEGREE_FIX=0)
-# PhaseCondition = pc.StrongPhaseCondition(par_relaxation, E_fic_formulation)
+# PhaseCondition = pc.SimplePhaseCondition(par_relaxation, E_fic_formulation, FIX_HARMONIC=NUMBER_HARMONIC[1],
+#                                         FIX_PHYSEREG_NODE=PHYSREG_LOAD_POINT, LIBERTY_DEGREE_FIX=0)
+PhaseCondition = pc.StrongPhaseCondition(par_relaxation, E_fic_formulation)
 
 nnm.contination_loop_NNM(elasticityNNM, u, PHYSREG_VOLUME, HARMONIC_MEASURED, PHYSREG_LOAD_POINT, 
                                PATH, F_START, FD_MIN, FD_MAX, START_U,

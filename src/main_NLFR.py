@@ -8,10 +8,11 @@ import import_extension.NLFRS.continuation_loop_NLFR as sn
 import import_extension.StepSizeRules as cs
 
 print("###################### Start Mesh #######################")
-mesh = sp.mesh('../GMSH_file/ClampedBeam.msh', 1)
+mesh = sp.mesh('../GMSH_file/simplest_clamped_clamped_beam.msh', 1)
+# mesh = sp.mesh('../GMSH_file/ClampedBeam.msh', 1)
 print("###################### End Mesh #########################")
 
-PATH_STORE_DATA_FORWARD = '../data/FRF/NLFR_forward.csv'
+PATH_STORE_DATA_FORWARD = '../data/FRF/NLFR_forward_400.csv'
 PATH_STORE_DATA_DOWNWARD = '../data/FRF/NLFR_downward.csv'
 PATH_FIGURE = '../figures/NLFRs.pdf'
 PATH_STORE_PREDICTOR = '../data/FRF/NLFRs_predictor.csv'
@@ -27,9 +28,9 @@ cd.create_doc_csv(PATH_STORE_PREDICTOR)
 
 
 # Imposed by GMSH
-PHYSREG_VOLUME = 1
-PHYSREG_CONSTRAINT = 2
-PHYSREG_LOAD_POINT = 3 #  [0.5, 0.015, 0.015]
+PHYSREG_VOLUME = 103
+PHYSREG_CONSTRAINT = 101
+PHYSREG_LOAD_POINT = 102 #  [0.5, 0.015, 0.015]
 
 # Chosen by the user
 PHYSREG_MEASURE_POINT = PHYSREG_LOAD_POINT
@@ -57,7 +58,7 @@ Kx_linear =  sp.predefinedelasticity(sp.dof(u), sp.tf(u), E, nu)
 elasticity += sp.integral(PHYSREG_VOLUME, FFT_point, Kx_non_linear)
 
 # Apply the force of -200 N in z direction at the middle of the beam on the second harmonic
-Force_apply = sp.array1x3(0,0,-200) * sp.tf(u.harmonic(2))
+Force_apply = sp.array1x3(0,0,-400) * sp.tf(u.harmonic(2))
 elasticity += sp.integral(PHYSREG_LOAD_POINT, FFT_point, Force_apply)
 
 Mddotx = -rho * sp.dtdt(sp.dof(u)) * sp.tf(u)
@@ -69,7 +70,7 @@ elasticity += sp.integral(PHYSREG_VOLUME, FFT_point, Cdotx)
 print("############ Forward #############")
 clk = sp.wallclock()
 u.setvalue(PHYSREG_VOLUME) # Reset the field values to zero
-F_START = 158; FD_MIN = 158; FD_MAX = 210 # [Hz]
+F_START = 710; FD_MIN = 700; FD_MAX = 800 # [Hz]
 START_U = sp.vec(elasticity)
 print("Number of unknowns is "+str(elasticity.countdofs()))
 

@@ -203,7 +203,6 @@ def cramer_2x2(a11, a12, a21, a22, b1, b2):
     """
     # Calculate the determinant
     det = a11 * a22 - a12 * a21
-    print("det", det)
     if abs(det) < 1e-8:
         raise ValueError(f"The system has no unique solution (determinant is zero : {det}).")
 

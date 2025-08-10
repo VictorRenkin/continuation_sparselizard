@@ -134,6 +134,10 @@ class CorrectorPseudoArcLength(AbstractCorrector):
             grad_w_g = Predictor.tan_w
             grad_mu_g = Predictor.tan_mu
 
+            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u_k, residue_G, clk_generate)
+            grad_mu_G = PhaseCondition.get_energy_fictive(u_k)
+            
+            print(f"Iteration {iter}: Residual max G: {residue_G.norm():.2e}, frequence: {f_k}")
             if residue_G.norm() < self.TOL and fct_g < self.TOL and phase_condition < self.TOL:
                 break
             
@@ -141,16 +145,12 @@ class CorrectorPseudoArcLength(AbstractCorrector):
                 iter = self.MAX_ITER
                 break
 
-            grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u_k, residue_G, clk_generate)
-            grad_mu_G = PhaseCondition.get_energy_fictive(u_k)
 
             delta_u, delta_f, delta_mu = ss.get_bordering_algorithm_3x3(Jac_k, grad_u_p, grad_u_g, grad_w_G, grad_w_p, grad_w_g, grad_mu_G, grad_mu_p, grad_mu_g, - residue_G, - phase_condition, - fct_g, clk_solver)
-
             u_k = u_k + delta_u
             f_k = delta_f + f_k
             mu_k = delta_mu + mu_k 
 
-            print(f"Iteration {iter}: Residual max G: {residue_G.norm():.2e}, frequence: {f_k}")
             field_u.setdata(PHYSREG_U, u_k)
             sp.setfundamentalfrequency(f_k)
             PhaseCondition.update(mu_k, PHYSREG_U)
@@ -230,7 +230,6 @@ class CorrectorAmplitude(AbstractCorrector):
             residue_G = Jac_k * u_k - b_k 
 
             phase_condition = PhaseCondition.condition(PreviousSolution, u_k, u)
-            print("Phase condition", phase_condition)
             grad_w_p = 0
             grad_mu_p = 0
 
@@ -243,9 +242,9 @@ class CorrectorAmplitude(AbstractCorrector):
             if residue_G.norm() < self.TOL and abs(fct_g) < self.TOL and phase_condition < self.TOL:
                 break
             
-            if residue_G.norm() > 1e5 :
-                iter = self.MAX_ITER
-                break
+            # if residue_G.norm() > 1e5 :
+            #     iter = self.MAX_ITER
+            #     break
 
             grad_w_G = sc.get_derivative_of_residual_wrt_frequency(elasticity, f_k, u_k, residue_G, clk_generate)
             grad_mu_G = PhaseCondition.get_energy_fictive(u_k)

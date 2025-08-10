@@ -105,20 +105,15 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
     print("residue_G Start", residue_G_i.norm())
     fictive_energy_i = PhaseCondition.get_energy_fictive(vec_u_i)
     relaxation_factor = PhaseCondition.get_parameter_relaxation(PHYSREG_U)
-    print("Relaxation parameter:\t", relaxation_factor)
-    tan_u, tan_w, tan_mu = Predictor.set_initial_prediction(elasticity, tan_w=1, tan_mu=1)
-    print("fictive_energy_i", fictive_energy_i.norm())
+    tan_u, tan_w, tan_mu = Predictor.set_initial_prediction(elasticity, tan_w=0, tan_mu=1)
     Previous_point.add_solution(f_i, vec_u_i, relaxation_factor, tan_u, tan_w, tan_mu, Jac_i, residue_G_i, fictive_energy_i)
     iter_newthon = 0
-    
-    while FD_MIN <= f_i <= FD_MAX:
+    number_point = 0
+    while FD_MIN <= f_i <= FD_MAX and number_point < 1000: 
         print("################## New Iteration ##################")
         print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f}")
         if iter_newthon != Corrector.MAX_ITER: 
            tan_u, tan_w, tan_mu =  Predictor.prediction_direction(Previous_point, PhaseCondition, elasticity, field_u, vec_u_i, PHYSREG_U, clk_generate, clk_solver)
-        print("tan_u", tan_u)
-        print("tan_w", tan_w)
-        print("tan_mu", tan_mu)
         StepSize.initialize(iter_newthon, length_s=Predictor.length_s)
         try :
             Predictor.length_s = StepSize.get_step_size(Previous_point, Predictor)
@@ -127,9 +122,6 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
             break
         
         u_pred, f_pred, mu_pred = Predictor.predict(Previous_point, PhaseCondition, elasticity, field_u, PHYSREG_U)
-        print("u_pred", u_pred)
-        print("f_pred", f_pred)
-        print("mu_pred", mu_pred)
         if not (FD_MIN <= Predictor.f_pred <= FD_MAX):
             break
 
@@ -143,14 +135,12 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
             u_pred_norm = norm_harmo_measured_u_pred.max(PHYSREG_MEASURED, 3)[0]
             cd.add_data_to_csv(u_pred_norm, f_pred, PATH['PATH_STORE_PREDICTOR'])
             vd.real_time_plot_data_FRF(PATH)
-
-
+            
 
         print("################## Newthon predictor-corecteur solveur ##################")
         u_k, f_k, mu_k, iter_newthon, residue_G_k, Jac_k, fictive_energy_k = Corrector.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, field_u, Predictor, Previous_point, PhaseCondition,
                                                                     clk_generate, clk_solver)
         
-        exit()
         if iter_newthon == Corrector.MAX_ITER:
             if STORE_PREDICTOR:
                 cd.remove_last_row_from_csv(PATH['PATH_STORE_PREDICTOR'])
@@ -166,6 +156,7 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
             norm_u_i = sv.get_norm_harmonique_measured(field_u, HARMONIC_MEASURED)
             point_measured = norm_u_i.max(PHYSREG_MEASURED, 3)[0]
             cd.add_data_to_csv(point_measured, f_i, PATH_STORE_DATA, bifurcation)
+            number_point +=1
             if STORE_PREDICTOR:
                 pass
             else:

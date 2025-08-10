@@ -103,7 +103,6 @@ class PseudoArcLengthCorrector(AbstractCorrector):
             f_k = delta_f + f_k
             u.setdata(PHYSREG_U, u_k)
             sp.setfundamentalfrequency(f_k)
-            # print(f"Iteration {iter}: Rel. error u: {relative_error_u_max:.2e}, Rel. error f: {relative_error_freq:.2e}, Residual max Q: {fct_G.norm():.2e}")
             iter += 1
         return u_k, f_k, iter, residue_G, Jac_2
     
@@ -191,6 +190,7 @@ class ArcLengthCorrector(AbstractCorrector):
             residue_G = Jac_k * u_k - b_k 
             fct_g        = self.corector_condition(Predictor, Prev_solution, u_k, f_k)
             grad_u_g, grad_w_g = self.grad_corrector(Prev_solution, u_k, f_k)
+            print(f"Iteration {iter}: Residual max G: {residue_G.norm():.2e}, frequence: {f_k}")
             if residue_G.norm() < self.TOL and fct_g < self.TOL:
                 break
             
@@ -202,7 +202,6 @@ class ArcLengthCorrector(AbstractCorrector):
 
             u_k = u_k + delta_u
             f_k = delta_f + f_k
-            print(f"Iteration {iter}: Residual max G: {residue_G.norm():.2e}, frequence: {f_k}")
             u.setdata(PHYSREG_U, u_k)
             sp.setfundamentalfrequency(f_k)
             iter += 1

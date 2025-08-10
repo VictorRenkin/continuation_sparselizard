@@ -157,23 +157,16 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l, clk_solver):
     X_2 = sp.solve(A, D)
     X_3 = sp.solve(A, G)
     clk_solver.pause()
-    print("e",e, "h", h, "f", f, "i", i)
-    print("Norm B", B.norm(), "Norm C", C.norm())
-    print("Norm D", D.norm(), "Norm G", G.norm())
-    print("Norm J", J.norm(), "Norm k", k, "Norm l", l)
-    print("Norm X_1", X_1.norm(), "Norm X_2", X_2.norm(), "Norm X_3", X_3.norm())
+
 
     a_11 = e - sv.compute_scalaire_product_vec(B, X_2)
     a_12 = h - sv.compute_scalaire_product_vec(B, X_3)
     a_21 = f - sv.compute_scalaire_product_vec(C, X_2)
     a_22 = i - sv.compute_scalaire_product_vec(C, X_3)
-    print("a_11", a_11, "a_12", a_12, "a_21", a_21, "a_22", a_22)
     b_1 = k - sv.compute_scalaire_product_vec(B, X_1)
     b_2 = l - sv.compute_scalaire_product_vec(C, X_1)
-    print("b_1", b_1, "b_2", b_2)
 
     y, z = cramer_2x2(a_11, a_12, a_21, a_22, b_1, b_2)
-    print("y",y, "z", z)
     X = X_1 - X_2 * y - X_3 * z
 
     return X, y, z
@@ -209,10 +202,8 @@ def cramer_2x2(a11, a12, a21, a22, b1, b2):
     """
     # Calculate the determinant
     det = a11 * a22 - a12 * a21
-    print("det", det)
     if abs(det) < 1e-8:
-        raise ValueError(f"The system has no unique solution (determinant is zero : {det}).")
-
+        print(f"Warning The system has no unique solution (determinant is zero : {det}).")
     # Apply Cramer's rule
     x = (b1 * a22 - b2 * a12) / det
     y = (a11 * b2 - a21 * b1) / det

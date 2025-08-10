@@ -133,8 +133,6 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
         
         print(f"length_s: {Predictor.length_s:.6f}, freq: {Previous_point.get_solution()['freq']:.2f} nbr point : {nbr_point}")
         u_pred, f_pred = Predictor.predict(Previous_point, u, PHYSREG_U)
-        print(f"tan_u : {tan_u.norm()}, tan_w : {tan_w}")
-        print(f"u_pred : {u_pred.norm()}, f_pred : {f_pred}")
         if np.sign(Predictor.tan_w) != np.sign(Previous_point.get_solution(-1)['tan_w']):
             print("############### Bifurcation detected #################")
             bifurcation = True
@@ -152,8 +150,7 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
         u_k, f_k, iter_newthon, residue_G, Jac = Corector.correct_step(elasticity, PHYSREG_U, HARMONIC_MEASURED, u, 
                     Predictor, Previous_point, clk_generate, clk_solver)
         nbr_point += 1
-        if nbr_point == 5 : 
-            exit()
+
         if iter_newthon == Corector.MAX_ITER:
             if STORE_PREDICTOR:
                 cd.remove_last_row_from_csv(PATH['PATH_STORE_PREDICTOR'])

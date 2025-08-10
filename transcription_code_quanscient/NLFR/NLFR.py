@@ -159,6 +159,3 @@ def continuation_loop_NLFR(elasticity, u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_
         clk_solver.print("Solver time :")
         qs.printonrank(0,f"Number iteration Newthon {number_newthon_iteration}")
         qs.printonrank(0,f"Number point {number_point}")
-        
-    
-                

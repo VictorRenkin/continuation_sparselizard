@@ -247,7 +247,7 @@ class PredictorTangent(AbstractPredictor):
         order = 1
         super().__init__(length_s, order)
         
-    def set_initial_prediction(self, elasticity, tan_w=0, tan_mu=0) :
+    def set_initial_prediction(self, elasticity, tan_w=0, tan_mu=-1) :
         
         tan_u = sp.vec(elasticity)
         densemat_tan_u = sp.densemat(tan_u.size(), 1, 1)
@@ -297,14 +297,12 @@ class PredictorTangent(AbstractPredictor):
         grad_mu_G = prev_point['fictive_energy']
 
         grad_u_p = PhaseCondition.get_derivatif_u(elasticity, field_u, PHYSREG_U, vec_u, PreviousPoint)
-        print("grad_u_p", grad_u_p.norm())
-        print("grad_mu_G", grad_mu_G.norm())
+
         grad_w_p = 0
         grad_mu_p = 0
-
+        tan_norm = (sv.compute_scalaire_product_vec(self.tan_u, self.tan_u)+ self.tan_w**2 + self.tan_mu**2)**0.5
         vec_0 = sp.vec(elasticity)
         tan_u, tan_w, tan_mu = ss.get_bordering_algorithm_3x3(prev_point['Jac'], grad_u_p, self.tan_u, grad_w_G, grad_w_p, self.tan_w, grad_mu_G, grad_mu_p, self.tan_mu, vec_0, 0, 1, clk_solver)
-        
         self.tan_u = tan_u
         self.tan_w = tan_w
         self.tan_mu = tan_mu

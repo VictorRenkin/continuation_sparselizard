@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import vector as sv
 import math
+import quanscient as qs
 
 class AbstractStepSize(ABC) :
     """
@@ -80,7 +81,7 @@ class AngleBasedStepSizer(AbstractStepSize):
     Class for angle-based step size rule.
     """
 
-    def __init__(self, MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, S_DOWN, ALPHA, ANLE_OPT, length_s=None):
+    def __init__(self, MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, S_DOWN, ALPHA, ALPHA_DOWN, ANLE_OPT, ANLGE_TOL, RESTART_ALPHA, length_s=None):
         """
         Initialize the angle-based step size rule.
         """
@@ -88,6 +89,9 @@ class AngleBasedStepSizer(AbstractStepSize):
         self.ALPHA = ALPHA
         self.ANLE_OPT = ANLE_OPT
         self.S_DOWN = S_DOWN
+        self.ANLGE_TOL = ANLGE_TOL
+        self.RESTART_ALPHA = RESTART_ALPHA
+        self.ALPHA_DOWN = ALPHA_DOWN
 
     def get_step_size(self, Previous_point, Predictor):
         """
@@ -97,6 +101,7 @@ class AngleBasedStepSizer(AbstractStepSize):
             raise ValueError("Step size rule not initialized with iteration.")
         elif self.iter == self.MAX_ITER:
             if self.length_s < self.MIN_LENGTH_S:
+                print("self.length_s", self.length_s)
                 raise ValueError("Step size is less than minimum allowed length.")
             else:
                 self.length_s = self.length_s * self.S_DOWN
@@ -105,13 +110,33 @@ class AngleBasedStepSizer(AbstractStepSize):
             if len(Previous_point) < 2 :
                 S_UP = 1.2
                 SimpleIter = IterationBasedStepSizer(self.MIN_LENGTH_S, self.MAX_LENGTH_S, self.START_LENGTH_S, self.MAX_ITER, S_UP, self.S_DOWN)
-                self.length_s = SimpleIter.get_step_size(Previous_point, Predictor,  self.length_s)
+                SimpleIter.iter = self.iter
+                self.length_s = SimpleIter.get_step_size(Previous_point, Predictor)
             else:
                 vec_prev_point_u = Previous_point.get_solution(-1)['u'] - Previous_point.get_solution(-2)['u']
-                vec_prev_point_f = Previous_point.get_solution(-1)['f'] - Previous_point.get_solution(-2)['f']
+                vec_prev_point_f = Previous_point.get_solution(-1)['freq'] - Previous_point.get_solution(-2)['freq']
                 norm_tan_x = (Predictor.tan_u * Predictor.tan_u  + Predictor.tan_w**2)**(1/2)
                 norm_tan_previous = (vec_prev_point_u * vec_prev_point_u + vec_prev_point_f**2)**(1/2)
                 cos_theta = (Predictor.tan_u * vec_prev_point_u + Predictor.tan_w * vec_prev_point_f)/ (norm_tan_x * norm_tan_previous)
-                factor_step_size = ((cos_theta + 1) /(math.cos(self.ANLE_OPT) + 1))**self.ALPHA
-                self.length_s = self.START_LENGTH_S * factor_step_size  
+                theta = math.acos(cos_theta)
+                
+
+                if abs(theta) < self.ANLE_OPT :
+                    alpha = self.ALPHA
+                else :
+                    alpha = self.ALPHA_DOWN
+                factor_step_size = ((cos_theta + 1) /(math.cos(self.ANLE_OPT) + 1))**alpha
+                qs.setoutputvalue(f"factor_step_size",factor_step_size, Previous_point.get_solution(-1)['freq'])
+                qs.setoutputvalue(f"Angle [rad]", theta, Previous_point.get_solution(-1)['freq'])
+
+                if factor_step_size < 0.01 : 
+                    factor_step_size = 0.01
+                print("before length_s", self.length_s)
+                print("factor_step_size", factor_step_size)
+                print("Angle [rad]", theta)
+                self.length_s = self.length_s * factor_step_size  
+                if self.length_s > self.MAX_LENGTH_S : 
+                    self.length_s = self.MAX_LENGTH_S
+                print("self.MAX_LENGTH_S", self.MAX_LENGTH_S)
+                print("length_s", self.length_s)
             return self.length_s

@@ -1,0 +1,3997 @@
+2025-12-08 10:37:43
+Reserving resources...
+2025-12-08 10:37:45
+Setting up job...
+2025-12-08 10:37:45
+Downloading inputs...
+2025-12-08 10:37:45
+Downloading done
+2025-12-08 10:37:45
+Quanscient Allsolve 399 int64/float64
+2025-12-08 10:37:45
+Physical RAM is 16.4601 GB for 1 rank
+2025-12-08 10:37:46
+Loading mesh from 'simulation.msh'
+2025-12-08 10:37:46
+Detected curvature order 2
+Extracted 825 nodes
+Extracted 348 lines
+Extracted 260 quadrangles
+Extracted 64 hexahedra
+2025-12-08 10:37:46
+Time to load the mesh:
+7.78739 ms
+2025-12-08 10:37:46
+Number of unknowns is 12375
+2025-12-08 10:37:46
+############ Forward #############
+2025-12-08 10:37:47
+Iteration 0:  Residual max G: 2.00e+02
+2025-12-08 10:37:48
+Iteration 1:  Residual max G: 3.73e+05
+2025-12-08 10:37:50
+Iteration 2:  Residual max G: 6.23e+03
+2025-12-08 10:37:53
+Iteration 3:  Residual max G: 2.09e+04
+2025-12-08 10:37:55
+Iteration 4:  Residual max G: 2.87e+03
+2025-12-08 10:37:57
+Iteration 5:  Residual max G: 3.82e+02
+2025-12-08 10:37:59
+Iteration 6:  Residual max G: 2.94e+00
+2025-12-08 10:38:01
+Iteration 7:  Residual max G: 2.85e-04
+2025-12-08 10:38:03
+Iteration 8:  Residual max G: 1.24e-07
+2025-12-08 10:38:03
+Convergence reached
+2025-12-08 10:38:06
+################## New Iteration ##################
+2025-12-08 10:38:08
+length s : 0.6
+2025-12-08 10:38:08
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:38:09
+Iteration 0: Residual max G: 4.45e+03, frequence: 160.59997017908634
+2025-12-08 10:38:13
+Iteration 1: Residual max G: 1.33e+01, frequence: 160.59996771130452
+2025-12-08 10:38:17
+Iteration 2: Residual max G: 2.07e-02, frequence: 160.59996762601457
+2025-12-08 10:38:20
+Iteration 3: Residual max G: 1.43e-07, frequence: 160.59996762602924
+2025-12-08 10:38:20
+Second value f:160.59996762602924,u:0.0046449331302910995
+2025-12-08 10:38:20
+################## New Iteration ##################
+2025-12-08 10:38:22
+before length_s 0.6
+2025-12-08 10:38:22
+factor_step_size 1.868259044143685
+2025-12-08 10:38:22
+Angle [rad] 0.0004821212769415551
+2025-12-08 10:38:22
+self.MAX_LENGTH_S 5
+2025-12-08 10:38:22
+length_s 1.120955426486211
+2025-12-08 10:38:22
+length s : 1.120955426486211
+2025-12-08 10:38:22
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:38:24
+Iteration 0: Residual max G: 1.79e+04, frequence: 161.7208588761373
+2025-12-08 10:38:27
+Iteration 1: Residual max G: 6.02e+01, frequence: 161.7208593786749
+2025-12-08 10:38:31
+Iteration 2: Residual max G: 2.56e+00, frequence: 161.7208594057837
+2025-12-08 10:38:34
+Iteration 3: Residual max G: 3.91e-05, frequence: 161.72085940742912
+2025-12-08 10:38:38
+Iteration 4: Residual max G: 2.16e-07, frequence: 161.72085940742926
+2025-12-08 10:38:38
+Second value f:161.72085940742926,u:0.006185117206408588
+2025-12-08 10:38:38
+################## New Iteration ##################
+2025-12-08 10:38:40
+before length_s 1.120955426486211
+2025-12-08 10:38:40
+factor_step_size 1.8680856689788747
+2025-12-08 10:38:40
+Angle [rad] 0.0007769553983787902
+2025-12-08 10:38:40
+self.MAX_LENGTH_S 5
+2025-12-08 10:38:40
+length_s 2.0940407677829933
+2025-12-08 10:38:40
+length s : 2.0940407677829933
+2025-12-08 10:38:40
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:38:42
+Iteration 0: Residual max G: 5.96e+04, frequence: 163.81478551627333
+2025-12-08 10:38:45
+Iteration 1: Residual max G: 5.43e+02, frequence: 163.8148007266873
+2025-12-08 10:38:49
+Iteration 2: Residual max G: 1.18e+02, frequence: 163.81480377038386
+2025-12-08 10:38:52
+Iteration 3: Residual max G: 8.96e-01, frequence: 163.81480377080598
+2025-12-08 10:38:56
+Iteration 4: Residual max G: 5.06e-05, frequence: 163.81480377067308
+2025-12-08 10:38:59
+Iteration 5: Residual max G: 2.74e-07, frequence: 163.814803770673
+2025-12-08 10:38:59
+Second value f:163.814803770673,u:0.008723635193682522
+2025-12-08 10:38:59
+################## New Iteration ##################
+2025-12-08 10:39:02
+before length_s 2.0940407677829933
+2025-12-08 10:39:02
+factor_step_size 1.8675230420722646
+2025-12-08 10:39:02
+Angle [rad] 0.0013448250110834306
+2025-12-08 10:39:02
+self.MAX_LENGTH_S 5
+2025-12-08 10:39:02
+length_s 3.910669384873436
+2025-12-08 10:39:02
+length s : 3.910669384873436
+2025-12-08 10:39:02
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:39:03
+Iteration 0: Residual max G: 1.55e+05, frequence: 167.72531326839788
+2025-12-08 10:39:07
+Iteration 1: Residual max G: 2.41e+03, frequence: 167.72534344749045
+2025-12-08 10:39:10
+Iteration 2: Residual max G: 7.78e+02, frequence: 167.72535048714653
+2025-12-08 10:39:14
+Iteration 3: Residual max G: 2.15e+02, frequence: 167.72534858785147
+2025-12-08 10:39:17
+Iteration 4: Residual max G: 1.36e+00, frequence: 167.72534849551974
+2025-12-08 10:39:21
+Iteration 5: Residual max G: 6.23e-04, frequence: 167.7253484922495
+2025-12-08 10:39:25
+Iteration 6: Residual max G: 3.43e-07, frequence: 167.72534849224917
+2025-12-08 10:39:25
+Second value f:167.72534849224917,u:0.012439667127329431
+2025-12-08 10:39:25
+################## New Iteration ##################
+2025-12-08 10:39:27
+before length_s 3.910669384873436
+2025-12-08 10:39:27
+factor_step_size 1.8669705827621546
+2025-12-08 10:39:27
+Angle [rad] 0.0017297478561380582
+2025-12-08 10:39:27
+self.MAX_LENGTH_S 5
+2025-12-08 10:39:27
+length_s 5
+2025-12-08 10:39:27
+length s : 5
+2025-12-08 10:39:27
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:39:28
+Iteration 0: Residual max G: 1.88e+05, frequence: 172.72519602556798
+2025-12-08 10:39:32
+Iteration 1: Residual max G: 3.04e+03, frequence: 172.7252193045615
+2025-12-08 10:39:35
+Iteration 2: Residual max G: 1.20e+03, frequence: 172.725216986553
+2025-12-08 10:39:39
+Iteration 3: Residual max G: 8.61e+02, frequence: 172.72520951052874
+2025-12-08 10:39:42
+Iteration 4: Residual max G: 2.71e+01, frequence: 172.72520840317986
+2025-12-08 10:39:46
+Iteration 5: Residual max G: 5.06e-01, frequence: 172.72520823121658
+2025-12-08 10:39:49
+Iteration 6: Residual max G: 1.05e-05, frequence: 172.7252082305289
+2025-12-08 10:39:53
+Iteration 7: Residual max G: 4.55e-07, frequence: 172.72520823052903
+2025-12-08 10:39:53
+Second value f:172.72520823052903,u:0.01616685929151508
+2025-12-08 10:39:53
+################## New Iteration ##################
+2025-12-08 10:39:55
+before length_s 5
+2025-12-08 10:39:55
+factor_step_size 1.8662804780841926
+2025-12-08 10:39:55
+Angle [rad] 0.0021144397677640833
+2025-12-08 10:39:55
+self.MAX_LENGTH_S 5
+2025-12-08 10:39:55
+length_s 5
+2025-12-08 10:39:55
+length s : 5
+2025-12-08 10:39:55
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:39:57
+Iteration 0: Residual max G: 2.07e+05, frequence: 177.72503960061627
+2025-12-08 10:40:00
+Iteration 1: Residual max G: 3.13e+03, frequence: 177.72505668704812
+2025-12-08 10:40:04
+Iteration 2: Residual max G: 2.40e+03, frequence: 177.72503913264887
+2025-12-08 10:40:07
+Iteration 3: Residual max G: 2.17e+03, frequence: 177.72501932690668
+2025-12-08 10:40:11
+Iteration 4: Residual max G: 4.30e+02, frequence: 177.72501106569706
+2025-12-08 10:40:14
+Iteration 5: Residual max G: 1.43e+02, frequence: 177.72500623506093
+2025-12-08 10:40:18
+Iteration 6: Residual max G: 2.43e+00, frequence: 177.72500562958035
+2025-12-08 10:40:22
+Iteration 7: Residual max G: 4.64e-03, frequence: 177.7250056024304
+2025-12-08 10:40:24
+################## New Iteration ##################
+2025-12-08 10:40:24
+length s : 0.25
+2025-12-08 10:40:24
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:40:25
+Iteration 0: Residual max G: 5.17e+02, frequence: 172.9751997990334
+2025-12-08 10:40:29
+Iteration 1: Residual max G: 9.67e-02, frequence: 172.97519973362958
+2025-12-08 10:40:33
+Iteration 2: Residual max G: 1.55e-04, frequence: 172.97519972662215
+2025-12-08 10:40:36
+Iteration 3: Residual max G: 4.66e-07, frequence: 172.97519972662093
+2025-12-08 10:40:36
+Second value f:172.97519972662093,u:0.0163346659820914
+2025-12-08 10:40:36
+################## New Iteration ##################
+2025-12-08 10:40:38
+before length_s 0.25
+2025-12-08 10:40:38
+factor_step_size 1.868361266443511
+2025-12-08 10:40:38
+Angle [rad] 0.0001165582754944135
+2025-12-08 10:40:38
+self.MAX_LENGTH_S 5
+2025-12-08 10:40:38
+length_s 0.46709031661087774
+2025-12-08 10:40:38
+length s : 0.46709031661087774
+2025-12-08 10:40:38
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:40:40
+Iteration 0: Residual max G: 1.84e+03, frequence: 173.44227400596847
+2025-12-08 10:40:43
+Iteration 1: Residual max G: 1.11e+00, frequence: 173.44227379449916
+2025-12-08 10:40:47
+Iteration 2: Residual max G: 2.36e-02, frequence: 173.44227370710146
+2025-12-08 10:40:50
+Iteration 3: Residual max G: 5.41e-07, frequence: 173.44227370708282
+2025-12-08 10:40:50
+Second value f:173.44227370708282,u:0.016644482955452063
+2025-12-08 10:40:50
+################## New Iteration ##################
+2025-12-08 10:40:53
+before length_s 0.46709031661087774
+2025-12-08 10:40:53
+factor_step_size 1.868342327778122
+2025-12-08 10:40:53
+Angle [rad] 0.00023266302374107357
+2025-12-08 10:40:53
+self.MAX_LENGTH_S 5
+2025-12-08 10:40:53
+length_s 0.8726846094193873
+2025-12-08 10:40:53
+length s : 0.8726846094193873
+2025-12-08 10:40:53
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:40:54
+Iteration 0: Residual max G: 6.68e+03, frequence: 174.3149271358758
+2025-12-08 10:40:58
+Iteration 1: Residual max G: 9.93e+00, frequence: 174.3149267770838
+2025-12-08 10:41:01
+Iteration 2: Residual max G: 2.21e+00, frequence: 174.31492591171008
+2025-12-08 10:41:05
+Iteration 3: Residual max G: 1.67e-05, frequence: 174.3149259097333
+2025-12-08 10:41:08
+Iteration 4: Residual max G: 5.37e-07, frequence: 174.31492590973144
+2025-12-08 10:41:08
+Second value f:174.31492590973144,u:0.017211092640249476
+2025-12-08 10:41:08
+################## New Iteration ##################
+2025-12-08 10:41:11
+before length_s 0.8726846094193873
+2025-12-08 10:41:11
+factor_step_size 1.8682627314659963
+2025-12-08 10:41:11
+Angle [rad] 0.0004738631276940479
+2025-12-08 10:41:11
+self.MAX_LENGTH_S 5
+2025-12-08 10:41:11
+length_s 1.6304041321022007
+2025-12-08 10:41:11
+length s : 1.6304041321022007
+2025-12-08 10:41:11
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:41:12
+Iteration 0: Residual max G: 2.55e+04, frequence: 175.94526639953583
+2025-12-08 10:41:16
+Iteration 1: Residual max G: 8.50e+01, frequence: 175.94526689986134
+2025-12-08 10:41:19
+Iteration 2: Residual max G: 1.17e+02, frequence: 175.94526028717397
+2025-12-08 10:41:23
+Iteration 3: Residual max G: 1.08e-01, frequence: 175.94526010662145
+2025-12-08 10:41:26
+Iteration 4: Residual max G: 7.53e-05, frequence: 175.94526010132364
+2025-12-08 10:41:30
+Iteration 5: Residual max G: 4.78e-07, frequence: 175.9452601013248
+2025-12-08 10:41:30
+Second value f:175.9452601013248,u:0.01823090249922364
+2025-12-08 10:41:30
+################## New Iteration ##################
+2025-12-08 10:41:32
+before length_s 1.6304041321022007
+2025-12-08 10:41:32
+factor_step_size 1.8677853352283216
+2025-12-08 10:41:32
+Angle [rad] 0.0011165996618402508
+2025-12-08 10:41:32
+self.MAX_LENGTH_S 5
+2025-12-08 10:41:32
+length_s 3.0452449284361496
+2025-12-08 10:41:32
+length s : 3.0452449284361496
+2025-12-08 10:41:32
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:41:34
+Iteration 0: Residual max G: 1.12e+05, frequence: 178.99035477122845
+2025-12-08 10:41:37
+Iteration 1: Residual max G: 1.03e+03, frequence: 178.9903616475288
+2025-12-08 10:41:41
+Iteration 2: Residual max G: 3.05e+03, frequence: 178.9903242463825
+2025-12-08 10:41:44
+Iteration 3: Residual max G: 2.79e+02, frequence: 178.9903134534457
+2025-12-08 10:41:48
+Iteration 4: Residual max G: 3.35e+02, frequence: 178.99030118429684
+2025-12-08 10:41:52
+Iteration 5: Residual max G: 4.35e+00, frequence: 178.99029985497955
+2025-12-08 10:41:55
+Iteration 6: Residual max G: 8.28e-02, frequence: 178.99029966416913
+2025-12-08 10:41:59
+Iteration 7: Residual max G: 6.90e-07, frequence: 178.99029966380812
+2025-12-08 10:41:59
+Second value f:178.99029966380812,u:0.020018560417448383
+2025-12-08 10:41:59
+################## New Iteration ##################
+2025-12-08 10:42:01
+before length_s 3.0452449284361496
+2025-12-08 10:42:01
+factor_step_size 1.85634998558745
+2025-12-08 10:42:01
+Angle [rad] 0.005080520316484466
+2025-12-08 10:42:01
+self.MAX_LENGTH_S 5
+2025-12-08 10:42:01
+length_s 5
+2025-12-08 10:42:01
+length s : 5
+2025-12-08 10:42:01
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:42:02
+Iteration 0: Residual max G: 7.93e+05, frequence: 183.98965341190421
+2025-12-08 10:42:06
+Iteration 1: Residual max G: 2.35e+04, frequence: 183.9897262713124
+2025-12-08 10:42:10
+Iteration 2: Residual max G: 3.20e+03, frequence: 183.98973897332056
+2025-12-08 10:42:13
+Iteration 3: Residual max G: 3.73e+05, frequence: 183.98908595505293
+2025-12-08 10:42:17
+Iteration 4: Residual max G: 7.38e+03, frequence: 183.98917509598834
+2025-12-08 10:42:21
+Iteration 5: Residual max G: 1.11e+05, frequence: 183.98895384033148
+2025-12-08 10:42:24
+Iteration 6: Residual max G: 2.22e+03, frequence: 183.98897375907157
+2025-12-08 10:42:28
+Iteration 7: Residual max G: 5.95e+06, frequence: 183.9900800640726
+2025-12-08 10:42:30
+################## New Iteration ##################
+2025-12-08 10:42:30
+length s : 0.25
+2025-12-08 10:42:30
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:42:31
+Iteration 0: Residual max G: 1.98e+03, frequence: 179.24026735121294
+2025-12-08 10:42:35
+Iteration 1: Residual max G: 1.64e+00, frequence: 179.24026601237088
+2025-12-08 10:42:38
+Iteration 2: Residual max G: 7.70e-01, frequence: 179.24026479919428
+2025-12-08 10:42:42
+Iteration 3: Residual max G: 1.93e-06, frequence: 179.24026479744015
+2025-12-08 10:42:42
+Second value f:179.24026479744015,u:0.020158941581133915
+2025-12-08 10:42:42
+################## New Iteration ##################
+2025-12-08 10:42:44
+before length_s 0.25
+2025-12-08 10:42:44
+factor_step_size 1.868059102411964
+2025-12-08 10:42:44
+Angle [rad] 0.0008127393231320287
+2025-12-08 10:42:44
+self.MAX_LENGTH_S 5
+2025-12-08 10:42:44
+length_s 0.467014775602991
+2025-12-08 10:42:44
+length s : 0.467014775602991
+2025-12-08 10:42:44
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:42:46
+Iteration 0: Residual max G: 8.12e+03, frequence: 179.70720877151393
+2025-12-08 10:42:49
+Iteration 1: Residual max G: 1.03e+01, frequence: 179.70720652328586
+2025-12-08 10:42:53
+Iteration 2: Residual max G: 5.72e+01, frequence: 179.70719520179443
+2025-12-08 10:42:56
+Iteration 3: Residual max G: 1.22e-02, frequence: 179.70719504691115
+2025-12-08 10:43:00
+Iteration 4: Residual max G: 1.19e-05, frequence: 179.70719504176682
+2025-12-08 10:43:03
+Iteration 5: Residual max G: 7.23e-07, frequence: 179.7071950417612
+2025-12-08 10:43:03
+Second value f:179.7071950417612,u:0.02041828314845533
+2025-12-08 10:43:03
+################## New Iteration ##################
+2025-12-08 10:43:06
+before length_s 0.467014775602991
+2025-12-08 10:43:06
+factor_step_size 1.8657271981230086
+2025-12-08 10:43:06
+Angle [rad] 0.0023784188227411137
+2025-12-08 10:43:06
+self.MAX_LENGTH_S 5
+2025-12-08 10:43:06
+length_s 0.871322168767814
+2025-12-08 10:43:06
+length s : 0.871322168767814
+2025-12-08 10:43:06
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:43:07
+Iteration 0: Residual max G: 4.21e+04, frequence: 180.57832035717482
+2025-12-08 10:43:11
+Iteration 1: Residual max G: 1.51e+02, frequence: 180.5783195626233
+2025-12-08 10:43:14
+Iteration 2: Residual max G: 5.51e+03, frequence: 180.5781846339764
+2025-12-08 10:43:18
+Iteration 3: Residual max G: 2.10e+01, frequence: 180.57817799796098
+2025-12-08 10:43:22
+Iteration 4: Residual max G: 1.30e+03, frequence: 180.57811340086448
+2025-12-08 10:43:25
+Iteration 5: Residual max G: 3.88e+00, frequence: 180.57811023245984
+2025-12-08 10:43:29
+Iteration 6: Residual max G: 2.78e+01, frequence: 180.57810087687437
+2025-12-08 10:43:32
+Iteration 7: Residual max G: 2.62e-02, frequence: 180.5781005963188
+2025-12-08 10:43:34
+################## New Iteration ##################
+2025-12-08 10:43:34
+length s : 0.043566108438390705
+2025-12-08 10:43:34
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:43:36
+Iteration 0: Residual max G: 1.05e+02, frequence: 179.75075130753189
+2025-12-08 10:43:39
+Iteration 1: Residual max G: 1.53e-02, frequence: 179.7507510946386
+2025-12-08 10:43:43
+Iteration 2: Residual max G: 4.57e-05, frequence: 179.75075108196896
+2025-12-08 10:43:46
+Iteration 3: Residual max G: 6.04e-07, frequence: 179.75075108194724
+2025-12-08 10:43:46
+Second value f:179.75075108194724,u:0.020442263116129275
+2025-12-08 10:43:46
+################## New Iteration ##################
+2025-12-08 10:43:49
+before length_s 0.043566108438390705
+2025-12-08 10:43:49
+factor_step_size 1.8683302285462384
+2025-12-08 10:43:49
+Angle [rad] 0.0002829060610505122
+2025-12-08 10:43:49
+self.MAX_LENGTH_S 5
+2025-12-08 10:43:49
+length_s 0.08139587733556872
+2025-12-08 10:43:49
+length s : 0.08139587733556872
+2025-12-08 10:43:49
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:43:50
+Iteration 0: Residual max G: 3.85e+02, frequence: 179.83212769317157
+2025-12-08 10:43:54
+Iteration 1: Residual max G: 1.80e-01, frequence: 179.8321269533365
+2025-12-08 10:43:57
+Iteration 2: Residual max G: 7.82e-03, frequence: 179.83212678369696
+2025-12-08 10:44:01
+Iteration 3: Residual max G: 7.05e-07, frequence: 179.8321267836745
+2025-12-08 10:44:01
+Second value f:179.8321267836745,u:0.020486956073322536
+2025-12-08 10:44:01
+################## New Iteration ##################
+2025-12-08 10:44:03
+before length_s 0.08139587733556872
+2025-12-08 10:44:03
+factor_step_size 1.8682028524550358
+2025-12-08 10:44:03
+Angle [rad] 0.0005939283321964614
+2025-12-08 10:44:03
+self.MAX_LENGTH_S 5
+2025-12-08 10:44:03
+length_s 0.15206401021638968
+2025-12-08 10:44:03
+length s : 0.15206401021638968
+2025-12-08 10:44:03
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:44:05
+Iteration 0: Residual max G: 1.48e+03, frequence: 179.98415121374939
+2025-12-08 10:44:08
+Iteration 1: Residual max G: 1.39e+00, frequence: 179.9841491793453
+2025-12-08 10:44:12
+Iteration 2: Residual max G: 9.97e-01, frequence: 179.98414717109205
+2025-12-08 10:44:16
+Iteration 3: Residual max G: 5.27e-06, frequence: 179.98414716666085
+2025-12-08 10:44:16
+Second value f:179.98414716666085,u:0.020570035816955077
+2025-12-08 10:44:16
+################## New Iteration ##################
+2025-12-08 10:44:18
+before length_s 0.15206401021638968
+2025-12-08 10:44:18
+factor_step_size 1.8674423247642198
+2025-12-08 10:44:18
+Angle [rad] 0.00140763786655437
+2025-12-08 10:44:18
+self.MAX_LENGTH_S 5
+2025-12-08 10:44:18
+length_s 0.2839707687514648
+2025-12-08 10:44:18
+length s : 0.2839707687514648
+2025-12-08 10:44:18
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:44:19
+Iteration 0: Residual max G: 6.33e+03, frequence: 180.26802709044247
+2025-12-08 10:44:23
+Iteration 1: Residual max G: 7.32e+00, frequence: 180.2680234497442
+2025-12-08 10:44:26
+Iteration 2: Residual max G: 8.90e+01, frequence: 180.26800242894112
+2025-12-08 10:44:30
+Iteration 3: Residual max G: 4.51e-02, frequence: 180.26800197258942
+2025-12-08 10:44:34
+Iteration 4: Residual max G: 2.77e-04, frequence: 180.26800193553677
+2025-12-08 10:44:37
+Iteration 5: Residual max G: 5.96e-07, frequence: 180.2680019355385
+2025-12-08 10:44:37
+Second value f:180.2680019355385,u:0.020723348558376018
+2025-12-08 10:44:37
+################## New Iteration ##################
+2025-12-08 10:44:40
+before length_s 0.2839707687514648
+2025-12-08 10:44:40
+factor_step_size 1.8569641138876023
+2025-12-08 10:44:40
+Angle [rad] 0.0049485963127521
+2025-12-08 10:44:40
+self.MAX_LENGTH_S 5
+2025-12-08 10:44:40
+length_s 0.5273235269645451
+2025-12-08 10:44:40
+length s : 0.5273235269645451
+2025-12-08 10:44:40
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:44:41
+Iteration 0: Residual max G: 3.84e+04, frequence: 180.79502864504406
+2025-12-08 10:44:45
+Iteration 1: Residual max G: 1.24e+02, frequence: 180.79502574139357
+2025-12-08 10:44:48
+Iteration 2: Residual max G: 2.59e+04, frequence: 180.79455229123243
+2025-12-08 10:44:52
+Iteration 3: Residual max G: 6.47e+01, frequence: 180.79454937965673
+2025-12-08 10:44:56
+Iteration 4: Residual max G: 9.32e+04, frequence: 180.7954234176396
+2025-12-08 10:44:59
+Iteration 5: Residual max G: 6.29e+02, frequence: 180.79543687462822
+2025-12-08 10:45:03
+Iteration 6: Residual max G: 8.21e+03, frequence: 180.7951665358146
+2025-12-08 10:45:07
+Iteration 7: Residual max G: 1.34e+02, frequence: 180.7951344962141
+2025-12-08 10:45:09
+################## New Iteration ##################
+2025-12-08 10:45:09
+length s : 0.026366176348227258
+2025-12-08 10:45:09
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:45:10
+Iteration 0: Residual max G: 9.61e+01, frequence: 180.2943532710138
+2025-12-08 10:45:14
+Iteration 1: Residual max G: 3.02e-02, frequence: 180.2943527672963
+2025-12-08 10:45:18
+Iteration 2: Residual max G: 2.20e-04, frequence: 180.29435272279392
+2025-12-08 10:45:21
+Iteration 3: Residual max G: 5.42e-07, frequence: 180.2943527227762
+2025-12-08 10:45:21
+Second value f:180.2943527227762,u:0.02073742026928087
+2025-12-08 10:45:21
+################## New Iteration ##################
+2025-12-08 10:45:23
+before length_s 0.026366176348227258
+2025-12-08 10:45:23
+factor_step_size 1.8681590829772063
+2025-12-08 10:45:23
+Angle [rad] 0.0006681815422825099
+2025-12-08 10:45:23
+self.MAX_LENGTH_S 5
+2025-12-08 10:45:23
+length_s 0.04925621182831954
+2025-12-08 10:45:23
+length s : 0.04925621182831954
+2025-12-08 10:45:23
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:45:25
+Iteration 0: Residual max G: 3.61e+02, frequence: 180.3435790818658
+2025-12-08 10:45:29
+Iteration 1: Residual max G: 3.17e-01, frequence: 180.3435774003351
+2025-12-08 10:45:32
+Iteration 2: Residual max G: 3.76e-02, frequence: 180.34357679655116
+2025-12-08 10:45:36
+Iteration 3: Residual max G: 5.10e-07, frequence: 180.343576796151
+2025-12-08 10:45:36
+Second value f:180.343576796151,u:0.020763605780497456
+2025-12-08 10:45:36
+################## New Iteration ##################
+2025-12-08 10:45:38
+before length_s 0.04925621182831954
+2025-12-08 10:45:38
+factor_step_size 1.867322232710091
+2025-12-08 10:45:38
+Angle [rad] 0.0014962238527672183
+2025-12-08 10:45:38
+self.MAX_LENGTH_S 5
+2025-12-08 10:45:38
+length_s 0.09197721944609882
+2025-12-08 10:45:38
+length s : 0.09197721944609882
+2025-12-08 10:45:38
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:45:39
+Iteration 0: Residual max G: 1.47e+03, frequence: 180.43548900644694
+2025-12-08 10:45:43
+Iteration 1: Residual max G: 2.00e+00, frequence: 180.43548465190264
+2025-12-08 10:45:47
+Iteration 2: Residual max G: 5.15e+00, frequence: 180.4354770253357
+2025-12-08 10:45:50
+Iteration 3: Residual max G: 3.24e-04, frequence: 180.4354769657045
+2025-12-08 10:45:54
+Iteration 4: Residual max G: 7.28e-07, frequence: 180.4354769653064
+2025-12-08 10:45:54
+Second value f:180.4354769653064,u:0.020812045899239014
+2025-12-08 10:45:54
+################## New Iteration ##################
+2025-12-08 10:45:56
+before length_s 0.09197721944609882
+2025-12-08 10:45:56
+factor_step_size 1.8596577515644521
+2025-12-08 10:45:56
+Angle [rad] 0.004323260399906474
+2025-12-08 10:45:56
+self.MAX_LENGTH_S 5
+2025-12-08 10:45:56
+length_s 0.17104614911028235
+2025-12-08 10:45:56
+length s : 0.17104614911028235
+2025-12-08 10:45:56
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:45:57
+Iteration 0: Residual max G: 7.37e+03, frequence: 180.6063475494369
+2025-12-08 10:46:01
+Iteration 1: Residual max G: 8.86e+00, frequence: 180.60634014878462
+2025-12-08 10:46:04
+Iteration 2: Residual max G: 8.63e+02, frequence: 180.60622118696688
+2025-12-08 10:46:08
+Iteration 3: Residual max G: 2.93e+00, frequence: 180.6062145134797
+2025-12-08 10:46:11
+Iteration 4: Residual max G: 1.75e+01, frequence: 180.6061976203167
+2025-12-08 10:46:15
+Iteration 5: Residual max G: 1.92e-02, frequence: 180.60619706430074
+2025-12-08 10:46:19
+Iteration 6: Residual max G: 5.62e-05, frequence: 180.60619703405308
+2025-12-08 10:46:22
+Iteration 7: Residual max G: 6.56e-07, frequence: 180.60619703402608
+2025-12-08 10:46:22
+Second value f:180.60619703402608,u:0.020898375629190932
+2025-12-08 10:46:22
+################## New Iteration ##################
+2025-12-08 10:46:24
+before length_s 0.17104614911028235
+2025-12-08 10:46:24
+factor_step_size 1.004613768287504
+2025-12-08 10:46:24
+Angle [rad] 0.049815571782997996
+2025-12-08 10:46:24
+self.MAX_LENGTH_S 5
+2025-12-08 10:46:24
+length_s 0.17183531640874705
+2025-12-08 10:46:24
+length s : 0.17183531640874705
+2025-12-08 10:46:24
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:46:26
+Iteration 0: Residual max G: 4.72e+04, frequence: 180.77690951499798
+2025-12-08 10:46:29
+Iteration 1: Residual max G: 1.81e+02, frequence: 180.7768970977239
+2025-12-08 10:46:33
+Iteration 2: Residual max G: 9.44e+04, frequence: 180.78004092456953
+2025-12-08 10:46:36
+Iteration 3: Residual max G: 6.46e+02, frequence: 180.78004802790426
+2025-12-08 10:46:40
+Iteration 4: Residual max G: 5.20e+03, frequence: 180.7793006892653
+2025-12-08 10:46:44
+Iteration 5: Residual max G: 1.93e+02, frequence: 180.7791579835463
+2025-12-08 10:46:47
+Iteration 6: Residual max G: 1.90e+04, frequence: 180.77773121804478
+2025-12-08 10:46:51
+Iteration 7: Residual max G: 4.23e+01, frequence: 180.777699020363
+2025-12-08 10:46:53
+################## New Iteration ##################
+2025-12-08 10:46:53
+length s : 0.008591765820437353
+2025-12-08 10:46:53
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:46:55
+Iteration 0: Residual max G: 1.18e+02, frequence: 180.61473265807467
+2025-12-08 10:46:58
+Iteration 1: Residual max G: 3.59e-01, frequence: 180.61472647499596
+2025-12-08 10:47:02
+Iteration 2: Residual max G: 6.23e-02, frequence: 180.6147238897189
+2025-12-08 10:47:06
+Iteration 3: Residual max G: 1.01e-06, frequence: 180.61472388192126
+2025-12-08 10:47:06
+Second value f:180.61472388192126,u:0.02090225538832696
+2025-12-08 10:47:06
+################## New Iteration ##################
+2025-12-08 10:47:08
+before length_s 0.008591765820437353
+2025-12-08 10:47:08
+factor_step_size 1.8177360008762855
+2025-12-08 10:47:08
+Angle [rad] 0.010482980120341207
+2025-12-08 10:47:08
+self.MAX_LENGTH_S 5
+2025-12-08 10:47:08
+length_s 0.015617562042907353
+2025-12-08 10:47:08
+length s : 0.015617562042907353
+2025-12-08 10:47:08
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:47:09
+Iteration 0: Residual max G: 5.33e+02, frequence: 180.63020188348239
+2025-12-08 10:47:13
+Iteration 1: Residual max G: 2.32e+00, frequence: 180.6301835899048
+2025-12-08 10:47:16
+Iteration 2: Residual max G: 1.88e+01, frequence: 180.63013092541877
+2025-12-08 10:47:20
+Iteration 3: Residual max G: 6.90e-02, frequence: 180.63012774250979
+2025-12-08 10:47:24
+Iteration 4: Residual max G: 9.49e-04, frequence: 180.63012736884855
+2025-12-08 10:47:27
+Iteration 5: Residual max G: 6.24e-07, frequence: 180.63012736833375
+2025-12-08 10:47:27
+Second value f:180.63012736833375,u:0.020908645961683556
+2025-12-08 10:47:27
+################## New Iteration ##################
+2025-12-08 10:47:30
+before length_s 0.015617562042907353
+2025-12-08 10:47:30
+factor_step_size 0.968356086343131
+2025-12-08 10:47:30
+Angle [rad] 0.061529498357886084
+2025-12-08 10:47:30
+self.MAX_LENGTH_S 5
+2025-12-08 10:47:30
+length_s 0.015123361258090797
+2025-12-08 10:47:30
+length s : 0.015123361258090797
+2025-12-08 10:47:30
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:47:31
+Iteration 0: Residual max G: 1.47e+03, frequence: 180.6448489602919
+2025-12-08 10:47:35
+Iteration 1: Residual max G: 4.35e+00, frequence: 180.6448059895023
+2025-12-08 10:47:38
+Iteration 2: Residual max G: 1.45e+05, frequence: 180.6367394517391
+2025-12-08 10:47:42
+Iteration 3: Residual max G: 1.49e+03, frequence: 180.6368045108152
+2025-12-08 10:47:45
+Iteration 4: Residual max G: 2.72e+05, frequence: 180.6261201732248
+2025-12-08 10:47:49
+Iteration 5: Residual max G: 4.80e+03, frequence: 180.62655353696212
+2025-12-08 10:47:53
+Iteration 6: Residual max G: 2.30e+05, frequence: 180.6180123271434
+2025-12-08 10:47:56
+Iteration 7: Residual max G: 4.02e+03, frequence: 180.61855128696956
+2025-12-08 10:47:58
+################## New Iteration ##################
+2025-12-08 10:47:58
+length s : 0.0007561680629045399
+2025-12-08 10:47:58
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:48:00
+Iteration 0: Residual max G: 3.68e+00, frequence: 180.63086344793166
+2025-12-08 10:48:03
+Iteration 1: Residual max G: 2.09e-03, frequence: 180.63086247752045
+2025-12-08 10:48:07
+Iteration 2: Residual max G: 1.88e-06, frequence: 180.6308624549384
+2025-12-08 10:48:07
+Second value f:180.6308624549384,u:0.020908907226415176
+2025-12-08 10:48:07
+################## New Iteration ##################
+2025-12-08 10:48:09
+before length_s 0.0007561680629045399
+2025-12-08 10:48:09
+factor_step_size 1.8514242952329099
+2025-12-08 10:48:09
+Angle [rad] 0.0060365119051002565
+2025-12-08 10:48:09
+self.MAX_LENGTH_S 5
+2025-12-08 10:48:09
+length_s 0.0013999879229406723
+2025-12-08 10:48:09
+length s : 0.0013999879229406723
+2025-12-08 10:48:09
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:48:10
+Iteration 0: Residual max G: 1.39e+01, frequence: 180.63222138439008
+2025-12-08 10:48:14
+Iteration 1: Residual max G: 3.17e-02, frequence: 180.6322174062887
+2025-12-08 10:48:18
+Iteration 2: Residual max G: 3.06e-04, frequence: 180.63221701544023
+2025-12-08 10:48:21
+Iteration 3: Residual max G: 7.27e-07, frequence: 180.6322170152323
+2025-12-08 10:48:21
+Second value f:180.6322170152323,u:0.0209093654435168
+2025-12-08 10:48:21
+################## New Iteration ##################
+2025-12-08 10:48:23
+before length_s 0.0013999879229406723
+2025-12-08 10:48:23
+factor_step_size 1.7737596114337029
+2025-12-08 10:48:23
+Angle [rad] 0.014417114384884886
+2025-12-08 10:48:23
+self.MAX_LENGTH_S 5
+2025-12-08 10:48:23
+length_s 0.0024832420342071238
+2025-12-08 10:48:23
+length s : 0.0024832420342071238
+2025-12-08 10:48:23
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:48:25
+Iteration 0: Residual max G: 5.39e+01, frequence: 180.63461017666617
+2025-12-08 10:48:28
+Iteration 1: Residual max G: 4.22e-01, frequence: 180.63459396426984
+2025-12-08 10:48:32
+Iteration 2: Residual max G: 9.90e-02, frequence: 180.6345861025368
+2025-12-08 10:48:36
+Iteration 3: Residual max G: 8.97e-06, frequence: 180.6345860281072
+2025-12-08 10:48:36
+Second value f:180.6345860281072,u:0.020910056125387568
+2025-12-08 10:48:36
+################## New Iteration ##################
+2025-12-08 10:48:38
+before length_s 0.0024832420342071238
+2025-12-08 10:48:38
+factor_step_size 1.0672163712997154
+2025-12-08 10:48:38
+Angle [rad] 0.04732691038702329
+2025-12-08 10:48:38
+self.MAX_LENGTH_S 5
+2025-12-08 10:48:38
+length_s 0.00265015655280545
+2025-12-08 10:48:38
+length s : 0.00265015655280545
+2025-12-08 10:48:38
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:48:39
+Iteration 0: Residual max G: 1.04e+02, frequence: 180.6370719479581
+2025-12-08 10:48:43
+Iteration 1: Residual max G: 1.42e+00, frequence: 180.63703219665922
+2025-12-08 10:48:46
+Iteration 2: Residual max G: 3.20e+00, frequence: 180.63697252366288
+2025-12-08 10:48:50
+Iteration 3: Residual max G: 1.96e-02, frequence: 180.636967861926
+2025-12-08 10:48:53
+Iteration 4: Residual max G: 6.39e-05, frequence: 180.6369675954641
+2025-12-08 10:48:57
+Iteration 5: Residual max G: 5.25e-07, frequence: 180.63696759555936
+2025-12-08 10:48:57
+Second value f:180.63696759555936,u:0.02091037131183052
+2025-12-08 10:48:57
+################## New Iteration ##################
+2025-12-08 10:48:59
+before length_s 0.00265015655280545
+2025-12-08 10:48:59
+factor_step_size 0.375216532121448
+2025-12-08 10:48:59
+Angle [rad] 0.2040536723769536
+2025-12-08 10:48:59
+self.MAX_LENGTH_S 5
+2025-12-08 10:48:59
+length_s 0.0009943825513225922
+2025-12-08 10:48:59
+length s : 0.0009943825513225922
+2025-12-08 10:48:59
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:49:01
+Iteration 0: Residual max G: 4.70e+01, frequence: 180.63774635514608
+2025-12-08 10:49:04
+Iteration 1: Residual max G: 9.98e-01, frequence: 180.63767479979543
+2025-12-08 10:49:08
+Iteration 2: Residual max G: 1.13e+00, frequence: 180.63759880831853
+2025-12-08 10:49:11
+Iteration 3: Residual max G: 6.43e-03, frequence: 180.6375930619851
+2025-12-08 10:49:15
+Iteration 4: Residual max G: 6.42e-06, frequence: 180.63759288138738
+2025-12-08 10:49:15
+Second value f:180.63759288138738,u:0.020910032995985896
+2025-12-08 10:49:15
+################## New Iteration ##################
+2025-12-08 10:49:17
+before length_s 0.0009943825513225922
+2025-12-08 10:49:17
+factor_step_size 0.027012526939283223
+2025-12-08 10:49:17
+Angle [rad] 0.3821789944210319
+2025-12-08 10:49:17
+self.MAX_LENGTH_S 5
+2025-12-08 10:49:17
+length_s 2.6860785455554703e-05
+2025-12-08 10:49:17
+length s : 2.6860785455554703e-05
+2025-12-08 10:49:17
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:49:18
+Iteration 0: Residual max G: 8.21e-02, frequence: 180.6376001566565
+2025-12-08 10:49:22
+Iteration 1: Residual max G: 1.76e-06, frequence: 180.6375997792811
+2025-12-08 10:49:22
+Second value f:180.6375997792811,u:0.02091001483426677
+2025-12-08 10:49:22
+################## New Iteration ##################
+2025-12-08 10:49:24
+before length_s 2.6860785455554703e-05
+2025-12-08 10:49:24
+factor_step_size 1.771149570364157
+2025-12-08 10:49:24
+Angle [rad] 0.014619962867863358
+2025-12-08 10:49:24
+self.MAX_LENGTH_S 5
+2025-12-08 10:49:24
+length_s 4.7574468619249514e-05
+2025-12-08 10:49:24
+length s : 4.7574468619249514e-05
+2025-12-08 10:49:24
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:49:26
+Iteration 0: Residual max G: 2.62e-01, frequence: 180.63761132172542
+2025-12-08 10:49:29
+Iteration 1: Residual max G: 1.16e-05, frequence: 180.63761009741012
+2025-12-08 10:49:33
+Iteration 2: Residual max G: 6.60e-07, frequence: 180.63761009673598
+2025-12-08 10:49:33
+Second value f:180.63761009673598,u:0.02090998119682547
+2025-12-08 10:49:33
+################## New Iteration ##################
+2025-12-08 10:49:35
+before length_s 4.7574468619249514e-05
+2025-12-08 10:49:35
+factor_step_size 1.5609872586917253
+2025-12-08 10:49:35
+Angle [rad] 0.026813522785951935
+2025-12-08 10:49:35
+self.MAX_LENGTH_S 5
+2025-12-08 10:49:35
+length_s 7.426313935367781e-05
+2025-12-08 10:49:35
+length s : 7.426313935367781e-05
+2025-12-08 10:49:35
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:49:36
+Iteration 0: Residual max G: 6.53e-01, frequence: 180.6376242471414
+2025-12-08 10:49:40
+Iteration 1: Residual max G: 4.54e-05, frequence: 180.6376211182871
+2025-12-08 10:49:43
+Iteration 2: Residual max G: 7.15e-07, frequence: 180.63762111356345
+2025-12-08 10:49:43
+Second value f:180.63762111356345,u:0.020909925000157637
+2025-12-08 10:49:43
+################## New Iteration ##################
+2025-12-08 10:49:46
+before length_s 7.426313935367781e-05
+2025-12-08 10:49:46
+factor_step_size 1.1609771563298361
+2025-12-08 10:49:46
+Angle [rad] 0.04362409233996383
+2025-12-08 10:49:46
+self.MAX_LENGTH_S 5
+2025-12-08 10:49:46
+length_s 8.621780834695921e-05
+2025-12-08 10:49:46
+length s : 8.621780834695921e-05
+2025-12-08 10:49:46
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:49:47
+Iteration 0: Residual max G: 9.03e-01, frequence: 180.6376301616101
+2025-12-08 10:49:50
+Iteration 1: Residual max G: 2.69e-05, frequence: 180.63762574473296
+2025-12-08 10:49:54
+Iteration 2: Residual max G: 1.35e-06, frequence: 180.63762573008884
+2025-12-08 10:49:54
+Second value f:180.63762573008884,u:0.02090985444716838
+2025-12-08 10:49:54
+################## New Iteration ##################
+2025-12-08 10:49:56
+before length_s 8.621780834695921e-05
+2025-12-08 10:49:56
+factor_step_size 0.995266384706208
+2025-12-08 10:49:56
+Angle [rad] 0.051862829950470535
+2025-12-08 10:49:56
+self.MAX_LENGTH_S 5
+2025-12-08 10:49:56
+length_s 8.580968641077081e-05
+2025-12-08 10:49:56
+length s : 8.580968641077081e-05
+2025-12-08 10:49:56
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:49:58
+Iteration 0: Residual max G: 9.04e-01, frequence: 180.637625870699
+2025-12-08 10:50:01
+Iteration 1: Residual max G: 1.11e-06, frequence: 180.6376214315043
+2025-12-08 10:50:01
+Second value f:180.6376214315043,u:0.020909779232552134
+2025-12-08 10:50:01
+################## New Iteration ##################
+2025-12-08 10:50:03
+before length_s 8.580968641077081e-05
+2025-12-08 10:50:03
+factor_step_size 0.9965456100652328
+2025-12-08 10:50:03
+Angle [rad] 0.051365213606366464
+2025-12-08 10:50:03
+self.MAX_LENGTH_S 5
+2025-12-08 10:50:03
+length_s 8.551326629372792e-05
+2025-12-08 10:50:03
+length s : 8.551326629372792e-05
+2025-12-08 10:50:03
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:50:05
+Iteration 0: Residual max G: 8.89e-01, frequence: 180.6376127743538
+2025-12-08 10:50:08
+Iteration 1: Residual max G: 2.35e-05, frequence: 180.63760849408516
+2025-12-08 10:50:12
+Iteration 2: Residual max G: 1.24e-06, frequence: 180.63760850322456
+2025-12-08 10:50:12
+Second value f:180.63760850322456,u:0.02090970018015522
+2025-12-08 10:50:12
+################## New Iteration ##################
+2025-12-08 10:50:14
+before length_s 8.551326629372792e-05
+2025-12-08 10:50:14
+factor_step_size 1.014528779194772
+2025-12-08 10:50:14
+Angle [rad] 0.04941978238569495
+2025-12-08 10:50:14
+self.MAX_LENGTH_S 5
+2025-12-08 10:50:14
+length_s 8.675566965793322e-05
+2025-12-08 10:50:14
+length s : 8.675566965793322e-05
+2025-12-08 10:50:14
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:50:16
+Iteration 0: Residual max G: 8.87e-01, frequence: 180.63759118323875
+2025-12-08 10:50:19
+Iteration 1: Residual max G: 8.65e-05, frequence: 180.63758706911358
+2025-12-08 10:50:23
+Iteration 2: Residual max G: 9.21e-07, frequence: 180.63758708659697
+2025-12-08 10:50:23
+Second value f:180.63758708659697,u:0.020909616765241296
+2025-12-08 10:50:23
+################## New Iteration ##################
+2025-12-08 10:50:25
+before length_s 8.675566965793322e-05
+2025-12-08 10:50:25
+factor_step_size 1.0740535963555293
+2025-12-08 10:50:25
+Angle [rad] 0.047056312438877805
+2025-12-08 10:50:25
+self.MAX_LENGTH_S 5
+2025-12-08 10:50:25
+length_s 9.318023900033546e-05
+2025-12-08 10:50:25
+length s : 9.318023900033546e-05
+2025-12-08 10:50:25
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:50:27
+Iteration 0: Residual max G: 9.75e-01, frequence: 180.63755988853038
+2025-12-08 10:50:30
+Iteration 1: Residual max G: 2.10e-04, frequence: 180.63755560936298
+2025-12-08 10:50:34
+Iteration 2: Residual max G: 9.20e-07, frequence: 180.63755563859752
+2025-12-08 10:50:34
+Second value f:180.63755563859752,u:0.020909524633229887
+2025-12-08 10:50:34
+################## New Iteration ##################
+2025-12-08 10:50:36
+before length_s 9.318023900033546e-05
+2025-12-08 10:50:36
+factor_step_size 1.0977058530997643
+2025-12-08 10:50:36
+Angle [rad] 0.046121385931857474
+2025-12-08 10:50:36
+self.MAX_LENGTH_S 5
+2025-12-08 10:50:36
+length_s 0.00010228449374390317
+2025-12-08 10:50:36
+length s : 0.00010228449374390317
+2025-12-08 10:50:36
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:50:37
+Iteration 0: Residual max G: 1.10e+00, frequence: 180.6375167542452
+2025-12-08 10:50:41
+Iteration 1: Residual max G: 4.16e-04, frequence: 180.63751227572817
+2025-12-08 10:50:44
+Iteration 2: Residual max G: 1.29e-06, frequence: 180.63751231698345
+2025-12-08 10:50:44
+Second value f:180.63751231698345,u:0.02090942164780941
+2025-12-08 10:50:44
+################## New Iteration ##################
+2025-12-08 10:50:47
+before length_s 0.00010228449374390317
+2025-12-08 10:50:47
+factor_step_size 1.1297225742674666
+2025-12-08 10:50:47
+Angle [rad] 0.04485758975181354
+2025-12-08 10:50:47
+self.MAX_LENGTH_S 5
+2025-12-08 10:50:47
+length_s 0.00011555310158000687
+2025-12-08 10:50:47
+length s : 0.00011555310158000687
+2025-12-08 10:50:47
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:50:48
+Iteration 0: Residual max G: 1.29e+00, frequence: 180.6374587836597
+2025-12-08 10:50:52
+Iteration 1: Residual max G: 7.69e-04, frequence: 180.63745399778168
+2025-12-08 10:50:55
+Iteration 2: Residual max G: 1.28e-06, frequence: 180.63745405742324
+2025-12-08 10:50:55
+Second value f:180.63745405742324,u:0.020909304221824472
+2025-12-08 10:50:55
+################## New Iteration ##################
+2025-12-08 10:50:57
+before length_s 0.00011555310158000687
+2025-12-08 10:50:57
+factor_step_size 1.156729023545774
+2025-12-08 10:50:57
+Angle [rad] 0.04379180683594425
+2025-12-08 10:50:57
+self.MAX_LENGTH_S 5
+2025-12-08 10:50:57
+length_s 0.00013366362635832698
+2025-12-08 10:50:57
+length s : 0.00013366362635832698
+2025-12-08 10:50:57
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:50:59
+Iteration 0: Residual max G: 1.55e+00, frequence: 180.63738174823843
+2025-12-08 10:51:02
+Iteration 1: Residual max G: 1.35e-03, frequence: 180.63737658606982
+2025-12-08 10:51:06
+Iteration 2: Residual max G: 7.91e-07, frequence: 180.63737667374326
+2025-12-08 10:51:06
+Second value f:180.63737667374326,u:0.020909168259970957
+2025-12-08 10:51:06
+################## New Iteration ##################
+2025-12-08 10:51:08
+before length_s 0.00013366362635832698
+2025-12-08 10:51:08
+factor_step_size 1.1914835146246785
+2025-12-08 10:51:08
+Angle [rad] 0.04241849617766033
+2025-12-08 10:51:08
+self.MAX_LENGTH_S 5
+2025-12-08 10:51:08
+length_s 0.00015925800731089924
+2025-12-08 10:51:08
+length s : 0.00015925800731089924
+2025-12-08 10:51:08
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:51:10
+Iteration 0: Residual max G: 1.95e+00, frequence: 180.63727914002567
+2025-12-08 10:51:13
+Iteration 1: Residual max G: 2.39e-03, frequence: 180.63727344730367
+2025-12-08 10:51:17
+Iteration 2: Residual max G: 1.39e-06, frequence: 180.63727357387785
+2025-12-08 10:51:17
+Second value f:180.63727357387785,u:0.020909007341978012
+2025-12-08 10:51:17
+################## New Iteration ##################
+2025-12-08 10:51:19
+before length_s 0.00015925800731089924
+2025-12-08 10:51:19
+factor_step_size 1.2248419832721804
+2025-12-08 10:51:19
+Angle [rad] 0.041096158317895315
+2025-12-08 10:51:19
+self.MAX_LENGTH_S 5
+2025-12-08 10:51:19
+length_s 0.00019506589352665722
+2025-12-08 10:51:19
+length s : 0.00019506589352665722
+2025-12-08 10:51:19
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:51:20
+Iteration 0: Residual max G: 2.53e+00, frequence: 180.63714141060018
+2025-12-08 10:51:24
+Iteration 1: Residual max G: 4.23e-03, frequence: 180.63713503920266
+2025-12-08 10:51:27
+Iteration 2: Residual max G: 3.73e-06, frequence: 180.63713522654518
+2025-12-08 10:51:27
+Second value f:180.63713522654518,u:0.020908812937360455
+2025-12-08 10:51:27
+################## New Iteration ##################
+2025-12-08 10:51:29
+before length_s 0.00019506589352665722
+2025-12-08 10:51:29
+factor_step_size 1.2609652902392332
+2025-12-08 10:51:29
+Angle [rad] 0.03965661703146245
+2025-12-08 10:51:29
+self.MAX_LENGTH_S 5
+2025-12-08 10:51:29
+length_s 0.0002459713210466167
+2025-12-08 10:51:29
+length s : 0.0002459713210466167
+2025-12-08 10:51:29
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:51:31
+Iteration 0: Residual max G: 3.41e+00, frequence: 180.63695419364737
+2025-12-08 10:51:34
+Iteration 1: Residual max G: 7.66e-03, frequence: 180.6369469321376
+2025-12-08 10:51:38
+Iteration 2: Residual max G: 1.20e-05, frequence: 180.63694721805913
+2025-12-08 10:51:42
+Iteration 3: Residual max G: 6.59e-07, frequence: 180.6369472161668
+2025-12-08 10:51:42
+Second value f:180.6369472161668,u:0.02090857275520364
+2025-12-08 10:51:42
+################## New Iteration ##################
+2025-12-08 10:51:44
+before length_s 0.0002459713210466167
+2025-12-08 10:51:44
+factor_step_size 1.3000856863146857
+2025-12-08 10:51:44
+Angle [rad] 0.038084801344065625
+2025-12-08 10:51:44
+self.MAX_LENGTH_S 5
+2025-12-08 10:51:44
+length_s 0.00031978379373662056
+2025-12-08 10:51:44
+length s : 0.00031978379373662056
+2025-12-08 10:51:44
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:51:45
+Iteration 0: Residual max G: 4.77e+00, frequence: 180.63669531823842
+2025-12-08 10:51:49
+Iteration 1: Residual max G: 1.42e-02, frequence: 180.63668690085197
+2025-12-08 10:51:52
+Iteration 2: Residual max G: 3.89e-05, frequence: 180.63668734071672
+2025-12-08 10:51:56
+Iteration 3: Residual max G: 8.19e-07, frequence: 180.63668734336756
+2025-12-08 10:51:56
+Second value f:180.63668734336756,u:0.02090826865816815
+2025-12-08 10:51:56
+################## New Iteration ##################
+2025-12-08 10:51:58
+before length_s 0.00031978379373662056
+2025-12-08 10:51:58
+factor_step_size 1.341685057471795
+2025-12-08 10:51:58
+Angle [rad] 0.03639343404514095
+2025-12-08 10:51:58
+self.MAX_LENGTH_S 5
+2025-12-08 10:51:58
+length_s 0.00042904913767806635
+2025-12-08 10:51:58
+length s : 0.00042904913767806635
+2025-12-08 10:51:58
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:52:00
+Iteration 0: Residual max G: 6.93e+00, frequence: 180.6363300813789
+2025-12-08 10:52:03
+Iteration 1: Residual max G: 2.75e-02, frequence: 180.63632012410523
+2025-12-08 10:52:07
+Iteration 2: Residual max G: 1.42e-04, frequence: 180.63632083879008
+2025-12-08 10:52:10
+Iteration 3: Residual max G: 6.20e-07, frequence: 180.63632083859378
+2025-12-08 10:52:10
+Second value f:180.63632083859378,u:0.020907873520977154
+2025-12-08 10:52:10
+################## New Iteration ##################
+2025-12-08 10:52:13
+before length_s 0.00042904913767806635
+2025-12-08 10:52:13
+factor_step_size 1.3882786401315401
+2025-12-08 10:52:13
+Angle [rad] 0.03446655320436536
+2025-12-08 10:52:13
+self.MAX_LENGTH_S 5
+2025-12-08 10:52:13
+length_s 0.0005956397534053159
+2025-12-08 10:52:13
+length s : 0.0005956397534053159
+2025-12-08 10:52:13
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:52:14
+Iteration 0: Residual max G: 1.05e+01, frequence: 180.6358020232475
+2025-12-08 10:52:18
+Iteration 1: Residual max G: 5.63e-02, frequence: 180.6357899514433
+2025-12-08 10:52:21
+Iteration 2: Residual max G: 5.64e-04, frequence: 180.63579116059014
+2025-12-08 10:52:25
+Iteration 3: Residual max G: 1.56e-06, frequence: 180.63579115873537
+2025-12-08 10:52:25
+Second value f:180.63579115873537,u:0.02090734480958685
+2025-12-08 10:52:25
+################## New Iteration ##################
+2025-12-08 10:52:27
+before length_s 0.0005956397534053159
+2025-12-08 10:52:27
+factor_step_size 1.4361204996196952
+2025-12-08 10:52:27
+Angle [rad] 0.03244122044969162
+2025-12-08 10:52:27
+self.MAX_LENGTH_S 5
+2025-12-08 10:52:27
+length_s 0.0008554104602537943
+2025-12-08 10:52:27
+length s : 0.0008554104602537943
+2025-12-08 10:52:27
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:52:29
+Iteration 0: Residual max G: 1.66e+01, frequence: 180.6350186775575
+2025-12-08 10:52:32
+Iteration 1: Residual max G: 1.22e-01, frequence: 180.63500368723646
+2025-12-08 10:52:36
+Iteration 2: Residual max G: 2.44e-03, frequence: 180.63500580817384
+2025-12-08 10:52:39
+Iteration 3: Residual max G: 9.08e-07, frequence: 180.63500580355802
+2025-12-08 10:52:39
+Second value f:180.63500580355802,u:0.02090661596029349
+2025-12-08 10:52:39
+################## New Iteration ##################
+2025-12-08 10:52:41
+before length_s 0.0008554104602537943
+2025-12-08 10:52:41
+factor_step_size 1.488512764774846
+2025-12-08 10:52:41
+Angle [rad] 0.030151552409243405
+2025-12-08 10:52:41
+self.MAX_LENGTH_S 5
+2025-12-08 10:52:41
+length_s 0.001273289389209699
+2025-12-08 10:52:41
+length s : 0.001273289389209699
+2025-12-08 10:52:41
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:52:43
+Iteration 0: Residual max G: 2.72e+01, frequence: 180.633822781165
+2025-12-08 10:52:46
+Iteration 1: Residual max G: 2.89e-01, frequence: 180.633803481605
+2025-12-08 10:52:50
+Iteration 2: Residual max G: 1.20e-02, frequence: 180.6338074098112
+2025-12-08 10:52:53
+Iteration 3: Residual max G: 1.21e-06, frequence: 180.63380739425796
+2025-12-08 10:52:53
+Second value f:180.63380739425796,u:0.020905577667185385
+2025-12-08 10:52:53
+################## New Iteration ##################
+2025-12-08 10:52:56
+before length_s 0.001273289389209699
+2025-12-08 10:52:56
+factor_step_size 1.5430786339927542
+2025-12-08 10:52:56
+Angle [rad] 0.02766076520230434
+2025-12-08 10:52:56
+self.MAX_LENGTH_S 5
+2025-12-08 10:52:56
+length_s 0.001964785651379171
+2025-12-08 10:52:56
+length s : 0.001964785651379171
+2025-12-08 10:52:56
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:52:57
+Iteration 0: Residual max G: 4.65e+01, frequence: 180.63194141984619
+2025-12-08 10:53:00
+Iteration 1: Residual max G: 7.76e-01, frequence: 180.63191521564184
+2025-12-08 10:53:04
+Iteration 2: Residual max G: 6.88e-02, frequence: 180.6319230181976
+2025-12-08 10:53:08
+Iteration 3: Residual max G: 5.19e-06, frequence: 180.63192295067182
+2025-12-08 10:53:08
+Second value f:180.63192295067182,u:0.020904047075032302
+2025-12-08 10:53:08
+################## New Iteration ##################
+2025-12-08 10:53:10
+before length_s 0.001964785651379171
+2025-12-08 10:53:10
+factor_step_size 1.5985004376957777
+2025-12-08 10:53:10
+Angle [rad] 0.02497959933796175
+2025-12-08 10:53:10
+self.MAX_LENGTH_S 5
+2025-12-08 10:53:10
+length_s 0.003140710723707988
+2025-12-08 10:53:10
+length s : 0.003140710723707988
+2025-12-08 10:53:10
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:53:11
+Iteration 0: Residual max G: 8.22e+01, frequence: 180.62889065866187
+2025-12-08 10:53:15
+Iteration 1: Residual max G: 2.58e+00, frequence: 180.62885152989568
+2025-12-08 10:53:18
+Iteration 2: Residual max G: 5.10e-01, frequence: 180.62886891451828
+2025-12-08 10:53:22
+Iteration 3: Residual max G: 2.50e-04, frequence: 180.62886852963624
+2025-12-08 10:53:25
+Iteration 4: Residual max G: 6.49e-07, frequence: 180.62886853026666
+2025-12-08 10:53:25
+Second value f:180.62886853026666,u:0.020901710545628956
+2025-12-08 10:53:25
+################## New Iteration ##################
+2025-12-08 10:53:28
+before length_s 0.003140710723707988
+2025-12-08 10:53:28
+factor_step_size 1.65359065026048
+2025-12-08 10:53:28
+Angle [rad] 0.022101000380507416
+2025-12-08 10:53:28
+self.MAX_LENGTH_S 5
+2025-12-08 10:53:28
+length_s 0.005193449887896355
+2025-12-08 10:53:28
+length s : 0.005193449887896355
+2025-12-08 10:53:28
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:53:29
+Iteration 0: Residual max G: 1.50e+02, frequence: 180.62379398510436
+2025-12-08 10:53:33
+Iteration 1: Residual max G: 1.42e+01, frequence: 180.62371984019558
+2025-12-08 10:53:36
+Iteration 2: Residual max G: 7.09e+00, frequence: 180.62377215871024
+2025-12-08 10:53:40
+Iteration 3: Residual max G: 5.71e-02, frequence: 180.62376746652424
+2025-12-08 10:53:43
+Iteration 4: Residual max G: 4.91e-05, frequence: 180.62376760417345
+2025-12-08 10:53:47
+Iteration 5: Residual max G: 6.59e-07, frequence: 180.62376760381787
+2025-12-08 10:53:47
+Second value f:180.62376760381787,u:0.02089801625123446
+2025-12-08 10:53:47
+################## New Iteration ##################
+2025-12-08 10:53:49
+before length_s 0.005193449887896355
+2025-12-08 10:53:49
+factor_step_size 1.7048693784069586
+2025-12-08 10:53:49
+Angle [rad] 0.019138988522845953
+2025-12-08 10:53:49
+self.MAX_LENGTH_S 5
+2025-12-08 10:53:49
+length_s 0.008854153682165546
+2025-12-08 10:53:49
+length s : 0.008854153682165546
+2025-12-08 10:53:49
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:53:50
+Iteration 0: Residual max G: 2.80e+02, frequence: 180.61504321602453
+2025-12-08 10:53:54
+Iteration 1: Residual max G: 2.10e+03, frequence: 180.61432816445244
+2025-12-08 10:53:57
+Iteration 2: Residual max G: 1.88e+01, frequence: 180.61426158923152
+2025-12-08 10:54:01
+Iteration 3: Residual max G: 1.69e+04, frequence: 180.61629125305365
+2025-12-08 10:54:04
+Iteration 4: Residual max G: 2.90e+01, frequence: 180.61632812823365
+2025-12-08 10:54:08
+Iteration 5: Residual max G: 4.22e+03, frequence: 180.61531340499565
+2025-12-08 10:54:11
+Iteration 6: Residual max G: 4.02e+00, frequence: 180.61533856214612
+2025-12-08 10:54:15
+Iteration 7: Residual max G: 3.50e+02, frequence: 180.61504621733374
+2025-12-08 10:54:17
+################## New Iteration ##################
+2025-12-08 10:54:17
+length s : 0.0004427076841082773
+2025-12-08 10:54:17
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:54:18
+Iteration 0: Residual max G: 7.00e-01, frequence: 180.6233313844282
+2025-12-08 10:54:22
+Iteration 1: Residual max G: 4.09e-05, frequence: 180.6233312847446
+2025-12-08 10:54:26
+Iteration 2: Residual max G: 5.27e-07, frequence: 180.62333128518944
+2025-12-08 10:54:26
+Second value f:180.62333128518944,u:0.02089770803517524
+2025-12-08 10:54:26
+################## New Iteration ##################
+2025-12-08 10:54:28
+before length_s 0.0004427076841082773
+2025-12-08 10:54:28
+factor_step_size 1.8676022663911722
+2025-12-08 10:54:28
+Angle [rad] 0.001280183340161574
+2025-12-08 10:54:28
+self.MAX_LENGTH_S 5
+2025-12-08 10:54:28
+length_s 0.0008268018741894058
+2025-12-08 10:54:28
+length s : 0.0008268018741894058
+2025-12-08 10:54:28
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:54:29
+Iteration 0: Residual max G: 2.37e+00, frequence: 180.6225162380137
+2025-12-08 10:54:33
+Iteration 1: Residual max G: 4.43e-04, frequence: 180.622515914973
+2025-12-08 10:54:37
+Iteration 2: Residual max G: 6.29e-07, frequence: 180.62251591809124
+2025-12-08 10:54:37
+Second value f:180.62251591809124,u:0.020897134604549433
+2025-12-08 10:54:37
+################## New Iteration ##################
+2025-12-08 10:54:39
+before length_s 0.0008268018741894058
+2025-12-08 10:54:39
+factor_step_size 1.8660339951622635
+2025-12-08 10:54:39
+Angle [rad] 0.0022358839856278065
+2025-12-08 10:54:39
+self.MAX_LENGTH_S 5
+2025-12-08 10:54:39
+length_s 0.0015428404045013042
+2025-12-08 10:54:39
+length s : 0.0015428404045013042
+2025-12-08 10:54:39
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:54:40
+Iteration 0: Residual max G: 7.82e+00, frequence: 180.62099385238074
+2025-12-08 10:54:44
+Iteration 1: Residual max G: 4.57e-03, frequence: 180.6209928426471
+2025-12-08 10:54:48
+Iteration 2: Residual max G: 4.59e-06, frequence: 180.62099287414844
+2025-12-08 10:54:48
+Second value f:180.62099287414844,u:0.020896071549384724
+2025-12-08 10:54:48
+################## New Iteration ##################
+2025-12-08 10:54:50
+before length_s 0.0015428404045013042
+2025-12-08 10:54:50
+factor_step_size 1.8619729450985159
+2025-12-08 10:54:50
+Angle [rad] 0.0037032225605808464
+2025-12-08 10:54:50
+self.MAX_LENGTH_S 5
+2025-12-08 10:54:50
+length_s 0.002872727091786279
+2025-12-08 10:54:50
+length s : 0.002872727091786279
+2025-12-08 10:54:50
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:54:51
+Iteration 0: Residual max G: 2.47e+01, frequence: 180.61815535217707
+2025-12-08 10:54:55
+Iteration 1: Residual max G: 4.44e-02, frequence: 180.618152352197
+2025-12-08 10:54:58
+Iteration 2: Residual max G: 3.75e-04, frequence: 180.61815262812442
+2025-12-08 10:55:02
+Iteration 3: Residual max G: 9.66e-07, frequence: 180.61815262789406
+2025-12-08 10:55:02
+Second value f:180.61815262789406,u:0.020894113112064495
+2025-12-08 10:55:02
+################## New Iteration ##################
+2025-12-08 10:55:04
+before length_s 0.002872727091786279
+2025-12-08 10:55:04
+factor_step_size 1.8535549962409195
+2025-12-08 10:55:04
+Angle [rad] 0.005642584418166379
+2025-12-08 10:55:04
+self.MAX_LENGTH_S 5
+2025-12-08 10:55:04
+length_s 0.005324757653817104
+2025-12-08 10:55:04
+length s : 0.005324757653817104
+2025-12-08 10:55:04
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:55:06
+Iteration 0: Residual max G: 7.27e+01, frequence: 180.61288375673104
+2025-12-08 10:55:09
+Iteration 1: Residual max G: 4.35e-01, frequence: 180.61287507731902
+2025-12-08 10:55:13
+Iteration 2: Residual max G: 2.54e-02, frequence: 180.61287717578503
+2025-12-08 10:55:17
+Iteration 3: Residual max G: 7.75e-07, frequence: 180.6128771701775
+2025-12-08 10:55:17
+Second value f:180.6128771701775,u:0.020890539936995824
+2025-12-08 10:55:17
+################## New Iteration ##################
+2025-12-08 10:55:19
+before length_s 0.005324757653817104
+2025-12-08 10:55:19
+factor_step_size 1.8413945660274316
+2025-12-08 10:55:19
+Angle [rad] 0.007626763116356587
+2025-12-08 10:55:19
+self.MAX_LENGTH_S 5
+2025-12-08 10:55:19
+length_s 0.00980497980915179
+2025-12-08 10:55:19
+length s : 0.00980497980915179
+2025-12-08 10:55:19
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:55:20
+Iteration 0: Residual max G: 1.95e+02, frequence: 180.6031534638274
+2025-12-08 10:55:24
+Iteration 1: Residual max G: 6.39e+00, frequence: 180.60312394491194
+2025-12-08 10:55:27
+Iteration 2: Residual max G: 2.03e+00, frequence: 180.60314060410207
+2025-12-08 10:55:31
+Iteration 3: Residual max G: 1.47e-03, frequence: 180.603140156567
+2025-12-08 10:55:34
+Iteration 4: Residual max G: 6.45e-07, frequence: 180.60314015909427
+2025-12-08 10:55:34
+Second value f:180.60314015909427,u:0.020884096020064
+2025-12-08 10:55:34
+################## New Iteration ##################
+2025-12-08 10:55:37
+before length_s 0.00980497980915179
+2025-12-08 10:55:37
+factor_step_size 1.8309907155920513
+2025-12-08 10:55:37
+Angle [rad] 0.008990628889274875
+2025-12-08 10:55:37
+self.MAX_LENGTH_S 5
+2025-12-08 10:55:37
+length_s 0.01795282699712445
+2025-12-08 10:55:37
+length s : 0.01795282699712445
+2025-12-08 10:55:37
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:55:38
+Iteration 0: Residual max G: 4.71e+02, frequence: 180.58529451681503
+2025-12-08 10:55:41
+Iteration 1: Residual max G: 7.86e+02, frequence: 180.5855720999147
+2025-12-08 10:55:45
+Iteration 2: Residual max G: 3.99e+03, frequence: 180.5861975643519
+2025-12-08 10:55:48
+Iteration 3: Residual max G: 3.33e+02, frequence: 180.58637772294273
+2025-12-08 10:55:52
+Iteration 4: Residual max G: 1.77e+04, frequence: 180.58506189158095
+2025-12-08 10:55:56
+Iteration 5: Residual max G: 2.53e+01, frequence: 180.5850575301157
+2025-12-08 10:55:59
+Iteration 6: Residual max G: 7.48e+02, frequence: 180.58532814435523
+2025-12-08 10:56:03
+Iteration 7: Residual max G: 6.94e+01, frequence: 180.5854106686025
+2025-12-08 10:56:05
+################## New Iteration ##################
+2025-12-08 10:56:05
+length s : 0.0008976413498562226
+2025-12-08 10:56:05
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:56:06
+Iteration 0: Residual max G: 1.18e+00, frequence: 180.6022478769803
+2025-12-08 10:56:10
+Iteration 1: Residual max G: 4.72e-05, frequence: 180.60224780921877
+2025-12-08 10:56:13
+Iteration 2: Residual max G: 5.67e-07, frequence: 180.60224780948616
+2025-12-08 10:56:13
+Second value f:180.60224780948616,u:0.020883512777597816
+2025-12-08 10:56:13
+################## New Iteration ##################
+2025-12-08 10:56:16
+before length_s 0.0008976413498562226
+2025-12-08 10:56:16
+factor_step_size 1.868146053553602
+2025-12-08 10:56:16
+Angle [rad] 0.0006887412858575237
+2025-12-08 10:56:16
+self.MAX_LENGTH_S 5
+2025-12-08 10:56:16
+length_s 0.0016769251452404305
+2025-12-08 10:56:16
+length s : 0.0016769251452404305
+2025-12-08 10:56:16
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:56:17
+Iteration 0: Residual max G: 4.01e+00, frequence: 180.6005806461338
+2025-12-08 10:56:20
+Iteration 1: Residual max G: 5.33e-04, frequence: 180.60058042113434
+2025-12-08 10:56:24
+Iteration 2: Residual max G: 8.47e-07, frequence: 180.60058042370926
+2025-12-08 10:56:24
+Second value f:180.60058042370926,u:0.02088242568088943
+2025-12-08 10:56:24
+################## New Iteration ##################
+2025-12-08 10:56:26
+before length_s 0.0016769251452404305
+2025-12-08 10:56:26
+factor_step_size 1.8676934571160162
+2025-12-08 10:56:26
+Angle [rad] 0.0012014838220433834
+2025-12-08 10:56:26
+self.MAX_LENGTH_S 5
+2025-12-08 10:56:26
+length_s 0.0031319821218388773
+2025-12-08 10:56:26
+length s : 0.0031319821218388773
+2025-12-08 10:56:26
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:56:28
+Iteration 0: Residual max G: 1.34e+01, frequence: 180.5974658636143
+2025-12-08 10:56:31
+Iteration 1: Residual max G: 5.80e-03, frequence: 180.59746513871775
+2025-12-08 10:56:35
+Iteration 2: Residual max G: 7.23e-06, frequence: 180.5974651641956
+2025-12-08 10:56:35
+Second value f:180.5974651641956,u:0.02088040333825813
+2025-12-08 10:56:35
+################## New Iteration ##################
+2025-12-08 10:56:37
+before length_s 0.0031319821218388773
+2025-12-08 10:56:37
+factor_step_size 1.866435750560303
+2025-12-08 10:56:37
+Angle [rad] 0.002034225628609125
+2025-12-08 10:56:37
+self.MAX_LENGTH_S 5
+2025-12-08 10:56:37
+length_s 0.0058456434023157955
+2025-12-08 10:56:37
+length s : 0.0058456434023157955
+2025-12-08 10:56:37
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:56:38
+Iteration 0: Residual max G: 4.30e+01, frequence: 180.59164953547818
+2025-12-08 10:56:42
+Iteration 1: Residual max G: 6.08e-02, frequence: 180.59164728138154
+2025-12-08 10:56:45
+Iteration 2: Residual max G: 6.81e-04, frequence: 180.5916475207426
+2025-12-08 10:56:49
+Iteration 3: Residual max G: 6.34e-07, frequence: 180.5916475206122
+2025-12-08 10:56:49
+Second value f:180.5916475206122,u:0.0208766533092097
+2025-12-08 10:56:49
+################## New Iteration ##################
+2025-12-08 10:56:51
+before length_s 0.0058456434023157955
+2025-12-08 10:56:51
+factor_step_size 1.8635975805516523
+2025-12-08 10:56:51
+Angle [rad] 0.0031976936916796746
+2025-12-08 10:56:51
+self.MAX_LENGTH_S 5
+2025-12-08 10:56:51
+length_s 0.010893926901323445
+2025-12-08 10:56:51
+length s : 0.010893926901323445
+2025-12-08 10:56:51
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:56:52
+Iteration 0: Residual max G: 1.31e+02, frequence: 180.58080250159722
+2025-12-08 10:56:56
+Iteration 1: Residual max G: 7.17e-01, frequence: 180.58079526363144
+2025-12-08 10:56:59
+Iteration 2: Residual max G: 6.03e-02, frequence: 180.58079736951487
+2025-12-08 10:57:03
+Iteration 3: Residual max G: 8.23e-07, frequence: 180.58079736376467
+2025-12-08 10:57:03
+Second value f:180.58079736376467,u:0.020869733626365523
+2025-12-08 10:57:03
+################## New Iteration ##################
+2025-12-08 10:57:05
+before length_s 0.010893926901323445
+2025-12-08 10:57:05
+factor_step_size 1.8589051959860965
+2025-12-08 10:57:05
+Angle [rad] 0.004506617623744509
+2025-12-08 10:57:05
+self.MAX_LENGTH_S 5
+2025-12-08 10:57:05
+length_s 0.020250777321562868
+2025-12-08 10:57:05
+length s : 0.020250777321562868
+2025-12-08 10:57:05
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:57:07
+Iteration 0: Residual max G: 3.66e+02, frequence: 180.5606202694658
+2025-12-08 10:57:10
+Iteration 1: Residual max G: 2.28e+01, frequence: 180.5605834814163
+2025-12-08 10:57:14
+Iteration 2: Residual max G: 1.25e+01, frequence: 180.56061072842223
+2025-12-08 10:57:18
+Iteration 3: Residual max G: 4.41e-02, frequence: 180.56060911035647
+2025-12-08 10:57:21
+Iteration 4: Residual max G: 2.40e-05, frequence: 180.56060914813472
+2025-12-08 10:57:25
+Iteration 5: Residual max G: 6.27e-07, frequence: 180.56060914808094
+2025-12-08 10:57:25
+Second value f:180.56060914808094,u:0.020857041855883968
+2025-12-08 10:57:25
+################## New Iteration ##################
+2025-12-08 10:57:27
+before length_s 0.020250777321562868
+2025-12-08 10:57:27
+factor_step_size 1.8538725784528505
+2025-12-08 10:57:27
+Angle [rad] 0.00558152955344192
+2025-12-08 10:57:27
+self.MAX_LENGTH_S 5
+2025-12-08 10:57:27
+length_s 0.03754236076880026
+2025-12-08 10:57:27
+length s : 0.03754236076880026
+2025-12-08 10:57:27
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:57:29
+Iteration 0: Residual max G: 9.30e+02, frequence: 180.5231677448926
+2025-12-08 10:57:32
+Iteration 1: Residual max G: 4.43e+01, frequence: 180.5232118619985
+2025-12-08 10:57:36
+Iteration 2: Residual max G: 1.01e+02, frequence: 180.52314537978518
+2025-12-08 10:57:40
+Iteration 3: Residual max G: 2.06e-01, frequence: 180.52314838878357
+2025-12-08 10:57:43
+Iteration 4: Residual max G: 5.34e-03, frequence: 180.52314790457277
+2025-12-08 10:57:47
+Iteration 5: Residual max G: 6.26e-07, frequence: 180.52314790461202
+2025-12-08 10:57:47
+Second value f:180.52314790461202,u:0.02083388117029522
+2025-12-08 10:57:47
+################## New Iteration ##################
+2025-12-08 10:57:49
+before length_s 0.03754236076880026
+2025-12-08 10:57:49
+factor_step_size 1.8517293424339698
+2025-12-08 10:57:49
+Angle [rad] 0.0059816785382071965
+2025-12-08 10:57:49
+self.MAX_LENGTH_S 5
+2025-12-08 10:57:49
+length_s 0.06951829101982937
+2025-12-08 10:57:49
+length s : 0.06951829101982937
+2025-12-08 10:57:49
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:57:51
+Iteration 0: Residual max G: 2.15e+03, frequence: 180.45375569461987
+2025-12-08 10:57:54
+Iteration 1: Residual max G: 1.14e+01, frequence: 180.45377391568803
+2025-12-08 10:57:58
+Iteration 2: Residual max G: 7.64e+01, frequence: 180.45372640062513
+2025-12-08 10:58:01
+Iteration 3: Residual max G: 6.25e-03, frequence: 180.45372599355804
+2025-12-08 10:58:05
+Iteration 4: Residual max G: 5.28e-05, frequence: 180.45372603305165
+2025-12-08 10:58:08
+Iteration 5: Residual max G: 6.55e-07, frequence: 180.4537260330383
+2025-12-08 10:58:08
+Second value f:180.4537260330383,u:0.020791672573320704
+2025-12-08 10:58:08
+################## New Iteration ##################
+2025-12-08 10:58:11
+before length_s 0.06951829101982937
+2025-12-08 10:58:11
+factor_step_size 1.8533520742305483
+2025-12-08 10:58:11
+Angle [rad] 0.005681257828758826
+2025-12-08 10:58:11
+self.MAX_LENGTH_S 5
+2025-12-08 10:58:11
+length_s 0.12884186885856366
+2025-12-08 10:58:11
+length s : 0.12884186885856366
+2025-12-08 10:58:11
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:58:12
+Iteration 0: Residual max G: 4.61e+03, frequence: 180.3250299828568
+2025-12-08 10:58:16
+Iteration 1: Residual max G: 8.92e+00, frequence: 180.32504174677442
+2025-12-08 10:58:19
+Iteration 2: Residual max G: 1.33e+02, frequence: 180.32499225808468
+2025-12-08 10:58:23
+Iteration 3: Residual max G: 3.30e-02, frequence: 180.3249915063692
+2025-12-08 10:58:26
+Iteration 4: Residual max G: 5.11e-04, frequence: 180.32499160336687
+2025-12-08 10:58:30
+Iteration 5: Residual max G: 5.56e-07, frequence: 180.32499160328626
+2025-12-08 10:58:30
+Second value f:180.32499160328626,u:0.02071451185661855
+2025-12-08 10:58:30
+################## New Iteration ##################
+2025-12-08 10:58:32
+before length_s 0.12884186885856366
+2025-12-08 10:58:32
+factor_step_size 1.857059243860556
+2025-12-08 10:58:32
+Angle [rad] 0.004927849032034323
+2025-12-08 10:58:32
+self.MAX_LENGTH_S 5
+2025-12-08 10:58:32
+length_s 0.23926698356006515
+2025-12-08 10:58:32
+length s : 0.23926698356006515
+2025-12-08 10:58:32
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:58:33
+Iteration 0: Residual max G: 9.39e+03, frequence: 180.0858844862633
+2025-12-08 10:58:37
+Iteration 1: Residual max G: 1.30e+01, frequence: 180.08589291643
+2025-12-08 10:58:41
+Iteration 2: Residual max G: 2.58e+02, frequence: 180.08584004917356
+2025-12-08 10:58:44
+Iteration 3: Residual max G: 6.37e-02, frequence: 180.08583927308686
+2025-12-08 10:58:48
+Iteration 4: Residual max G: 1.99e-03, frequence: 180.08583942001135
+2025-12-08 10:58:51
+Iteration 5: Residual max G: 6.20e-07, frequence: 180.08583942000394
+2025-12-08 10:58:51
+Second value f:180.08583942000394,u:0.020572564377663444
+2025-12-08 10:58:51
+################## New Iteration ##################
+2025-12-08 10:58:54
+before length_s 0.23926698356006515
+2025-12-08 10:58:54
+factor_step_size 1.860741378452428
+2025-12-08 10:58:54
+Angle [rad] 0.004044805734009823
+2025-12-08 10:58:54
+self.MAX_LENGTH_S 5
+2025-12-08 10:58:54
+length_s 0.4452139768077101
+2025-12-08 10:58:54
+length s : 0.4452139768077101
+2025-12-08 10:58:54
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:58:55
+Iteration 0: Residual max G: 1.85e+04, frequence: 179.64079499786706
+2025-12-08 10:58:59
+Iteration 1: Residual max G: 3.34e+01, frequence: 179.64080143417476
+2025-12-08 10:59:02
+Iteration 2: Residual max G: 5.13e+02, frequence: 179.64074519751728
+2025-12-08 10:59:06
+Iteration 3: Residual max G: 2.36e-02, frequence: 179.6407451532614
+2025-12-08 10:59:09
+Iteration 4: Residual max G: 7.52e-05, frequence: 179.64074517477448
+2025-12-08 10:59:13
+Iteration 5: Residual max G: 5.54e-07, frequence: 179.64074517479557
+2025-12-08 10:59:13
+Second value f:179.64074517479557,u:0.02030923403747985
+2025-12-08 10:59:13
+################## New Iteration ##################
+2025-12-08 10:59:15
+before length_s 0.4452139768077101
+2025-12-08 10:59:15
+factor_step_size 1.8634366407656584
+2025-12-08 10:59:15
+Angle [rad] 0.003251261061163687
+2025-12-08 10:59:15
+self.MAX_LENGTH_S 5
+2025-12-08 10:59:15
+length_s 0.829628037364479
+2025-12-08 10:59:15
+length s : 0.829628037364479
+2025-12-08 10:59:15
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:59:17
+Iteration 0: Residual max G: 3.60e+04, frequence: 178.81129376224757
+2025-12-08 10:59:20
+Iteration 1: Residual max G: 1.14e+02, frequence: 178.81129912474825
+2025-12-08 10:59:24
+Iteration 2: Residual max G: 1.07e+03, frequence: 178.81123853729434
+2025-12-08 10:59:27
+Iteration 3: Residual max G: 3.84e+00, frequence: 178.81124217853156
+2025-12-08 10:59:31
+Iteration 4: Residual max G: 6.39e-01, frequence: 178.81124070210836
+2025-12-08 10:59:34
+Iteration 5: Residual max G: 8.11e-07, frequence: 178.81124070338473
+2025-12-08 10:59:34
+Second value f:178.81124070338473,u:0.019815222591784802
+2025-12-08 10:59:34
+################## New Iteration ##################
+2025-12-08 10:59:37
+before length_s 0.829628037364479
+2025-12-08 10:59:37
+factor_step_size 1.8651602279171617
+2025-12-08 10:59:37
+Angle [rad] 0.00262156596683707
+2025-12-08 10:59:37
+self.MAX_LENGTH_S 5
+2025-12-08 10:59:37
+length_s 1.5473892192571992
+2025-12-08 10:59:37
+length s : 1.5473892192571992
+2025-12-08 10:59:37
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 10:59:38
+Iteration 0: Residual max G: 6.97e+04, frequence: 177.26403513464473
+2025-12-08 10:59:42
+Iteration 1: Residual max G: 4.30e+02, frequence: 177.26404036939635
+2025-12-08 10:59:45
+Iteration 2: Residual max G: 2.67e+03, frequence: 177.26396945240526
+2025-12-08 10:59:49
+Iteration 3: Residual max G: 7.18e+02, frequence: 177.26400630214445
+2025-12-08 10:59:53
+Iteration 4: Residual max G: 5.77e+02, frequence: 177.26397337337494
+2025-12-08 10:59:56
+Iteration 5: Residual max G: 2.70e+01, frequence: 177.26398052663683
+2025-12-08 11:00:00
+Iteration 6: Residual max G: 7.02e-01, frequence: 177.26397938115747
+2025-12-08 11:00:03
+Iteration 7: Residual max G: 3.30e-05, frequence: 177.2639793890682
+2025-12-08 11:00:06
+################## New Iteration ##################
+2025-12-08 11:00:06
+length s : 0.07736946096285996
+2025-12-08 11:00:06
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:00:07
+Iteration 0: Residual max G: 1.74e+02, frequence: 178.73388042494773
+2025-12-08 11:00:11
+Iteration 1: Residual max G: 2.83e-02, frequence: 178.73388023172296
+2025-12-08 11:00:14
+Iteration 2: Residual max G: 9.02e-05, frequence: 178.73388024437972
+2025-12-08 11:00:18
+Iteration 3: Residual max G: 6.14e-07, frequence: 178.73388024437062
+2025-12-08 11:00:18
+Second value f:178.73388024437062,u:0.019768796445063314
+2025-12-08 11:00:18
+################## New Iteration ##################
+2025-12-08 11:00:20
+before length_s 0.07736946096285996
+2025-12-08 11:00:20
+factor_step_size 1.8683524494924793
+2025-12-08 11:00:20
+Angle [rad] 0.00018017271192437368
+2025-12-08 11:00:20
+self.MAX_LENGTH_S 5
+2025-12-08 11:00:20
+length_s 0.14455342190587217
+2025-12-08 11:00:20
+length s : 0.14455342190587217
+2025-12-08 11:00:20
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:00:21
+Iteration 0: Residual max G: 5.85e+02, frequence: 178.58934332517305
+2025-12-08 11:00:25
+Iteration 1: Residual max G: 4.09e-01, frequence: 178.58934258789103
+2025-12-08 11:00:29
+Iteration 2: Residual max G: 1.40e-02, frequence: 178.5893427425437
+2025-12-08 11:00:32
+Iteration 3: Residual max G: 5.27e-07, frequence: 178.58934274250078
+2025-12-08 11:00:32
+Second value f:178.58934274250078,u:0.019681866660123403
+2025-12-08 11:00:32
+################## New Iteration ##################
+2025-12-08 11:00:34
+before length_s 0.14455342190587217
+2025-12-08 11:00:34
+factor_step_size 1.8683215728534421
+2025-12-08 11:00:34
+Angle [rad] 0.0003139542638906262
+2025-12-08 11:00:34
+self.MAX_LENGTH_S 5
+2025-12-08 11:00:34
+length_s 0.2700722765765263
+2025-12-08 11:00:34
+length s : 0.2700722765765263
+2025-12-08 11:00:34
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:00:36
+Iteration 0: Residual max G: 1.91e+03, frequence: 178.3192992297374
+2025-12-08 11:00:39
+Iteration 1: Residual max G: 1.44e+01, frequence: 178.31929470462896
+2025-12-08 11:00:43
+Iteration 2: Residual max G: 5.08e+00, frequence: 178.31929754638617
+2025-12-08 11:00:47
+Iteration 3: Residual max G: 2.06e-04, frequence: 178.3192975289544
+2025-12-08 11:00:50
+Iteration 4: Residual max G: 5.43e-07, frequence: 178.3192975289723
+2025-12-08 11:00:50
+Second value f:178.3192975289723,u:0.019518761212589903
+2025-12-08 11:00:50
+################## New Iteration ##################
+2025-12-08 11:00:52
+before length_s 0.2700722765765263
+2025-12-08 11:00:52
+factor_step_size 1.8682458769415609
+2025-12-08 11:00:52
+Angle [rad] 0.0005105217028666567
+2025-12-08 11:00:52
+self.MAX_LENGTH_S 5
+2025-12-08 11:00:52
+length_s 0.5045614171903162
+2025-12-08 11:00:52
+length s : 0.5045614171903162
+2025-12-08 11:00:52
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:00:54
+Iteration 0: Residual max G: 5.92e+03, frequence: 177.81478395846435
+2025-12-08 11:00:57
+Iteration 1: Residual max G: 3.41e+01, frequence: 177.81479118525954
+2025-12-08 11:01:01
+Iteration 2: Residual max G: 9.80e+01, frequence: 177.8147794078654
+2025-12-08 11:01:04
+Iteration 3: Residual max G: 3.68e-03, frequence: 177.814779481102
+2025-12-08 11:01:08
+Iteration 4: Residual max G: 2.49e-06, frequence: 177.8147794792531
+2025-12-08 11:01:08
+Second value f:177.8147794792531,u:0.019211443216719006
+2025-12-08 11:01:08
+################## New Iteration ##################
+2025-12-08 11:01:10
+before length_s 0.5045614171903162
+2025-12-08 11:01:10
+factor_step_size 1.8680923402457588
+2025-12-08 11:01:10
+Angle [rad] 0.0007677076293845525
+2025-12-08 11:01:10
+self.MAX_LENGTH_S 5
+2025-12-08 11:01:10
+length_s 0.9425673186367745
+2025-12-08 11:01:10
+length s : 0.9425673186367745
+2025-12-08 11:01:10
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:01:12
+Iteration 0: Residual max G: 1.72e+04, frequence: 176.87228666509023
+2025-12-08 11:01:15
+Iteration 1: Residual max G: 3.44e+01, frequence: 176.87229100728536
+2025-12-08 11:01:19
+Iteration 2: Residual max G: 1.80e+02, frequence: 176.87227649001215
+2025-12-08 11:01:22
+Iteration 3: Residual max G: 9.61e-03, frequence: 176.8722765952014
+2025-12-08 11:01:26
+Iteration 4: Residual max G: 1.32e-05, frequence: 176.87227659129138
+2025-12-08 11:01:29
+Iteration 5: Residual max G: 5.41e-07, frequence: 176.87227659129164
+2025-12-08 11:01:29
+Second value f:176.87227659129164,u:0.018627286868757087
+2025-12-08 11:01:29
+################## New Iteration ##################
+2025-12-08 11:01:32
+before length_s 0.9425673186367745
+2025-12-08 11:01:32
+factor_step_size 1.8678624315985788
+2025-12-08 11:01:32
+Angle [rad] 0.001040043589234851
+2025-12-08 11:01:32
+self.MAX_LENGTH_S 5
+2025-12-08 11:01:32
+length_s 1.760586083734238
+2025-12-08 11:01:32
+length s : 1.760586083734238
+2025-12-08 11:01:32
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:01:33
+Iteration 0: Residual max G: 4.66e+04, frequence: 175.11179829377144
+2025-12-08 11:01:37
+Iteration 1: Residual max G: 2.22e+02, frequence: 175.11180324459824
+2025-12-08 11:01:40
+Iteration 2: Residual max G: 7.24e+02, frequence: 175.1117778587162
+2025-12-08 11:01:44
+Iteration 3: Residual max G: 3.08e+00, frequence: 175.11177957887088
+2025-12-08 11:01:47
+Iteration 4: Residual max G: 6.41e-02, frequence: 175.11177934015285
+2025-12-08 11:01:51
+Iteration 5: Residual max G: 5.91e-07, frequence: 175.11177934028143
+2025-12-08 11:01:51
+Second value f:175.11177934028143,u:0.017495156359125238
+2025-12-08 11:01:51
+################## New Iteration ##################
+2025-12-08 11:01:53
+before length_s 1.760586083734238
+2025-12-08 11:01:53
+factor_step_size 1.867570242789009
+2025-12-08 11:01:53
+Angle [rad] 0.001306697206962515
+2025-12-08 11:01:53
+self.MAX_LENGTH_S 5
+2025-12-08 11:01:53
+length_s 3.2880181798505013
+2025-12-08 11:01:53
+length s : 3.2880181798505013
+2025-12-08 11:01:53
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:01:54
+Iteration 0: Residual max G: 1.19e+05, frequence: 171.8239088672381
+2025-12-08 11:01:58
+Iteration 1: Residual max G: 1.62e+03, frequence: 171.82391670288595
+2025-12-08 11:02:02
+Iteration 2: Residual max G: 5.04e+03, frequence: 171.8238607900231
+2025-12-08 11:02:05
+Iteration 3: Residual max G: 7.54e+03, frequence: 171.8239300379241
+2025-12-08 11:02:09
+Iteration 4: Residual max G: 2.20e+07, frequence: 171.8277090610463
+2025-12-08 11:02:12
+Iteration 5: Residual max G: 7.85e+05, frequence: 171.82727208887343
+2025-12-08 11:02:16
+Iteration 6: Residual max G: 1.54e+06, frequence: 171.8264088367042
+2025-12-08 11:02:19
+Iteration 7: Residual max G: 4.22e+05, frequence: 171.82594330214545
+2025-12-08 11:02:22
+################## New Iteration ##################
+2025-12-08 11:02:22
+length s : 0.16440090899252507
+2025-12-08 11:02:22
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:02:23
+Iteration 0: Residual max G: 2.98e+02, frequence: 174.94738581662926
+2025-12-08 11:02:27
+Iteration 1: Residual max G: 4.14e-02, frequence: 174.9473857293262
+2025-12-08 11:02:30
+Iteration 2: Residual max G: 5.57e-05, frequence: 174.94738573479353
+2025-12-08 11:02:34
+Iteration 3: Residual max G: 5.13e-07, frequence: 174.94738573479168
+2025-12-08 11:02:34
+Second value f:174.94738573479168,u:0.017386351228635296
+2025-12-08 11:02:34
+################## New Iteration ##################
+2025-12-08 11:02:36
+before length_s 0.16440090899252507
+2025-12-08 11:02:36
+factor_step_size 1.8683623073115545
+2025-12-08 11:02:36
+Angle [rad] 0.0001065712141197167
+2025-12-08 11:02:36
+self.MAX_LENGTH_S 5
+2025-12-08 11:02:36
+length_s 0.30716046164939104
+2025-12-08 11:02:36
+length s : 0.30716046164939104
+2025-12-08 11:02:36
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:02:38
+Iteration 0: Residual max G: 1.02e+03, frequence: 174.6402387758333
+2025-12-08 11:02:41
+Iteration 1: Residual max G: 5.37e-01, frequence: 174.6402384531471
+2025-12-08 11:02:45
+Iteration 2: Residual max G: 8.18e-03, frequence: 174.6402385186065
+2025-12-08 11:02:48
+Iteration 3: Residual max G: 5.29e-07, frequence: 174.6402385185995
+2025-12-08 11:02:48
+Second value f:174.6402385185995,u:0.017181509415779957
+2025-12-08 11:02:48
+################## New Iteration ##################
+2025-12-08 11:02:50
+before length_s 0.30716046164939104
+2025-12-08 11:02:50
+factor_step_size 1.8683507117963312
+2025-12-08 11:02:50
+Angle [rad] 0.00019021693757623507
+2025-12-08 11:02:50
+self.MAX_LENGTH_S 5
+2025-12-08 11:02:50
+length_s 0.5738834671583294
+2025-12-08 11:02:50
+length s : 0.5738834671583294
+2025-12-08 11:02:50
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:02:52
+Iteration 0: Residual max G: 3.42e+03, frequence: 174.06637936205334
+2025-12-08 11:02:55
+Iteration 1: Residual max G: 1.27e+01, frequence: 174.0663774731795
+2025-12-08 11:02:59
+Iteration 2: Residual max G: 2.44e+00, frequence: 174.06637858055979
+2025-12-08 11:03:03
+Iteration 3: Residual max G: 1.92e-05, frequence: 174.06637857789818
+2025-12-08 11:03:06
+Iteration 4: Residual max G: 5.32e-07, frequence: 174.06637857789906
+2025-12-08 11:03:06
+Second value f:174.06637857789906,u:0.016793110432404577
+2025-12-08 11:03:06
+################## New Iteration ##################
+2025-12-08 11:03:08
+before length_s 0.5738834671583294
+2025-12-08 11:03:08
+factor_step_size 1.8683162093227172
+2025-12-08 11:03:08
+Angle [rad] 0.0003317384442029968
+2025-12-08 11:03:08
+self.MAX_LENGTH_S 5
+2025-12-08 11:03:08
+length_s 1.072195783954228
+2025-12-08 11:03:08
+length s : 1.072195783954228
+2025-12-08 11:03:08
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:03:10
+Iteration 0: Residual max G: 1.12e+04, frequence: 172.9942255395543
+2025-12-08 11:03:13
+Iteration 1: Residual max G: 7.87e+01, frequence: 172.99423260092755
+2025-12-08 11:03:17
+Iteration 2: Residual max G: 1.85e+02, frequence: 172.99422328831537
+2025-12-08 11:03:20
+Iteration 3: Residual max G: 3.00e-02, frequence: 172.99422342601102
+2025-12-08 11:03:24
+Iteration 4: Residual max G: 2.17e-05, frequence: 172.9942234228379
+2025-12-08 11:03:27
+Iteration 5: Residual max G: 4.80e-07, frequence: 172.9942234228405
+2025-12-08 11:03:27
+Second value f:172.9942234228405,u:0.016045772401781445
+2025-12-08 11:03:27
+################## New Iteration ##################
+2025-12-08 11:03:29
+before length_s 1.072195783954228
+2025-12-08 11:03:29
+factor_step_size 1.8682239763596906
+2025-12-08 11:03:29
+Angle [rad] 0.0005545474118372359
+2025-12-08 11:03:29
+self.MAX_LENGTH_S 5
+2025-12-08 11:03:29
+length_s 2.0031018709350636
+2025-12-08 11:03:29
+length s : 2.0031018709350636
+2025-12-08 11:03:29
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:03:31
+Iteration 0: Residual max G: 3.61e+04, frequence: 170.99119489488064
+2025-12-08 11:03:34
+Iteration 1: Residual max G: 1.86e+02, frequence: 170.9912006254397
+2025-12-08 11:03:38
+Iteration 2: Residual max G: 2.85e+02, frequence: 170.99118983965744
+2025-12-08 11:03:41
+Iteration 3: Residual max G: 4.31e-01, frequence: 170.99119030702076
+2025-12-08 11:03:45
+Iteration 4: Residual max G: 5.74e-04, frequence: 170.9911902915645
+2025-12-08 11:03:49
+Iteration 5: Residual max G: 4.69e-07, frequence: 170.99119029156532
+2025-12-08 11:03:49
+Second value f:170.99119029156532,u:0.014558896967626422
+2025-12-08 11:03:49
+################## New Iteration ##################
+2025-12-08 11:03:51
+before length_s 2.0031018709350636
+2025-12-08 11:03:51
+factor_step_size 1.8679688382007762
+2025-12-08 11:03:51
+Angle [rad] 0.0009240286784113529
+2025-12-08 11:03:51
+self.MAX_LENGTH_S 5
+2025-12-08 11:03:51
+length_s 3.741731874648372
+2025-12-08 11:03:51
+length s : 3.741731874648372
+2025-12-08 11:03:51
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:03:52
+Iteration 0: Residual max G: 1.17e+05, frequence: 167.24958516617482
+2025-12-08 11:03:56
+Iteration 1: Residual max G: 2.44e+03, frequence: 167.2495978562134
+2025-12-08 11:04:00
+Iteration 2: Residual max G: 2.58e+03, frequence: 167.2495706248139
+2025-12-08 11:04:03
+Iteration 3: Residual max G: 6.19e+02, frequence: 167.24958636646883
+2025-12-08 11:04:07
+Iteration 4: Residual max G: 3.83e+01, frequence: 167.24958267970058
+2025-12-08 11:04:11
+Iteration 5: Residual max G: 1.05e-01, frequence: 167.24958288762227
+2025-12-08 11:04:14
+Iteration 6: Residual max G: 1.31e-06, frequence: 167.24958288695655
+2025-12-08 11:04:14
+Second value f:167.24958288695655,u:0.011298300681304248
+2025-12-08 11:04:14
+################## New Iteration ##################
+2025-12-08 11:04:17
+before length_s 3.741731874648372
+2025-12-08 11:04:17
+factor_step_size 1.866758139436315
+2025-12-08 11:04:17
+Angle [rad] 0.0018566677179098975
+2025-12-08 11:04:17
+self.MAX_LENGTH_S 5
+2025-12-08 11:04:17
+length_s 5
+2025-12-08 11:04:17
+length s : 5
+2025-12-08 11:04:17
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:04:18
+Iteration 0: Residual max G: 2.43e+05, frequence: 162.24978022272904
+2025-12-08 11:04:21
+Iteration 1: Residual max G: 1.24e+04, frequence: 162.24981053088774
+2025-12-08 11:04:25
+Iteration 2: Residual max G: 4.43e+04, frequence: 162.24997459784663
+2025-12-08 11:04:29
+Iteration 3: Residual max G: 8.26e+04, frequence: 162.2501978614673
+2025-12-08 11:04:32
+Iteration 4: Residual max G: 1.31e+05, frequence: 162.25036160029873
+2025-12-08 11:04:36
+Iteration 5: Residual max G: 3.13e+04, frequence: 162.25037984924313
+2025-12-08 11:04:39
+Iteration 6: Residual max G: 2.48e+05, frequence: 162.2502462839521
+2025-12-08 11:04:43
+Iteration 7: Residual max G: 6.58e+03, frequence: 162.25019495508906
+2025-12-08 11:04:45
+################## New Iteration ##################
+2025-12-08 11:04:45
+length s : 0.25
+2025-12-08 11:04:45
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:04:46
+Iteration 0: Residual max G: 6.08e+02, frequence: 166.99959275374516
+2025-12-08 11:04:50
+Iteration 1: Residual max G: 1.64e-01, frequence: 166.999592891428
+2025-12-08 11:04:53
+Iteration 2: Residual max G: 8.50e-06, frequence: 166.99959289306636
+2025-12-08 11:04:53
+Second value f:166.99959289306636,u:0.011045801190064798
+2025-12-08 11:04:53
+################## New Iteration ##################
+2025-12-08 11:04:55
+before length_s 0.25
+2025-12-08 11:04:55
+factor_step_size 1.8683575929018246
+2025-12-08 11:04:55
+Angle [rad] 0.0001464601470988118
+2025-12-08 11:04:55
+self.MAX_LENGTH_S 5
+2025-12-08 11:04:55
+length_s 0.46708939822545614
+2025-12-08 11:04:55
+length s : 0.46708939822545614
+2025-12-08 11:04:55
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:04:57
+Iteration 0: Residual max G: 2.19e+03, frequence: 166.5325224702651
+2025-12-08 11:05:00
+Iteration 1: Residual max G: 2.26e+00, frequence: 166.53252302066517
+2025-12-08 11:05:04
+Iteration 2: Residual max G: 1.10e-03, frequence: 166.53252304077006
+2025-12-08 11:05:07
+Iteration 3: Residual max G: 3.78e-07, frequence: 166.53252304076642
+2025-12-08 11:05:08
+Second value f:166.53252304076642,u:0.010556704838740107
+2025-12-08 11:05:08
+################## New Iteration ##################
+2025-12-08 11:05:10
+before length_s 0.46708939822545614
+2025-12-08 11:05:10
+factor_step_size 1.8683264879011006
+2025-12-08 11:05:10
+Angle [rad] 0.0002967227287692528
+2025-12-08 11:05:10
+self.MAX_LENGTH_S 5
+2025-12-08 11:05:10
+length_s 0.872675494922405
+2025-12-08 11:05:10
+length s : 0.872675494922405
+2025-12-08 11:05:10
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:05:11
+Iteration 0: Residual max G: 8.14e+03, frequence: 165.65988532708417
+2025-12-08 11:05:15
+Iteration 1: Residual max G: 3.69e+01, frequence: 165.6598878084177
+2025-12-08 11:05:18
+Iteration 2: Residual max G: 1.62e-01, frequence: 165.65988809311736
+2025-12-08 11:05:22
+Iteration 3: Residual max G: 2.36e-06, frequence: 165.65988809252252
+2025-12-08 11:05:22
+Second value f:165.65988809252252,u:0.00956859074990953
+2025-12-08 11:05:22
+################## New Iteration ##################
+2025-12-08 11:05:24
+before length_s 0.872675494922405
+2025-12-08 11:05:24
+factor_step_size 1.8681516437204195
+2025-12-08 11:05:24
+Angle [rad] 0.0006799964227126543
+2025-12-08 11:05:24
+self.MAX_LENGTH_S 5
+2025-12-08 11:05:24
+length_s 1.6302901602738216
+2025-12-08 11:05:24
+length s : 1.6302901602738216
+2025-12-08 11:05:24
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:05:25
+Iteration 0: Residual max G: 3.34e+04, frequence: 164.02968086072357
+2025-12-08 11:05:29
+Iteration 1: Residual max G: 8.93e+02, frequence: 164.02969469225897
+2025-12-08 11:05:32
+Iteration 2: Residual max G: 7.72e+01, frequence: 164.02970248337112
+2025-12-08 11:05:36
+Iteration 3: Residual max G: 2.15e-01, frequence: 164.02970239043833
+2025-12-08 11:05:40
+Iteration 4: Residual max G: 2.77e-06, frequence: 164.02970239145415
+2025-12-08 11:05:40
+Second value f:164.02970239145415,u:0.007277787631088201
+2025-12-08 11:05:40
+################## New Iteration ##################
+2025-12-08 11:05:42
+before length_s 1.6302901602738216
+2025-12-08 11:05:42
+factor_step_size 1.8650088461314154
+2025-12-08 11:05:42
+Angle [rad] 0.0026827733122110863
+2025-12-08 11:05:42
+self.MAX_LENGTH_S 5
+2025-12-08 11:05:42
+length_s 3.04050557067168
+2025-12-08 11:05:42
+length s : 3.04050557067168
+2025-12-08 11:05:42
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:05:43
+Iteration 0: Residual max G: 2.16e+05, frequence: 160.9894835397057
+2025-12-08 11:05:47
+Iteration 1: Residual max G: 1.25e+04, frequence: 160.9895515628763
+2025-12-08 11:05:50
+Iteration 2: Residual max G: 8.03e+05, frequence: 160.98985414204995
+2025-12-08 11:05:54
+Iteration 3: Residual max G: 6.24e+03, frequence: 160.9898501881389
+2025-12-08 11:05:57
+Iteration 4: Residual max G: 3.63e+04, frequence: 160.98985231417592
+2025-12-08 11:06:01
+Iteration 5: Residual max G: 8.53e+03, frequence: 160.98989336477845
+2025-12-08 11:06:05
+Iteration 6: Residual max G: 5.29e+03, frequence: 160.98995166252982
+2025-12-08 11:06:08
+Iteration 7: Residual max G: 5.81e+02, frequence: 160.98997095418355
+2025-12-08 11:06:10
+################## New Iteration ##################
+2025-12-08 11:06:10
+length s : 0.15202527853358402
+2025-12-08 11:06:10
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:06:12
+Iteration 0: Residual max G: 5.41e+02, frequence: 163.87769144886673
+2025-12-08 11:06:15
+Iteration 1: Residual max G: 4.74e-01, frequence: 163.8776922051229
+2025-12-08 11:06:19
+Iteration 2: Residual max G: 1.58e-05, frequence: 163.87769220951563
+2025-12-08 11:06:23
+Iteration 3: Residual max G: 2.12e-07, frequence: 163.87769220951563
+2025-12-08 11:06:23
+Second value f:163.87769220951563,u:0.007008967497709574
+2025-12-08 11:06:23
+################## New Iteration ##################
+2025-12-08 11:06:25
+before length_s 0.15202527853358402
+2025-12-08 11:06:25
+factor_step_size 1.8682787741165234
+2025-12-08 11:06:25
+Angle [rad] 0.0004361177272839498
+2025-12-08 11:06:25
+self.MAX_LENGTH_S 5
+2025-12-08 11:06:25
+length_s 0.28402560101344737
+2025-12-08 11:06:25
+length s : 0.28402560101344737
+2025-12-08 11:06:25
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:06:26
+Iteration 0: Residual max G: 2.10e+03, frequence: 163.59369644000293
+2025-12-08 11:06:30
+Iteration 1: Residual max G: 9.70e+00, frequence: 163.59370014181772
+2025-12-08 11:06:33
+Iteration 2: Residual max G: 8.24e-03, frequence: 163.5937002477028
+2025-12-08 11:06:37
+Iteration 3: Residual max G: 1.67e-07, frequence: 163.59370024775959
+2025-12-08 11:06:37
+Second value f:163.59370024775959,u:0.006455786167242519
+2025-12-08 11:06:37
+################## New Iteration ##################
+2025-12-08 11:06:39
+before length_s 0.28402560101344737
+2025-12-08 11:06:39
+factor_step_size 1.8677140746839693
+2025-12-08 11:06:39
+Angle [rad] 0.0011829655150182535
+2025-12-08 11:06:39
+self.MAX_LENGTH_S 5
+2025-12-08 11:06:39
+length_s 0.5304786125833891
+2025-12-08 11:06:39
+length s : 0.5304786125833891
+2025-12-08 11:06:39
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:06:41
+Iteration 0: Residual max G: 9.54e+03, frequence: 163.0632941104053
+2025-12-08 11:06:44
+Iteration 1: Residual max G: 4.25e+02, frequence: 163.06332335861796
+2025-12-08 11:06:48
+Iteration 2: Residual max G: 4.08e+01, frequence: 163.06333221608205
+2025-12-08 11:06:51
+Iteration 3: Residual max G: 1.18e-01, frequence: 163.06333272125423
+2025-12-08 11:06:55
+Iteration 4: Residual max G: 1.14e-06, frequence: 163.06333272276518
+2025-12-08 11:06:55
+Second value f:163.06333272276518,u:0.00503018913689455
+2025-12-08 11:06:55
+################## New Iteration ##################
+2025-12-08 11:06:57
+before length_s 0.5304786125833891
+2025-12-08 11:06:57
+factor_step_size 1.8273437259638563
+2025-12-08 11:06:57
+Angle [rad] 0.009423722481027628
+2025-12-08 11:06:57
+self.MAX_LENGTH_S 5
+2025-12-08 11:06:57
+length_s 0.9693667644622673
+2025-12-08 11:06:57
+length s : 0.9693667644622673
+2025-12-08 11:06:57
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:06:58
+Iteration 0: Residual max G: 1.07e+05, frequence: 162.09440967741483
+2025-12-08 11:07:02
+Iteration 1: Residual max G: 1.83e+09, frequence: 162.11013854744
+2025-12-08 11:07:02
+################## New Iteration ##################
+2025-12-08 11:07:02
+length s : 0.04846833822311337
+2025-12-08 11:07:02
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:07:03
+Iteration 0: Residual max G: 2.67e+02, frequence: 163.01488657049765
+2025-12-08 11:07:07
+Iteration 1: Residual max G: 1.66e+00, frequence: 163.0148900343199
+2025-12-08 11:07:11
+Iteration 2: Residual max G: 4.92e-04, frequence: 163.01489009396417
+2025-12-08 11:07:14
+Iteration 3: Residual max G: 1.56e-07, frequence: 163.01489009398074
+2025-12-08 11:07:14
+Second value f:163.01489009398074,u:0.00482561173104369
+2025-12-08 11:07:14
+################## New Iteration ##################
+2025-12-08 11:07:16
+before length_s 0.04846833822311337
+2025-12-08 11:07:16
+factor_step_size 1.8644267901546157
+2025-12-08 11:07:16
+Angle [rad] 0.002906172428457317
+2025-12-08 11:07:16
+self.MAX_LENGTH_S 5
+2025-12-08 11:07:16
+length_s 0.09036566825744752
+2025-12-08 11:07:16
+length s : 0.09036566825744752
+2025-12-08 11:07:16
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:07:18
+Iteration 0: Residual max G: 1.28e+03, frequence: 162.92458152708818
+2025-12-08 11:07:22
+Iteration 1: Residual max G: 1.11e+02, frequence: 162.92461501593766
+2025-12-08 11:07:25
+Iteration 2: Residual max G: 7.35e+00, frequence: 162.9246236215828
+2025-12-08 11:07:29
+Iteration 3: Residual max G: 2.34e-02, frequence: 162.92462410773436
+2025-12-08 11:07:33
+Iteration 4: Residual max G: 2.76e-07, frequence: 162.92462410930628
+2025-12-08 11:07:33
+Second value f:162.92462410930628,u:0.00425331484108129
+2025-12-08 11:07:33
+################## New Iteration ##################
+2025-12-08 11:07:35
+before length_s 0.09036566825744752
+2025-12-08 11:07:35
+factor_step_size 1.4226014864731298
+2025-12-08 11:07:35
+Angle [rad] 0.03301911591254809
+2025-12-08 11:07:35
+self.MAX_LENGTH_S 5
+2025-12-08 11:07:35
+length_s 0.12855433398918256
+2025-12-08 11:07:35
+length s : 0.12855433398918256
+2025-12-08 11:07:35
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:07:36
+Iteration 0: Residual max G: 1.37e+04, frequence: 162.79649967194578
+2025-12-08 11:07:40
+Iteration 1: Residual max G: 2.48e+04, frequence: 162.79534292784757
+2025-12-08 11:07:43
+Iteration 2: Residual max G: 2.11e+03, frequence: 162.79567291178284
+2025-12-08 11:07:47
+Iteration 3: Residual max G: 6.72e+03, frequence: 162.7962695741391
+2025-12-08 11:07:51
+Iteration 4: Residual max G: 2.11e+04, frequence: 162.79520377298329
+2025-12-08 11:07:54
+Iteration 5: Residual max G: 2.66e+03, frequence: 162.79558251070208
+2025-12-08 11:07:58
+Iteration 6: Residual max G: 4.97e+03, frequence: 162.79609813113711
+2025-12-08 11:08:02
+Iteration 7: Residual max G: 9.60e+04, frequence: 162.79382218794154
+2025-12-08 11:08:04
+################## New Iteration ##################
+2025-12-08 11:08:04
+length s : 0.006427716699459129
+2025-12-08 11:08:04
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:08:05
+Iteration 0: Residual max G: 3.43e+01, frequence: 162.91821788743826
+2025-12-08 11:08:09
+Iteration 1: Residual max G: 3.87e-01, frequence: 162.91822245382772
+2025-12-08 11:08:12
+Iteration 2: Residual max G: 1.10e-04, frequence: 162.9182225308068
+2025-12-08 11:08:16
+Iteration 3: Residual max G: 1.29e-07, frequence: 162.91822253083018
+2025-12-08 11:08:16
+Second value f:162.91822253083018,u:0.004177601719973645
+2025-12-08 11:08:16
+################## New Iteration ##################
+2025-12-08 11:08:18
+before length_s 0.006427716699459129
+2025-12-08 11:08:18
+factor_step_size 1.8114811480964348
+2025-12-08 11:08:18
+Angle [rad] 0.011121174608618051
+2025-12-08 11:08:18
+self.MAX_LENGTH_S 5
+2025-12-08 11:08:18
+length_s 0.01164368762637485
+2025-12-08 11:08:18
+length s : 0.01164368762637485
+2025-12-08 11:08:18
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:08:19
+Iteration 0: Residual max G: 1.74e+02, frequence: 162.9066390788483
+2025-12-08 11:08:23
+Iteration 1: Residual max G: 4.54e+01, frequence: 162.90670072584476
+2025-12-08 11:08:27
+Iteration 2: Residual max G: 3.06e+01, frequence: 162.90675137845062
+2025-12-08 11:08:30
+Iteration 3: Residual max G: 3.13e+02, frequence: 162.90658955936925
+2025-12-08 11:08:34
+Iteration 4: Residual max G: 7.79e+01, frequence: 162.9066703184515
+2025-12-08 11:08:37
+Iteration 5: Residual max G: 3.30e+01, frequence: 162.90672289496567
+2025-12-08 11:08:41
+Iteration 6: Residual max G: 6.46e+01, frequence: 162.90679646175528
+2025-12-08 11:08:44
+Iteration 7: Residual max G: 3.32e+01, frequence: 162.90674372866334
+2025-12-08 11:08:47
+################## New Iteration ##################
+2025-12-08 11:08:47
+length s : 0.0005821843813187424
+2025-12-08 11:08:47
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:08:48
+Iteration 0: Residual max G: 4.35e-01, frequence: 162.9176433582311
+2025-12-08 11:08:52
+Iteration 1: Residual max G: 7.34e-05, frequence: 162.9176434366195
+2025-12-08 11:08:55
+Iteration 2: Residual max G: 1.36e-07, frequence: 162.91764343669155
+2025-12-08 11:08:55
+Second value f:162.91764343669155,u:0.004169803368637735
+2025-12-08 11:08:55
+################## New Iteration ##################
+2025-12-08 11:08:57
+before length_s 0.0005821843813187424
+2025-12-08 11:08:57
+factor_step_size 1.8675117926731994
+2025-12-08 11:08:57
+Angle [rad] 0.001353753737028417
+2025-12-08 11:08:57
+self.MAX_LENGTH_S 5
+2025-12-08 11:08:57
+length_s 0.0010872361976229023
+2025-12-08 11:08:57
+length s : 0.0010872361976229023
+2025-12-08 11:08:57
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:08:59
+Iteration 0: Residual max G: 1.60e+00, frequence: 162.9165621249104
+2025-12-08 11:09:02
+Iteration 1: Residual max G: 1.10e-03, frequence: 162.91656243586348
+2025-12-08 11:09:06
+Iteration 2: Residual max G: 1.20e-07, frequence: 162.91656243611183
+2025-12-08 11:09:06
+Second value f:162.91656243611183,u:0.004154661460421895
+2025-12-08 11:09:06
+################## New Iteration ##################
+2025-12-08 11:09:08
+before length_s 0.0010872361976229023
+2025-12-08 11:09:08
+factor_step_size 1.8644280279144738
+2025-12-08 11:09:08
+Angle [rad] 0.0029057155157354297
+2025-12-08 11:09:08
+self.MAX_LENGTH_S 5
+2025-12-08 11:09:08
+length_s 0.002027073639811299
+2025-12-08 11:09:08
+length s : 0.002027073639811299
+2025-12-08 11:09:08
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:09:09
+Iteration 0: Residual max G: 6.17e+00, frequence: 162.91454763437494
+2025-12-08 11:09:13
+Iteration 1: Residual max G: 2.07e-02, frequence: 162.91454905928586
+2025-12-08 11:09:16
+Iteration 2: Residual max G: 4.55e-07, frequence: 162.9145490657557
+2025-12-08 11:09:16
+Second value f:162.9145490657557,u:0.004123976888494659
+2025-12-08 11:09:16
+################## New Iteration ##################
+2025-12-08 11:09:18
+before length_s 0.002027073639811299
+2025-12-08 11:09:18
+factor_step_size 1.843877997401204
+2025-12-08 11:09:18
+Angle [rad] 0.007264743626454785
+2025-12-08 11:09:18
+self.MAX_LENGTH_S 5
+2025-12-08 11:09:18
+length_s 0.0037376764835600276
+2025-12-08 11:09:18
+length s : 0.0037376764835600276
+2025-12-08 11:09:18
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:09:20
+Iteration 0: Residual max G: 2.65e+01, frequence: 162.91083998698448
+2025-12-08 11:09:23
+Iteration 1: Residual max G: 7.02e-01, frequence: 162.91084932647516
+2025-12-08 11:09:27
+Iteration 2: Residual max G: 8.96e-04, frequence: 162.91084966018047
+2025-12-08 11:09:30
+Iteration 3: Residual max G: 1.22e-07, frequence: 162.9108496606057
+2025-12-08 11:09:30
+Second value f:162.9108496606057,u:0.004053736836631358
+2025-12-08 11:09:30
+################## New Iteration ##################
+2025-12-08 11:09:33
+before length_s 0.0037376764835600276
+2025-12-08 11:09:33
+factor_step_size 1.495858969073396
+2025-12-08 11:09:33
+Angle [rad] 0.029823230612852362
+2025-12-08 11:09:33
+self.MAX_LENGTH_S 5
+2025-12-08 11:09:33
+length_s 0.005591036891427979
+2025-12-08 11:09:33
+length s : 0.005591036891427979
+2025-12-08 11:09:33
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:09:34
+Iteration 0: Residual max G: 1.17e+02, frequence: 162.90534359143572
+2025-12-08 11:09:37
+Iteration 1: Residual max G: 2.38e+02, frequence: 162.90558742520804
+2025-12-08 11:09:41
+Iteration 2: Residual max G: 1.17e+02, frequence: 162.9054166911753
+2025-12-08 11:09:44
+Iteration 3: Residual max G: 2.44e+03, frequence: 162.90463645452485
+2025-12-08 11:09:48
+Iteration 4: Residual max G: 4.88e+02, frequence: 162.90498574033595
+2025-12-08 11:09:51
+Iteration 5: Residual max G: 1.98e+02, frequence: 162.90520839654639
+2025-12-08 11:09:55
+Iteration 6: Residual max G: 9.38e+01, frequence: 162.9053614839438
+2025-12-08 11:09:58
+Iteration 7: Residual max G: 4.73e+02, frequence: 162.90570541967935
+2025-12-08 11:10:01
+################## New Iteration ##################
+2025-12-08 11:10:01
+length s : 0.00027955184457139894
+2025-12-08 11:10:01
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:10:02
+Iteration 0: Residual max G: 2.93e-01, frequence: 162.9105743571472
+2025-12-08 11:10:06
+Iteration 1: Residual max G: 1.09e-04, frequence: 162.91057452247287
+2025-12-08 11:10:09
+Iteration 2: Residual max G: 1.43e-07, frequence: 162.91057452280072
+2025-12-08 11:10:09
+Second value f:162.91057452280072,u:0.004047288148998522
+2025-12-08 11:10:09
+################## New Iteration ##################
+2025-12-08 11:10:11
+before length_s 0.00027955184457139894
+2025-12-08 11:10:11
+factor_step_size 1.862558912816672
+2025-12-08 11:10:11
+Angle [rad] 0.003529199109988627
+2025-12-08 11:10:11
+self.MAX_LENGTH_S 5
+2025-12-08 11:10:11
+length_s 0.0005206817797008001
+2025-12-08 11:10:11
+length s : 0.0005206817797008001
+2025-12-08 11:10:11
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:10:13
+Iteration 0: Residual max G: 1.10e+00, frequence: 162.91006239388713
+2025-12-08 11:10:16
+Iteration 1: Residual max G: 1.81e-03, frequence: 162.9100630928776
+2025-12-08 11:10:20
+Iteration 2: Residual max G: 1.76e-07, frequence: 162.9100630944485
+2025-12-08 11:10:20
+Second value f:162.9100630944485,u:0.004034543197436485
+2025-12-08 11:10:20
+################## New Iteration ##################
+2025-12-08 11:10:22
+before length_s 0.0005206817797008001
+2025-12-08 11:10:22
+factor_step_size 1.8379698507471296
+2025-12-08 11:10:22
+Angle [rad] 0.008100234482494523
+2025-12-08 11:10:22
+self.MAX_LENGTH_S 5
+2025-12-08 11:10:22
+length_s 0.0009569974129234293
+2025-12-08 11:10:22
+length s : 0.0009569974129234293
+2025-12-08 11:10:22
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:10:23
+Iteration 0: Residual max G: 4.37e+00, frequence: 162.90912461742482
+2025-12-08 11:10:27
+Iteration 1: Residual max G: 4.12e-02, frequence: 162.909128250757
+2025-12-08 11:10:30
+Iteration 2: Residual max G: 5.37e-06, frequence: 162.90912829220798
+2025-12-08 11:10:30
+Second value f:162.90912829220798,u:0.0040077247905879725
+2025-12-08 11:10:30
+################## New Iteration ##################
+2025-12-08 11:10:33
+before length_s 0.0009569974129234293
+2025-12-08 11:10:33
+factor_step_size 1.6183460903655904
+2025-12-08 11:10:33
+Angle [rad] 0.023971397912325842
+2025-12-08 11:10:33
+self.MAX_LENGTH_S 5
+2025-12-08 11:10:33
+length_s 0.0015487530216946163
+2025-12-08 11:10:33
+length s : 0.0015487530216946163
+2025-12-08 11:10:33
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:10:34
+Iteration 0: Residual max G: 1.70e+01, frequence: 162.9076241639366
+2025-12-08 11:10:38
+Iteration 1: Residual max G: 1.76e+00, frequence: 162.90765336710356
+2025-12-08 11:10:41
+Iteration 2: Residual max G: 3.93e-02, frequence: 162.90765772563134
+2025-12-08 11:10:45
+Iteration 3: Residual max G: 2.02e-05, frequence: 162.90765782447724
+2025-12-08 11:10:48
+Iteration 4: Residual max G: 1.31e-07, frequence: 162.90765782541754
+2025-12-08 11:10:48
+Second value f:162.90765782541754,u:0.003941716010814625
+2025-12-08 11:10:48
+################## New Iteration ##################
+2025-12-08 11:10:50
+before length_s 0.0015487530216946163
+2025-12-08 11:10:50
+factor_step_size 0.4115998817516501
+2025-12-08 11:10:50
+Angle [rad] 0.19480310012252142
+2025-12-08 11:10:50
+self.MAX_LENGTH_S 5
+2025-12-08 11:10:50
+length_s 0.0006374665605920148
+2025-12-08 11:10:50
+length s : 0.0006374665605920148
+2025-12-08 11:10:50
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:10:52
+Iteration 0: Residual max G: 1.28e+01, frequence: 162.90710665308708
+2025-12-08 11:10:55
+Iteration 1: Residual max G: 1.19e+01, frequence: 162.9072860693709
+2025-12-08 11:10:59
+Iteration 2: Residual max G: 1.37e+01, frequence: 162.90709308785122
+2025-12-08 11:11:02
+Iteration 3: Residual max G: 1.05e+01, frequence: 162.90726222082475
+2025-12-08 11:11:06
+Iteration 4: Residual max G: 2.09e+01, frequence: 162.90702402580231
+2025-12-08 11:11:09
+Iteration 5: Residual max G: 9.10e+00, frequence: 162.9071811548251
+2025-12-08 11:11:13
+Iteration 6: Residual max G: 1.61e+02, frequence: 162.90784168966053
+2025-12-08 11:11:16
+Iteration 7: Residual max G: 4.62e+01, frequence: 162.90748776769672
+2025-12-08 11:11:18
+################## New Iteration ##################
+2025-12-08 11:11:18
+length s : 3.187332802960074e-05
+2025-12-08 11:11:18
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:11:20
+Iteration 0: Residual max G: 3.19e-02, frequence: 162.90763026680102
+2025-12-08 11:11:23
+Iteration 1: Residual max G: 9.22e-06, frequence: 162.9076304249518
+2025-12-08 11:11:23
+Second value f:162.9076304249518,u:0.003939592097382937
+2025-12-08 11:11:23
+################## New Iteration ##################
+2025-12-08 11:11:25
+before length_s 3.187332802960074e-05
+2025-12-08 11:11:25
+factor_step_size 1.8194839563255243
+2025-12-08 11:11:25
+Angle [rad] 0.010297976008369743
+2025-12-08 11:11:25
+self.MAX_LENGTH_S 5
+2025-12-08 11:11:25
+length_s 5.799300898455918e-05
+2025-12-08 11:11:25
+length s : 5.799300898455918e-05
+2025-12-08 11:11:25
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:11:27
+Iteration 0: Residual max G: 1.13e-01, frequence: 162.90758088043933
+2025-12-08 11:11:30
+Iteration 1: Residual max G: 1.30e-04, frequence: 162.90758150162011
+2025-12-08 11:11:34
+Iteration 2: Residual max G: 1.33e-07, frequence: 162.9075815015566
+2025-12-08 11:11:34
+Second value f:162.9075815015566,u:0.003935527867025666
+2025-12-08 11:11:34
+################## New Iteration ##################
+2025-12-08 11:11:36
+before length_s 5.799300898455918e-05
+2025-12-08 11:11:36
+factor_step_size 1.655174394786831
+2025-12-08 11:11:36
+Angle [rad] 0.022014203659902924
+2025-12-08 11:11:36
+self.MAX_LENGTH_S 5
+2025-12-08 11:11:36
+length_s 9.5988543547885e-05
+2025-12-08 11:11:36
+length s : 9.5988543547885e-05
+2025-12-08 11:11:36
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:11:37
+Iteration 0: Residual max G: 3.54e-01, frequence: 162.90750169675428
+2025-12-08 11:11:41
+Iteration 1: Residual max G: 1.56e-03, frequence: 162.90750406084086
+2025-12-08 11:11:44
+Iteration 2: Residual max G: 2.30e-07, frequence: 162.90750407094836
+2025-12-08 11:11:44
+Second value f:162.90750407094836,u:0.003928107873688445
+2025-12-08 11:11:44
+################## New Iteration ##################
+2025-12-08 11:11:47
+before length_s 9.5988543547885e-05
+2025-12-08 11:11:47
+factor_step_size 0.9981670454260811
+2025-12-08 11:11:47
+Angle [rad] 0.050728393883404055
+2025-12-08 11:11:47
+self.MAX_LENGTH_S 5
+2025-12-08 11:11:47
+length_s 9.581260090794509e-05
+2025-12-08 11:11:47
+length s : 9.581260090794509e-05
+2025-12-08 11:11:47
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:11:48
+Iteration 0: Residual max G: 4.57e-01, frequence: 162.90742983462633
+2025-12-08 11:11:51
+Iteration 1: Residual max G: 3.10e-03, frequence: 162.90743390930407
+2025-12-08 11:11:55
+Iteration 2: Residual max G: 2.06e-07, frequence: 162.90743393728874
+2025-12-08 11:11:55
+Second value f:162.90743393728874,u:0.00391955135521968
+2025-12-08 11:11:55
+################## New Iteration ##################
+2025-12-08 11:11:57
+before length_s 9.581260090794509e-05
+2025-12-08 11:11:57
+factor_step_size 0.910146478354828
+2025-12-08 11:11:57
+Angle [rad] 0.07914931231834339
+2025-12-08 11:11:57
+self.MAX_LENGTH_S 5
+2025-12-08 11:11:57
+length_s 8.720350129838282e-05
+2025-12-08 11:11:57
+length s : 8.720350129838282e-05
+2025-12-08 11:11:57
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:11:58
+Iteration 0: Residual max G: 5.16e-01, frequence: 162.90737516062995
+2025-12-08 11:12:02
+Iteration 1: Residual max G: 4.26e-03, frequence: 162.90738157476778
+2025-12-08 11:12:05
+Iteration 2: Residual max G: 3.87e-07, frequence: 162.90738163037827
+2025-12-08 11:12:05
+Second value f:162.90738163037827,u:0.00391037840599089
+2025-12-08 11:12:05
+################## New Iteration ##################
+2025-12-08 11:12:08
+before length_s 8.720350129838282e-05
+2025-12-08 11:12:08
+factor_step_size 0.7530021826816283
+2025-12-08 11:12:08
+Angle [rad] 0.11764250253366819
+2025-12-08 11:12:08
+self.MAX_LENGTH_S 5
+2025-12-08 11:12:08
+length_s 6.566442681516248e-05
+2025-12-08 11:12:08
+length s : 6.566442681516248e-05
+2025-12-08 11:12:08
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:12:09
+Iteration 0: Residual max G: 4.03e-01, frequence: 162.90734889515144
+2025-12-08 11:12:12
+Iteration 1: Residual max G: 1.82e-03, frequence: 162.90735553765657
+2025-12-08 11:12:16
+Iteration 2: Residual max G: 2.57e-07, frequence: 162.9073555696327
+2025-12-08 11:12:16
+Second value f:162.9073555696327,u:0.003902452008699012
+2025-12-08 11:12:16
+################## New Iteration ##################
+2025-12-08 11:12:18
+before length_s 6.566442681516248e-05
+2025-12-08 11:12:18
+factor_step_size 0.6974245265223719
+2025-12-08 11:12:18
+Angle [rad] 0.13001069866566822
+2025-12-08 11:12:18
+self.MAX_LENGTH_S 5
+2025-12-08 11:12:18
+length_s 4.579598178092763e-05
+2025-12-08 11:12:18
+length s : 4.579598178092763e-05
+2025-12-08 11:12:18
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:12:19
+Iteration 0: Residual max G: 2.42e-01, frequence: 162.907343126729
+2025-12-08 11:12:23
+Iteration 1: Residual max G: 2.10e-04, frequence: 162.90734772941255
+2025-12-08 11:12:26
+Iteration 2: Residual max G: 2.49e-07, frequence: 162.90734773559947
+2025-12-08 11:12:26
+Second value f:162.90734773559947,u:0.0038965325360917767
+2025-12-08 11:12:26
+################## New Iteration ##################
+2025-12-08 11:12:29
+before length_s 4.579598178092763e-05
+2025-12-08 11:12:29
+factor_step_size 0.7944496660069266
+2025-12-08 11:12:29
+Angle [rad] 0.10816089575662247
+2025-12-08 11:12:29
+self.MAX_LENGTH_S 5
+2025-12-08 11:12:29
+length_s 3.638260243031725e-05
+2025-12-08 11:12:29
+length s : 3.638260243031725e-05
+2025-12-08 11:12:29
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:12:30
+Iteration 0: Residual max G: 1.64e-01, frequence: 162.90734545201505
+2025-12-08 11:12:33
+Iteration 1: Residual max G: 5.14e-06, frequence: 162.90734868085673
+2025-12-08 11:12:33
+Second value f:162.90734868085673,u:0.0038917687864209283
+2025-12-08 11:12:33
+################## New Iteration ##################
+2025-12-08 11:12:36
+before length_s 3.638260243031725e-05
+2025-12-08 11:12:36
+factor_step_size 0.8777370770737492
+2025-12-08 11:12:36
+Angle [rad] 0.08782999021001532
+2025-12-08 11:12:36
+self.MAX_LENGTH_S 5
+2025-12-08 11:12:36
+length_s 3.1934359113522945e-05
+2025-12-08 11:12:36
+length s : 3.1934359113522945e-05
+2025-12-08 11:12:36
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:12:37
+Iteration 0: Residual max G: 1.25e-01, frequence: 162.90735230434134
+2025-12-08 11:12:40
+Iteration 1: Residual max G: 9.13e-06, frequence: 162.90735467521216
+2025-12-08 11:12:40
+Second value f:162.90735467521216,u:0.003887664594231951
+2025-12-08 11:12:40
+################## New Iteration ##################
+2025-12-08 11:12:43
+before length_s 3.1934359113522945e-05
+2025-12-08 11:12:43
+factor_step_size 0.9325012817800443
+2025-12-08 11:12:43
+Angle [rad] 0.07276319250031656
+2025-12-08 11:12:43
+self.MAX_LENGTH_S 5
+2025-12-08 11:12:43
+length_s 2.9778830806184386e-05
+2025-12-08 11:12:43
+length s : 2.9778830806184386e-05
+2025-12-08 11:12:43
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:12:44
+Iteration 0: Residual max G: 1.03e-01, frequence: 162.90736236128492
+2025-12-08 11:12:47
+Iteration 1: Residual max G: 2.89e-05, frequence: 162.90736416650302
+2025-12-08 11:12:51
+Iteration 2: Residual max G: 1.40e-07, frequence: 162.90736417603048
+2025-12-08 11:12:51
+Second value f:162.90736417603048,u:0.0038839741817594652
+2025-12-08 11:12:51
+################## New Iteration ##################
+2025-12-08 11:12:53
+before length_s 2.9778830806184386e-05
+2025-12-08 11:12:53
+factor_step_size 0.9707410892390873
+2025-12-08 11:12:53
+Angle [rad] 0.06072489880033573
+2025-12-08 11:12:53
+self.MAX_LENGTH_S 5
+2025-12-08 11:12:53
+length_s 2.8907534653061918e-05
+2025-12-08 11:12:53
+length s : 2.8907534653061918e-05
+2025-12-08 11:12:53
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:12:55
+Iteration 0: Residual max G: 8.93e-02, frequence: 162.90737502661997
+2025-12-08 11:12:58
+Iteration 1: Residual max G: 4.23e-05, frequence: 162.90737646546856
+2025-12-08 11:13:01
+Iteration 2: Residual max G: 1.21e-07, frequence: 162.90737646626783
+2025-12-08 11:13:02
+Second value f:162.90737646626783,u:0.00388055429602936
+2025-12-08 11:13:02
+################## New Iteration ##################
+2025-12-08 11:13:04
+before length_s 2.8907534653061918e-05
+2025-12-08 11:13:04
+factor_step_size 0.997043419239964
+2025-12-08 11:13:04
+Angle [rad] 0.05117043231252214
+2025-12-08 11:13:04
+self.MAX_LENGTH_S 5
+2025-12-08 11:13:04
+length_s 2.8822067192286602e-05
+2025-12-08 11:13:04
+length s : 2.8822067192286602e-05
+2025-12-08 11:13:04
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:13:05
+Iteration 0: Residual max G: 8.05e-02, frequence: 162.9073900212429
+2025-12-08 11:13:09
+Iteration 1: Residual max G: 4.79e-05, frequence: 162.90739118515222
+2025-12-08 11:13:12
+Iteration 2: Residual max G: 2.48e-07, frequence: 162.90739119275418
+2025-12-08 11:13:12
+Second value f:162.90739119275418,u:0.0038773169231052637
+2025-12-08 11:13:12
+################## New Iteration ##################
+2025-12-08 11:13:14
+before length_s 2.8822067192286602e-05
+2025-12-08 11:13:14
+factor_step_size 1.1605283322809412
+2025-12-08 11:13:14
+Angle [rad] 0.043641813122159055
+2025-12-08 11:13:14
+self.MAX_LENGTH_S 5
+2025-12-08 11:13:14
+length_s 3.34488255715536e-05
+2025-12-08 11:13:14
+length s : 3.34488255715536e-05
+2025-12-08 11:13:14
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:13:16
+Iteration 0: Residual max G: 9.75e-02, frequence: 162.90740950380652
+2025-12-08 11:13:19
+Iteration 1: Residual max G: 8.49e-05, frequence: 162.9074107666219
+2025-12-08 11:13:23
+Iteration 2: Residual max G: 1.55e-07, frequence: 162.90741076463834
+2025-12-08 11:13:23
+Second value f:162.90741076463834,u:0.003873772121533338
+2025-12-08 11:13:23
+################## New Iteration ##################
+2025-12-08 11:13:25
+before length_s 3.34488255715536e-05
+2025-12-08 11:13:25
+factor_step_size 1.187231170550171
+2025-12-08 11:13:25
+Angle [rad] 0.042586711509021435
+2025-12-08 11:13:25
+self.MAX_LENGTH_S 5
+2025-12-08 11:13:25
+length_s 3.971148833684407e-05
+2025-12-08 11:13:25
+length s : 3.971148833684407e-05
+2025-12-08 11:13:25
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:13:26
+Iteration 0: Residual max G: 1.21e-01, frequence: 162.9074353281557
+2025-12-08 11:13:30
+Iteration 1: Residual max G: 1.46e-04, frequence: 162.9074367031204
+2025-12-08 11:13:33
+Iteration 2: Residual max G: 2.61e-07, frequence: 162.90743670975527
+2025-12-08 11:13:33
+Second value f:162.90743670975527,u:0.0038698424487860314
+2025-12-08 11:13:33
+################## New Iteration ##################
+2025-12-08 11:13:35
+before length_s 3.971148833684407e-05
+2025-12-08 11:13:35
+factor_step_size 1.2344695453950878
+2025-12-08 11:13:35
+Angle [rad] 0.040713394915685784
+2025-12-08 11:13:35
+self.MAX_LENGTH_S 5
+2025-12-08 11:13:35
+length_s 4.9022622954146234e-05
+2025-12-08 11:13:35
+length s : 4.9022622954146234e-05
+2025-12-08 11:13:35
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:13:37
+Iteration 0: Residual max G: 1.60e-01, frequence: 162.9074701920298
+2025-12-08 11:13:40
+Iteration 1: Residual max G: 2.59e-04, frequence: 162.90747173510033
+2025-12-08 11:13:44
+Iteration 2: Residual max G: 1.41e-07, frequence: 162.90747174089262
+2025-12-08 11:13:44
+Second value f:162.90747174089262,u:0.0038653589269016376
+2025-12-08 11:13:44
+################## New Iteration ##################
+2025-12-08 11:13:46
+before length_s 4.9022622954146234e-05
+2025-12-08 11:13:46
+factor_step_size 1.2575450890426032
+2025-12-08 11:13:46
+Angle [rad] 0.03979334185418331
+2025-12-08 11:13:46
+self.MAX_LENGTH_S 5
+2025-12-08 11:13:46
+length_s 6.16481587479738e-05
+2025-12-08 11:13:46
+length s : 6.16481587479738e-05
+2025-12-08 11:13:46
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:13:47
+Iteration 0: Residual max G: 2.13e-01, frequence: 162.9075174354456
+2025-12-08 11:13:51
+Iteration 1: Residual max G: 4.52e-04, frequence: 162.9075191621638
+2025-12-08 11:13:54
+Iteration 2: Residual max G: 3.03e-07, frequence: 162.90751916047694
+2025-12-08 11:13:54
+Second value f:162.90751916047694,u:0.0038602072657191256
+2025-12-08 11:13:54
+################## New Iteration ##################
+2025-12-08 11:13:56
+before length_s 6.16481587479738e-05
+2025-12-08 11:13:56
+factor_step_size 1.2976032613889728
+2025-12-08 11:13:56
+Angle [rad] 0.03818502579769709
+2025-12-08 11:13:56
+self.MAX_LENGTH_S 5
+2025-12-08 11:13:56
+length_s 7.999485184999593e-05
+2025-12-08 11:13:56
+length s : 7.999485184999593e-05
+2025-12-08 11:13:56
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:13:58
+Iteration 0: Residual max G: 2.96e-01, frequence: 162.90758254796967
+2025-12-08 11:14:01
+Iteration 1: Residual max G: 8.10e-04, frequence: 162.90758451161605
+2025-12-08 11:14:05
+Iteration 2: Residual max G: 1.35e-07, frequence: 162.9075845144841
+2025-12-08 11:14:05
+Second value f:162.9075845144841,u:0.003854172479389483
+2025-12-08 11:14:05
+################## New Iteration ##################
+2025-12-08 11:14:07
+before length_s 7.999485184999593e-05
+2025-12-08 11:14:07
+factor_step_size 1.3468917977119905
+2025-12-08 11:14:07
+Angle [rad] 0.03617997783863884
+2025-12-08 11:14:07
+self.MAX_LENGTH_S 5
+2025-12-08 11:14:07
+length_s 0.00010774440981594537
+2025-12-08 11:14:07
+length s : 0.00010774440981594537
+2025-12-08 11:14:07
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:14:08
+Iteration 0: Residual max G: 4.33e-01, frequence: 162.9076746614217
+2025-12-08 11:14:12
+Iteration 1: Residual max G: 1.52e-03, frequence: 162.90767694877186
+2025-12-08 11:14:15
+Iteration 2: Residual max G: 1.95e-07, frequence: 162.90767695803132
+2025-12-08 11:14:15
+Second value f:162.90767695803132,u:0.00384692883313455
+2025-12-08 11:14:15
+################## New Iteration ##################
+2025-12-08 11:14:17
+before length_s 0.00010774440981594537
+2025-12-08 11:14:17
+factor_step_size 1.3903042435350739
+2025-12-08 11:14:17
+Angle [rad] 0.034381853022236425
+2025-12-08 11:14:17
+self.MAX_LENGTH_S 5
+2025-12-08 11:14:17
+length_s 0.0001497975101842909
+2025-12-08 11:14:17
+length s : 0.0001497975101842909
+2025-12-08 11:14:17
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:14:19
+Iteration 0: Residual max G: 6.57e-01, frequence: 162.90780796014113
+2025-12-08 11:14:22
+Iteration 1: Residual max G: 2.91e-03, frequence: 162.90781064162346
+2025-12-08 11:14:26
+Iteration 2: Residual max G: 1.34e-07, frequence: 162.90781065360983
+2025-12-08 11:14:26
+Second value f:162.90781065360983,u:0.0038380810004781814
+2025-12-08 11:14:26
+################## New Iteration ##################
+2025-12-08 11:14:28
+before length_s 0.0001497975101842909
+2025-12-08 11:14:28
+factor_step_size 1.4369534436421467
+2025-12-08 11:14:28
+Angle [rad] 0.03240545750838745
+2025-12-08 11:14:28
+self.MAX_LENGTH_S 5
+2025-12-08 11:14:28
+length_s 0.00021525204810833636
+2025-12-08 11:14:28
+length s : 0.00021525204810833636
+2025-12-08 11:14:28
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:14:29
+Iteration 0: Residual max G: 1.03e+00, frequence: 162.9080056891732
+2025-12-08 11:14:33
+Iteration 1: Residual max G: 5.72e-03, frequence: 162.90800885577673
+2025-12-08 11:14:36
+Iteration 2: Residual max G: 2.31e-07, frequence: 162.90800887194612
+2025-12-08 11:14:36
+Second value f:162.90800887194612,u:0.003827083044314387
+2025-12-08 11:14:36
+################## New Iteration ##################
+2025-12-08 11:14:39
+before length_s 0.00021525204810833636
+2025-12-08 11:14:39
+factor_step_size 1.4910848071272598
+2025-12-08 11:14:39
+Angle [rad] 0.030036825529892147
+2025-12-08 11:14:39
+self.MAX_LENGTH_S 5
+2025-12-08 11:14:39
+length_s 0.00032095905863736634
+2025-12-08 11:14:39
+length s : 0.00032095905863736634
+2025-12-08 11:14:39
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:14:40
+Iteration 0: Residual max G: 1.69e+00, frequence: 162.90830788953417
+2025-12-08 11:14:43
+Iteration 1: Residual max G: 1.17e-02, frequence: 162.9083116716728
+2025-12-08 11:14:47
+Iteration 2: Residual max G: 5.59e-07, frequence: 162.90831169470843
+2025-12-08 11:14:47
+Second value f:162.90831169470843,u:0.0038131314407853422
+2025-12-08 11:14:47
+################## New Iteration ##################
+2025-12-08 11:14:49
+before length_s 0.00032095905863736634
+2025-12-08 11:14:49
+factor_step_size 1.5440523678336968
+2025-12-08 11:14:49
+Angle [rad] 0.027615118241496168
+2025-12-08 11:14:49
+self.MAX_LENGTH_S 5
+2025-12-08 11:14:49
+length_s 0.0004955775944666998
+2025-12-08 11:14:49
+length s : 0.0004955775944666998
+2025-12-08 11:14:49
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:14:50
+Iteration 0: Residual max G: 2.87e+00, frequence: 162.90878339612868
+2025-12-08 11:14:54
+Iteration 1: Residual max G: 2.44e-02, frequence: 162.90878790544159
+2025-12-08 11:14:57
+Iteration 2: Residual max G: 1.36e-06, frequence: 162.9087879389747
+2025-12-08 11:14:57
+Second value f:162.9087879389747,u:0.003795131947589557
+2025-12-08 11:14:57
+################## New Iteration ##################
+2025-12-08 11:15:00
+before length_s 0.0004955775944666998
+2025-12-08 11:15:00
+factor_step_size 1.6010679529628726
+2025-12-08 11:15:00
+Angle [rad] 0.024850775838360598
+2025-12-08 11:15:00
+self.MAX_LENGTH_S 5
+2025-12-08 11:15:00
+length_s 0.0007934534047070637
+2025-12-08 11:15:00
+length s : 0.0007934534047070637
+2025-12-08 11:15:00
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:15:01
+Iteration 0: Residual max G: 5.06e+00, frequence: 162.9095553449409
+2025-12-08 11:15:04
+Iteration 1: Residual max G: 5.24e-02, frequence: 162.90956073503403
+2025-12-08 11:15:08
+Iteration 2: Residual max G: 4.08e-06, frequence: 162.9095607825869
+2025-12-08 11:15:08
+Second value f:162.9095607825869,u:0.00377150581101245
+2025-12-08 11:15:08
+################## New Iteration ##################
+2025-12-08 11:15:10
+before length_s 0.0007934534047070637
+2025-12-08 11:15:10
+factor_step_size 1.6555350476011306
+2025-12-08 11:15:10
+Angle [rad] 0.021994401930798643
+2025-12-08 11:15:10
+self.MAX_LENGTH_S 5
+2025-12-08 11:15:10
+length_s 0.0013135899201309879
+2025-12-08 11:15:10
+length s : 0.0013135899201309879
+2025-12-08 11:15:10
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:15:12
+Iteration 0: Residual max G: 9.16e+00, frequence: 162.9108460630939
+2025-12-08 11:15:15
+Iteration 1: Residual max G: 1.14e-01, frequence: 162.91085244599546
+2025-12-08 11:15:19
+Iteration 2: Residual max G: 1.19e-05, frequence: 162.91085251136764
+2025-12-08 11:15:22
+Iteration 3: Residual max G: 1.24e-07, frequence: 162.91085251159058
+2025-12-08 11:15:22
+Second value f:162.91085251159058,u:0.0037400716272507793
+2025-12-08 11:15:22
+################## New Iteration ##################
+2025-12-08 11:15:24
+before length_s 0.0013135899201309879
+2025-12-08 11:15:24
+factor_step_size 1.7064629941227738
+2025-12-08 11:15:24
+Angle [rad] 0.01904110730068758
+2025-12-08 11:15:24
+self.MAX_LENGTH_S 5
+2025-12-08 11:15:24
+length_s 0.002241592588156221
+2025-12-08 11:15:24
+length s : 0.002241592588156221
+2025-12-08 11:15:24
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:15:26
+Iteration 0: Residual max G: 1.69e+01, frequence: 162.9130635945068
+2025-12-08 11:15:29
+Iteration 1: Residual max G: 2.48e-01, frequence: 162.913071038042
+2025-12-08 11:15:33
+Iteration 2: Residual max G: 3.24e-05, frequence: 162.91307112309198
+2025-12-08 11:15:36
+Iteration 3: Residual max G: 1.27e-07, frequence: 162.91307112327468
+2025-12-08 11:15:36
+Second value f:162.91307112327468,u:0.0036978214996829075
+2025-12-08 11:15:36
+################## New Iteration ##################
+2025-12-08 11:15:38
+before length_s 0.002241592588156221
+2025-12-08 11:15:38
+factor_step_size 1.7515119329489888
+2025-12-08 11:15:38
+Angle [rad] 0.01607296403061359
+2025-12-08 11:15:38
+self.MAX_LENGTH_S 5
+2025-12-08 11:15:38
+length_s 0.003926176166965629
+2025-12-08 11:15:38
+length s : 0.003926176166965629
+2025-12-08 11:15:38
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:15:40
+Iteration 0: Residual max G: 3.16e+01, frequence: 162.9169648371693
+2025-12-08 11:15:43
+Iteration 1: Residual max G: 5.39e-01, frequence: 162.91697335234744
+2025-12-08 11:15:47
+Iteration 2: Residual max G: 8.06e-05, frequence: 162.91697345646
+2025-12-08 11:15:50
+Iteration 3: Residual max G: 1.16e-07, frequence: 162.91697345640955
+2025-12-08 11:15:50
+Second value f:162.91697345640955,u:0.003640682073512743
+2025-12-08 11:15:50
+################## New Iteration ##################
+2025-12-08 11:15:53
+before length_s 0.003926176166965629
+2025-12-08 11:15:53
+factor_step_size 1.7882898189106238
+2025-12-08 11:15:53
+Angle [rad] 0.013237075277082741
+2025-12-08 11:15:53
+self.MAX_LENGTH_S 5
+2025-12-08 11:15:53
+length_s 0.007021140866634171
+2025-12-08 11:15:53
+length s : 0.007021140866634171
+2025-12-08 11:15:53
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:15:54
+Iteration 0: Residual max G: 5.92e+01, frequence: 162.92396067287663
+2025-12-08 11:15:57
+Iteration 1: Residual max G: 1.15e+00, frequence: 162.92397016565485
+2025-12-08 11:16:01
+Iteration 2: Residual max G: 1.75e-04, frequence: 162.92397028279092
+2025-12-08 11:16:04
+Iteration 3: Residual max G: 1.13e-07, frequence: 162.92397028281601
+2025-12-08 11:16:04
+Second value f:162.92397028281601,u:0.003563282953090503
+2025-12-08 11:16:04
+################## New Iteration ##################
+2025-12-08 11:16:07
+before length_s 0.007021140866634171
+2025-12-08 11:16:07
+factor_step_size 1.8162280317331938
+2025-12-08 11:16:07
+Angle [rad] 0.010640139299079702
+2025-12-08 11:16:07
+self.MAX_LENGTH_S 5
+2025-12-08 11:16:07
+length_s 0.012751992856728471
+2025-12-08 11:16:07
+length s : 0.012751992856728471
+2025-12-08 11:16:07
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:16:08
+Iteration 0: Residual max G: 1.10e+02, frequence: 162.93668759593356
+2025-12-08 11:16:11
+Iteration 1: Residual max G: 2.41e+00, frequence: 162.93669788316805
+2025-12-08 11:16:15
+Iteration 2: Residual max G: 3.21e-04, frequence: 162.93669800173063
+2025-12-08 11:16:18
+Iteration 3: Residual max G: 9.73e-08, frequence: 162.93669800172438
+2025-12-08 11:16:18
+Second value f:162.93669800172438,u:0.0034587438320879825
+2025-12-08 11:16:18
+################## New Iteration ##################
+2025-12-08 11:16:21
+before length_s 0.012751992856728471
+2025-12-08 11:16:21
+factor_step_size 1.8360534127465906
+2025-12-08 11:16:21
+Angle [rad] 0.008353844768256184
+2025-12-08 11:16:21
+self.MAX_LENGTH_S 5
+2025-12-08 11:16:21
+length_s 0.023413340003916455
+2025-12-08 11:16:21
+length s : 0.023413340003916455
+2025-12-08 11:16:21
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:16:22
+Iteration 0: Residual max G: 2.01e+02, frequence: 162.96007677415818
+2025-12-08 11:16:25
+Iteration 1: Residual max G: 4.96e+00, frequence: 162.96008762271234
+2025-12-08 11:16:29
+Iteration 2: Residual max G: 4.57e-04, frequence: 162.96008772691508
+2025-12-08 11:16:32
+Iteration 3: Residual max G: 1.23e-07, frequence: 162.96008772690342
+2025-12-08 11:16:32
+Second value f:162.96008772690342,u:0.003318571356944552
+2025-12-08 11:16:32
+################## New Iteration ##################
+2025-12-08 11:16:35
+before length_s 0.023413340003916455
+2025-12-08 11:16:35
+factor_step_size 1.8491441746942856
+2025-12-08 11:16:35
+Angle [rad] 0.006431849939737273
+2025-12-08 11:16:35
+self.MAX_LENGTH_S 5
+2025-12-08 11:16:35
+length_s 0.043294641278378794
+2025-12-08 11:16:35
+length s : 0.043294641278378794
+2025-12-08 11:16:35
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:16:36
+Iteration 0: Residual max G: 3.60e+02, frequence: 163.00334892331298
+2025-12-08 11:16:40
+Iteration 1: Residual max G: 9.98e+00, frequence: 163.00336005157985
+2025-12-08 11:16:43
+Iteration 2: Residual max G: 4.15e-04, frequence: 163.00336012336498
+2025-12-08 11:16:47
+Iteration 3: Residual max G: 9.20e-08, frequence: 163.00336012334677
+2025-12-08 11:16:47
+Second value f:163.00336012334677,u:0.003132868881140954
+2025-12-08 11:16:47
+################## New Iteration ##################
+2025-12-08 11:16:49
+before length_s 0.043294641278378794
+2025-12-08 11:16:49
+factor_step_size 1.8572566817941667
+2025-12-08 11:16:49
+Angle [rad] 0.004884511179284265
+2025-12-08 11:16:49
+self.MAX_LENGTH_S 5
+2025-12-08 11:16:49
+length_s 0.08040926180015055
+2025-12-08 11:16:49
+length s : 0.08040926180015055
+2025-12-08 11:16:49
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:16:50
+Iteration 0: Residual max G: 6.24e+02, frequence: 163.08373820618945
+2025-12-08 11:16:54
+Iteration 1: Residual max G: 1.97e+01, frequence: 163.08374927591927
+2025-12-08 11:16:57
+Iteration 2: Residual max G: 8.47e-05, frequence: 163.0837492986676
+2025-12-08 11:17:01
+Iteration 3: Residual max G: 9.52e-08, frequence: 163.08374929865406
+2025-12-08 11:17:01
+Second value f:163.08374929865406,u:0.0028912448791063787
+2025-12-08 11:17:01
+################## New Iteration ##################
+2025-12-08 11:17:03
+before length_s 0.08040926180015055
+2025-12-08 11:17:03
+factor_step_size 1.862122248716021
+2025-12-08 11:17:03
+Angle [rad] 0.0036596622419317135
+2025-12-08 11:17:03
+self.MAX_LENGTH_S 5
+2025-12-08 11:17:03
+length_s 0.14973187540089158
+2025-12-08 11:17:03
+length s : 0.14973187540089158
+2025-12-08 11:17:03
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:17:05
+Iteration 0: Residual max G: 1.03e+03, frequence: 163.23345345310943
+2025-12-08 11:17:08
+Iteration 1: Residual max G: 3.84e+01, frequence: 163.23346412152614
+2025-12-08 11:17:12
+Iteration 2: Residual max G: 4.17e-04, frequence: 163.23346408693655
+2025-12-08 11:17:15
+Iteration 3: Residual max G: 8.35e-08, frequence: 163.23346408696403
+2025-12-08 11:17:15
+Second value f:163.23346408696403,u:0.0025851227670092656
+2025-12-08 11:17:15
+################## New Iteration ##################
+2025-12-08 11:17:17
+before length_s 0.14973187540089158
+2025-12-08 11:17:17
+factor_step_size 1.8649298626340813
+2025-12-08 11:17:17
+Angle [rad] 0.0027141622885583417
+2025-12-08 11:17:17
+self.MAX_LENGTH_S 5
+2025-12-08 11:17:17
+length_s 0.2792394458233281
+2025-12-08 11:17:17
+length s : 0.2792394458233281
+2025-12-08 11:17:17
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:17:19
+Iteration 0: Residual max G: 1.60e+03, frequence: 163.51268049501869
+2025-12-08 11:17:22
+Iteration 1: Residual max G: 7.29e+01, frequence: 163.51269030619423
+2025-12-08 11:17:26
+Iteration 2: Residual max G: 5.51e-03, frequence: 163.51269022128199
+2025-12-08 11:17:29
+Iteration 3: Residual max G: 7.55e-08, frequence: 163.51269022138257
+2025-12-08 11:17:29
+Second value f:163.51269022138257,u:0.0022124710128510333
+2025-12-08 11:17:29
+################## New Iteration ##################
+2025-12-08 11:17:32
+before length_s 0.2792394458233281
+2025-12-08 11:17:32
+factor_step_size 1.8665339534224616
+2025-12-08 11:17:32
+Angle [rad] 0.0019818220849846854
+2025-12-08 11:17:32
+self.MAX_LENGTH_S 5
+2025-12-08 11:17:32
+length_s 0.5212099067641139
+2025-12-08 11:17:32
+length s : 0.5212099067641139
+2025-12-08 11:17:32
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:17:33
+Iteration 0: Residual max G: 2.25e+03, frequence: 164.03388278177437
+2025-12-08 11:17:36
+Iteration 1: Residual max G: 1.32e+02, frequence: 164.03389116298226
+2025-12-08 11:17:40
+Iteration 2: Residual max G: 2.11e-02, frequence: 164.03389105716874
+2025-12-08 11:17:43
+Iteration 3: Residual max G: 7.73e-08, frequence: 164.0338910573339
+2025-12-08 11:17:43
+Second value f:164.0338910573339,u:0.0017853226807557545
+2025-12-08 11:17:43
+################## New Iteration ##################
+2025-12-08 11:17:46
+before length_s 0.5212099067641139
+2025-12-08 11:17:46
+factor_step_size 1.8674477504828448
+2025-12-08 11:17:46
+Angle [rad] 0.0014035037127477544
+2025-12-08 11:17:46
+self.MAX_LENGTH_S 5
+2025-12-08 11:17:46
+length_s 0.9733322679160179
+2025-12-08 11:17:46
+length s : 0.9733322679160179
+2025-12-08 11:17:46
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:17:47
+Iteration 0: Residual max G: 2.74e+03, frequence: 165.00721204943855
+2025-12-08 11:17:51
+Iteration 1: Residual max G: 2.14e+02, frequence: 165.0072183497871
+2025-12-08 11:17:54
+Iteration 2: Residual max G: 3.75e-02, frequence: 165.00721826632306
+2025-12-08 11:17:58
+Iteration 3: Residual max G: 1.24e-07, frequence: 165.00721826646716
+2025-12-08 11:17:58
+Second value f:165.00721826646716,u:0.0013369876898083129
+2025-12-08 11:17:58
+################## New Iteration ##################
+2025-12-08 11:18:00
+before length_s 0.9733322679160179
+2025-12-08 11:18:00
+factor_step_size 1.867962797842543
+2025-12-08 11:18:00
+Angle [rad] 0.0009310014071959787
+2025-12-08 11:18:00
+self.MAX_LENGTH_S 5
+2025-12-08 11:18:00
+length_s 1.8181484664068326
+2025-12-08 11:18:00
+length s : 1.8181484664068326
+2025-12-08 11:18:00
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:18:01
+Iteration 0: Residual max G: 2.70e+03, frequence: 166.8253607851593
+2025-12-08 11:18:05
+Iteration 1: Residual max G: 2.83e+02, frequence: 166.8253646363725
+2025-12-08 11:18:08
+Iteration 2: Residual max G: 2.80e-02, frequence: 166.8253645979681
+2025-12-08 11:18:12
+Iteration 3: Residual max G: 6.66e-08, frequence: 166.82536459802478
+2025-12-08 11:18:12
+Second value f:166.82536459802478,u:0.0009190731646078786
+2025-12-08 11:18:12
+################## New Iteration ##################
+2025-12-08 11:18:14
+before length_s 1.8181484664068326
+2025-12-08 11:18:14
+factor_step_size 1.8682267392050214
+2025-12-08 11:18:14
+Angle [rad] 0.0005491879358405843
+2025-12-08 11:18:14
+self.MAX_LENGTH_S 5
+2025-12-08 11:18:14
+length_s 3.396713580785847
+2025-12-08 11:18:14
+length s : 3.396713580785847
+2025-12-08 11:18:14
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:18:15
+Iteration 0: Residual max G: 2.04e+03, frequence: 170.22207577518947
+2025-12-08 11:18:19
+Iteration 1: Residual max G: 2.75e+02, frequence: 170.2220775426019
+2025-12-08 11:18:22
+Iteration 2: Residual max G: 7.32e-03, frequence: 170.2220775334806
+2025-12-08 11:18:26
+Iteration 3: Residual max G: 1.95e-08, frequence: 170.22207753348863
+2025-12-08 11:18:26
+Second value f:170.22207753348863,u:0.0005799126632097396
+2025-12-08 11:18:26
+################## New Iteration ##################
+2025-12-08 11:18:28
+before length_s 3.396713580785847
+2025-12-08 11:18:28
+factor_step_size 1.868332365738847
+2025-12-08 11:18:28
+Angle [rad] 0.00027470023761741333
+2025-12-08 11:18:28
+self.MAX_LENGTH_S 5
+2025-12-08 11:18:28
+length_s 5
+2025-12-08 11:18:28
+length s : 5
+2025-12-08 11:18:28
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:18:29
+Iteration 0: Residual max G: 7.18e+02, frequence: 175.22207695740804
+2025-12-08 11:18:33
+Iteration 1: Residual max G: 8.69e+01, frequence: 175.22207735826282
+2025-12-08 11:18:36
+Iteration 2: Residual max G: 1.20e-04, frequence: 175.22207735780148
+2025-12-08 11:18:40
+Iteration 3: Residual max G: 1.13e-08, frequence: 175.2220773578016
+2025-12-08 11:18:40
+Second value f:175.2220773578016,u:0.0003726156115613522
+2025-12-08 11:18:40
+################## New Iteration ##################
+2025-12-08 11:18:42
+before length_s 5
+2025-12-08 11:18:42
+factor_step_size 1.8683620874028812
+2025-12-08 11:18:42
+Angle [rad] 0.00010875766214170937
+2025-12-08 11:18:42
+self.MAX_LENGTH_S 5
+2025-12-08 11:18:42
+length_s 5
+2025-12-08 11:18:42
+length s : 5
+2025-12-08 11:18:42
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:18:43
+Iteration 0: Residual max G: 1.30e+02, frequence: 180.2220772532598
+2025-12-08 11:18:47
+Iteration 1: Residual max G: 8.65e+00, frequence: 180.22207730712844
+2025-12-08 11:18:50
+Iteration 2: Residual max G: 2.19e-07, frequence: 180.22207730712122
+2025-12-08 11:18:50
+Second value f:180.22207730712122,u:0.0002721296310448883
+2025-12-08 11:18:50
+################## New Iteration ##################
+2025-12-08 11:18:53
+before length_s 5
+2025-12-08 11:18:53
+factor_step_size 1.8683668974107417
+2025-12-08 11:18:53
+Angle [rad] 3.912078164170818e-05
+2025-12-08 11:18:53
+self.MAX_LENGTH_S 5
+2025-12-08 11:18:53
+length_s 5
+2025-12-08 11:18:53
+length s : 5
+2025-12-08 11:18:53
+Time generate :
+1895.69 s
+2025-12-08 11:18:53
+Solver time :
+6.55548 s
+2025-12-08 11:18:53
+Number iteration Newthon 1232
+2025-12-08 11:18:53
+Number point 137
+2025-12-08 11:18:53
+Time :
+2467.05 s
+2025-12-08 11:18:53
+Total execution time:
+2467.35 s
+2025-12-08 11:18:53
+Simulation finished successfully
+2025-12-08 11:18:53
+Uploading results...
+2025-12-08 11:18:53
+99% of results uploaded
+2025-12-08 11:18:53
+100% of results uploaded
+2025-12-08 11:18:53
+Uploading done

@@ -79,6 +79,7 @@ class PseudoArcLengthCorrector(AbstractCorrector):
             clk_generate.resume()
             elasticity.generate()
             Jac_2 = elasticity.A(False, True)
+            Jac_2.reusefactorization()
             b_2 = elasticity.b(False, True, True)
             
             clk_generate.pause()
@@ -186,6 +187,7 @@ class ArcLengthCorrector(AbstractCorrector):
             clk_generate.resume()
             elasticity.generate()
             Jac_k = elasticity.A(False, True)
+            Jac_k.reusefactorization()
             b_k = elasticity.b(False, True, True)
             clk_generate.pause()
             residue_G = Jac_k * u_k - b_k 
@@ -210,97 +212,3 @@ class ArcLengthCorrector(AbstractCorrector):
             qs.setfundamentalfrequency(f_k)
             iter += 1
         return u_k, f_k, iter, residue_G, Jac_k
-    
-
-class CrisfildArclengthCorrector(AbstractCorrector) :
-    def __init__(self, MAX_ITER=10, TOL=1e-6):
-        """
-        Initialises the arc-length corrector based on the condition:
-
-            ‖Δũ‖² + (Δλ * ω)² - s² = 0
-
-        where Δ represente the differnce between iteration of newthons ũ_k et previous solution ũ_i.
-        """
-        super().__init__(MAX_ITER=MAX_ITER, TOL=TOL)
-    
-    def corection(self, Prev_solution, u_k, lambda_k, freq_i, Jac, grad_lambda_G, residue_G, Predictor, clk_solver) :
-        prev_sol = Prev_solution.get_solution()
-        delta_u = u_k - prev_sol['u']
-        delta_lambda = lambda_k - 1
-        bool_error = False
-        clk_solver.resume()
-        iter_newthon_u = - qs.solve(Jac, residue_G)
-        tangent_solution_u = - qs.solve(Jac, grad_lambda_G)
-        clk_solver.pause()
-
-        a = tangent_solution_u * tangent_solution_u + freq_i**2
-        b = 2 * tangent_solution_u * (delta_u + iter_newthon_u) + 2 * delta_lambda * freq_i**2
-        c = (delta_u + iter_newthon_u) * (delta_u + iter_newthon_u) - Predictor.length_s**2 + delta_lambda**2 * freq_i**2
-
-        try:
-            dlanda_1, dlanda_2 = ss.solve_quadratic_equation(a, b, c)
-        except ValueError:
-            bool_error = True
-            return delta_u, delta_lambda, bool_error
-
-        delta_u_1 = delta_u + iter_newthon_u + dlanda_1 * tangent_solution_u
-        delta_u_2 = delta_u + iter_newthon_u + dlanda_2 * tangent_solution_u
-
-        cos_theta_1 = delta_u_1 * delta_u/(Predictor.length_s)**2
-        cos_theta_2 = delta_u_2 * delta_u /(Predictor.length_s)**2
-
-        if cos_theta_1 > cos_theta_2 : 
-            delta_u = delta_u_1
-            delta_lambda = delta_lambda + dlanda_1
-        else :
-            delta_u = delta_u_2
-            delta_lambda = delta_lambda + dlanda_2
-
-        return delta_u, delta_lambda, bool_error
-        
-
-
-    def correct_step(self, elasticity, PHYSREG_U, HARMONIC_MEASURED, u,
-                    Predictor, Prev_solution, clk_generate, clk_solver):
-
-        iter = 0
-        prev_sol = Prev_solution.get_solution()
-        prev_lambda = 1
-
-        f_k = Predictor.f_pred
-        u_k = Predictor.u_pred
-        lambda_k = Predictor.f_pred / prev_sol["freq"]
-    
-        u.setdata(PHYSREG_U, u_k)
-        qs.setfundamentalfrequency(f_k)
-        while iter < self.MAX_ITER:
-            clk_generate.resume()
-            elasticity.generate()
-            Jac_k = elasticity.A(False, True)
-            b_k = elasticity.b(False, True, True)
-            clk_generate.pause()
-            residue_G_k = Jac_k * u_k - b_k 
-            residue_norm = (residue_G_k * residue_G_k)**0.5
-            qs.printonrank(0, f"Iteration {iter}: Residual max G: {residue_norm:.2e}, frequence: {f_k}")
-            if residue_norm < self.TOL:
-                break
-            
-            if residue_norm > 1e8 :
-                iter = self.MAX_ITER
-                break
-            grad_lambda_G = sc.get_derivative_of_residual_wrt_lambda(elasticity, prev_sol["freq"], u, PHYSREG_U, u_k, residue_G_k, lambda_k, clk_generate)
-            delta_u, delta_lambda, bool_error = self.corection(Prev_solution, u_k, lambda_k, prev_sol["freq"], Jac_k, grad_lambda_G, residue_G_k, Predictor, clk_solver)
-            if bool_error : 
-                iter = self.MAX_ITER
-                break
-
-            u_k = delta_u + prev_sol["u"]
-            lambda_k = delta_lambda + prev_lambda
-            f_k = prev_sol["freq"] * lambda_k
-            u.setdata(PHYSREG_U, u_k)
-            qs.setfundamentalfrequency(f_k)
-            
-            iter +=1
-
-    
-        return u_k, f_k, iter, residue_G_k, Jac_k

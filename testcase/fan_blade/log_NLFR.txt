@@ -1,0 +1,1979 @@
+2025-12-08 11:51:09
+Reserving resources...
+2025-12-08 11:51:11
+Setting up job...
+2025-12-08 11:51:11
+Downloading inputs...
+2025-12-08 11:51:11
+Downloading done
+2025-12-08 11:51:11
+Quanscient Allsolve 399 int64/float64
+2025-12-08 11:51:11
+Physical RAM is 16.4601 GB for 1 rank
+2025-12-08 11:51:12
+Loading mesh from 'simulation.msh'
+2025-12-08 11:51:12
+Detected curvature order 2
+Extracted 3895 nodes
+Extracted 3234 lines
+Extracted 4615 triangles
+Extracted 2041 tetrahedra
+2025-12-08 11:51:12
+Extracted 9 physical regions:
+101 (2041 3D elements)
+102 (2041 3D elements)
+104 (2041 3D elements)
+103 (1063 2D elements)
+105 (1066 2D elements)
+3 (7 0D elements)
+4 (1 0D element)
+5 (73 2D elements)
+6 (71 2D elements)
+2025-12-08 11:51:12
+Time to load the mesh:
+14.9231 ms
+2025-12-08 11:51:12
+Number of unknowns is 81795
+2025-12-08 11:51:31
+Iteration 1:  Residual max Q: 2.00e+01
+2025-12-08 11:51:49
+Iteration 2:  Residual max Q: 2.17e+04
+2025-12-08 11:52:07
+Iteration 3:  Residual max Q: 2.21e-01
+2025-12-08 11:52:26
+Iteration 4:  Residual max Q: 5.73e-03
+2025-12-08 11:52:37
+Convergence reached
+2025-12-08 11:52:37
+First iteration
+85.2276 s
+2025-12-08 11:52:37
+Value f:13, u:0.0018179989296005187
+2025-12-08 11:52:37
+################## New Iteration ##################
+2025-12-08 11:52:37
+Tangent previsous point1
+2025-12-08 11:53:03
+tan_w1.0
+2025-12-08 11:53:03
+length_s: 0.050000, freq: 13.00
+2025-12-08 11:53:03
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:53:33
+Iteration 0: Residual max G: 1.14e+01
+2025-12-08 11:54:03
+Iteration 1: Residual max G: 7.52e-03
+2025-12-08 11:54:14
+Second value f:13.049997128482113,u:0.0018609799429154855
+2025-12-08 11:54:14
+Time:
+96.8839 s
+2025-12-08 11:54:14
+################## New Iteration ##################
+2025-12-08 11:54:14
+Tangent previsous point1.0
+2025-12-08 11:54:32
+tan_w0.9998850630423246
+2025-12-08 11:54:32
+Theta  :0.01582605941099273 [°]
+2025-12-08 11:54:32
+s_change : 1.802995221163532
+2025-12-08 11:54:32
+length_s: 0.055000, freq: 13.05
+2025-12-08 11:54:32
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:55:01
+Iteration 0: Residual max G: 1.53e+01
+2025-12-08 11:55:30
+Iteration 1: Residual max G: 1.29e-02
+2025-12-08 11:55:41
+Second value f:13.104993609671777,u:0.001910885476137071
+2025-12-08 11:55:41
+Time:
+87.4481 s
+2025-12-08 11:55:41
+################## New Iteration ##################
+2025-12-08 11:55:41
+Tangent previsous point0.9998850630423246
+2025-12-08 11:56:00
+tan_w0.9999868626253821
+2025-12-08 11:56:00
+Theta  :0.018930415004847045 [°]
+2025-12-08 11:56:00
+s_change : 1.799267654191453
+2025-12-08 11:56:00
+length_s: 0.060500, freq: 13.10
+2025-12-08 11:56:00
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:56:29
+Iteration 0: Residual max G: 2.07e+01
+2025-12-08 11:56:58
+Iteration 1: Residual max G: 2.24e-02
+2025-12-08 11:57:09
+Second value f:13.165489236000985,u:0.001969245344365291
+2025-12-08 11:57:09
+Time:
+87.6789 s
+2025-12-08 11:57:09
+################## New Iteration ##################
+2025-12-08 11:57:09
+Tangent previsous point0.9999868626253821
+2025-12-08 11:57:27
+tan_w0.9998683931885873
+2025-12-08 11:57:27
+Theta  :0.022794833307827268 [°]
+2025-12-08 11:57:27
+s_change : 1.7946382048916631
+2025-12-08 11:57:27
+length_s: 0.066550, freq: 13.17
+2025-12-08 11:57:27
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:57:56
+Iteration 0: Residual max G: 2.85e+01
+2025-12-08 11:58:26
+Iteration 1: Residual max G: 4.04e-02
+2025-12-08 11:58:36
+Second value f:13.232033708915473,u:0.0020380624797649263
+2025-12-08 11:58:36
+Time:
+87.6165 s
+2025-12-08 11:58:36
+################## New Iteration ##################
+2025-12-08 11:58:36
+Tangent previsous point0.9998683931885873
+2025-12-08 11:58:55
+tan_w0.9999652667463687
+2025-12-08 11:58:55
+Theta  :0.027941146708650614 [°]
+2025-12-08 11:58:55
+s_change : 1.7884915746538252
+2025-12-08 11:58:55
+length_s: 0.073205, freq: 13.23
+2025-12-08 11:58:55
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 11:59:24
+Iteration 0: Residual max G: 4.01e+01
+2025-12-08 11:59:53
+Iteration 1: Residual max G: 7.42e-02
+2025-12-08 12:00:04
+Second value f:13.305231586321073,u:0.002120011428271887
+2025-12-08 12:00:04
+Time:
+87.1586 s
+2025-12-08 12:00:04
+################## New Iteration ##################
+2025-12-08 12:00:04
+Tangent previsous point0.9999652667463687
+2025-12-08 12:00:22
+tan_w0.9998397827851092
+2025-12-08 12:00:22
+Theta  :0.03463225945959092 [°]
+2025-12-08 12:00:22
+s_change : 1.7805313429359284
+2025-12-08 12:00:22
+length_s: 0.080526, freq: 13.31
+2025-12-08 12:00:22
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:00:51
+Iteration 0: Residual max G: 5.74e+01
+2025-12-08 12:01:20
+Iteration 1: Residual max G: 1.42e-01
+2025-12-08 12:01:31
+Second value f:13.385747691817496,u:0.0022187460127621695
+2025-12-08 12:01:31
+Time:
+87.3423 s
+2025-12-08 12:01:31
+################## New Iteration ##################
+2025-12-08 12:01:31
+Tangent previsous point0.9998397827851092
+2025-12-08 12:01:49
+tan_w0.9999263688216943
+2025-12-08 12:01:49
+Theta  :0.04367337761995261 [°]
+2025-12-08 12:01:49
+s_change : 1.7698316249607258
+2025-12-08 12:01:49
+length_s: 0.088578, freq: 13.39
+2025-12-08 12:01:49
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:02:19
+Iteration 0: Residual max G: 8.44e+01
+2025-12-08 12:02:48
+Iteration 1: Residual max G: 2.82e-01
+2025-12-08 12:02:59
+Second value f:13.474312999052765,u:0.0023393932712927968
+2025-12-08 12:02:59
+Time:
+87.6202 s
+2025-12-08 12:02:59
+################## New Iteration ##################
+2025-12-08 12:02:59
+Tangent previsous point0.9999263688216943
+2025-12-08 12:03:17
+tan_w0.9997850887408255
+2025-12-08 12:03:17
+Theta  :0.056445749471745126 [°]
+2025-12-08 12:03:17
+s_change : 1.7548256378894218
+2025-12-08 12:03:17
+length_s: 0.097436, freq: 13.47
+2025-12-08 12:03:17
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:03:46
+Iteration 0: Residual max G: 1.28e+02
+2025-12-08 12:04:15
+Iteration 1: Residual max G: 5.86e-01
+2025-12-08 12:04:26
+Second value f:13.571730968618567,u:0.0024893795199261025
+2025-12-08 12:04:26
+Time:
+87.5049 s
+2025-12-08 12:04:26
+################## New Iteration ##################
+2025-12-08 12:04:26
+Tangent previsous point0.9997850887408255
+2025-12-08 12:04:44
+tan_w0.9998462897104836
+2025-12-08 12:04:44
+Theta  :0.07508150462657123 [°]
+2025-12-08 12:04:44
+s_change : 1.733158841666034
+2025-12-08 12:04:44
+length_s: 0.107179, freq: 13.57
+2025-12-08 12:04:44
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:05:13
+Iteration 0: Residual max G: 2.02e+02
+2025-12-08 12:05:43
+Iteration 1: Residual max G: 1.28e+00
+2025-12-08 12:05:53
+Second value f:13.678884216638629,u:0.0026798829275603304
+2025-12-08 12:05:53
+Time:
+87.235 s
+2025-12-08 12:05:53
+################## New Iteration ##################
+2025-12-08 12:05:53
+Tangent previsous point0.9998462897104836
+2025-12-08 12:06:12
+tan_w0.9996621231996015
+2025-12-08 12:06:12
+Theta  :0.1030718238273824 [°]
+2025-12-08 12:06:12
+s_change : 1.7011176067284655
+2025-12-08 12:06:12
+length_s: 0.117897, freq: 13.68
+2025-12-08 12:06:12
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:06:41
+Iteration 0: Residual max G: 3.33e+02
+2025-12-08 12:07:10
+Iteration 1: Residual max G: 3.01e+00
+2025-12-08 12:07:39
+Iteration 2: Residual max G: 2.16e-03
+2025-12-08 12:07:50
+Second value f:13.796741121175108,u:0.0029285458920795824
+2025-12-08 12:07:50
+Time:
+116.608 s
+2025-12-08 12:07:50
+################## New Iteration ##################
+2025-12-08 12:07:50
+Tangent previsous point0.9996621231996015
+2025-12-08 12:08:08
+tan_w0.9996455936050288
+2025-12-08 12:08:08
+Theta  :0.1474856831049793 [°]
+2025-12-08 12:08:08
+s_change : 1.6514871933519328
+2025-12-08 12:08:08
+length_s: 0.129687, freq: 13.80
+2025-12-08 12:08:08
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:08:37
+Iteration 0: Residual max G: 5.85e+02
+2025-12-08 12:09:06
+Iteration 1: Residual max G: 7.67e+00
+2025-12-08 12:09:35
+Iteration 2: Residual max G: 2.04e-02
+2025-12-08 12:09:46
+Second value f:13.926361133191056,u:0.003264933870691075
+2025-12-08 12:09:46
+Time:
+116.344 s
+2025-12-08 12:09:46
+################## New Iteration ##################
+2025-12-08 12:09:46
+Tangent previsous point0.9996455936050288
+2025-12-08 12:10:05
+tan_w0.9993072923633256
+2025-12-08 12:10:05
+Theta  :0.22333884216513675 [°]
+2025-12-08 12:10:05
+s_change : 1.570049956933074
+2025-12-08 12:10:05
+length_s: 0.142656, freq: 13.93
+2025-12-08 12:10:05
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:10:34
+Iteration 0: Residual max G: 1.12e+03
+2025-12-08 12:11:03
+Iteration 1: Residual max G: 2.10e+01
+2025-12-08 12:11:32
+Iteration 2: Residual max G: 2.56e-01
+2025-12-08 12:11:43
+Second value f:14.068894635194537,u:0.003742639864934725
+2025-12-08 12:11:43
+Time:
+116.35 s
+2025-12-08 12:11:43
+################## New Iteration ##################
+2025-12-08 12:11:43
+Tangent previsous point0.9993072923633256
+2025-12-08 12:12:01
+tan_w0.9989470178792156
+2025-12-08 12:12:01
+Theta  :0.36514199273033937 [°]
+2025-12-08 12:12:01
+s_change : 1.4284243802939351
+2025-12-08 12:12:01
+length_s: 0.156921, freq: 14.07
+2025-12-08 12:12:01
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:12:30
+Iteration 0: Residual max G: 2.38e+03
+2025-12-08 12:12:59
+Iteration 1: Residual max G: 5.93e+01
+2025-12-08 12:13:29
+Iteration 2: Residual max G: 4.43e+00
+2025-12-08 12:13:39
+Second value f:14.225560978819383,u:0.00446981079647883
+2025-12-08 12:13:39
+Time:
+116.775 s
+2025-12-08 12:13:39
+################## New Iteration ##################
+2025-12-08 12:13:39
+Tangent previsous point0.9989470178792156
+2025-12-08 12:13:58
+tan_w0.9977083376688699
+2025-12-08 12:13:58
+Theta  :0.6668785494355234 [°]
+2025-12-08 12:13:58
+s_change : 1.1681418224628717
+2025-12-08 12:13:58
+length_s: 0.172614, freq: 14.23
+2025-12-08 12:13:58
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:14:27
+Iteration 0: Residual max G: 5.99e+03
+2025-12-08 12:14:56
+Iteration 1: Residual max G: 1.39e+02
+2025-12-08 12:15:25
+Iteration 2: Residual max G: 9.90e+01
+2025-12-08 12:15:55
+Iteration 3: Residual max G: 3.68e-02
+2025-12-08 12:16:05
+Second value f:14.397522523832876,u:0.005701435325999038
+2025-12-08 12:16:05
+Time:
+146.026 s
+2025-12-08 12:16:05
+################## New Iteration ##################
+2025-12-08 12:16:05
+Tangent previsous point0.9977083376688699
+2025-12-08 12:16:24
+tan_w0.994354332333525
+2025-12-08 12:16:24
+Theta  :1.442698604260398 [°]
+2025-12-08 12:16:24
+s_change : 0.6964222862577234
+2025-12-08 12:16:24
+length_s: 0.189875, freq: 14.40
+2025-12-08 12:16:24
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:16:53
+Iteration 0: Residual max G: 1.96e+04
+2025-12-08 12:17:22
+Iteration 1: Residual max G: 1.62e+02
+2025-12-08 12:17:51
+Iteration 2: Residual max G: 2.31e+03
+2025-12-08 12:18:21
+Iteration 3: Residual max G: 1.06e+00
+2025-12-08 12:18:50
+Iteration 4: Residual max G: 2.20e-01
+2025-12-08 12:19:01
+Second value f:14.585056842259,u:0.008204884386747331
+2025-12-08 12:19:01
+Time:
+175.077 s
+2025-12-08 12:19:01
+################## New Iteration ##################
+2025-12-08 12:19:01
+Tangent previsous point0.994354332333525
+2025-12-08 12:19:19
+tan_w0.9784875536120964
+2025-12-08 12:19:19
+Theta  :4.157317067740257 [°]
+2025-12-08 12:19:19
+s_change : 0.11400138154710293
+2025-12-08 12:19:19
+length_s: 0.208862, freq: 14.59
+2025-12-08 12:19:19
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:19:48
+Iteration 0: Residual max G: 1.01e+05
+2025-12-08 12:20:17
+Iteration 1: Residual max G: 7.45e+01
+2025-12-08 12:20:46
+Iteration 2: Residual max G: 6.39e+04
+2025-12-08 12:21:15
+Iteration 3: Residual max G: 1.64e+00
+2025-12-08 12:21:44
+Iteration 4: Residual max G: 5.76e-01
+2025-12-08 12:21:55
+Second value f:14.778383734838163,u:0.01533402266135365
+2025-12-08 12:21:55
+Time:
+174.627 s
+2025-12-08 12:21:55
+################## New Iteration ##################
+2025-12-08 12:21:55
+Tangent previsous point0.9784875536120964
+2025-12-08 12:22:13
+tan_w0.8410559043162164
+2025-12-08 12:22:13
+Theta  :17.060608798789186 [°]
+2025-12-08 12:22:13
+s_change : 2.094230673775628e-05
+2025-12-08 12:22:13
+length_s: 0.229749, freq: 14.78
+2025-12-08 12:22:13
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:22:42
+Iteration 0: Residual max G: 9.80e+05
+2025-12-08 12:23:12
+Iteration 1: Residual max G: 3.00e+02
+2025-12-08 12:23:41
+Iteration 2: Residual max G: 4.67e+05
+2025-12-08 12:24:10
+Iteration 3: Residual max G: 7.04e+01
+2025-12-08 12:24:39
+Iteration 4: Residual max G: 5.90e+04
+2025-12-08 12:25:08
+Iteration 5: Residual max G: 1.53e+00
+2025-12-08 12:25:37
+Iteration 6: Residual max G: 1.98e+02
+2025-12-08 12:25:48
+Second value f:14.882150886537714,u:0.033591317533478826
+2025-12-08 12:25:48
+Time:
+232.781 s
+2025-12-08 12:25:48
+################## New Iteration ##################
+2025-12-08 12:25:48
+Tangent previsous point0.8410559043162164
+2025-12-08 12:26:06
+tan_w0.15626328763520425
+2025-12-08 12:26:06
+Theta  :18.248800186270746 [°]
+2025-12-08 12:26:06
+s_change : 9.484356594803662e-06
+2025-12-08 12:26:06
+length_s: 0.252724, freq: 14.88
+2025-12-08 12:26:06
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:26:36
+Iteration 0: Residual max G: 2.65e+06
+2025-12-08 12:27:05
+Iteration 1: Residual max G: 2.11e+03
+2025-12-08 12:27:34
+Iteration 2: Residual max G: 4.61e+04
+2025-12-08 12:28:03
+Iteration 3: Residual max G: 2.84e+00
+2025-12-08 12:28:32
+Iteration 4: Residual max G: 8.65e+02
+2025-12-08 12:28:43
+Second value f:14.885294527164849,u:0.05326000190304725
+2025-12-08 12:28:43
+Time:
+175.161 s
+2025-12-08 12:28:43
+################## New Iteration ##################
+2025-12-08 12:28:43
+Tangent previsous point0.15626328763520425
+2025-12-08 12:29:01
+tan_w-0.060456228606071465
+2025-12-08 12:29:01
+Theta  :9.50288330691668 [°]
+2025-12-08 12:29:01
+s_change : 0.0032300568607845585
+2025-12-08 12:29:01
+length_s: 0.277996, freq: 14.89
+2025-12-08 12:29:01
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:29:31
+Iteration 0: Residual max G: 3.30e+06
+2025-12-08 12:30:00
+Iteration 1: Residual max G: 3.30e+03
+2025-12-08 12:30:29
+Iteration 2: Residual max G: 2.32e+04
+2025-12-08 12:30:58
+Iteration 3: Residual max G: 1.11e+01
+2025-12-08 12:31:27
+Iteration 4: Residual max G: 1.63e+04
+2025-12-08 12:31:57
+Iteration 5: Residual max G: 1.57e-01
+2025-12-08 12:32:26
+Iteration 6: Residual max G: 1.35e+01
+2025-12-08 12:32:36
+Second value f:14.853235996126655,u:0.07339509736203027
+2025-12-08 12:32:36
+Time:
+233.365 s
+2025-12-08 12:32:36
+################## New Iteration ##################
+2025-12-08 12:32:36
+Tangent previsous point-0.060456228606071465
+2025-12-08 12:32:55
+tan_w-0.1745875026376703
+2025-12-08 12:32:55
+Theta  :9.086207745198704 [°]
+2025-12-08 12:32:55
+s_change : 0.004264323061346564
+2025-12-08 12:32:55
+length_s: 0.305795, freq: 14.85
+2025-12-08 12:32:55
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:33:24
+Iteration 0: Residual max G: 3.98e+06
+2025-12-08 12:33:53
+Iteration 1: Residual max G: 4.85e+03
+2025-12-08 12:34:22
+Iteration 2: Residual max G: 1.52e+04
+2025-12-08 12:34:51
+Iteration 3: Residual max G: 4.20e+01
+2025-12-08 12:35:20
+Iteration 4: Residual max G: 3.75e+04
+2025-12-08 12:35:49
+Iteration 5: Residual max G: 7.13e-01
+2025-12-08 12:36:18
+Iteration 6: Residual max G: 4.41e+02
+2025-12-08 12:36:47
+Iteration 7: Residual max G: 2.09e-03
+2025-12-08 12:37:17
+Iteration 8: Residual max G: 2.03e-03
+2025-12-08 12:37:27
+Second value f:14.80222474398895,u:0.09335418559389422
+2025-12-08 12:37:27
+Time:
+290.973 s
+2025-12-08 12:37:27
+################## New Iteration ##################
+2025-12-08 12:37:27
+Tangent previsous point-0.1745875026376703
+2025-12-08 12:37:46
+tan_w-0.15476432042086133
+2025-12-08 12:37:46
+Theta  :9.648515630492236 [°]
+2025-12-08 12:37:46
+s_change : 0.002931198914937298
+2025-12-08 12:37:46
+length_s: 0.336375, freq: 14.80
+2025-12-08 12:37:46
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:38:15
+Iteration 0: Residual max G: 4.82e+06
+2025-12-08 12:38:44
+Iteration 1: Residual max G: 7.14e+03
+2025-12-08 12:39:13
+Iteration 2: Residual max G: 1.11e+04
+2025-12-08 12:39:42
+Iteration 3: Residual max G: 1.21e+02
+2025-12-08 12:40:11
+Iteration 4: Residual max G: 5.21e+04
+2025-12-08 12:40:40
+Iteration 5: Residual max G: 1.58e+00
+2025-12-08 12:41:10
+Iteration 6: Residual max G: 5.58e+03
+2025-12-08 12:41:39
+Iteration 7: Residual max G: 1.92e-02
+2025-12-08 12:42:08
+Iteration 8: Residual max G: 6.20e-01
+2025-12-08 12:42:19
+Second value f:14.742135216219488,u:0.11219634925119375
+2025-12-08 12:42:19
+Time:
+291.186 s
+2025-12-08 12:42:19
+################## New Iteration ##################
+2025-12-08 12:42:19
+Tangent previsous point-0.15476432042086133
+2025-12-08 12:42:37
+tan_w-0.20520861482503355
+2025-12-08 12:42:37
+Theta  :10.586349965044933 [°]
+2025-12-08 12:42:37
+s_change : 0.0015686080529345194
+2025-12-08 12:42:37
+length_s: 0.370012, freq: 14.74
+2025-12-08 12:42:37
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:43:06
+Iteration 0: Residual max G: 5.87e+06
+2025-12-08 12:43:35
+Iteration 1: Residual max G: 1.05e+04
+2025-12-08 12:44:04
+Iteration 2: Residual max G: 1.03e+04
+2025-12-08 12:44:33
+Iteration 3: Residual max G: 2.32e+02
+2025-12-08 12:45:02
+Iteration 4: Residual max G: 6.07e+04
+2025-12-08 12:45:31
+Iteration 5: Residual max G: 2.75e+00
+2025-12-08 12:46:00
+Iteration 6: Residual max G: 2.49e+04
+2025-12-08 12:46:30
+Iteration 7: Residual max G: 2.55e-01
+2025-12-08 12:46:59
+Iteration 8: Residual max G: 1.20e+01
+2025-12-08 12:47:10
+Second value f:14.68348377554747,u:0.12847293128514625
+2025-12-08 12:47:10
+Time:
+290.961 s
+2025-12-08 12:47:10
+################## New Iteration ##################
+2025-12-08 12:47:10
+Tangent previsous point-0.20520861482503355
+2025-12-08 12:47:28
+tan_w-0.12089468039984025
+2025-12-08 12:47:28
+Theta  :11.981295870659938 [°]
+2025-12-08 12:47:28
+s_change : 0.000618922447154386
+2025-12-08 12:47:28
+length_s: 0.407014, freq: 14.68
+2025-12-08 12:47:28
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:47:57
+Iteration 0: Residual max G: 7.15e+06
+2025-12-08 12:48:26
+Iteration 1: Residual max G: 1.54e+04
+2025-12-08 12:48:55
+Iteration 2: Residual max G: 1.19e+04
+2025-12-08 12:49:24
+Iteration 3: Residual max G: 3.29e+02
+2025-12-08 12:49:54
+Iteration 4: Residual max G: 8.13e+04
+2025-12-08 12:50:23
+Iteration 5: Residual max G: 4.43e+00
+2025-12-08 12:50:52
+Iteration 6: Residual max G: 5.77e+04
+2025-12-08 12:51:21
+Iteration 7: Residual max G: 1.20e+00
+2025-12-08 12:51:50
+Iteration 8: Residual max G: 6.58e+01
+2025-12-08 12:52:19
+Iteration 9: Residual max G: 9.35e-04
+2025-12-08 12:52:30
+Second value f:14.640241044347569,u:0.13998412026112647
+2025-12-08 12:52:30
+Time:
+320.496 s
+2025-12-08 12:52:30
+################## New Iteration ##################
+2025-12-08 12:52:30
+Tangent previsous point-0.12089468039984025
+2025-12-08 12:52:48
+tan_w-0.08337356263035774
+2025-12-08 12:52:48
+Theta  :13.638548696859566 [°]
+2025-12-08 12:52:48
+s_change : 0.00020502763195058327
+2025-12-08 12:52:48
+length_s: 0.447715, freq: 14.64
+2025-12-08 12:52:48
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:53:17
+Iteration 0: Residual max G: 8.70e+06
+2025-12-08 12:53:46
+Iteration 1: Residual max G: 2.22e+04
+2025-12-08 12:54:16
+Iteration 2: Residual max G: 1.38e+04
+2025-12-08 12:54:45
+Iteration 3: Residual max G: 6.89e+02
+2025-12-08 12:55:14
+Iteration 4: Residual max G: 8.92e+04
+2025-12-08 12:55:43
+Iteration 5: Residual max G: 9.16e+00
+2025-12-08 12:56:12
+Iteration 6: Residual max G: 1.40e+05
+2025-12-08 12:56:42
+Iteration 7: Residual max G: 6.53e+00
+2025-12-08 12:57:11
+Iteration 8: Residual max G: 3.61e+02
+2025-12-08 12:57:40
+Iteration 9: Residual max G: 3.69e-02
+2025-12-08 12:58:09
+Iteration 10: Residual max G: 2.06e-02
+2025-12-08 12:58:20
+Second value f:14.630018603462142,u:0.14369777888271842
+2025-12-08 12:58:20
+Time:
+350.213 s
+2025-12-08 12:58:20
+################## New Iteration ##################
+2025-12-08 12:58:20
+Tangent previsous point-0.08337356263035774
+2025-12-08 12:58:39
+tan_w0.023579006389669435
+2025-12-08 12:58:39
+Theta  :15.442252413300668 [°]
+2025-12-08 12:58:39
+s_change : 6.160084671163933e-05
+2025-12-08 12:58:39
+length_s: 0.492487, freq: 14.63
+2025-12-08 12:58:39
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 12:59:08
+Iteration 0: Residual max G: 1.05e+07
+2025-12-08 12:59:37
+Iteration 1: Residual max G: 3.19e+04
+2025-12-08 13:00:06
+Iteration 2: Residual max G: 1.11e+04
+2025-12-08 13:00:35
+Iteration 3: Residual max G: 1.78e+04
+2025-12-08 13:01:05
+Iteration 4: Residual max G: 1.95e+03
+2025-12-08 13:01:34
+Iteration 5: Residual max G: 6.80e+04
+2025-12-08 13:02:03
+Iteration 6: Residual max G: 6.53e+01
+2025-12-08 13:02:32
+Iteration 7: Residual max G: 2.20e+05
+2025-12-08 13:03:01
+Iteration 8: Residual max G: 1.59e+01
+2025-12-08 13:03:30
+Iteration 9: Residual max G: 2.47e+03
+2025-12-08 13:04:00
+Iteration 10: Residual max G: 8.55e-02
+2025-12-08 13:04:29
+Iteration 11: Residual max G: 4.94e-01
+2025-12-08 13:04:40
+Second value f:14.670083205570966,u:0.1362025484714915
+2025-12-08 13:04:40
+Time:
+379.511 s
+2025-12-08 13:04:40
+################## New Iteration ##################
+2025-12-08 13:04:40
+Tangent previsous point0.023579006389669435
+2025-12-08 13:04:58
+tan_w0.16146803206948485
+2025-12-08 13:04:58
+Theta  :16.944843202555433 [°]
+2025-12-08 13:04:58
+s_change : 2.2622577746521202e-05
+2025-12-08 13:04:58
+length_s: 0.541735, freq: 14.67
+2025-12-08 13:04:58
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:05:28
+Iteration 0: Residual max G: 1.26e+07
+2025-12-08 13:05:57
+Iteration 1: Residual max G: 4.70e+04
+2025-12-08 13:06:26
+Iteration 2: Residual max G: 4.70e+05
+2025-12-08 13:06:56
+Iteration 3: Residual max G: 6.94e+02
+2025-12-08 13:07:25
+Iteration 4: Residual max G: 3.02e+06
+2025-12-08 13:07:54
+Iteration 5: Residual max G: 2.73e+03
+2025-12-08 13:08:23
+Iteration 6: Residual max G: 2.83e+04
+2025-12-08 13:08:52
+Iteration 7: Residual max G: 1.00e+02
+2025-12-08 13:09:22
+Iteration 8: Residual max G: 2.26e+03
+2025-12-08 13:09:51
+Iteration 9: Residual max G: 2.97e+00
+2025-12-08 13:10:20
+Iteration 10: Residual max G: 1.39e-02
+2025-12-08 13:10:31
+Second value f:14.768155671615581,u:0.11483745929919992
+2025-12-08 13:10:31
+Time:
+350.949 s
+2025-12-08 13:10:31
+################## New Iteration ##################
+2025-12-08 13:10:31
+Tangent previsous point0.16146803206948485
+2025-12-08 13:10:49
+tan_w0.1977266768677895
+2025-12-08 13:10:49
+Theta  :18.01520303545458 [°]
+2025-12-08 13:10:49
+s_change : 1.1082587700131302e-05
+2025-12-08 13:10:49
+length_s: 0.595909, freq: 14.77
+2025-12-08 13:10:49
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:11:18
+Iteration 0: Residual max G: 1.50e+07
+2025-12-08 13:11:47
+Iteration 1: Residual max G: 6.80e+04
+2025-12-08 13:12:16
+Iteration 2: Residual max G: 6.98e+05
+2025-12-08 13:12:45
+Iteration 3: Residual max G: 9.68e+02
+2025-12-08 13:13:14
+Iteration 4: Residual max G: 1.95e+06
+2025-12-08 13:13:44
+Iteration 5: Residual max G: 1.10e+03
+2025-12-08 13:14:13
+Iteration 6: Residual max G: 4.57e+06
+2025-12-08 13:14:42
+Iteration 7: Residual max G: 6.44e+03
+2025-12-08 13:15:11
+Iteration 8: Residual max G: 9.55e+04
+2025-12-08 13:15:40
+Iteration 9: Residual max G: 3.45e+02
+2025-12-08 13:16:09
+Iteration 10: Residual max G: 1.23e+07
+2025-12-08 13:16:39
+Iteration 11: Residual max G: 4.51e+04
+2025-12-08 13:17:09
+Iteration 12: Residual max G: 1.08e+04
+2025-12-08 13:17:38
+Iteration 13: Residual max G: 4.31e+04
+2025-12-08 13:18:07
+Iteration 14: Residual max G: 2.31e+04
+2025-12-08 13:18:07
+Time:
+455.92 s
+2025-12-08 13:18:07
+################## New Iteration ##################
+2025-12-08 13:18:07
+Tangent previsous point0.16146803206948485
+2025-12-08 13:18:18
+tan_w0.1977266768677895
+2025-12-08 13:18:18
+Theta  :18.01520303545458 [°]
+2025-12-08 13:18:18
+s_change : 1.1082587700131302e-05
+2025-12-08 13:18:18
+length_s: 0.238364, freq: 14.77
+2025-12-08 13:18:18
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:18:47
+Iteration 0: Residual max G: 2.39e+06
+2025-12-08 13:19:16
+Iteration 1: Residual max G: 1.78e+03
+2025-12-08 13:19:45
+Iteration 2: Residual max G: 1.63e+05
+2025-12-08 13:20:14
+Iteration 3: Residual max G: 3.65e+02
+2025-12-08 13:20:43
+Iteration 4: Residual max G: 8.37e+04
+2025-12-08 13:21:12
+Iteration 5: Residual max G: 4.94e+00
+2025-12-08 13:21:41
+Iteration 6: Residual max G: 6.62e+03
+2025-12-08 13:22:10
+Iteration 7: Residual max G: 4.89e-02
+2025-12-08 13:22:39
+Iteration 8: Residual max G: 1.79e+00
+2025-12-08 13:22:50
+Second value f:14.820081477568307,u:0.10254930863763552
+2025-12-08 13:22:50
+Time:
+283.474 s
+2025-12-08 13:22:50
+################## New Iteration ##################
+2025-12-08 13:22:50
+Tangent previsous point0.1977266768677895
+2025-12-08 13:23:09
+tan_w0.24053706355813056
+2025-12-08 13:23:09
+Theta  :7.29826985282811 [°]
+2025-12-08 13:23:09
+s_change : 0.014044657070331637
+2025-12-08 13:23:09
+length_s: 0.262200, freq: 14.82
+2025-12-08 13:23:09
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:23:38
+Iteration 0: Residual max G: 2.86e+06
+2025-12-08 13:24:07
+Iteration 1: Residual max G: 2.55e+03
+2025-12-08 13:24:36
+Iteration 2: Residual max G: 6.49e+05
+2025-12-08 13:25:06
+Iteration 3: Residual max G: 1.34e+02
+2025-12-08 13:25:35
+Iteration 4: Residual max G: 4.82e+05
+2025-12-08 13:26:04
+Iteration 5: Residual max G: 7.41e+01
+2025-12-08 13:26:34
+Iteration 6: Residual max G: 1.95e+04
+2025-12-08 13:27:03
+Iteration 7: Residual max G: 3.35e-01
+2025-12-08 13:27:32
+Iteration 8: Residual max G: 7.25e+01
+2025-12-08 13:27:43
+Second value f:14.881484590989697,u:0.08706046105665359
+2025-12-08 13:27:43
+Time:
+292.721 s
+2025-12-08 13:27:43
+################## New Iteration ##################
+2025-12-08 13:27:43
+Tangent previsous point0.24053706355813056
+2025-12-08 13:28:02
+tan_w0.22947799740444838
+2025-12-08 13:28:02
+Theta  :7.991438661430568 [°]
+2025-12-08 13:28:02
+s_change : 0.008847451971101575
+2025-12-08 13:28:02
+length_s: 0.288420, freq: 14.88
+2025-12-08 13:28:02
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:28:31
+Iteration 0: Residual max G: 3.43e+06
+2025-12-08 13:29:00
+Iteration 1: Residual max G: 3.64e+03
+2025-12-08 13:29:29
+Iteration 2: Residual max G: 4.09e+06
+2025-12-08 13:29:59
+Iteration 3: Residual max G: 5.06e+03
+2025-12-08 13:30:28
+Iteration 4: Residual max G: 1.05e+05
+2025-12-08 13:30:57
+Iteration 5: Residual max G: 4.94e+02
+2025-12-08 13:31:26
+Iteration 6: Residual max G: 1.55e+08
+2025-12-08 13:31:55
+Iteration 7: Residual max G: 5.91e+06
+2025-12-08 13:32:25
+Iteration 8: Residual max G: 2.11e+05
+2025-12-08 13:32:54
+Iteration 9: Residual max G: 3.98e+07
+2025-12-08 13:33:23
+Iteration 10: Residual max G: 4.55e+05
+2025-12-08 13:33:52
+Iteration 11: Residual max G: 3.57e+07
+2025-12-08 13:34:21
+Iteration 12: Residual max G: 3.64e+05
+2025-12-08 13:34:51
+Iteration 13: Residual max G: 1.37e+08
+2025-12-08 13:35:20
+Iteration 14: Residual max G: 5.13e+06
+2025-12-08 13:35:20
+Time:
+456.866 s
+2025-12-08 13:35:20
+################## New Iteration ##################
+2025-12-08 13:35:20
+Tangent previsous point0.24053706355813056
+2025-12-08 13:35:31
+tan_w0.22947799740444838
+2025-12-08 13:35:31
+Theta  :7.991438661430568 [°]
+2025-12-08 13:35:31
+s_change : 0.008847451971101575
+2025-12-08 13:35:31
+length_s: 0.115368, freq: 14.88
+2025-12-08 13:35:31
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:36:00
+Iteration 0: Residual max G: 5.49e+05
+2025-12-08 13:36:29
+Iteration 1: Residual max G: 9.61e+01
+2025-12-08 13:36:58
+Iteration 2: Residual max G: 2.25e+03
+2025-12-08 13:37:27
+Iteration 3: Residual max G: 2.55e-01
+2025-12-08 13:37:56
+Iteration 4: Residual max G: 2.69e+00
+2025-12-08 13:38:07
+Second value f:14.90899871939628,u:0.07975243175501502
+2025-12-08 13:38:07
+Time:
+167.485 s
+2025-12-08 13:38:07
+################## New Iteration ##################
+2025-12-08 13:38:07
+Tangent previsous point0.22947799740444838
+2025-12-08 13:38:25
+tan_w0.24832821453400586
+2025-12-08 13:38:25
+Theta  :3.475828040578196 [°]
+2025-12-08 13:38:25
+s_change : 0.17956487895381928
+2025-12-08 13:38:25
+length_s: 0.126905, freq: 14.91
+2025-12-08 13:38:25
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:38:54
+Iteration 0: Residual max G: 6.61e+05
+2025-12-08 13:39:23
+Iteration 1: Residual max G: 1.38e+02
+2025-12-08 13:39:52
+Iteration 2: Residual max G: 3.35e+03
+2025-12-08 13:40:21
+Iteration 3: Residual max G: 3.29e-01
+2025-12-08 13:40:50
+Iteration 4: Residual max G: 6.55e+00
+2025-12-08 13:41:01
+Second value f:14.939587139032348,u:0.07135646348149853
+2025-12-08 13:41:01
+Time:
+173.949 s
+2025-12-08 13:41:01
+################## New Iteration ##################
+2025-12-08 13:41:01
+Tangent previsous point0.24832821453400586
+2025-12-08 13:41:19
+tan_w0.23458589204444558
+2025-12-08 13:41:19
+Theta  :3.823949663363738 [°]
+2025-12-08 13:41:19
+s_change : 0.14237373025400973
+2025-12-08 13:41:19
+length_s: 0.139595, freq: 14.94
+2025-12-08 13:41:19
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:41:48
+Iteration 0: Residual max G: 7.95e+05
+2025-12-08 13:42:17
+Iteration 1: Residual max G: 1.99e+02
+2025-12-08 13:42:46
+Iteration 2: Residual max G: 5.02e+03
+2025-12-08 13:43:15
+Iteration 3: Residual max G: 4.71e-01
+2025-12-08 13:43:44
+Iteration 4: Residual max G: 1.67e+01
+2025-12-08 13:43:55
+Second value f:14.973596531392369,u:0.06173116804205666
+2025-12-08 13:43:55
+Time:
+173.524 s
+2025-12-08 13:43:55
+################## New Iteration ##################
+2025-12-08 13:43:55
+Tangent previsous point0.23458589204444558
+2025-12-08 13:44:13
+tan_w0.25432471867946993
+2025-12-08 13:44:13
+Theta  :4.215278938580953 [°]
+2025-12-08 13:44:13
+s_change : 0.10968025058334256
+2025-12-08 13:44:13
+length_s: 0.153555, freq: 14.97
+2025-12-08 13:44:13
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:44:41
+Iteration 0: Residual max G: 9.55e+05
+2025-12-08 13:45:10
+Iteration 1: Residual max G: 2.84e+02
+2025-12-08 13:45:39
+Iteration 2: Residual max G: 7.61e+03
+2025-12-08 13:46:08
+Iteration 3: Residual max G: 7.89e-01
+2025-12-08 13:46:37
+Iteration 4: Residual max G: 4.63e+01
+2025-12-08 13:46:48
+Second value f:15.011984392065617,u:0.050741787092488166
+2025-12-08 13:46:48
+Time:
+173.584 s
+2025-12-08 13:46:48
+################## New Iteration ##################
+2025-12-08 13:46:48
+Tangent previsous point0.25432471867946993
+2025-12-08 13:47:06
+tan_w0.24949565453989597
+2025-12-08 13:47:06
+Theta  :4.667662468957222 [°]
+2025-12-08 13:47:06
+s_change : 0.08112411774227758
+2025-12-08 13:47:06
+length_s: 0.168910, freq: 15.01
+2025-12-08 13:47:06
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:47:35
+Iteration 0: Residual max G: 1.14e+06
+2025-12-08 13:48:04
+Iteration 1: Residual max G: 8.73e+03
+2025-12-08 13:48:34
+Iteration 2: Residual max G: 1.13e+04
+2025-12-08 13:49:03
+Iteration 3: Residual max G: 6.14e+02
+2025-12-08 13:49:32
+Iteration 4: Residual max G: 7.49e+04
+2025-12-08 13:50:01
+Iteration 5: Residual max G: 1.41e+03
+2025-12-08 13:50:29
+Iteration 6: Residual max G: 1.07e+05
+2025-12-08 13:50:58
+Iteration 7: Residual max G: 1.56e+02
+2025-12-08 13:51:27
+Iteration 8: Residual max G: 3.07e+04
+2025-12-08 13:51:56
+Iteration 9: Residual max G: 1.21e+00
+2025-12-08 13:52:25
+Iteration 10: Residual max G: 3.47e+02
+2025-12-08 13:52:54
+Iteration 11: Residual max G: 1.49e-03
+2025-12-08 13:53:05
+Second value f:15.058038146279085,u:0.03830825758118964
+2025-12-08 13:53:05
+Time:
+376.866 s
+2025-12-08 13:53:05
+################## New Iteration ##################
+2025-12-08 13:53:05
+Tangent previsous point0.24949565453989597
+2025-12-08 13:53:23
+tan_w0.30714983952941016
+2025-12-08 13:53:23
+Theta  :5.308978803566598 [°]
+2025-12-08 13:53:23
+s_change : 0.052901731854802375
+2025-12-08 13:53:23
+length_s: 0.185801, freq: 15.06
+2025-12-08 13:53:23
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:53:52
+Iteration 0: Residual max G: 1.33e+06
+2025-12-08 13:54:21
+Iteration 1: Residual max G: 5.64e+02
+2025-12-08 13:54:50
+Iteration 2: Residual max G: 2.11e+04
+2025-12-08 13:55:19
+Iteration 3: Residual max G: 9.53e+00
+2025-12-08 13:55:48
+Iteration 4: Residual max G: 1.14e+03
+2025-12-08 13:56:17
+Iteration 5: Residual max G: 3.95e-01
+2025-12-08 13:56:46
+Iteration 6: Residual max G: 1.52e-01
+2025-12-08 13:56:57
+Second value f:15.126072619243104,u:0.02466907781532575
+2025-12-08 13:56:57
+Time:
+231.545 s
+2025-12-08 13:56:57
+################## New Iteration ##################
+2025-12-08 13:56:57
+Tangent previsous point0.30714983952941016
+2025-12-08 13:57:15
+tan_w0.4615864144168624
+2025-12-08 13:57:15
+Theta  :8.218150758089799 [°]
+2025-12-08 13:57:15
+s_change : 0.007606385614322392
+2025-12-08 13:57:15
+length_s: 0.204381, freq: 15.13
+2025-12-08 13:57:15
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 13:57:44
+Iteration 0: Residual max G: 1.37e+06
+2025-12-08 13:58:12
+Iteration 1: Residual max G: 5.65e+02
+2025-12-08 13:58:41
+Iteration 2: Residual max G: 6.41e+04
+2025-12-08 13:59:10
+Iteration 3: Residual max G: 6.00e+01
+2025-12-08 13:59:39
+Iteration 4: Residual max G: 4.13e+03
+2025-12-08 14:00:08
+Iteration 5: Residual max G: 1.41e+04
+2025-12-08 14:00:37
+Iteration 6: Residual max G: 6.94e+03
+2025-12-08 14:01:06
+Iteration 7: Residual max G: 7.76e+05
+2025-12-08 14:01:36
+Iteration 8: Residual max G: 3.46e+02
+2025-12-08 14:02:05
+Iteration 9: Residual max G: 5.93e+05
+2025-12-08 14:02:34
+Iteration 10: Residual max G: 1.23e+02
+2025-12-08 14:03:03
+Iteration 11: Residual max G: 6.95e+04
+2025-12-08 14:03:32
+Iteration 12: Residual max G: 4.78e+00
+2025-12-08 14:04:01
+Iteration 13: Residual max G: 5.94e+02
+2025-12-08 14:04:30
+Iteration 14: Residual max G: 3.80e-02
+2025-12-08 14:04:30
+Time:
+453.053 s
+2025-12-08 14:04:30
+################## New Iteration ##################
+2025-12-08 14:04:30
+Tangent previsous point0.30714983952941016
+2025-12-08 14:04:41
+tan_w0.4615864144168624
+2025-12-08 14:04:41
+Theta  :8.218150758089799 [°]
+2025-12-08 14:04:41
+s_change : 0.007606385614322392
+2025-12-08 14:04:41
+length_s: 0.081753, freq: 15.13
+2025-12-08 14:04:41
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:05:10
+Iteration 0: Residual max G: 2.20e+05
+2025-12-08 14:05:39
+Iteration 1: Residual max G: 1.77e+01
+2025-12-08 14:06:08
+Iteration 2: Residual max G: 8.66e+02
+2025-12-08 14:06:37
+Iteration 3: Residual max G: 2.04e+00
+2025-12-08 14:07:07
+Iteration 4: Residual max G: 1.67e-01
+2025-12-08 14:07:17
+Second value f:15.170434517005589,u:0.019195500680821095
+2025-12-08 14:07:17
+Time:
+167.704 s
+2025-12-08 14:07:17
+################## New Iteration ##################
+2025-12-08 14:07:17
+Tangent previsous point0.4615864144168624
+2025-12-08 14:07:35
+tan_w0.6393608577036904
+2025-12-08 14:07:35
+Theta  :6.016405986381596 [°]
+2025-12-08 14:07:35
+s_change : 0.03301024456746168
+2025-12-08 14:07:35
+length_s: 0.089928, freq: 15.17
+2025-12-08 14:07:35
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:08:04
+Iteration 0: Residual max G: 2.08e+05
+2025-12-08 14:08:33
+Iteration 1: Residual max G: 1.83e+01
+2025-12-08 14:09:02
+Iteration 2: Residual max G: 2.94e+03
+2025-12-08 14:09:31
+Iteration 3: Residual max G: 1.78e+01
+2025-12-08 14:10:00
+Iteration 4: Residual max G: 6.41e+00
+2025-12-08 14:10:11
+Second value f:15.235873509709021,u:0.014185575511086302
+2025-12-08 14:10:11
+Time:
+173.669 s
+2025-12-08 14:10:11
+################## New Iteration ##################
+2025-12-08 14:10:11
+Tangent previsous point0.6393608577036904
+2025-12-08 14:10:29
+tan_w0.8174459817963461
+2025-12-08 14:10:29
+Theta  :7.9718486829933095 [°]
+2025-12-08 14:10:29
+s_change : 0.008963757387076778
+2025-12-08 14:10:29
+length_s: 0.098921, freq: 15.24
+2025-12-08 14:10:29
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:10:58
+Iteration 0: Residual max G: 1.41e+05
+2025-12-08 14:11:27
+Iteration 1: Residual max G: 1.78e+01
+2025-12-08 14:11:56
+Iteration 2: Residual max G: 5.48e+03
+2025-12-08 14:12:25
+Iteration 3: Residual max G: 2.16e+04
+2025-12-08 14:12:54
+Iteration 4: Residual max G: 5.53e+03
+2025-12-08 14:13:23
+Iteration 5: Residual max G: 6.75e+05
+2025-12-08 14:13:52
+Iteration 6: Residual max G: 1.95e+02
+2025-12-08 14:14:21
+Iteration 7: Residual max G: 2.73e+06
+2025-12-08 14:14:50
+Iteration 8: Residual max G: 2.42e+03
+2025-12-08 14:15:19
+Iteration 9: Residual max G: 6.76e+05
+2025-12-08 14:15:48
+Iteration 10: Residual max G: 4.63e+02
+2025-12-08 14:16:17
+Iteration 11: Residual max G: 1.05e+05
+2025-12-08 14:16:46
+Iteration 12: Residual max G: 4.73e+02
+2025-12-08 14:17:15
+Iteration 13: Residual max G: 1.29e+04
+2025-12-08 14:17:44
+Iteration 14: Residual max G: 1.20e+02
+2025-12-08 14:17:44
+Time:
+452.49 s
+2025-12-08 14:17:44
+################## New Iteration ##################
+2025-12-08 14:17:44
+Tangent previsous point0.6393608577036904
+2025-12-08 14:17:55
+tan_w0.8174459817963461
+2025-12-08 14:17:55
+Theta  :7.9718486829933095 [°]
+2025-12-08 14:17:55
+s_change : 0.008963757387076778
+2025-12-08 14:17:55
+length_s: 0.039568, freq: 15.24
+2025-12-08 14:17:55
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:18:24
+Iteration 0: Residual max G: 2.26e+04
+2025-12-08 14:18:53
+Iteration 1: Residual max G: 1.22e+01
+2025-12-08 14:19:22
+Iteration 2: Residual max G: 2.32e+02
+2025-12-08 14:19:51
+Iteration 3: Residual max G: 1.48e-02
+2025-12-08 14:20:02
+Second value f:15.269197710171026,u:0.012473025409499723
+2025-12-08 14:20:02
+Time:
+138.496 s
+2025-12-08 14:20:02
+################## New Iteration ##################
+2025-12-08 14:20:02
+Tangent previsous point0.8174459817963461
+2025-12-08 14:20:20
+tan_w0.8652018609966229
+2025-12-08 14:20:20
+Theta  :3.1219849146734098 [°]
+2025-12-08 14:20:20
+s_change : 0.22733666000769018
+2025-12-08 14:20:20
+length_s: 0.043525, freq: 15.27
+2025-12-08 14:20:20
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:20:49
+Iteration 0: Residual max G: 1.94e+04
+2025-12-08 14:21:18
+Iteration 1: Residual max G: 2.27e+01
+2025-12-08 14:21:47
+Iteration 2: Residual max G: 3.17e+02
+2025-12-08 14:22:16
+Iteration 3: Residual max G: 3.03e-02
+2025-12-08 14:22:27
+Second value f:15.308164193274218,u:0.010912240458429572
+2025-12-08 14:22:27
+Time:
+144.419 s
+2025-12-08 14:22:27
+################## New Iteration ##################
+2025-12-08 14:22:27
+Tangent previsous point0.8652018609966229
+2025-12-08 14:22:44
+tan_w0.923894419970052
+2025-12-08 14:22:44
+Theta  :2.851459834785953 [°]
+2025-12-08 14:22:44
+s_change : 0.27226668779705354
+2025-12-08 14:22:44
+length_s: 0.047878, freq: 15.31
+2025-12-08 14:22:45
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:23:13
+Iteration 0: Residual max G: 1.56e+04
+2025-12-08 14:23:42
+Iteration 1: Residual max G: 7.44e+01
+2025-12-08 14:24:11
+Iteration 2: Residual max G: 4.25e+02
+2025-12-08 14:24:41
+Iteration 3: Residual max G: 6.66e-01
+2025-12-08 14:25:10
+Iteration 4: Residual max G: 3.44e-03
+2025-12-08 14:25:21
+Second value f:15.352869904788443,u:0.00953023734710351
+2025-12-08 14:25:21
+Time:
+174.015 s
+2025-12-08 14:25:21
+################## New Iteration ##################
+2025-12-08 14:25:21
+Tangent previsous point0.923894419970052
+2025-12-08 14:25:39
+tan_w0.9420890132661269
+2025-12-08 14:25:39
+Theta  :2.541954377933645 [°]
+2025-12-08 14:25:39
+s_change : 0.33466131721094783
+2025-12-08 14:25:39
+length_s: 0.052665, freq: 15.35
+2025-12-08 14:25:39
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:26:08
+Iteration 0: Residual max G: 1.19e+04
+2025-12-08 14:26:37
+Iteration 1: Residual max G: 1.92e+02
+2025-12-08 14:27:06
+Iteration 2: Residual max G: 5.23e+02
+2025-12-08 14:27:35
+Iteration 3: Residual max G: 8.20e-01
+2025-12-08 14:28:04
+Iteration 4: Residual max G: 4.97e-03
+2025-12-08 14:28:15
+Second value f:15.403389952940586,u:0.008327480690357797
+2025-12-08 14:28:15
+Time:
+174.43 s
+2025-12-08 14:28:15
+################## New Iteration ##################
+2025-12-08 14:28:15
+Tangent previsous point0.9420890132661269
+2025-12-08 14:28:33
+tan_w0.9754938036407585
+2025-12-08 14:28:33
+Theta  :1.9730544441323417 [°]
+2025-12-08 14:28:33
+s_change : 0.4890113254130576
+2025-12-08 14:28:33
+length_s: 0.057932, freq: 15.40
+2025-12-08 14:28:33
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:29:02
+Iteration 0: Residual max G: 8.92e+03
+2025-12-08 14:29:31
+Iteration 1: Residual max G: 8.49e+02
+2025-12-08 14:30:00
+Iteration 2: Residual max G: 2.14e+03
+2025-12-08 14:30:29
+Iteration 3: Residual max G: 9.12e+01
+2025-12-08 14:30:58
+Iteration 4: Residual max G: 1.05e+01
+2025-12-08 14:31:27
+Iteration 5: Residual max G: 2.25e-03
+2025-12-08 14:31:38
+Second value f:15.459884473676471,u:0.007291299440284097
+2025-12-08 14:31:38
+Time:
+202.85 s
+2025-12-08 14:31:38
+################## New Iteration ##################
+2025-12-08 14:31:38
+Tangent previsous point0.9754938036407585
+2025-12-08 14:31:56
+tan_w0.9740223778411772
+2025-12-08 14:31:56
+Theta  :1.5301277905905066 [°]
+2025-12-08 14:31:56
+s_change : 0.6569908459320061
+2025-12-08 14:31:56
+length_s: 0.063725, freq: 15.46
+2025-12-08 14:31:56
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:32:26
+Iteration 0: Residual max G: 6.59e+03
+2025-12-08 14:32:55
+Iteration 1: Residual max G: 9.48e+03
+2025-12-08 14:33:25
+Iteration 2: Residual max G: 8.62e+04
+2025-12-08 14:33:54
+Iteration 3: Residual max G: 1.41e+03
+2025-12-08 14:34:23
+Iteration 4: Residual max G: 2.42e+05
+2025-12-08 14:34:52
+Iteration 5: Residual max G: 2.95e+01
+2025-12-08 14:35:21
+Iteration 6: Residual max G: 6.19e+03
+2025-12-08 14:35:50
+Iteration 7: Residual max G: 2.92e+01
+2025-12-08 14:36:20
+Iteration 8: Residual max G: 2.14e+01
+2025-12-08 14:36:30
+Second value f:15.522649389581451,u:0.006400715888759434
+2025-12-08 14:36:30
+Time:
+292.636 s
+2025-12-08 14:36:30
+################## New Iteration ##################
+2025-12-08 14:36:30
+Tangent previsous point0.9740223778411772
+2025-12-08 14:36:48
+tan_w0.9954437634366737
+2025-12-08 14:36:48
+Theta  :1.1842774747000493 [°]
+2025-12-08 14:36:48
+s_change : 0.8273575624914271
+2025-12-08 14:36:48
+length_s: 0.070098, freq: 15.52
+2025-12-08 14:36:48
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:37:17
+Iteration 0: Residual max G: 4.87e+03
+2025-12-08 14:37:46
+Iteration 1: Residual max G: 3.77e+02
+2025-12-08 14:38:15
+Iteration 2: Residual max G: 1.44e+02
+2025-12-08 14:38:44
+Iteration 3: Residual max G: 3.18e-01
+2025-12-08 14:38:55
+Second value f:15.592102632156278,u:0.005634448271336554
+2025-12-08 14:38:55
+Time:
+144.676 s
+2025-12-08 14:38:55
+################## New Iteration ##################
+2025-12-08 14:38:55
+Tangent previsous point0.9954437634366737
+2025-12-08 14:39:13
+tan_w0.9858872008882135
+2025-12-08 14:39:13
+Theta  :0.9100052130318858 [°]
+2025-12-08 14:39:13
+s_change : 0.9933520539984146
+2025-12-08 14:39:13
+length_s: 0.077107, freq: 15.59
+2025-12-08 14:39:13
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:39:42
+Iteration 0: Residual max G: 3.61e+03
+2025-12-08 14:40:11
+Iteration 1: Residual max G: 1.22e+02
+2025-12-08 14:40:40
+Iteration 2: Residual max G: 1.85e+01
+2025-12-08 14:41:09
+Iteration 3: Residual max G: 3.28e-03
+2025-12-08 14:41:20
+Second value f:15.668774380319505,u:0.0049731511351254155
+2025-12-08 14:41:20
+Time:
+144.95 s
+2025-12-08 14:41:20
+################## New Iteration ##################
+2025-12-08 14:41:20
+Tangent previsous point0.9858872008882135
+2025-12-08 14:41:38
+tan_w1.0027005368943487
+2025-12-08 14:41:38
+Theta  :0.7013281855739634 [°]
+2025-12-08 14:41:38
+s_change : 1.1416195090872914
+2025-12-08 14:41:38
+length_s: 0.084818, freq: 15.67
+2025-12-08 14:41:38
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:42:07
+Iteration 0: Residual max G: 2.70e+03
+2025-12-08 14:42:36
+Iteration 1: Residual max G: 5.98e+01
+2025-12-08 14:43:05
+Iteration 2: Residual max G: 3.83e+00
+2025-12-08 14:43:16
+Second value f:15.753295422370673,u:0.004400234333966117
+2025-12-08 14:43:16
+Time:
+115.831 s
+2025-12-08 14:43:16
+################## New Iteration ##################
+2025-12-08 14:43:16
+Tangent previsous point1.0027005368943487
+2025-12-08 14:43:34
+tan_w0.990224468006433
+2025-12-08 14:43:34
+Theta  :0.5415840615393487 [°]
+2025-12-08 14:43:34
+s_change : 1.2699073676775612
+2025-12-08 14:43:34
+length_s: 0.093300, freq: 15.75
+2025-12-08 14:43:34
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:44:03
+Iteration 0: Residual max G: 2.04e+03
+2025-12-08 14:44:32
+Iteration 1: Residual max G: 3.52e+01
+2025-12-08 14:45:01
+Iteration 2: Residual max G: 9.71e-01
+2025-12-08 14:45:12
+Second value f:15.846390994270461,u:0.0039018423775807674
+2025-12-08 14:45:12
+Time:
+116.291 s
+2025-12-08 14:45:12
+################## New Iteration ##################
+2025-12-08 14:45:12
+Tangent previsous point0.990224468006433
+2025-12-08 14:45:30
+tan_w1.005386982715956
+2025-12-08 14:45:30
+Theta  :0.42041375745124043 [°]
+2025-12-08 14:45:30
+s_change : 1.3767479521392048
+2025-12-08 14:45:30
+length_s: 0.102630, freq: 15.85
+2025-12-08 14:45:30
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:45:59
+Iteration 0: Residual max G: 1.55e+03
+2025-12-08 14:46:29
+Iteration 1: Residual max G: 2.27e+01
+2025-12-08 14:46:58
+Iteration 2: Residual max G: 2.75e-01
+2025-12-08 14:47:09
+Second value f:15.948879148578834,u:0.003466532197475614
+2025-12-08 14:47:09
+Time:
+116.313 s
+2025-12-08 14:47:09
+################## New Iteration ##################
+2025-12-08 14:47:09
+Tangent previsous point1.005386982715956
+2025-12-08 14:47:27
+tan_w0.9918572446019394
+2025-12-08 14:47:27
+Theta  :0.3282538877743026 [°]
+2025-12-08 14:47:27
+s_change : 1.4639877892339326
+2025-12-08 14:47:27
+length_s: 0.112893, freq: 15.95
+2025-12-08 14:47:27
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:47:56
+Iteration 0: Residual max G: 1.18e+03
+2025-12-08 14:48:25
+Iteration 1: Residual max G: 1.56e+01
+2025-12-08 14:48:54
+Iteration 2: Residual max G: 8.35e-02
+2025-12-08 14:49:04
+Second value f:16.061672934305015,u:0.0030848767620925976
+2025-12-08 14:49:04
+Time:
+115.967 s
+2025-12-08 14:49:04
+################## New Iteration ##################
+2025-12-08 14:49:04
+Tangent previsous point0.9918572446019394
+2025-12-08 14:49:22
+tan_w1.0064169162800334
+2025-12-08 14:49:22
+Theta  :0.2576654959499441 [°]
+2025-12-08 14:49:22
+s_change : 1.5345282467565244
+2025-12-08 14:49:22
+length_s: 0.124182, freq: 16.06
+2025-12-08 14:49:22
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:49:51
+Iteration 0: Residual max G: 9.13e+02
+2025-12-08 14:50:20
+Iteration 1: Residual max G: 1.11e+01
+2025-12-08 14:50:49
+Iteration 2: Residual max G: 2.66e-02
+2025-12-08 14:51:00
+Second value f:16.185785318284974,u:0.002749095941676641
+2025-12-08 14:51:00
+Time:
+115.722 s
+2025-12-08 14:51:00
+################## New Iteration ##################
+2025-12-08 14:51:00
+Tangent previsous point1.0064169162800334
+2025-12-08 14:51:18
+tan_w0.9924939062921017
+2025-12-08 14:51:18
+Theta  :0.2029870797670013 [°]
+2025-12-08 14:51:18
+s_change : 1.5914973142112512
+2025-12-08 14:51:18
+length_s: 0.136600, freq: 16.19
+2025-12-08 14:51:18
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:51:47
+Iteration 0: Residual max G: 7.10e+02
+2025-12-08 14:52:16
+Iteration 1: Residual max G: 8.11e+00
+2025-12-08 14:52:45
+Iteration 2: Residual max G: 8.88e-03
+2025-12-08 14:52:56
+Second value f:16.322336234435905,u:0.0024527416959843704
+2025-12-08 14:52:56
+Time:
+116.086 s
+2025-12-08 14:52:56
+################## New Iteration ##################
+2025-12-08 14:52:56
+Tangent previsous point0.9924939062921017
+2025-12-08 14:53:14
+tan_w1.0068251958778145
+2025-12-08 14:53:14
+Theta  :0.16080820095990173 [°]
+2025-12-08 14:53:14
+s_change : 1.6368841606550786
+2025-12-08 14:53:14
+length_s: 0.150260, freq: 16.32
+2025-12-08 14:53:14
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:53:43
+Iteration 0: Residual max G: 5.54e+02
+2025-12-08 14:54:12
+Iteration 1: Residual max G: 6.04e+00
+2025-12-08 14:54:41
+Iteration 2: Residual max G: 3.14e-03
+2025-12-08 14:54:52
+Second value f:16.472561373320527,u:0.0021904413556507202
+2025-12-08 14:54:52
+Time:
+115.979 s
+2025-12-08 14:54:52
+################## New Iteration ##################
+2025-12-08 14:54:52
+Tangent previsous point1.0068251958778145
+2025-12-08 14:55:10
+tan_w0.9927503573839418
+2025-12-08 14:55:10
+Theta  :0.12788720184398217 [°]
+2025-12-08 14:55:10
+s_change : 1.673206533610184
+2025-12-08 14:55:10
+length_s: 0.165286, freq: 16.47
+2025-12-08 14:55:10
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:55:39
+Iteration 0: Residual max G: 4.35e+02
+2025-12-08 14:56:08
+Iteration 1: Residual max G: 4.57e+00
+2025-12-08 14:56:38
+Iteration 2: Residual max G: 1.30e-03
+2025-12-08 14:56:49
+Second value f:16.637822526843852,u:0.001957692285029223
+2025-12-08 14:56:49
+Time:
+116.291 s
+2025-12-08 14:56:49
+################## New Iteration ##################
+2025-12-08 14:56:49
+Tangent previsous point0.9927503573839418
+2025-12-08 14:57:07
+tan_w1.0069919527756674
+2025-12-08 14:57:07
+Theta  :0.10202913403085495 [°]
+2025-12-08 14:57:07
+s_change : 1.702300509795306
+2025-12-08 14:57:07
+length_s: 0.181815, freq: 16.64
+2025-12-08 14:57:07
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:57:35
+Iteration 0: Residual max G: 3.44e+02
+2025-12-08 14:58:05
+Iteration 1: Residual max G: 3.50e+00
+2025-12-08 14:58:34
+Iteration 2: Residual max G: 8.10e-04
+2025-12-08 14:58:44
+Second value f:16.819619380509625,u:0.0017506985509049295
+2025-12-08 14:58:44
+Time:
+115.821 s
+2025-12-08 14:58:44
+################## New Iteration ##################
+2025-12-08 14:58:44
+Tangent previsous point1.0069919527756674
+2025-12-08 14:59:02
+tan_w0.9928564094366945
+2025-12-08 14:59:02
+Theta  :0.0816589631938591 [°]
+2025-12-08 14:59:02
+s_change : 1.7255756262641708
+2025-12-08 14:59:02
+length_s: 0.199996, freq: 16.82
+2025-12-08 14:59:02
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 14:59:31
+Iteration 0: Residual max G: 2.72e+02
+2025-12-08 15:00:00
+Iteration 1: Residual max G: 2.69e+00
+2025-12-08 15:00:29
+Iteration 2: Residual max G: 1.19e-03
+2025-12-08 15:00:40
+Second value f:17.019602760673305,u:0.0015662417182174004
+2025-12-08 15:00:40
+Time:
+115.353 s
+2025-12-08 15:00:40
+################## New Iteration ##################
+2025-12-08 15:00:40
+Tangent previsous point0.9928564094366945
+2025-12-08 15:00:58
+tan_w1.0070617612811958
+2025-12-08 15:00:58
+Theta  :0.06569394319980273 [°]
+2025-12-08 15:00:58
+s_change : 1.7440396108405645
+2025-12-08 15:00:58
+length_s: 0.219996, freq: 17.02
+2025-12-08 15:00:58
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 15:01:27
+Iteration 0: Residual max G: 2.17e+02
+2025-12-08 15:01:56
+Iteration 1: Residual max G: 2.50e+00
+2025-12-08 15:02:25
+Iteration 2: Residual max G: 6.11e-02
+2025-12-08 15:02:36
+Second value f:17.239589384593497,u:0.0014015778118554288
+2025-12-08 15:02:36
+Time:
+115.989 s
+2025-12-08 15:02:36
+################## New Iteration ##################
+2025-12-08 15:02:36
+Tangent previsous point1.0070617612811958
+2025-12-08 15:02:54
+tan_w0.992901248853544
+2025-12-08 15:02:54
+Theta  :0.05280403310661986 [°]
+2025-12-08 15:02:54
+s_change : 1.7590911986106166
+2025-12-08 15:02:54
+length_s: 0.241996, freq: 17.24
+2025-12-08 15:02:54
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 15:03:23
+Iteration 0: Residual max G: 1.72e+02
+2025-12-08 15:03:52
+Iteration 1: Residual max G: 1.62e+00
+2025-12-08 15:04:02
+Second value f:17.481578205236286,u:0.0012543553058727858
+2025-12-08 15:04:02
+Time:
+86.7344 s
+2025-12-08 15:04:02
+################## New Iteration ##################
+2025-12-08 15:04:02
+Tangent previsous point0.992901248853544
+2025-12-08 15:04:20
+tan_w1.0070915337547794
+2025-12-08 15:04:20
+Theta  :0.04268181133699616 [°]
+2025-12-08 15:04:20
+s_change : 1.7710019486464916
+2025-12-08 15:04:20
+length_s: 0.266195, freq: 17.48
+2025-12-08 15:04:20
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 15:04:49
+Iteration 0: Residual max G: 1.39e+02
+2025-12-08 15:05:18
+Iteration 1: Residual max G: 1.33e+00
+2025-12-08 15:05:29
+Second value f:17.74776846260074,u:0.0011225491858030566
+2025-12-08 15:05:29
+Time:
+86.5225 s
+2025-12-08 15:05:29
+################## New Iteration ##################
+2025-12-08 15:05:29
+Tangent previsous point1.0070915337547794
+2025-12-08 15:05:47
+tan_w0.9929205485232545
+2025-12-08 15:05:47
+Theta  :0.03453063969301129 [°]
+2025-12-08 15:05:47
+s_change : 1.7806519718082796
+2025-12-08 15:05:47
+length_s: 0.292815, freq: 17.75
+2025-12-08 15:05:47
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 15:06:16
+Iteration 0: Residual max G: 1.11e+02
+2025-12-08 15:06:45
+Iteration 1: Residual max G: 1.05e+00
+2025-12-08 15:06:56
+Second value f:18.040579599207515,u:0.0010044077241159854
+2025-12-08 15:06:56
+Time:
+86.7465 s
+2025-12-08 15:06:56
+################## New Iteration ##################
+2025-12-08 15:06:56
+Tangent previsous point0.9929205485232545
+2025-12-08 15:07:14
+tan_w1.0071044359979926
+2025-12-08 15:07:14
+Theta  :0.027999094553216905 [°]
+2025-12-08 15:07:14
+s_change : 1.7884224831672173
+2025-12-08 15:07:14
+length_s: 0.322096, freq: 18.04
+2025-12-08 15:07:14
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 15:07:43
+Iteration 0: Residual max G: 8.95e+01
+2025-12-08 15:08:12
+Iteration 1: Residual max G: 8.36e-01
+2025-12-08 15:08:23
+Second value f:18.362673198054388,u:0.0008984092814661434
+2025-12-08 15:08:23
+Time:
+86.8787 s
+2025-12-08 15:08:23
+################## New Iteration ##################
+2025-12-08 15:08:23
+Tangent previsous point1.0071044359979926
+2025-12-08 15:08:41
+tan_w0.9929289613756451
+2025-12-08 15:08:41
+Theta  :0.022737818174554374 [°]
+2025-12-08 15:08:41
+s_change : 1.7947064205457155
+2025-12-08 15:08:41
+length_s: 0.354306, freq: 18.36
+2025-12-08 15:08:41
+################## Newthon predictor-corecteur solveur ##################
+2025-12-08 15:09:10
+Iteration 0: Residual max G: 7.21e+01
+2025-12-08 15:09:39
+Iteration 1: Residual max G: 6.69e-01
+2025-12-08 15:09:50
+Second value f:18.716977140566396,u:0.0008032269878740923
+2025-12-08 15:09:50
+Time:
+87.0569 s
+2025-12-08 15:09:50
+################## New Iteration ##################
+2025-12-08 15:09:50
+Tangent previsous point0.9929289613756451
+2025-12-08 15:10:08
+tan_w1.0071100938175668
+2025-12-08 15:10:08
+Theta  :0.018495513252831722 [°]
+2025-12-08 15:10:08
+s_change : 1.7997893995938963
+2025-12-08 15:10:08
+length_s: 0.389736, freq: 18.72
+2025-12-08 15:10:08
+Time generate :
+8755.82 s
+2025-12-08 15:10:08
+Solver time :
+3122.08 s
+2025-12-08 15:10:08
+Time :
+11936.3 s
+2025-12-08 15:10:08
+Total execution time:
+11936.6 s
+2025-12-08 15:10:08
+Simulation finished successfully
+2025-12-08 15:10:08
+Uploading results...
+2025-12-08 15:10:08
+98% of results uploaded
+2025-12-08 15:10:08
+100% of results uploaded
+2025-12-08 15:10:08
+Uploading done

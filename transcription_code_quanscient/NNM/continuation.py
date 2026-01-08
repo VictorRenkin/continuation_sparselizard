@@ -36,8 +36,8 @@ def get_derivative_of_residual_wrt_frequency(elasticity, freq, vec_u, residu_G, 
     qs.setfundamentalfrequency(freq - h)
     clk_generate.resume()
     elasticity.generate()
-    Jac = elasticity.A()
-    b = elasticity.b()
+    Jac = elasticity.A(False, True)
+    b = elasticity.b(False, True, True)
     clk_generate.pause()
     residu_G_prev = Jac * vec_u - b
     deriv_residu_G = (residu_G - residu_G_prev) / h
@@ -77,8 +77,8 @@ def get_derivative_of_residual_wrt_lambda(elasticity, freq, u, PHYSREG_U, vec_u,
     qs.setfundamentalfrequency(freq * lambda_prev)
     clk_generate.resume()
     elasticity.generate()
-    Jac = elasticity.A()
-    b = elasticity.b()
+    Jac = elasticity.A(False, True)
+    b = elasticity.b(False, True, True)
     clk_generate.pause()
     residu_G_prev = Jac * vec_u - b
     deriv_residu_G = (residu_G - residu_G_prev) / h

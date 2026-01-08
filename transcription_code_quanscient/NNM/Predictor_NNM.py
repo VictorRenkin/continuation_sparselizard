@@ -239,39 +239,9 @@ class PredictorSecant(AbstractPredictor):
         self.tan_mu = tan_mu
         return self.tan_u, self.tan_w, self.tan_mu
     
-    def prediction_direction(self, PreviousPoint, PhaseCondition, elasticity, field_u, vec_u, PHYSREG_U, clk_generate, clk_solver):
-        """
-        Compute the tangent vector in the direction of the displacement and the frequency.
-        This function uses the bordered algorithm to compute the tangent vector.
-        Parameters
-        ----------
-        elasticity : `formulation` object from Sparselizard
-            The elasticity formulation.
-        field_u : `field` object from Sparselizard
-            The displacement field. This field is updated with the solution obtained at the current frequency.
-        PHYSREG_U : int
-            Physical region associated with the displacement vector `u`.
-        residu_G : `vec` object from Sparselizard
-            The residual vector at the current step.
-        vec_u : `vec` object from Sparselizard
-            The displacement vector at the current step.
-        Jac : `mat` object from Sparselizard
-            The Jacobian matrix of the system at the current step.
-        prev_tan_u : `vec` object from Sparselizard
-            The tangent vector in the u direction from the previous step.
-        prev_tan_w : float
-            The tangent vector in the w direction from the previous step.
-        freq : float
-            The frequency at which the system is solved.
-        h : float, optional
-            The step size for finite difference approximation (default is 0.005).
+    def prediction_direction(self, PreviousPoint, PhaseCondition, elasticity, field_u, vec_u, PHYSREG_U, clk_generate, clk_solver) :
 
-        Returns
-        -------
-        tuple of `vec` and float
-            The tangent vector in the u direction and the tangent vector in the w direction.
-        """
-        if len(PreviousPoint) < self.order + 1 : 
+        if len(PreviousPoint) < 2 : 
             pred_tan = PredictorTangent(self.length_s, self.tan_w, order=self.order)
             tan_u, tan_w = pred_tan.prediction_direction( PreviousPoint, elasticity, field_u, PHYSREG_U, clk_generate, clk_solver)
             return tan_u, tan_w
@@ -303,4 +273,3 @@ class PredictorSecant(AbstractPredictor):
         mu_pred = self.length_s * self.tan_mu/tan_norm + prev_point['mu']
         self.set_predictor(field_u, PHYSREG_U, PhaseCondition, f_pred, u_pred, mu_pred, self.tan_u, self.tan_w, self.tan_mu)
         return u_pred, f_pred, mu_pred
-        

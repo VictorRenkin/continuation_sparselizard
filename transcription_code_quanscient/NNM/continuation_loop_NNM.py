@@ -9,7 +9,7 @@ import StepSizeRules as cs
 
 def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYSREG_MEASURED, 
                                FREQ_START, FD_MIN, FD_MAX, START_U, 
-                               Corrector, Predictor, StepSize, PhaseCondition, step_size_after_first_point=1e-1,point_max=1):
+                               Corrector, Predictor, StepSize, PhaseCondition, point_max=1):
     """
     Goal is to solve the NLFRs and store the result at PATH_STORE_DATA and show them at PATH_FIGURE, this is done at each frequency step.
 
@@ -84,8 +84,8 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
     qs.setoutputvalue(f"NNM-{type_arc}", u_measured, f_i)
 
     elasticity.generate()
-    Jac_i = elasticity.A()
-    b_i = elasticity.b()
+    Jac_i = elasticity.A(False, True)
+    b_i = elasticity.b(False, True, True)
 
     residue_G_i = Jac_i * vec_u_i - b_i 
     qs.printonrank(0, f"residue_G Start {(residue_G_i * residue_G_i)**0.5}")
@@ -122,7 +122,7 @@ def contination_loop_NNM(elasticity, field_u, PHYSREG_U, HARMONIC_MEASURED, PHYS
         Predictor.f_pred = f_k
         Predictor.u_pred = u_k
         Predictor.mu_pred = mu_k
-    StepSize.length_s = step_size_after_first_point
+    StepSize  = cs.IterationBasedStepSizer(1e-6, 1.1, 1e-1, Corrector.MAX_ITER, 1.2, 0.4)
     Predictor.length_s = StepSize.length_s
     iter_newthon = 0
     number_point = 0

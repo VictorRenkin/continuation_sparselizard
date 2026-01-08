@@ -117,9 +117,8 @@ class CorrectorPseudoArcLength(AbstractCorrector):
         while iter_new < self.MAX_ITER:
             clk_generate.resume()
             elasticity.generate()
-            Jac_k = elasticity.A()
-            Jac_k.reusefactorization()
-            b_k = elasticity.b()
+            Jac_k = elasticity.A(False, True)
+            b_k = elasticity.b(False, True, True)
             
             clk_generate.pause()
             residue_G = Jac_k * u_k - b_k 
@@ -216,13 +215,13 @@ class CorrectorAmplitude(AbstractCorrector):
 
         grad_u_p = PhaseCondition.get_derivatif_u(elasticity, u, PHYSREG_U, u_k, PreviousSolution) 
         desired_amplitude = (u_k * u_k)**0.5 + Predictor.length_s
-
+        print("desired_amplitude", desired_amplitude)
+        print("Tol",  self.TOL)
         while iter_new < self.MAX_ITER:
             clk_generate.resume()
             elasticity.generate()
-            Jac_k = elasticity.A()
-            Jac_k.reusefactorization()
-            b_k = elasticity.b()
+            Jac_k = elasticity.A(False, True)
+            b_k = elasticity.b(False, True, True)
             
             clk_generate.pause()
             residue_G = Jac_k * u_k - b_k 

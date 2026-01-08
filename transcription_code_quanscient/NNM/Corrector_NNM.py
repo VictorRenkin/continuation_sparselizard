@@ -215,8 +215,6 @@ class CorrectorAmplitude(AbstractCorrector):
 
         grad_u_p = PhaseCondition.get_derivatif_u(elasticity, u, PHYSREG_U, u_k, PreviousSolution) 
         desired_amplitude = (u_k * u_k)**0.5 + Predictor.length_s
-        print("desired_amplitude", desired_amplitude)
-        print("Tol",  self.TOL)
         while iter_new < self.MAX_ITER:
             clk_generate.resume()
             elasticity.generate()

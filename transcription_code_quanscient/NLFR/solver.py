@@ -51,12 +51,12 @@ def get_max(u, measure_quantity, vec_u, PHYSREG_MEASURED, HARMONIQUE_MEASURED, s
 
 
 
-def get_bordering_algorithm_2X2(A, c, b, d, f, h, clk_solver):
+def get_bordering_algorithm_2X2(A, C, B, d, F, h, clk_solver):
     """
     Solve the bordered linear system:
     
-        [ A   c ] [ x ] = [ f ]
-        [ bᵗ  d ] [ y ]   [ h ]
+        [ A   C ] [ X ] = [ F ]
+        [ Bᵗ  d ] [ y ]   [ h ]
     
     using only two solves with A (Jacobian).
 
@@ -85,19 +85,21 @@ def get_bordering_algorithm_2X2(A, c, b, d, f, h, clk_solver):
         Update for the auxiliary parameter.
     """
 
-    x1 = qs.solve(A, f)  
-    x2 = qs.solve(A, c)
+    clk_solver.resume()
+    [X_1, X_2] =  qs.solve(A, [F,C])
+    clk_solver.pause()
 
-    num = h - sv.compute_scalaire_product_vec(b, x1)
-    den = d - sv.compute_scalaire_product_vec(b, x2)
+    num = h - sv.compute_scalaire_product_vec(B, X_1)
+    den = d - sv.compute_scalaire_product_vec(B, X_2)
 
     if abs(den) < 1e-12:
         raise ValueError("Denominator too small. The bordered system may be ill-conditioned.")
 
     y = num / den
-    x = x1 - x2 * y
+    
+    X = X_1 - X_2 * y
 
-    return x, y
+    return X, y
 
 
 def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l, clk_solver):
@@ -152,9 +154,7 @@ def get_bordering_algorithm_3x3(A, B, C, D, e, f, G, h, i, J, k, l, clk_solver):
     """
 
     clk_solver.resume()
-    X_1 = qs.solve(A, J)
-    X_2 = qs.solve(A, D)
-    X_3 = qs.solve(A, G)
+    [X_1, X_2, X_3] =  qs.solve(A, [J, D, G])
     clk_solver.pause()
 
     a_11 = e - sv.compute_scalaire_product_vec(B, X_2)
@@ -204,7 +204,7 @@ def cramer_2x2(a11, a12, a21, a22, b1, b2):
     # Calculate the determinant
     det = a11 * a22 - a12 * a21
     if abs(det) < 1e-8:
-        raise ValueError(f"The system has no unique solution (determinant is zero : {det}).")
+        qs.printonrank(0, f"Singular system detected: determinant is approximately zero (det = {det:.2e}). No unique solution exists.")
 
     # Apply Cramer's rule
     x = (b1 * a22 - b2 * a12) / det

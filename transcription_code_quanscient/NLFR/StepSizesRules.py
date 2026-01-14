@@ -81,7 +81,7 @@ class AngleBasedStepSizer(AbstractStepSize):
     Class for angle-based step size rule.
     """
 
-    def __init__(self, MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, S_DOWN, ALPHA, ALPHA_DOWN, ANLE_OPT, ANLGE_TOL, RESTART_ALPHA, length_s=None):
+    def __init__(self, MIN_LENGTH_S, MAX_LENGTH_S, START_LENGTH_S, MAX_ITER, S_DOWN, ALPHA, ALPHA_DOWN, ANLE_OPT, length_s=None):
         """
         Initialize the angle-based step size rule.
         """
@@ -89,8 +89,6 @@ class AngleBasedStepSizer(AbstractStepSize):
         self.ALPHA = ALPHA
         self.ANLE_OPT = ANLE_OPT
         self.S_DOWN = S_DOWN
-        self.ANLGE_TOL = ANLGE_TOL
-        self.RESTART_ALPHA = RESTART_ALPHA
         self.ALPHA_DOWN = ALPHA_DOWN
 
     def get_step_size(self, Previous_point, Predictor):
@@ -131,7 +129,6 @@ class AngleBasedStepSizer(AbstractStepSize):
 
                 if factor_step_size < 0.01 : 
                     factor_step_size = 0.01
-                print("Angle [rad]", theta)
                 self.length_s = self.length_s * factor_step_size  
                 if self.length_s > self.MAX_LENGTH_S : 
                     self.length_s = self.MAX_LENGTH_S

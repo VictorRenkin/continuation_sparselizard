@@ -31,7 +31,6 @@ PHYSREG_CONSTRAINT = reg.clamp_target
 E  = 1.04e11      # Young's modulus [Pa]
 nu = 0.3        # Poisson's ratio [-]
 rho = 4400     # Density [kg/m³]
-distance_axe_rotasion = 0.1
 
 # Define the elasticity problem 
 u_LNM = qs.field("h1xyz")
@@ -101,7 +100,7 @@ for i in range(len(var.eigenvector_real)):
     qs.setdata(var.eigenvector_real[i])
 
     # Eigenfrequencies
-    qs.setoutputvalue("Eigenfrequencies", [var.eigenfrequencies[i]*2*math.pi], i)
+    qs.setoutputvalue("Eigenfrequencies", [var.eigenfrequencies[i]], i)
 
     qs.setdata(var.eigenvector_imag[i])
 

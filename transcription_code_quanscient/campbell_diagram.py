@@ -68,20 +68,20 @@ Omega_square = qs.array3x3(
 
 form_stat = qs.formulation()
 form_stat += qs.integral(reg.all, qs.predefinedelasticity(qs.dof(u_stat), qs.tf(u_stat), u_stat, par.H(), 0.0))
-form_stat += qs.integral(reg.all, -rho *(Omega_square * qs.tf(u_stat))  * qs.dof(u_stat))
-form_stat += qs.integral(reg.all, -(Omega_square * qs.tf(u_stat)) * rho *  qs.array3x1(qs.getx() + dco_x, (qs.gety() + dco_y), 0))
+form_stat += qs.integral(reg.all, -rho * (Omega_square * qs.tf(u_stat))  * qs.dof(u_stat))
+form_stat += qs.integral(reg.all, -rho * (Omega_square * qs.tf(u_stat)) *  qs.array3x1(qs.getx() + dco_x, (qs.gety() + dco_y), 0))
 form_stat.allsolve(relrestol=1e-06, maxnumit=1000, nltol=1e-05, maxnumnlit=1000, relaxvalue=-1)
 u_LNM.setvalue(PHYSREG_VOLUME, u_stat)
 
-LNM_formulation = qs.formulation()
-LNM_formulation += qs.integral(reg.all, qs.predefinedelasticity(qs.dof(u_LNM), qs.tf(u_LNM), u_LNM, par.H(), 0.0))
-LNM_formulation += qs.integral(reg.all, -par.rho() * qs.dtdt(qs.dof(u_LNM)) * qs.tf(u_LNM))
+formulation = qs.formulation()
+formulation += qs.integral(reg.all, qs.predefinedelasticity(qs.dof(u_LNM), qs.tf(u_LNM), u_LNM, par.H(), 0.0))
+formulation += qs.integral(reg.all, -par.rho() * qs.dtdt(qs.dof(u_LNM)) * qs.tf(u_LNM))
 centrifuge_softening = -rho *(Omega_square * qs.tf(u_LNM))  * qs.dof(u_LNM)
-LNM_formulation += qs.integral(reg.all, centrifuge_softening)
+formulation += qs.integral(reg.all, centrifuge_softening)
 
 
 
-eig = qs.eigenvalue(LNM_formulation)
+eig = qs.eigenvalue(formulation)
 
 eig.settolerance(1e-06, 1000)
 

@@ -18,11 +18,17 @@
 
 ## Introduction
 
-This project focuses on implementing a **parallel Harmonic Balance Method** within the *Sparselizard* framework for the analysis of a nonlinear mechanical system. The primary objective is to accurately trace the system's **nonlinear frequency responses (NLFR)**. This is achieved through the application of a **continuation method** based on a robust predictor-corrector scheme.
+This project is dedicated to the implementation of a **parallel Harmonic Balance Method** within the *Sparselizard* framework for the analysis of a **nonlinear mechanical system**. The main objective is the accurate computation and tracing of the system’s **nonlinear frequency responses (NLFRs)** and **nonlinear normal modes (NNMs)**. This is achieved through the use of a **continuation strategy** relying on a robust **predictor–corrector scheme**, ensuring numerical stability and efficiency when following solution branches.
+
+The *Sparselizard* framework is used as a **development and prototyping environment**, enabling rapid implementation and validation of the proposed numerical formulations. Once validated, all developed algorithms have been **integrated into Quanscient Allsolve** (https://quanscient.com/), in order to benefit from advanced **high-performance computing capabilities**, such as **domain decomposition methods** and large-scale parallelisation. For clarity and reproducibility, the parts of the code transcribed from the Quanscient implementation are explicitly provided in the present project under the **`transcription_quanscient`** directory.
+
+In addition, all numerical results presented and analysed in this work are fully reproducible using the **test cases** included in the **`testcase`** directory. These test cases cover a representative set of benchmark configurations, including a **clamped–clamped beam**, a **cantilever beam**, a **fan blade**, and a **cantilever beam in rotation**, thereby ensuring transparency and consistency between the numerical implementations and the reported results.
+
+Finally, the governing formulation is expressed in a **rotating reference frame**, allowing **centrifugal effects** to be consistently taken into account in the system dynamics, which is essential for applications involving rotating mechanical structures.
 
 ## Requirements
 
-This repository relies on **Sparselizard**. Please refer to the official documentation at [this link](https://github.com/halbux/sparselizard-users/tree/main/api/python) for proper installation instructions. Additionally, this project requires specific Python packages, which are listed in the `requirements.txt` file. To install these dependencies, ensure that both [Python](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/) are installed on your system, then execute the following command:
+This repository relies on *Sparselizard*. Please refer to the official documentation at [this link](https://github.com/halbux/sparselizard-users/tree/main/api/python) for proper installation instructions. Additionally, this project requires specific Python packages, which are listed in the `requirements.txt` file. To install these dependencies, ensure that both [Python](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/) are installed on your system, then execute the following command:
 
 ```bash
 pip install -r requirements.txt

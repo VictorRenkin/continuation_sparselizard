@@ -1,0 +1,1131 @@
+2025-12-29 16:41:25
+Reserving resources...
+2025-12-29 16:42:02
+Setting up job...
+2025-12-29 16:42:02
+Downloading inputs...
+2025-12-29 16:42:02
+Downloading done
+2025-12-29 16:42:03
+Quanscient Allsolve 399 int64/float64
+2025-12-29 16:42:03
+Physical RAM is 132.661 GB for 1 rank
+2025-12-29 16:42:03
+Loading mesh from 'simulation.msh'
+2025-12-29 16:42:03
+Detected curvature order 2
+Extracted 6885 nodes
+Extracted 2802 lines
+Extracted 2336 quadrangles
+Extracted 640 hexahedra
+2025-12-29 16:42:03
+Time to load the mesh:
+11.2128 ms
+2025-12-29 16:42:07
+DDM eigensolve for 20655 dofs:
+2025-12-29 16:42:11
+eps @0 -> 12 converged with nearest +736670 +0i | candidate +1.20126e+07 +0i has error 1.07647e-06
+2025-12-29 16:42:11
+4.38981 s
+2025-12-29 16:42:11
+
+Printing the 12 eigenfrequencies [Hz]:
+
+#1      136.602         
+#2      78.1107         
+#3      76.3575         
+#4      69.5492         
+#5      24.8078         
+#6      3.95856         
+#7      226.502         
+#8      230.31          
+#9      339.563         
+#10     387.946         
+#11     468.549         
+#12     476.114         
+
+2025-12-29 16:42:11
+u_start 5.948416593001138e-05
+2025-12-29 16:42:11
+Number of unknowns is 227205
+2025-12-29 16:42:11
+Harmonic use [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2025-12-29 16:42:30
+residue_G Start 2.8682991686966353
+2025-12-29 16:42:31
+desired_amplitude 0.001999999999999997
+2025-12-29 16:42:31
+Tol 0.0001
+2025-12-29 16:42:48
+Iteration 0: Residual max G: 2.87e+00, frequence: 3.9585640196573415, fct_g :-2.999999999999994e-06
+2025-12-29 16:43:58
+Singular system detected: determinant is approximately zero (det = -5.86e-17). No unique solution exists.
+2025-12-29 16:44:19
+Iteration 1: Residual max G: 6.45e+00, frequence: 3.9693174712368258, fct_g :2.2500000323968677e-06
+2025-12-29 16:45:19
+Singular system detected: determinant is approximately zero (det = -1.79e-16). No unique solution exists.
+2025-12-29 16:45:40
+Iteration 2: Residual max G: 5.80e-01, frequence: 3.960247254554114, fct_g :2.0250006160242791e-07
+2025-12-29 16:46:38
+Singular system detected: determinant is approximately zero (det = -2.33e-15). No unique solution exists.
+2025-12-29 16:46:59
+Iteration 3: Residual max G: 7.05e-03, frequence: 3.9587838700303637, fct_g :2.439409074988979e-09
+2025-12-29 16:47:57
+Singular system detected: determinant is approximately zero (det = -1.01e-13). No unique solution exists.
+2025-12-29 16:48:18
+Iteration 4: Residual max G: 1.08e-06, frequence: 3.958631701703095, fct_g :3.71694019591078e-13
+2025-12-29 16:48:18
+desired_amplitude 0.0030000000929234997
+2025-12-29 16:48:18
+Tol 0.0001
+2025-12-29 16:48:38
+Iteration 0: Residual max G: 1.08e-06, frequence: 3.958631701703095, fct_g :-5.000000185846999e-06
+2025-12-29 16:49:37
+Singular system detected: determinant is approximately zero (det = -6.62e-13). No unique solution exists.
+2025-12-29 16:49:58
+Iteration 1: Residual max G: 4.48e+00, frequence: 3.958374364597096, fct_g :1.5624999741858432e-06
+2025-12-29 16:50:56
+Singular system detected: determinant is approximately zero (det = -5.15e-15). No unique solution exists.
+2025-12-29 16:51:17
+Iteration 2: Residual max G: 1.66e-01, frequence: 3.958267424605293, fct_g :5.778476029716064e-08
+2025-12-29 16:52:15
+Singular system detected: determinant is approximately zero (det = -2.03e-13). No unique solution exists.
+2025-12-29 16:52:36
+Iteration 3: Residual max G: 2.68e-04, frequence: 3.958462711343445, fct_g :9.216203139734459e-11
+2025-12-29 16:53:34
+Singular system detected: determinant is approximately zero (det = -2.46e-12). No unique solution exists.
+2025-12-29 16:53:55
+Iteration 4: Residual max G: 1.94e-07, frequence: 3.9585467141139605, fct_g :2.3615786789218246e-16
+2025-12-29 16:53:55
+################## New Iteration ##################
+2025-12-29 16:53:55
+length_s: 0.100000, freq: 3.96
+2025-12-29 16:53:55
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 16:54:36
+Iteration 0: Residual max G: 4.14e+04, frequence: 3.948384836467575
+2025-12-29 16:55:14
+Singular system detected: determinant is approximately zero (det = 2.74e-19). No unique solution exists.
+2025-12-29 16:55:57
+Iteration 1: Residual max G: 2.45e+00, frequence: 3.9478078860279906
+2025-12-29 16:56:34
+Singular system detected: determinant is approximately zero (det = -7.41e-14). No unique solution exists.
+2025-12-29 16:57:16
+Iteration 2: Residual max G: 1.65e+00, frequence: 3.9567118472525427
+2025-12-29 16:57:54
+Singular system detected: determinant is approximately zero (det = -4.13e-13). No unique solution exists.
+2025-12-29 16:58:36
+Iteration 3: Residual max G: 5.52e-01, frequence: 3.961849062570064
+2025-12-29 16:59:12
+Singular system detected: determinant is approximately zero (det = -1.54e-12). No unique solution exists.
+2025-12-29 16:59:55
+Iteration 4: Residual max G: 1.11e-01, frequence: 3.9595396582230045
+2025-12-29 17:00:33
+Singular system detected: determinant is approximately zero (det = -4.38e-12). No unique solution exists.
+2025-12-29 17:01:15
+Iteration 5: Residual max G: 1.39e-01, frequence: 3.9569546663380297
+2025-12-29 17:01:52
+Singular system detected: determinant is approximately zero (det = -1.12e-12). No unique solution exists.
+2025-12-29 17:02:35
+Iteration 6: Residual max G: 4.01e-01, frequence: 3.961352059836991
+2025-12-29 17:03:12
+Singular system detected: determinant is approximately zero (det = -2.06e-12). No unique solution exists.
+2025-12-29 17:03:54
+Iteration 7: Residual max G: 7.98e-02, frequence: 3.959392058829647
+2025-12-29 17:04:32
+Singular system detected: determinant is approximately zero (det = -5.95e-12). No unique solution exists.
+2025-12-29 17:05:14
+Iteration 8: Residual max G: 9.92e-02, frequence: 3.9572036120304848
+2025-12-29 17:05:51
+Singular system detected: determinant is approximately zero (det = -4.85e-12). No unique solution exists.
+2025-12-29 17:06:33
+Iteration 9: Residual max G: 3.09e-02, frequence: 3.9584245686201953
+2025-12-29 17:07:11
+Singular system detected: determinant is approximately zero (det = -4.18e-10). No unique solution exists.
+2025-12-29 17:07:53
+Iteration 10: Residual max G: 2.26e-04, frequence: 3.958528370987185
+2025-12-29 17:08:29
+Singular system detected: determinant is approximately zero (det = -1.06e-09). No unique solution exists.
+2025-12-29 17:09:11
+Iteration 11: Residual max G: 3.60e-04, frequence: 3.9586601052593338
+2025-12-29 17:09:49
+Singular system detected: determinant is approximately zero (det = -6.35e-10). No unique solution exists.
+2025-12-29 17:10:31
+Iteration 12: Residual max G: 1.04e-03, frequence: 3.9584365831221686
+2025-12-29 17:11:09
+Singular system detected: determinant is approximately zero (det = -1.38e-10). No unique solution exists.
+2025-12-29 17:11:51
+Iteration 13: Residual max G: 3.35e-03, frequence: 3.9588378431078577
+2025-12-29 17:12:28
+Singular system detected: determinant is approximately zero (det = -2.10e-10). No unique solution exists.
+2025-12-29 17:13:10
+Iteration 14: Residual max G: 6.95e-04, frequence: 3.9586552973248983
+2025-12-29 17:13:46
+Singular system detected: determinant is approximately zero (det = -2.35e-09). No unique solution exists.
+2025-12-29 17:14:28
+Iteration 15: Residual max G: 8.41e-05, frequence: 3.9585912892644246
+2025-12-29 17:14:28
+################## New Iteration ##################
+2025-12-29 17:14:28
+length_s: 0.120000, freq: 3.96
+2025-12-29 17:14:28
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 17:15:10
+Iteration 0: Residual max G: 1.09e+05, frequence: 3.9586445854254815
+2025-12-29 17:15:47
+Singular system detected: determinant is approximately zero (det = -2.96e-16). No unique solution exists.
+2025-12-29 17:16:30
+Iteration 1: Residual max G: 1.70e+01, frequence: 3.9573030521858534
+2025-12-29 17:17:07
+Singular system detected: determinant is approximately zero (det = -4.05e-09). No unique solution exists.
+2025-12-29 17:17:49
+Iteration 2: Residual max G: 5.20e-02, frequence: 3.9582343951894208
+2025-12-29 17:19:09
+Iteration 3: Residual max G: 3.06e-05, frequence: 3.9585687793750988
+2025-12-29 17:19:09
+################## New Iteration ##################
+2025-12-29 17:19:09
+length_s: 0.144000, freq: 3.96
+2025-12-29 17:19:09
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 17:19:50
+Iteration 0: Residual max G: 1.57e+05, frequence: 3.9585417679988963
+2025-12-29 17:20:28
+Singular system detected: determinant is approximately zero (det = -2.06e-15). No unique solution exists.
+2025-12-29 17:21:10
+Iteration 1: Residual max G: 3.51e+01, frequence: 3.9660057588893407
+2025-12-29 17:21:48
+Singular system detected: determinant is approximately zero (det = 3.87e-09). No unique solution exists.
+2025-12-29 17:22:30
+Iteration 2: Residual max G: 3.45e-02, frequence: 3.8559985156291665
+2025-12-29 17:23:08
+Singular system detected: determinant is approximately zero (det = -1.74e-10). No unique solution exists.
+2025-12-29 17:23:50
+Iteration 3: Residual max G: 2.83e-02, frequence: 3.937488214567989
+2025-12-29 17:24:28
+Singular system detected: determinant is approximately zero (det = -1.12e-09). No unique solution exists.
+2025-12-29 17:25:10
+Iteration 4: Residual max G: 5.31e-02, frequence: 3.9991491230133924
+2025-12-29 17:25:48
+Singular system detected: determinant is approximately zero (det = -1.25e-09). No unique solution exists.
+2025-12-29 17:26:30
+Iteration 5: Residual max G: 7.18e-03, frequence: 3.969629772488063
+2025-12-29 17:27:50
+Iteration 6: Residual max G: 1.64e-03, frequence: 3.961600573092415
+2025-12-29 17:29:10
+Iteration 7: Residual max G: 1.60e-02, frequence: 3.911036433567481
+2025-12-29 17:29:47
+Singular system detected: determinant is approximately zero (det = -3.52e-11). No unique solution exists.
+2025-12-29 17:30:30
+Iteration 8: Residual max G: 3.30e-01, frequence: 4.782838517461317
+2025-12-29 17:31:07
+Singular system detected: determinant is approximately zero (det = -3.10e-12). No unique solution exists.
+2025-12-29 17:31:50
+Iteration 9: Residual max G: 3.23e-01, frequence: 4.1492191617674115
+2025-12-29 17:32:28
+Singular system detected: determinant is approximately zero (det = -1.52e-11). No unique solution exists.
+2025-12-29 17:33:10
+Iteration 10: Residual max G: 1.31e-01, frequence: 3.62587672767906
+2025-12-29 17:33:47
+Singular system detected: determinant is approximately zero (det = -2.01e-11). No unique solution exists.
+2025-12-29 17:34:30
+Iteration 11: Residual max G: 6.88e-02, frequence: 3.837067696299873
+2025-12-29 17:35:08
+Singular system detected: determinant is approximately zero (det = -1.13e-10). No unique solution exists.
+2025-12-29 17:35:50
+Iteration 12: Residual max G: 1.04e-01, frequence: 3.9423129476406356
+2025-12-29 17:36:28
+Singular system detected: determinant is approximately zero (det = -6.27e-09). No unique solution exists.
+2025-12-29 17:37:10
+Iteration 13: Residual max G: 3.28e-03, frequence: 3.956390149789879
+2025-12-29 17:38:30
+Iteration 14: Residual max G: 3.05e-04, frequence: 3.9583878953994964
+2025-12-29 17:39:49
+Iteration 15: Residual max G: 2.05e-04, frequence: 3.959223199430065
+2025-12-29 17:41:09
+Iteration 16: Residual max G: 3.55e-04, frequence: 3.957781165272152
+2025-12-29 17:42:29
+Iteration 17: Residual max G: 1.39e-04, frequence: 3.958395795848793
+2025-12-29 17:43:49
+Iteration 18: Residual max G: 1.87e-04, frequence: 3.959130086414861
+2025-12-29 17:45:09
+Iteration 19: Residual max G: 9.35e-05, frequence: 3.958831130972583
+2025-12-29 17:45:09
+################## New Iteration ##################
+2025-12-29 17:45:09
+length_s: 0.172800, freq: 3.96
+2025-12-29 17:45:09
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 17:45:50
+Iteration 0: Residual max G: 2.26e+05, frequence: 3.959145944295786
+2025-12-29 17:46:28
+Singular system detected: determinant is approximately zero (det = -1.09e-14). No unique solution exists.
+2025-12-29 17:47:10
+Iteration 1: Residual max G: 7.27e+01, frequence: 3.962704528606787
+2025-12-29 17:47:48
+Singular system detected: determinant is approximately zero (det = -4.25e-09). No unique solution exists.
+2025-12-29 17:48:30
+Iteration 2: Residual max G: 1.97e-02, frequence: 3.9523275832260776
+2025-12-29 17:49:50
+Iteration 3: Residual max G: 1.96e-03, frequence: 3.9565561754673886
+2025-12-29 17:51:10
+Iteration 4: Residual max G: 4.68e-04, frequence: 3.958538506156404
+2025-12-29 17:52:29
+Iteration 5: Residual max G: 3.01e-04, frequence: 3.959332841435167
+2025-12-29 17:53:49
+Iteration 6: Residual max G: 1.19e-04, frequence: 3.9589653716009177
+2025-12-29 17:55:09
+Iteration 7: Residual max G: 1.22e-03, frequence: 3.9563490039443407
+2025-12-29 17:56:29
+Iteration 8: Residual max G: 7.53e-04, frequence: 3.9579106320774424
+2025-12-29 17:57:49
+Iteration 9: Residual max G: 8.39e-04, frequence: 3.960261656706616
+2025-12-29 17:59:09
+Iteration 10: Residual max G: 1.39e-03, frequence: 3.9564334181560503
+2025-12-29 18:00:29
+Iteration 11: Residual max G: 5.22e-04, frequence: 3.9581059403294785
+2025-12-29 18:01:48
+Iteration 12: Residual max G: 6.87e-04, frequence: 3.960026910990424
+2025-12-29 18:03:08
+Iteration 13: Residual max G: 1.20e-03, frequence: 3.956779616892123
+2025-12-29 18:04:28
+Iteration 14: Residual max G: 1.97e-03, frequence: 3.962210120567704
+2025-12-29 18:05:47
+Iteration 15: Residual max G: 7.54e-04, frequence: 3.95984499800297
+2025-12-29 18:07:07
+Iteration 16: Residual max G: 2.31e-04, frequence: 3.959119452761445
+2025-12-29 18:08:27
+Iteration 17: Residual max G: 7.31e-05, frequence: 3.9589025518351724
+2025-12-29 18:08:27
+################## New Iteration ##################
+2025-12-29 18:08:27
+length_s: 0.207360, freq: 3.96
+2025-12-29 18:08:27
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 18:09:09
+Iteration 0: Residual max G: 3.26e+05, frequence: 3.958988253613744
+2025-12-29 18:09:45
+Singular system detected: determinant is approximately zero (det = -2.37e-14). No unique solution exists.
+2025-12-29 18:10:28
+Iteration 1: Residual max G: 1.51e+02, frequence: 3.9644432131965317
+2025-12-29 18:11:05
+Singular system detected: determinant is approximately zero (det = -3.12e-09). No unique solution exists.
+2025-12-29 18:11:48
+Iteration 2: Residual max G: 4.67e-02, frequence: 3.9510567335031217
+2025-12-29 18:13:08
+Iteration 3: Residual max G: 1.07e-02, frequence: 3.9717916490931695
+2025-12-29 18:14:27
+Iteration 4: Residual max G: 1.83e-02, frequence: 3.936174281179369
+2025-12-29 18:15:48
+Iteration 5: Residual max G: 7.93e-03, frequence: 3.9523755480759166
+2025-12-29 18:17:07
+Iteration 6: Residual max G: 3.11e-03, frequence: 3.956584704774684
+2025-12-29 18:18:28
+Iteration 7: Residual max G: 7.52e-04, frequence: 3.9583590319921402
+2025-12-29 18:19:47
+Iteration 8: Residual max G: 2.14e-04, frequence: 3.9588331088789896
+2025-12-29 18:21:07
+Iteration 9: Residual max G: 6.31e-05, frequence: 3.958968960957816
+2025-12-29 18:21:08
+################## New Iteration ##################
+2025-12-29 18:21:08
+length_s: 0.248832, freq: 3.96
+2025-12-29 18:21:08
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 18:21:49
+Iteration 0: Residual max G: 4.70e+05, frequence: 3.9590486476196394
+2025-12-29 18:22:25
+Singular system detected: determinant is approximately zero (det = -3.39e-14). No unique solution exists.
+2025-12-29 18:23:08
+Iteration 1: Residual max G: 3.13e+02, frequence: 3.9703270574003033
+2025-12-29 18:23:46
+Singular system detected: determinant is approximately zero (det = -1.95e-09). No unique solution exists.
+2025-12-29 18:24:28
+Iteration 2: Residual max G: 1.48e-01, frequence: 3.9401799892641804
+2025-12-29 18:25:48
+Iteration 3: Residual max G: 4.16e-02, frequence: 3.997440376754425
+2025-12-29 18:27:08
+Iteration 4: Residual max G: 1.83e-02, frequence: 3.970292476863833
+2025-12-29 18:28:27
+Iteration 5: Residual max G: 4.72e-03, frequence: 3.962701960595805
+2025-12-29 18:29:47
+Iteration 6: Residual max G: 4.63e-02, frequence: 3.9085044539571308
+2025-12-29 18:31:07
+Iteration 7: Residual max G: 2.08e-02, frequence: 3.944168478222878
+2025-12-29 18:32:27
+Iteration 8: Residual max G: 6.43e-03, frequence: 3.954954019642327
+2025-12-29 18:33:47
+Iteration 9: Residual max G: 2.09e-03, frequence: 3.958168780686694
+2025-12-29 18:35:07
+Iteration 10: Residual max G: 2.08e-03, frequence: 3.9613146044576215
+2025-12-29 18:36:27
+Iteration 11: Residual max G: 2.92e-02, frequence: 3.9274002012926132
+2025-12-29 18:37:04
+Singular system detected: determinant is approximately zero (det = -3.93e-09). No unique solution exists.
+2025-12-29 18:37:47
+Iteration 12: Residual max G: 4.51e-01, frequence: 4.40050686185623
+2025-12-29 18:38:25
+Singular system detected: determinant is approximately zero (det = -4.91e-10). No unique solution exists.
+2025-12-29 18:39:07
+Iteration 13: Residual max G: 2.00e+00, frequence: 4.094271840373936
+2025-12-29 18:39:45
+Singular system detected: determinant is approximately zero (det = -5.59e-09). No unique solution exists.
+2025-12-29 18:40:27
+Iteration 14: Residual max G: 2.03e+00, frequence: 4.007276049171427
+2025-12-29 18:41:46
+Iteration 15: Residual max G: 2.05e-01, frequence: 3.8809781938690855
+2025-12-29 18:43:06
+Iteration 16: Residual max G: 9.07e-02, frequence: 3.9366740810141905
+2025-12-29 18:44:26
+Iteration 17: Residual max G: 1.13e-02, frequence: 3.9527447611293116
+2025-12-29 18:45:46
+Iteration 18: Residual max G: 2.83e-03, frequence: 3.9575080800694886
+2025-12-29 18:47:06
+Iteration 19: Residual max G: 1.07e-03, frequence: 3.958737524455649
+2025-12-29 18:47:44
+################## New Iteration ##################
+2025-12-29 18:47:44
+length_s: 0.298598, freq: 3.96
+2025-12-29 18:47:44
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 18:48:25
+Iteration 0: Residual max G: 1.26e+05, frequence: 3.9590008356225455
+2025-12-29 18:49:01
+Singular system detected: determinant is approximately zero (det = -3.68e-13). No unique solution exists.
+2025-12-29 18:49:43
+Iteration 1: Residual max G: 2.27e+01, frequence: 3.9599322634612117
+2025-12-29 18:51:02
+Iteration 2: Residual max G: 8.19e-03, frequence: 3.9593963598787654
+2025-12-29 18:52:22
+Iteration 3: Residual max G: 3.54e-04, frequence: 3.9587800654701173
+2025-12-29 18:53:41
+Iteration 4: Residual max G: 6.33e-04, frequence: 3.9598757735820485
+2025-12-29 18:55:01
+Iteration 5: Residual max G: 8.25e-03, frequence: 3.9485593415878912
+2025-12-29 18:56:21
+Iteration 6: Residual max G: 3.86e-03, frequence: 3.9558366605086546
+2025-12-29 18:57:41
+Iteration 7: Residual max G: 1.18e-03, frequence: 3.958154726032695
+2025-12-29 18:59:00
+Iteration 8: Residual max G: 1.71e-03, frequence: 3.961106681038141
+2025-12-29 19:00:19
+Iteration 9: Residual max G: 6.70e-04, frequence: 3.9597180029098467
+2025-12-29 19:01:38
+Iteration 10: Residual max G: 1.94e-04, frequence: 3.959322107007498
+2025-12-29 19:02:57
+Iteration 11: Residual max G: 7.27e-05, frequence: 3.959211421585697
+2025-12-29 19:02:59
+################## New Iteration ##################
+2025-12-29 19:02:59
+length_s: 0.119439, freq: 3.96
+2025-12-29 19:02:59
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 19:03:40
+Iteration 0: Residual max G: 1.08e+05, frequence: 3.959502363680327
+2025-12-29 19:04:16
+Singular system detected: determinant is approximately zero (det = -5.28e-13). No unique solution exists.
+2025-12-29 19:04:58
+Iteration 1: Residual max G: 1.67e+01, frequence: 3.9599332231537456
+2025-12-29 19:06:17
+Iteration 2: Residual max G: 6.93e-03, frequence: 3.9595084654942503
+2025-12-29 19:07:37
+Iteration 3: Residual max G: 7.11e-05, frequence: 3.9593877978093364
+2025-12-29 19:07:37
+################## New Iteration ##################
+2025-12-29 19:07:37
+length_s: 0.143327, freq: 3.96
+2025-12-29 19:07:37
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 19:08:18
+Iteration 0: Residual max G: 1.56e+05, frequence: 3.959599445425985
+2025-12-29 19:08:54
+Singular system detected: determinant is approximately zero (det = -2.50e-13). No unique solution exists.
+2025-12-29 19:09:36
+Iteration 1: Residual max G: 3.46e+01, frequence: 3.960748393740977
+2025-12-29 19:10:56
+Iteration 2: Residual max G: 1.65e-02, frequence: 3.9599223270337407
+2025-12-29 19:12:15
+Iteration 3: Residual max G: 7.20e-04, frequence: 3.9589647081826853
+2025-12-29 19:13:34
+Iteration 4: Residual max G: 1.27e-03, frequence: 3.9606483230242606
+2025-12-29 19:14:54
+Iteration 5: Residual max G: 2.08e-03, frequence: 3.9578448860209168
+2025-12-29 19:16:13
+Iteration 6: Residual max G: 3.66e-03, frequence: 3.962689819752024
+2025-12-29 19:17:32
+Iteration 7: Residual max G: 1.24e-03, frequence: 3.959932058215421
+2025-12-29 19:18:52
+Iteration 8: Residual max G: 1.62e-04, frequence: 3.9596854407954223
+2025-12-29 19:20:11
+Iteration 9: Residual max G: 1.33e-03, frequence: 3.958279723971535
+2025-12-29 19:21:31
+Iteration 10: Residual max G: 6.00e-04, frequence: 3.9592009617844988
+2025-12-29 19:22:50
+Iteration 11: Residual max G: 7.97e-04, frequence: 3.960253921330309
+2025-12-29 19:24:10
+Iteration 12: Residual max G: 1.30e-03, frequence: 3.9584932186395565
+2025-12-29 19:25:30
+Iteration 13: Residual max G: 2.16e-03, frequence: 3.961392655460162
+2025-12-29 19:26:49
+Iteration 14: Residual max G: 3.80e-03, frequence: 3.956364529449153
+2025-12-29 19:28:09
+Iteration 15: Residual max G: 1.33e-03, frequence: 3.9592921652486863
+2025-12-29 19:29:28
+Iteration 16: Residual max G: 1.43e-04, frequence: 3.9594988011209655
+2025-12-29 19:30:48
+Iteration 17: Residual max G: 1.91e-04, frequence: 3.9597444299472744
+2025-12-29 19:32:07
+Iteration 18: Residual max G: 6.43e-05, frequence: 3.9595977342711914
+2025-12-29 19:32:07
+################## New Iteration ##################
+2025-12-29 19:32:07
+length_s: 0.171993, freq: 3.96
+2025-12-29 19:32:07
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 19:32:48
+Iteration 0: Residual max G: 2.25e+05, frequence: 3.959849651530035
+2025-12-29 19:33:24
+Singular system detected: determinant is approximately zero (det = -2.25e-13). No unique solution exists.
+2025-12-29 19:34:06
+Iteration 1: Residual max G: 7.18e+01, frequence: 3.9620522419140847
+2025-12-29 19:35:26
+Iteration 2: Residual max G: 4.70e-02, frequence: 3.9606760311223663
+2025-12-29 19:36:46
+Iteration 3: Residual max G: 4.10e-04, frequence: 3.9601424790908477
+2025-12-29 19:38:05
+Iteration 4: Residual max G: 1.69e-04, frequence: 3.9599950416156653
+2025-12-29 19:39:25
+Iteration 5: Residual max G: 5.79e-05, frequence: 3.959944306429093
+2025-12-29 19:39:25
+################## New Iteration ##################
+2025-12-29 19:39:25
+length_s: 0.206391, freq: 3.96
+2025-12-29 19:39:25
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 19:40:06
+Iteration 0: Residual max G: 3.25e+05, frequence: 3.9603601775124972
+2025-12-29 19:40:42
+Singular system detected: determinant is approximately zero (det = -6.12e-14). No unique solution exists.
+2025-12-29 19:41:24
+Iteration 1: Residual max G: 1.49e+02, frequence: 3.9755139925465737
+2025-12-29 19:42:44
+Iteration 2: Residual max G: 5.18e-01, frequence: 3.7757461539914092
+2025-12-29 19:43:21
+Singular system detected: determinant is approximately zero (det = -8.57e-09). No unique solution exists.
+2025-12-29 19:44:04
+Iteration 3: Residual max G: 6.73e-01, frequence: 3.8952283791856437
+2025-12-29 19:45:24
+Iteration 4: Residual max G: 5.37e-01, frequence: 3.9405685441802696
+2025-12-29 19:46:43
+Iteration 5: Residual max G: 6.74e-02, frequence: 3.9906028734272367
+2025-12-29 19:48:03
+Iteration 6: Residual max G: 5.07e-02, frequence: 3.963230683478014
+2025-12-29 19:49:23
+Iteration 7: Residual max G: 8.00e-03, frequence: 3.955445743964839
+2025-12-29 19:50:43
+Iteration 8: Residual max G: 4.25e-03, frequence: 3.958662742877514
+2025-12-29 19:52:02
+Iteration 9: Residual max G: 1.10e-03, frequence: 3.9598866165666773
+2025-12-29 19:53:22
+Iteration 10: Residual max G: 3.15e-04, frequence: 3.9602492988723665
+2025-12-29 19:54:42
+Iteration 11: Residual max G: 8.76e-05, frequence: 3.9603441787132545
+2025-12-29 19:54:42
+################## New Iteration ##################
+2025-12-29 19:54:42
+length_s: 0.247669, freq: 3.96
+2025-12-29 19:54:42
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 19:55:23
+Iteration 0: Residual max G: 4.69e+05, frequence: 3.960823999706881
+2025-12-29 19:55:59
+Singular system detected: determinant is approximately zero (det = -2.07e-13). No unique solution exists.
+2025-12-29 19:56:41
+Iteration 1: Residual max G: 3.10e+02, frequence: 3.9698331890104717
+2025-12-29 19:58:01
+Iteration 2: Residual max G: 3.23e-01, frequence: 3.9453003730239486
+2025-12-29 19:59:20
+Iteration 3: Residual max G: 5.67e-02, frequence: 3.987455980117977
+2025-12-29 20:00:40
+Iteration 4: Residual max G: 2.63e-02, frequence: 3.9700090351398596
+2025-12-29 20:02:00
+Iteration 5: Residual max G: 1.30e-02, frequence: 3.961831205501397
+2025-12-29 20:03:19
+Iteration 6: Residual max G: 5.54e-04, frequence: 3.9612613144777837
+2025-12-29 20:04:39
+Iteration 7: Residual max G: 6.42e-04, frequence: 3.9606990282450987
+2025-12-29 20:05:59
+Iteration 8: Residual max G: 2.62e-04, frequence: 3.96093322580223
+2025-12-29 20:07:18
+Iteration 9: Residual max G: 3.74e-04, frequence: 3.9612475198934995
+2025-12-29 20:08:38
+Iteration 10: Residual max G: 6.55e-04, frequence: 3.96069691710542
+2025-12-29 20:09:57
+Iteration 11: Residual max G: 1.14e-03, frequence: 3.961659948737803
+2025-12-29 20:11:17
+Iteration 12: Residual max G: 4.47e-04, frequence: 3.961233235992069
+2025-12-29 20:12:37
+Iteration 13: Residual max G: 1.36e-04, frequence: 3.9611007962183553
+2025-12-29 20:13:57
+Iteration 14: Residual max G: 6.16e-05, frequence: 3.9610618165984692
+2025-12-29 20:13:57
+################## New Iteration ##################
+2025-12-29 20:13:57
+length_s: 0.297203, freq: 3.96
+2025-12-29 20:13:57
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 20:14:38
+Iteration 0: Residual max G: 6.77e+05, frequence: 3.9619229150394686
+2025-12-29 20:15:14
+Singular system detected: determinant is approximately zero (det = -2.30e-13). No unique solution exists.
+2025-12-29 20:15:56
+Iteration 1: Residual max G: 6.45e+02, frequence: 3.978319629031114
+2025-12-29 20:17:16
+Iteration 2: Residual max G: 9.45e-01, frequence: 3.966495648422609
+2025-12-29 20:18:36
+Iteration 3: Residual max G: 9.01e-03, frequence: 3.9625193109949843
+2025-12-29 20:19:55
+Iteration 4: Residual max G: 4.74e-04, frequence: 3.9621173277754127
+2025-12-29 20:21:15
+Iteration 5: Residual max G: 1.32e-04, frequence: 3.961999617850424
+2025-12-29 20:22:34
+Iteration 6: Residual max G: 4.05e-05, frequence: 3.9619713745552065
+2025-12-29 20:22:35
+################## New Iteration ##################
+2025-12-29 20:22:35
+length_s: 0.356644, freq: 3.96
+2025-12-29 20:22:35
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 20:23:16
+Iteration 0: Residual max G: 9.80e+05, frequence: 3.9630627217434897
+2025-12-29 20:23:53
+Singular system detected: determinant is approximately zero (det = -2.26e-13). No unique solution exists.
+2025-12-29 20:24:36
+Iteration 1: Residual max G: 1.34e+03, frequence: 3.9981300802774036
+2025-12-29 20:25:13
+Singular system detected: determinant is approximately zero (det = -9.60e-09). No unique solution exists.
+2025-12-29 20:25:55
+Iteration 2: Residual max G: 2.40e+00, frequence: 3.972931853770557
+2025-12-29 20:27:14
+Iteration 3: Residual max G: 7.25e-02, frequence: 3.948385833197369
+2025-12-29 20:28:34
+Iteration 4: Residual max G: 2.00e-02, frequence: 3.957989389042327
+2025-12-29 20:29:53
+Iteration 5: Residual max G: 2.91e-02, frequence: 3.9711470894643406
+2025-12-29 20:31:13
+Iteration 6: Residual max G: 1.08e-02, frequence: 3.96583903105253
+2025-12-29 20:32:32
+Iteration 7: Residual max G: 4.60e-03, frequence: 3.9641460016708567
+2025-12-29 20:33:52
+Iteration 8: Residual max G: 9.18e-04, frequence: 3.9635189411607743
+2025-12-29 20:35:13
+Iteration 9: Residual max G: 1.25e-03, frequence: 3.9627383657658344
+2025-12-29 20:36:32
+Iteration 10: Residual max G: 4.33e-04, frequence: 3.963191834007856
+2025-12-29 20:37:52
+Iteration 11: Residual max G: 5.97e-05, frequence: 3.9632278142586927
+2025-12-29 20:37:52
+################## New Iteration ##################
+2025-12-29 20:37:52
+length_s: 0.427973, freq: 3.96
+2025-12-29 20:37:52
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 20:38:33
+Iteration 0: Residual max G: 1.42e+06, frequence: 3.9647352969183514
+2025-12-29 20:39:09
+Singular system detected: determinant is approximately zero (det = -3.12e-13). No unique solution exists.
+2025-12-29 20:39:51
+Iteration 1: Residual max G: 2.81e+03, frequence: 4.018835081174936
+2025-12-29 20:40:29
+Singular system detected: determinant is approximately zero (det = -1.38e-09). No unique solution exists.
+2025-12-29 20:41:11
+Iteration 2: Residual max G: 6.51e+00, frequence: 3.8860080252998577
+2025-12-29 20:42:30
+Iteration 3: Residual max G: 1.75e+00, frequence: 3.9575698530224206
+2025-12-29 20:43:50
+Iteration 4: Residual max G: 1.20e-01, frequence: 3.976702553184803
+2025-12-29 20:45:10
+Iteration 5: Residual max G: 9.96e-02, frequence: 3.9464143423059954
+2025-12-29 20:46:29
+Iteration 6: Residual max G: 4.40e-02, frequence: 3.961453877087715
+2025-12-29 20:47:49
+Iteration 7: Residual max G: 4.48e-02, frequence: 3.9716479510289946
+2025-12-29 20:49:09
+Iteration 8: Residual max G: 3.75e-02, frequence: 3.9536376497964825
+2025-12-29 20:50:29
+Iteration 9: Residual max G: 9.77e-02, frequence: 3.983361684199193
+2025-12-29 20:51:48
+Iteration 10: Residual max G: 3.01e-02, frequence: 3.971184582877443
+2025-12-29 20:53:08
+Iteration 11: Residual max G: 2.78e-02, frequence: 3.9667854728190868
+2025-12-29 20:54:27
+Iteration 12: Residual max G: 2.05e-03, frequence: 3.9655319142380754
+2025-12-29 20:55:47
+Iteration 13: Residual max G: 2.28e-03, frequence: 3.9643173754883563
+2025-12-29 20:57:07
+Iteration 14: Residual max G: 8.44e-04, frequence: 3.964846012424502
+2025-12-29 20:58:26
+Iteration 15: Residual max G: 2.34e-04, frequence: 3.9649846044314274
+2025-12-29 20:59:46
+Iteration 16: Residual max G: 7.94e-05, frequence: 3.9650259540685466
+2025-12-29 20:59:47
+################## New Iteration ##################
+2025-12-29 20:59:47
+length_s: 0.513567, freq: 3.97
+2025-12-29 20:59:47
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 21:00:28
+Iteration 0: Residual max G: 2.06e+06, frequence: 3.9671832124866437
+2025-12-29 21:01:05
+Singular system detected: determinant is approximately zero (det = -1.26e-13). No unique solution exists.
+2025-12-29 21:01:48
+Iteration 1: Residual max G: 5.88e+03, frequence: 4.253459043174057
+2025-12-29 21:02:25
+Singular system detected: determinant is approximately zero (det = -4.24e-09). No unique solution exists.
+2025-12-29 21:03:08
+Iteration 2: Residual max G: 1.17e+01, frequence: 4.047253040609157
+2025-12-29 21:04:28
+Iteration 3: Residual max G: 4.40e+00, frequence: 3.9900344322522874
+2025-12-29 21:05:47
+Iteration 4: Residual max G: 5.60e-02, frequence: 3.9738448151446364
+2025-12-29 21:07:07
+Iteration 5: Residual max G: 4.10e-02, frequence: 3.9579498357854317
+2025-12-29 21:08:26
+Iteration 6: Residual max G: 1.47e-02, frequence: 3.9649408312316634
+2025-12-29 21:09:46
+Iteration 7: Residual max G: 3.75e-03, frequence: 3.967312670751474
+2025-12-29 21:11:05
+Iteration 8: Residual max G: 4.35e-04, frequence: 3.9675096407456274
+2025-12-29 21:12:25
+Iteration 9: Residual max G: 1.58e-04, frequence: 3.9675626595543854
+2025-12-29 21:13:45
+Iteration 10: Residual max G: 6.97e-05, frequence: 3.967581219258205
+2025-12-29 21:13:45
+################## New Iteration ##################
+2025-12-29 21:13:45
+length_s: 0.616281, freq: 3.97
+2025-12-29 21:13:45
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 21:14:27
+Iteration 0: Residual max G: 3.01e+06, frequence: 3.9706464824779837
+2025-12-29 21:15:03
+Singular system detected: determinant is approximately zero (det = -1.59e-13). No unique solution exists.
+2025-12-29 21:15:45
+Iteration 1: Residual max G: 1.24e+04, frequence: 4.461153412802058
+2025-12-29 21:16:23
+Singular system detected: determinant is approximately zero (det = -2.72e-09). No unique solution exists.
+2025-12-29 21:17:05
+Iteration 2: Residual max G: 3.10e+01, frequence: 4.093524746830203
+2025-12-29 21:18:25
+Iteration 3: Residual max G: 4.76e+01, frequence: 4.005004030564138
+2025-12-29 21:19:45
+Iteration 4: Residual max G: 3.04e-01, frequence: 3.9804147027775096
+2025-12-29 21:21:04
+Iteration 5: Residual max G: 7.00e-02, frequence: 3.9720534110168706
+2025-12-29 21:22:24
+Iteration 6: Residual max G: 2.45e-03, frequence: 3.9713369380877452
+2025-12-29 21:23:44
+Iteration 7: Residual max G: 4.59e-04, frequence: 3.9712010107371616
+2025-12-29 21:25:04
+Iteration 8: Residual max G: 5.02e-05, frequence: 3.9711748961302886
+2025-12-29 21:25:04
+################## New Iteration ##################
+2025-12-29 21:25:04
+length_s: 0.739537, freq: 3.97
+2025-12-29 21:25:04
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 21:25:46
+Iteration 0: Residual max G: 4.41e+06, frequence: 3.9754851348457834
+2025-12-29 21:26:23
+Singular system detected: determinant is approximately zero (det = -2.22e-13). No unique solution exists.
+2025-12-29 21:27:06
+Iteration 1: Residual max G: 2.61e+04, frequence: 4.74220269401329
+2025-12-29 21:27:43
+Singular system detected: determinant is approximately zero (det = -1.93e-09). No unique solution exists.
+2025-12-29 21:28:26
+Iteration 2: Residual max G: 8.76e+01, frequence: 4.166452150277958
+2025-12-29 21:29:45
+Iteration 3: Residual max G: 1.49e+02, frequence: 4.0271403983598875
+2025-12-29 21:31:05
+Iteration 4: Residual max G: 1.92e+00, frequence: 3.991049445778155
+2025-12-29 21:32:25
+Iteration 5: Residual max G: 1.26e+00, frequence: 3.9565980587247602
+2025-12-29 21:33:44
+Iteration 6: Residual max G: 3.02e-01, frequence: 3.969481501966294
+2025-12-29 21:35:04
+Iteration 7: Residual max G: 1.91e-01, frequence: 3.9743826670322235
+2025-12-29 21:36:24
+Iteration 8: Residual max G: 3.60e-03, frequence: 3.9757228274005194
+2025-12-29 21:37:43
+Iteration 9: Residual max G: 4.10e-03, frequence: 3.9769197035020825
+2025-12-29 21:39:03
+Iteration 10: Residual max G: 1.94e-03, frequence: 3.976434887992998
+2025-12-29 21:40:23
+Iteration 11: Residual max G: 4.66e-04, frequence: 3.97627244723294
+2025-12-29 21:41:43
+Iteration 12: Residual max G: 5.58e-04, frequence: 3.976094930683867
+2025-12-29 21:43:03
+Iteration 13: Residual max G: 2.02e-04, frequence: 3.9761700022379514
+2025-12-29 21:44:22
+Iteration 14: Residual max G: 6.81e-05, frequence: 3.9761947252483583
+2025-12-29 21:44:23
+################## New Iteration ##################
+2025-12-29 21:44:23
+length_s: 0.887444, freq: 3.98
+2025-12-29 21:44:23
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 21:45:04
+Iteration 0: Residual max G: 6.51e+06, frequence: 3.98221404034714
+2025-12-29 21:45:41
+Singular system detected: determinant is approximately zero (det = -5.36e-13). No unique solution exists.
+2025-12-29 21:46:24
+Iteration 1: Residual max G: 5.55e+04, frequence: 4.673001356222149
+2025-12-29 21:47:01
+Singular system detected: determinant is approximately zero (det = -2.60e-10). No unique solution exists.
+2025-12-29 21:47:44
+Iteration 2: Residual max G: 1.36e+03, frequence: 3.007970994414648
+2025-12-29 21:49:04
+Iteration 3: Residual max G: 5.81e+03, frequence: 5.285873370534093
+2025-12-29 21:50:24
+Iteration 4: Residual max G: 9.84e+02, frequence: 4.221140299603446
+2025-12-29 21:51:44
+Iteration 5: Residual max G: 3.51e+02, frequence: 4.058999938471538
+2025-12-29 21:53:04
+Iteration 6: Residual max G: 1.37e+01, frequence: 4.007864821906382
+2025-12-29 21:54:23
+Iteration 7: Residual max G: 1.34e+00, frequence: 3.9909727678755496
+2025-12-29 21:55:43
+Iteration 8: Residual max G: 3.05e-01, frequence: 3.9845579893657552
+2025-12-29 21:57:03
+Iteration 9: Residual max G: 4.82e-02, frequence: 3.983569169379845
+2025-12-29 21:58:23
+Iteration 10: Residual max G: 3.21e-03, frequence: 3.98280093604358
+2025-12-29 21:59:42
+Iteration 11: Residual max G: 1.04e-03, frequence: 3.9831332232709404
+2025-12-29 22:01:02
+Iteration 12: Residual max G: 2.85e-04, frequence: 3.983215325404767
+2025-12-29 22:02:22
+Iteration 13: Residual max G: 1.74e-04, frequence: 3.9832432632705377
+2025-12-29 22:03:42
+Iteration 14: Residual max G: 1.72e-04, frequence: 3.983271887962341
+2025-12-29 22:05:02
+Iteration 15: Residual max G: 6.79e-05, frequence: 3.983252053821022
+2025-12-29 22:05:03
+################## New Iteration ##################
+2025-12-29 22:05:03
+length_s: 1.064933, freq: 3.98
+2025-12-29 22:05:03
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 22:05:44
+Iteration 0: Residual max G: 9.70e+06, frequence: 3.991711458420922
+2025-12-29 22:06:21
+Singular system detected: determinant is approximately zero (det = -3.85e-13). No unique solution exists.
+2025-12-29 22:07:04
+Iteration 1: Residual max G: 1.19e+05, frequence: 6.086975435221444
+2025-12-29 22:07:41
+Singular system detected: determinant is approximately zero (det = -1.70e-09). No unique solution exists.
+2025-12-29 22:08:24
+Iteration 2: Residual max G: 8.59e+02, frequence: 4.55455681402365
+2025-12-29 22:09:44
+Iteration 3: Residual max G: 2.70e+03, frequence: 4.103719206068868
+2025-12-29 22:11:04
+Iteration 4: Residual max G: 6.28e+01, frequence: 4.011989404085619
+2025-12-29 22:12:24
+Iteration 5: Residual max G: 3.94e+01, frequence: 3.99479694096836
+2025-12-29 22:13:44
+Iteration 6: Residual max G: 2.97e-01, frequence: 3.98612598276704
+2025-12-29 22:15:03
+Iteration 7: Residual max G: 2.06e+00, frequence: 4.000976030433764
+2025-12-29 22:16:23
+Iteration 8: Residual max G: 4.41e-01, frequence: 3.995161975871689
+2025-12-29 22:17:43
+Iteration 9: Residual max G: 1.56e-02, frequence: 3.9936373748606893
+2025-12-29 22:19:02
+Iteration 10: Residual max G: 2.15e-03, frequence: 3.9932594855930357
+2025-12-29 22:20:22
+Iteration 11: Residual max G: 2.36e-03, frequence: 3.9928907452286366
+2025-12-29 22:21:42
+Iteration 12: Residual max G: 2.63e-03, frequence: 3.9933073057176323
+2025-12-29 22:23:02
+Iteration 13: Residual max G: 3.05e-03, frequence: 3.9928106452057555
+2025-12-29 22:24:22
+Iteration 14: Residual max G: 8.22e-04, frequence: 3.993017833119767
+2025-12-29 22:25:41
+Iteration 15: Residual max G: 2.52e-04, frequence: 3.993063055685601
+2025-12-29 22:27:02
+Iteration 16: Residual max G: 1.19e-04, frequence: 3.9930794985248
+2025-12-29 22:28:21
+Iteration 17: Residual max G: 3.42e-05, frequence: 3.993081507016521
+2025-12-29 22:28:22
+################## New Iteration ##################
+2025-12-29 22:28:22
+length_s: 1.277920, freq: 3.99
+2025-12-29 22:28:22
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 22:29:03
+Iteration 0: Residual max G: 1.10e+07, frequence: 4.002894475438559
+2025-12-29 22:29:40
+Singular system detected: determinant is approximately zero (det = -1.20e-12). No unique solution exists.
+2025-12-29 22:30:23
+Iteration 1: Residual max G: 1.50e+05, frequence: 5.271131190815759
+2025-12-29 22:31:00
+Singular system detected: determinant is approximately zero (det = -7.85e-10). No unique solution exists.
+2025-12-29 22:31:42
+Iteration 2: Residual max G: 3.77e+03, frequence: 4.369450596461876
+2025-12-29 22:33:02
+Iteration 3: Residual max G: 5.01e+03, frequence: 4.074973697056253
+2025-12-29 22:34:22
+Iteration 4: Residual max G: 4.93e+02, frequence: 3.9224264214077884
+2025-12-29 22:35:43
+Iteration 5: Residual max G: 7.82e+02, frequence: 4.092910616997665
+2025-12-29 22:37:02
+Iteration 6: Residual max G: 1.56e+03, frequence: 3.9041581827338825
+2025-12-29 22:38:22
+Iteration 7: Residual max G: 2.25e+02, frequence: 3.977286024908615
+2025-12-29 22:39:42
+Iteration 8: Residual max G: 2.15e+02, frequence: 4.0341139675306446
+2025-12-29 22:41:03
+Iteration 9: Residual max G: 8.16e+01, frequence: 4.01236557162197
+2025-12-29 22:42:23
+Iteration 10: Residual max G: 2.44e+01, frequence: 4.006495699303418
+2025-12-29 22:43:42
+Iteration 11: Residual max G: 1.54e+00, frequence: 4.00509590753591
+2025-12-29 22:45:02
+Iteration 12: Residual max G: 6.65e-01, frequence: 4.004022989976345
+2025-12-29 22:46:22
+Iteration 13: Residual max G: 5.71e-02, frequence: 4.004410146967486
+2025-12-29 22:47:43
+Iteration 14: Residual max G: 7.83e-02, frequence: 4.004769128726786
+2025-12-29 22:49:03
+Iteration 15: Residual max G: 1.49e-02, frequence: 4.004635504996724
+2025-12-29 22:50:23
+Iteration 16: Residual max G: 4.38e-03, frequence: 4.00454183279335
+2025-12-29 22:51:43
+Iteration 17: Residual max G: 4.97e-04, frequence: 4.004570794121789
+2025-12-29 22:53:03
+Iteration 18: Residual max G: 8.45e-04, frequence: 4.004612422123741
+2025-12-29 22:54:23
+Iteration 19: Residual max G: 1.11e-03, frequence: 4.004560629733667
+2025-12-29 22:55:00
+################## New Iteration ##################
+2025-12-29 22:55:00
+length_s: 1.277920, freq: 3.99
+2025-12-29 22:55:00
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 22:55:42
+Iteration 0: Residual max G: 3.03e+06, frequence: 3.997006694385336
+2025-12-29 22:56:19
+Singular system detected: determinant is approximately zero (det = -5.89e-12). No unique solution exists.
+2025-12-29 22:57:02
+Iteration 1: Residual max G: 1.20e+04, frequence: 4.1460689809436895
+2025-12-29 22:58:21
+Iteration 2: Residual max G: 1.08e+02, frequence: 4.0381269506006445
+2025-12-29 22:59:41
+Iteration 3: Residual max G: 5.43e+01, frequence: 4.00804983755923
+2025-12-29 23:01:01
+Iteration 4: Residual max G: 3.75e-01, frequence: 3.9991340756695224
+2025-12-29 23:02:21
+Iteration 5: Residual max G: 3.77e-01, frequence: 3.9954136281452803
+2025-12-29 23:03:40
+Iteration 6: Residual max G: 2.59e-01, frequence: 3.9996904676110407
+2025-12-29 23:05:00
+Iteration 7: Residual max G: 3.36e-01, frequence: 3.9946291107485643
+2025-12-29 23:06:19
+Iteration 8: Residual max G: 3.14e-02, frequence: 3.9965317269452636
+2025-12-29 23:07:39
+Iteration 9: Residual max G: 7.93e-03, frequence: 3.9971392598715716
+2025-12-29 23:08:59
+Iteration 10: Residual max G: 1.61e-03, frequence: 3.9973453780000754
+2025-12-29 23:10:19
+Iteration 11: Residual max G: 2.07e-04, frequence: 3.997388891616456
+2025-12-29 23:11:39
+Iteration 12: Residual max G: 1.02e-04, frequence: 3.997402505787002
+2025-12-29 23:12:59
+Iteration 13: Residual max G: 4.01e-05, frequence: 3.9974144390503934
+2025-12-29 23:13:01
+################## New Iteration ##################
+2025-12-29 23:13:01
+length_s: 0.511168, freq: 4.00
+2025-12-29 23:13:01
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 23:13:42
+Iteration 0: Residual max G: 2.35e+06, frequence: 4.002608618182626
+2025-12-29 23:14:19
+Singular system detected: determinant is approximately zero (det = -1.67e-12). No unique solution exists.
+2025-12-29 23:15:02
+Iteration 1: Residual max G: 7.17e+03, frequence: 4.226610774588701
+2025-12-29 23:16:21
+Iteration 2: Residual max G: 7.19e+01, frequence: 4.055246734818134
+2025-12-29 23:17:41
+Iteration 3: Residual max G: 1.31e+01, frequence: 4.014225789034701
+2025-12-29 23:19:02
+Iteration 4: Residual max G: 1.48e+01, frequence: 3.9901483701053495
+2025-12-29 23:20:21
+Iteration 5: Residual max G: 2.32e+00, frequence: 3.999962301343258
+2025-12-29 23:21:41
+Iteration 6: Residual max G: 5.47e-02, frequence: 4.002148057975237
+2025-12-29 23:23:01
+Iteration 7: Residual max G: 3.57e-02, frequence: 4.003700102509912
+2025-12-29 23:24:21
+Iteration 8: Residual max G: 7.84e-03, frequence: 4.00308715780069
+2025-12-29 23:25:41
+Iteration 9: Residual max G: 6.99e-04, frequence: 4.002931429833696
+2025-12-29 23:27:01
+Iteration 10: Residual max G: 2.38e-04, frequence: 4.002894149067073
+2025-12-29 23:28:21
+Iteration 11: Residual max G: 8.70e-05, frequence: 4.0028799010056915
+2025-12-29 23:28:21
+################## New Iteration ##################
+2025-12-29 23:28:21
+length_s: 0.613402, freq: 4.00
+2025-12-29 23:28:21
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 23:29:03
+Iteration 0: Residual max G: 3.46e+06, frequence: 4.009435676532002
+2025-12-29 23:29:40
+Singular system detected: determinant is approximately zero (det = -2.91e-12). No unique solution exists.
+2025-12-29 23:30:22
+Iteration 1: Residual max G: 1.53e+04, frequence: 4.220314680046874
+2025-12-29 23:31:00
+Singular system detected: determinant is approximately zero (det = -4.42e-09). No unique solution exists.
+2025-12-29 23:31:43
+Iteration 2: Residual max G: 6.17e+02, frequence: 3.7730436458852012
+2025-12-29 23:33:03
+Iteration 3: Residual max G: 2.63e+02, frequence: 3.9522081113588303
+2025-12-29 23:34:22
+Iteration 4: Residual max G: 4.93e+02, frequence: 4.067327961992007
+2025-12-29 23:35:42
+Iteration 5: Residual max G: 3.64e+02, frequence: 3.951061898845443
+2025-12-29 23:37:02
+Iteration 6: Residual max G: 8.29e+01, frequence: 4.003628814936047
+2025-12-29 23:38:22
+Iteration 7: Residual max G: 1.47e+00, frequence: 4.008236161816578
+2025-12-29 23:39:42
+Iteration 8: Residual max G: 1.51e-02, frequence: 4.009409725428467
+2025-12-29 23:41:02
+Iteration 9: Residual max G: 1.16e-02, frequence: 4.009746630866277
+2025-12-29 23:42:22
+Iteration 10: Residual max G: 4.11e-04, frequence: 4.009829447743491
+2025-12-29 23:43:42
+Iteration 11: Residual max G: 3.24e-04, frequence: 4.009884957120027
+2025-12-29 23:45:02
+Iteration 12: Residual max G: 1.20e-04, frequence: 4.009858504091451
+2025-12-29 23:46:22
+Iteration 13: Residual max G: 3.52e-05, frequence: 4.009851073612799
+2025-12-29 23:46:22
+################## New Iteration ##################
+2025-12-29 23:46:22
+length_s: 0.736082, freq: 4.01
+2025-12-29 23:46:22
+################## Newthon predictor-corecteur solveur ##################
+2025-12-29 23:47:04
+Iteration 0: Residual max G: 5.13e+06, frequence: 4.018211183682609
+2025-12-29 23:47:41
+Singular system detected: determinant is approximately zero (det = -3.34e-12). No unique solution exists.
+2025-12-29 23:48:24
+Iteration 1: Residual max G: 3.30e+04, frequence: 4.326094277961248
+2025-12-29 23:49:01
+Singular system detected: determinant is approximately zero (det = -5.78e-09). No unique solution exists.
+2025-12-29 23:49:44
+Iteration 2: Residual max G: 6.25e+02, frequence: 4.099544390151224
+2025-12-29 23:51:04
+Iteration 3: Residual max G: 3.49e+02, frequence: 4.025508756485888
+2025-12-29 23:52:24
+Iteration 4: Residual max G: 9.80e+00, frequence: 4.012233423273483
+2025-12-29 23:53:44
+Iteration 5: Residual max G: 8.19e+00, frequence: 4.025138701933015
+2025-12-29 23:55:04
+Iteration 6: Residual max G: 1.88e+00, frequence: 4.019220137685398
+2025-12-29 23:56:24
+Iteration 7: Residual max G: 1.11e-02, frequence: 4.018905167500589
+2025-12-29 23:57:43
+Iteration 8: Residual max G: 1.68e-03, frequence: 4.01872946189724
+2025-12-29 23:59:04
+Iteration 9: Residual max G: 1.83e-03, frequence: 4.018891018351895
+2025-12-30 00:00:24
+Iteration 10: Residual max G: 4.23e-04, frequence: 4.018825641293377
+2025-12-30 00:01:43
+Iteration 11: Residual max G: 4.78e-05, frequence: 4.018813729631683
+2025-12-30 00:01:44
+################## New Iteration ##################
+2025-12-30 00:01:44
+length_s: 0.883298, freq: 4.02
+2025-12-30 00:01:44
+################## Newthon predictor-corecteur solveur ##################
+2025-12-30 00:02:25
+Iteration 0: Residual max G: 7.66e+06, frequence: 4.029558633729251
+2025-12-30 00:03:03
+Singular system detected: determinant is approximately zero (det = -1.57e-12). No unique solution exists.
+2025-12-30 00:03:45
+Iteration 1: Residual max G: 7.17e+04, frequence: 5.152348333066994
+2025-12-30 00:04:23
+Singular system detected: determinant is approximately zero (det = -2.17e-09). No unique solution exists.
+2025-12-30 00:05:05
+Iteration 2: Residual max G: 2.84e+04, frequence: 2.9203211701287266
+2025-12-30 00:05:43
+Singular system detected: determinant is approximately zero (det = -5.53e-09). No unique solution exists.
+2025-12-30 00:06:25
+Iteration 3: Residual max G: 1.67e+06, frequence: 4.310746185439314
+2025-12-30 00:07:03
+Singular system detected: determinant is approximately zero (det = -2.95e-12). No unique solution exists.
+2025-12-30 00:07:45
+Iteration 4: Residual max G: 7.39e+03, frequence: 3.634088959233405
+2025-12-30 00:09:05
+Iteration 5: Residual max G: 8.04e+05, frequence: 3.8992262502043893
+2025-12-30 00:09:42
+Singular system detected: determinant is approximately zero (det = -1.45e-11). No unique solution exists.
+2025-12-30 00:10:25
+Iteration 6: Residual max G: 8.49e+03, frequence: 3.9607526136692677
+2025-12-30 00:11:45
+Iteration 7: Residual max G: 5.63e+04, frequence: 3.996729871796106
+2025-12-30 00:12:23
+Singular system detected: determinant is approximately zero (det = -2.59e-09). No unique solution exists.
+2025-12-30 00:13:05
+Iteration 8: Residual max G: 8.19e+03, frequence: 4.000273691597085
+2025-12-30 00:14:25
+Iteration 9: Residual max G: 3.98e+03, frequence: 4.012567377692214
+2025-12-30 00:15:45
+Iteration 10: Residual max G: 4.47e+02, frequence: 4.000981168462156
+2025-12-30 00:17:05
+Iteration 11: Residual max G: 5.47e+01, frequence: 4.005193277204433
+2025-12-30 00:18:25
+Iteration 12: Residual max G: 7.69e+00, frequence: 4.005969035866811
+2025-12-30 00:19:45
+Iteration 13: Residual max G: 8.06e-02, frequence: 4.006141464323583
+2025-12-30 00:21:05
+Iteration 14: Residual max G: 5.54e-04, frequence: 4.006196550180047
+2025-12-30 00:22:25
+Iteration 15: Residual max G: 1.21e-04, frequence: 4.006210614490593
+2025-12-30 00:23:45
+Iteration 16: Residual max G: 9.26e-05, frequence: 4.00621605551984
+2025-12-30 00:23:46
+################## New Iteration ##################
+2025-12-30 00:23:46
+length_s: 1.059958, freq: 4.01
+2025-12-30 00:23:46
+################## Newthon predictor-corecteur solveur ##################
+2025-12-30 00:24:27
+Iteration 0: Residual max G: 1.06e+07, frequence: 3.996036727593509
+2025-12-30 00:25:04
+Singular system detected: determinant is approximately zero (det = 6.23e-14). No unique solution exists.
+2025-12-30 00:25:05
+Time generate :
+14762.7 s
+2025-12-30 00:25:05
+Solver time :
+12554.6 s
+2025-12-30 00:25:05
+Number iteration Newthon 326
+2025-12-30 00:25:05
+Number point 25
+2025-12-30 00:25:06
+Total execution time:
+27783.4 s
+2025-12-30 00:25:06
+Simulation finished successfully
+2025-12-30 00:25:06
+Uploading results...
+2025-12-30 00:25:06
+100% of results uploaded
+2025-12-30 00:25:06
+Uploading done

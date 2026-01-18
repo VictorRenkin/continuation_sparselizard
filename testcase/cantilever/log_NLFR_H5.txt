@@ -1,0 +1,4500 @@
+2025-08-16 14:17:04
+Reserving resources...
+2025-08-16 14:17:46
+Setting up job...
+2025-08-16 14:17:48
+Downloading inputs...
+2025-08-16 14:17:48
+Downloading done
+2025-08-16 14:17:49
+Quanscient Allsolve 354 int64/float64
+2025-08-16 14:17:49
+Physical RAM is 265.299 GB for 4 ranks
+2025-08-16 14:17:50
+Loading mesh from 'simulation.msh'
+2025-08-16 14:17:50
+Detected curvature order 2
+Extracted 6885 nodes
+Extracted 2802 lines
+Extracted 2336 quadrangles
+Extracted 640 hexahedra
+2025-08-16 14:17:50
+Time to load the mesh:
+11.4169 ms
+2025-08-16 14:17:50
+Time to partition the mesh in 4 pieces:
+1.7052 ms
+2025-08-16 14:17:50
+Number of unknowns is 227205
+2025-08-16 14:17:57
+Iteration 0:  Residual max G: 2.00e+00
+2025-08-16 14:18:21
+Iteration 1:  Residual max G: 5.22e+06
+2025-08-16 14:19:35
+Iteration 2:  Residual max G: 3.74e+04
+2025-08-16 14:20:31
+Iteration 3:  Residual max G: 9.74e+00
+2025-08-16 14:21:26
+Iteration 4:  Residual max G: 3.03e+02
+2025-08-16 14:22:23
+Iteration 5:  Residual max G: 5.02e-01
+2025-08-16 14:23:17
+Iteration 6:  Residual max G: 1.79e+00
+2025-08-16 14:24:10
+Iteration 7:  Residual max G: 4.21e-05
+2025-08-16 14:24:10
+Convergence reached
+2025-08-16 14:25:03
+################## New Iteration ##################
+2025-08-16 14:26:35
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 14:26:50
+Iteration 0: Residual max G: 2.63e+04, frequence: 4.0901760156221005
+2025-08-16 14:28:41
+Iteration 1: Residual max G: 1.22e+01, frequence: 4.07279224373894
+2025-08-16 14:30:34
+Iteration 2: Residual max G: 1.18e+01, frequence: 4.091216086613544
+2025-08-16 14:32:35
+Iteration 3: Residual max G: 5.02e-02, frequence: 4.090876093104871
+2025-08-16 14:34:26
+Iteration 4: Residual max G: 1.04e-05, frequence: 4.0908753284254065
+2025-08-16 14:34:26
+Second value f:4.0908753284254065,u:0.08604519020560344
+2025-08-16 14:34:26
+################## New Iteration ##################
+2025-08-16 14:36:10
+Theta  :0.6719615358391632 [°]
+2025-08-16 14:36:10
+s_change : 1.302153239175893
+2025-08-16 14:36:10
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 14:36:25
+Iteration 0: Residual max G: 4.47e+04, frequence: 4.079797174920992
+2025-08-16 14:38:21
+Iteration 1: Residual max G: 3.01e+00, frequence: 4.0776073259326555
+2025-08-16 14:40:08
+Iteration 2: Residual max G: 7.62e+00, frequence: 4.080627786313052
+2025-08-16 14:42:00
+Iteration 3: Residual max G: 7.90e-03, frequence: 4.080644751440503
+2025-08-16 14:43:51
+Iteration 4: Residual max G: 4.02e-05, frequence: 4.08064434153156
+2025-08-16 14:43:51
+Second value f:4.08064434153156,u:0.09336473725824346
+2025-08-16 14:43:51
+################## New Iteration ##################
+2025-08-16 14:45:22
+Theta  :0.8389830115589065 [°]
+2025-08-16 14:45:22
+s_change : 1.1978262960380093
+2025-08-16 14:45:22
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 14:45:38
+Iteration 0: Residual max G: 6.44e+04, frequence: 4.069416023141199
+2025-08-16 14:47:35
+Iteration 1: Residual max G: 5.93e+00, frequence: 4.069708538259645
+2025-08-16 14:49:34
+Iteration 2: Residual max G: 1.52e+01, frequence: 4.070341729027672
+2025-08-16 14:51:23
+Iteration 3: Residual max G: 4.92e-03, frequence: 4.070332969212477
+2025-08-16 14:53:20
+Iteration 4: Residual max G: 7.11e-05, frequence: 4.070338952987503
+2025-08-16 14:53:21
+Second value f:4.070338952987503,u:0.10212010567588217
+2025-08-16 14:53:21
+################## New Iteration ##################
+2025-08-16 14:54:53
+Theta  :0.9642102156514825 [°]
+2025-08-16 14:54:53
+s_change : 1.1251258456208049
+2025-08-16 14:54:53
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 14:55:09
+Iteration 0: Residual max G: 8.17e+04, frequence: 4.0597986571219815
+2025-08-16 14:56:57
+Iteration 1: Residual max G: 9.49e+00, frequence: 4.062421524952527
+2025-08-16 14:58:46
+Iteration 2: Residual max G: 2.13e+01, frequence: 4.060687908972941
+2025-08-16 15:00:34
+Iteration 3: Residual max G: 3.56e-04, frequence: 4.060688911972972
+2025-08-16 15:00:34
+Second value f:4.060688911972972,u:0.11194823060583198
+2025-08-16 15:00:34
+################## New Iteration ##################
+2025-08-16 15:02:11
+Theta  :1.0550534723369887 [°]
+2025-08-16 15:02:11
+s_change : 1.0751640599384102
+2025-08-16 15:02:11
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 15:02:26
+Iteration 0: Residual max G: 9.48e+04, frequence: 4.051330825009328
+2025-08-16 15:04:21
+Iteration 1: Residual max G: 1.47e+01, frequence: 4.05412681649117
+2025-08-16 15:06:19
+Iteration 2: Residual max G: 2.16e+01, frequence: 4.052120185389249
+2025-08-16 15:08:14
+Iteration 3: Residual max G: 6.31e-02, frequence: 4.052107057263485
+2025-08-16 15:10:07
+Iteration 4: Residual max G: 2.75e-03, frequence: 4.052111321917235
+2025-08-16 15:12:05
+Iteration 5: Residual max G: 9.62e-06, frequence: 4.052112464099983
+2025-08-16 15:12:05
+Second value f:4.052112464099983,u:0.1224812975683113
+2025-08-16 15:12:05
+################## New Iteration ##################
+2025-08-16 15:13:44
+Theta  :1.109843220041582 [°]
+2025-08-16 15:13:44
+s_change : 1.046109861224906
+2025-08-16 15:13:44
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 15:13:59
+Iteration 0: Residual max G: 1.04e+05, frequence: 4.043947210790239
+2025-08-16 15:15:52
+Iteration 1: Residual max G: 1.75e+01, frequence: 4.046803779060604
+2025-08-16 15:17:41
+Iteration 2: Residual max G: 8.52e+01, frequence: 4.044630705667069
+2025-08-16 15:19:33
+Iteration 3: Residual max G: 1.37e+01, frequence: 4.044662221756348
+2025-08-16 15:21:26
+Iteration 4: Residual max G: 1.35e+01, frequence: 4.0446395078671955
+2025-08-16 15:23:15
+Iteration 5: Residual max G: 4.19e-01, frequence: 4.044649904886766
+2025-08-16 15:25:13
+Iteration 6: Residual max G: 8.76e-03, frequence: 4.044645852474751
+2025-08-16 15:27:03
+Iteration 7: Residual max G: 2.04e-05, frequence: 4.044651959843485
+2025-08-16 15:27:04
+Second value f:4.044651959843485,u:0.13345585770094565
+2025-08-16 15:27:04
+################## New Iteration ##################
+2025-08-16 15:28:47
+Theta  :1.1551205080589708 [°]
+2025-08-16 15:28:47
+s_change : 1.0226934109090045
+2025-08-16 15:28:47
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 15:29:03
+Iteration 0: Residual max G: 1.09e+05, frequence: 4.0376872921595135
+2025-08-16 15:31:03
+Iteration 1: Residual max G: 1.68e+01, frequence: 4.039920814868683
+2025-08-16 15:33:03
+Iteration 2: Residual max G: 6.15e+01, frequence: 4.038282759256539
+2025-08-16 15:35:00
+Iteration 3: Residual max G: 5.38e-01, frequence: 4.038270292832319
+2025-08-16 15:36:59
+Iteration 4: Residual max G: 2.73e-01, frequence: 4.0382726055942735
+2025-08-16 15:38:57
+Iteration 5: Residual max G: 4.73e-05, frequence: 4.0382721258659435
+2025-08-16 15:38:57
+Second value f:4.0382721258659435,u:0.1446262253531656
+2025-08-16 15:38:57
+################## New Iteration ##################
+2025-08-16 15:40:40
+Theta  :1.1838163484957192 [°]
+2025-08-16 15:40:40
+s_change : 1.008124653058684
+2025-08-16 15:40:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 15:40:55
+Iteration 0: Residual max G: 1.11e+05, frequence: 4.032408146582378
+2025-08-16 15:42:47
+Iteration 1: Residual max G: 1.73e+01, frequence: 4.034166144648142
+2025-08-16 15:44:44
+Iteration 2: Residual max G: 5.97e+01, frequence: 4.032844614006133
+2025-08-16 15:46:45
+Iteration 3: Residual max G: 7.83e-01, frequence: 4.032856218084587
+2025-08-16 15:48:41
+Iteration 4: Residual max G: 4.53e-01, frequence: 4.032860227384323
+2025-08-16 15:50:39
+Iteration 5: Residual max G: 1.92e-05, frequence: 4.032853768443929
+2025-08-16 15:50:39
+Second value f:4.032853768443929,u:0.15582643756532671
+2025-08-16 15:50:39
+################## New Iteration ##################
+2025-08-16 15:52:20
+Theta  :1.1938907518228474 [°]
+2025-08-16 15:52:20
+s_change : 1.0030592942066785
+2025-08-16 15:52:20
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 15:52:36
+Iteration 0: Residual max G: 1.12e+05, frequence: 4.027819439975807
+2025-08-16 15:54:34
+Iteration 1: Residual max G: 1.76e+01, frequence: 4.029431715537559
+2025-08-16 15:56:33
+Iteration 2: Residual max G: 6.00e+01, frequence: 4.028249799721397
+2025-08-16 15:58:31
+Iteration 3: Residual max G: 1.45e+00, frequence: 4.028249947482176
+2025-08-16 16:00:29
+Iteration 4: Residual max G: 9.81e-01, frequence: 4.0282453575011985
+2025-08-16 16:02:24
+Iteration 5: Residual max G: 5.94e-04, frequence: 4.028241501984646
+2025-08-16 16:04:22
+Iteration 6: Residual max G: 5.47e-05, frequence: 4.028248752825841
+2025-08-16 16:04:22
+Second value f:4.028248752825841,u:0.16699368672731368
+2025-08-16 16:04:22
+################## New Iteration ##################
+2025-08-16 16:06:04
+Theta  :1.195836875327529 [°]
+2025-08-16 16:06:04
+s_change : 1.0020837302910988
+2025-08-16 16:06:04
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 16:06:20
+Iteration 0: Residual max G: 1.13e+05, frequence: 4.024000705033261
+2025-08-16 16:08:16
+Iteration 1: Residual max G: 1.78e+01, frequence: 4.025335728180943
+2025-08-16 16:10:13
+Iteration 2: Residual max G: 6.19e+01, frequence: 4.024296025011019
+2025-08-16 16:12:10
+Iteration 3: Residual max G: 4.96e+00, frequence: 4.0243096301521195
+2025-08-16 16:14:07
+Iteration 4: Residual max G: 4.31e+00, frequence: 4.024287910883789
+2025-08-16 16:16:05
+Iteration 5: Residual max G: 1.97e-02, frequence: 4.0242959886517795
+2025-08-16 16:18:02
+Iteration 6: Residual max G: 7.34e-05, frequence: 4.024300415644517
+2025-08-16 16:18:02
+Second value f:4.024300415644517,u:0.17811048680714078
+2025-08-16 16:18:02
+################## New Iteration ##################
+2025-08-16 16:19:42
+Theta  :1.209244839935443 [°]
+2025-08-16 16:19:42
+s_change : 0.9953882469734344
+2025-08-16 16:19:42
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 16:19:57
+Iteration 0: Residual max G: 1.12e+05, frequence: 4.020685377385088
+2025-08-16 16:21:55
+Iteration 1: Residual max G: 1.76e+01, frequence: 4.0218313240327115
+2025-08-16 16:23:44
+Iteration 2: Residual max G: 6.17e+01, frequence: 4.020922667261706
+2025-08-16 16:25:44
+Iteration 3: Residual max G: 1.19e+01, frequence: 4.020933577428691
+2025-08-16 16:27:32
+Iteration 4: Residual max G: 1.46e+01, frequence: 4.020924210354078
+2025-08-16 16:29:33
+Iteration 5: Residual max G: 8.38e-01, frequence: 4.020922813688985
+2025-08-16 16:31:23
+Iteration 6: Residual max G: 4.81e-02, frequence: 4.020920475451538
+2025-08-16 16:33:22
+Iteration 7: Residual max G: 1.01e-04, frequence: 4.020918576588394
+2025-08-16 16:33:22
+Second value f:4.020918576588394,u:0.18909698500289748
+2025-08-16 16:33:22
+################## New Iteration ##################
+2025-08-16 16:34:54
+Theta  :1.2239729295214987 [°]
+2025-08-16 16:34:54
+s_change : 0.98808508673947
+2025-08-16 16:34:54
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 16:35:10
+Iteration 0: Residual max G: 1.10e+05, frequence: 4.01783301289027
+2025-08-16 16:37:03
+Iteration 1: Residual max G: 1.68e+01, frequence: 4.018886487972666
+2025-08-16 16:38:59
+Iteration 2: Residual max G: 6.12e+01, frequence: 4.018041357077065
+2025-08-16 16:41:00
+Iteration 3: Residual max G: 3.23e+01, frequence: 4.018064663356963
+2025-08-16 16:43:01
+Iteration 4: Residual max G: 1.21e+02, frequence: 4.01802348266886
+2025-08-16 16:45:01
+Iteration 5: Residual max G: 3.63e+01, frequence: 4.01799252618681
+2025-08-16 16:47:01
+Iteration 6: Residual max G: 7.84e+02, frequence: 4.018108052736104
+2025-08-16 16:48:55
+Iteration 7: Residual max G: 2.00e+00, frequence: 4.018120975669561
+2025-08-16 16:50:52
+Iteration 8: Residual max G: 3.33e+02, frequence: 4.018042143691634
+2025-08-16 16:52:50
+Iteration 9: Residual max G: 1.67e-02, frequence: 4.0180396252746915
+2025-08-16 16:54:46
+Iteration 10: Residual max G: 4.57e-01, frequence: 4.018043314664652
+2025-08-16 16:56:42
+Iteration 11: Residual max G: 8.57e-05, frequence: 4.018043582185559
+2025-08-16 16:56:42
+Second value f:4.018043582185559,u:0.19986908119161345
+2025-08-16 16:56:42
+################## New Iteration ##################
+2025-08-16 16:58:21
+Theta  :1.1971726502935855 [°]
+2025-08-16 16:58:21
+s_change : 1.001414674562535
+2025-08-16 16:58:21
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 16:58:37
+Iteration 0: Residual max G: 1.10e+05, frequence: 4.015353672923778
+2025-08-16 17:00:33
+Iteration 1: Residual max G: 1.70e+01, frequence: 4.0163614817015825
+2025-08-16 17:02:29
+Iteration 2: Residual max G: 6.40e+01, frequence: 4.015554052573054
+2025-08-16 17:04:21
+Iteration 3: Residual max G: 1.29e+02, frequence: 4.015500351582705
+2025-08-16 17:06:14
+Iteration 4: Residual max G: 1.03e+02, frequence: 4.015465587990955
+2025-08-16 17:08:02
+Iteration 5: Residual max G: 8.94e+02, frequence: 4.015339308492746
+2025-08-16 17:10:00
+Iteration 6: Residual max G: 1.37e+01, frequence: 4.015323405711112
+2025-08-16 17:11:57
+Iteration 7: Residual max G: 5.23e+03, frequence: 4.015621847529473
+2025-08-16 17:13:47
+Iteration 8: Residual max G: 9.05e-02, frequence: 4.01562250096247
+2025-08-16 17:15:45
+Iteration 9: Residual max G: 2.91e+02, frequence: 4.015550359161381
+2025-08-16 17:17:45
+Iteration 10: Residual max G: 1.45e-04, frequence: 4.0155552356680815
+2025-08-16 17:17:45
+Second value f:4.0155552356680815,u:0.21056757168637238
+2025-08-16 17:17:45
+################## New Iteration ##################
+2025-08-16 17:19:21
+Theta  :1.2000891652629915 [°]
+2025-08-16 17:19:21
+s_change : 0.999955418362295
+2025-08-16 17:19:21
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 17:19:36
+Iteration 0: Residual max G: 1.10e+05, frequence: 4.013248646395626
+2025-08-16 17:21:29
+Iteration 1: Residual max G: 1.70e+01, frequence: 4.014174110275582
+2025-08-16 17:23:23
+Iteration 2: Residual max G: 6.53e+01, frequence: 4.013383491077364
+2025-08-16 17:25:17
+Iteration 3: Residual max G: 1.96e+01, frequence: 4.013368974450417
+2025-08-16 17:27:11
+Iteration 4: Residual max G: 5.49e+01, frequence: 4.013399607663767
+2025-08-16 17:29:04
+Iteration 5: Residual max G: 3.36e+03, frequence: 4.013160770494781
+2025-08-16 17:30:53
+Iteration 6: Residual max G: 9.53e-01, frequence: 4.013159892288571
+2025-08-16 17:32:45
+Iteration 7: Residual max G: 3.31e+03, frequence: 4.013389152204956
+2025-08-16 17:34:36
+Iteration 8: Residual max G: 1.60e-02, frequence: 4.013396811615683
+2025-08-16 17:36:29
+Iteration 9: Residual max G: 1.30e+00, frequence: 4.013386592143825
+2025-08-16 17:38:20
+Iteration 10: Residual max G: 7.10e-05, frequence: 4.0133888461818
+2025-08-16 17:38:20
+Second value f:4.0133888461818,u:0.22117217660567
+2025-08-16 17:38:20
+################## New Iteration ##################
+2025-08-16 17:40:01
+Theta  :1.2211350978959599 [°]
+2025-08-16 17:40:01
+s_change : 0.9894880914307855
+2025-08-16 17:40:01
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 17:40:16
+Iteration 0: Residual max G: 1.08e+05, frequence: 4.011391177880367
+2025-08-16 17:42:11
+Iteration 1: Residual max G: 1.64e+01, frequence: 4.012270674474488
+2025-08-16 17:44:10
+Iteration 2: Residual max G: 6.77e+01, frequence: 4.011525173064617
+2025-08-16 17:46:02
+Iteration 3: Residual max G: 7.37e+00, frequence: 4.011518508461443
+2025-08-16 17:48:01
+Iteration 4: Residual max G: 1.34e+01, frequence: 4.011527173610604
+2025-08-16 17:50:00
+Iteration 5: Residual max G: 3.57e-01, frequence: 4.0115326261113395
+2025-08-16 17:51:58
+Iteration 6: Residual max G: 1.09e-02, frequence: 4.011534760103586
+2025-08-16 17:53:56
+Iteration 7: Residual max G: 4.59e-04, frequence: 4.011537006684883
+2025-08-16 17:53:56
+Second value f:4.011537006684883,u:0.23156640033357706
+2025-08-16 17:53:56
+################## New Iteration ##################
+2025-08-16 17:55:35
+Theta  :1.204471917690742 [°]
+2025-08-16 17:55:35
+s_change : 0.997766539048532
+2025-08-16 17:55:35
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 17:55:51
+Iteration 0: Residual max G: 1.08e+05, frequence: 4.009817747848649
+2025-08-16 17:57:50
+Iteration 1: Residual max G: 1.64e+01, frequence: 4.010633575931816
+2025-08-16 17:59:46
+Iteration 2: Residual max G: 7.08e+01, frequence: 4.009921629978153
+2025-08-16 18:01:39
+Iteration 3: Residual max G: 4.27e+00, frequence: 4.009913150794203
+2025-08-16 18:03:30
+Iteration 4: Residual max G: 8.09e+00, frequence: 4.009919668146195
+2025-08-16 18:05:23
+Iteration 5: Residual max G: 6.49e-02, frequence: 4.009925174501915
+2025-08-16 18:07:16
+Iteration 6: Residual max G: 2.46e-04, frequence: 4.00992714356735
+2025-08-16 18:07:16
+Second value f:4.00992714356735,u:0.2418342795566209
+2025-08-16 18:07:16
+################## New Iteration ##################
+2025-08-16 18:08:59
+Theta  :1.2075301766251927 [°]
+2025-08-16 18:08:59
+s_change : 0.9962419907451917
+2025-08-16 18:08:59
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 18:09:15
+Iteration 0: Residual max G: 1.08e+05, frequence: 4.00844589141919
+2025-08-16 18:11:13
+Iteration 1: Residual max G: 1.62e+01, frequence: 4.00922835932801
+2025-08-16 18:13:06
+Iteration 2: Residual max G: 7.37e+01, frequence: 4.008531665982773
+2025-08-16 18:15:04
+Iteration 3: Residual max G: 2.82e+00, frequence: 4.00851451962294
+2025-08-16 18:17:02
+Iteration 4: Residual max G: 5.91e+00, frequence: 4.008533110777185
+2025-08-16 18:19:00
+Iteration 5: Residual max G: 3.98e-02, frequence: 4.00852477009269
+2025-08-16 18:20:57
+Iteration 6: Residual max G: 1.12e-03, frequence: 4.008530394969573
+2025-08-16 18:22:57
+Iteration 7: Residual max G: 2.22e-04, frequence: 4.008532378450379
+2025-08-16 18:22:57
+Second value f:4.008532378450379,u:0.2519557604775042
+2025-08-16 18:22:57
+################## New Iteration ##################
+2025-08-16 18:24:30
+Theta  :1.1957990396774547 [°]
+2025-08-16 18:24:30
+s_change : 1.002102687715097
+2025-08-16 18:24:30
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 18:24:46
+Iteration 0: Residual max G: 1.08e+05, frequence: 4.007244061930247
+2025-08-16 18:26:45
+Iteration 1: Residual max G: 1.64e+01, frequence: 4.008021009938738
+2025-08-16 18:28:42
+Iteration 2: Residual max G: 7.82e+01, frequence: 4.0073208597151
+2025-08-16 18:30:40
+Iteration 3: Residual max G: 2.04e+00, frequence: 4.007322941469819
+2025-08-16 18:32:39
+Iteration 4: Residual max G: 4.86e+00, frequence: 4.007333665538222
+2025-08-16 18:34:33
+Iteration 5: Residual max G: 1.34e-02, frequence: 4.007330184045374
+2025-08-16 18:36:32
+Iteration 6: Residual max G: 4.44e-04, frequence: 4.007327296491817
+2025-08-16 18:36:32
+Second value f:4.007327296491817,u:0.2619850297908568
+2025-08-16 18:36:32
+################## New Iteration ##################
+2025-08-16 18:38:14
+Theta  :1.2237598727200436 [°]
+2025-08-16 18:38:14
+s_change : 0.9881903514702852
+2025-08-16 18:38:14
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 18:38:29
+Iteration 0: Residual max G: 1.06e+05, frequence: 4.006228569990986
+2025-08-16 18:40:23
+Iteration 1: Residual max G: 1.61e+01, frequence: 4.006979942508724
+2025-08-16 18:42:16
+Iteration 2: Residual max G: 8.37e+01, frequence: 4.006293644855219
+2025-08-16 18:44:10
+Iteration 3: Residual max G: 2.62e+00, frequence: 4.006296309526643
+2025-08-16 18:46:07
+Iteration 4: Residual max G: 7.00e+00, frequence: 4.006298309667568
+2025-08-16 18:48:05
+Iteration 5: Residual max G: 4.93e-02, frequence: 4.0062991613670444
+2025-08-16 18:50:03
+Iteration 6: Residual max G: 1.41e-03, frequence: 4.006300071842547
+2025-08-16 18:51:58
+Iteration 7: Residual max G: 1.55e-04, frequence: 4.006298065539482
+2025-08-16 18:51:59
+Second value f:4.006298065539482,u:0.27177881678936416
+2025-08-16 18:51:59
+################## New Iteration ##################
+2025-08-16 18:53:40
+Theta  :1.204610164131312 [°]
+2025-08-16 18:53:40
+s_change : 0.9976975725958793
+2025-08-16 18:53:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 18:53:55
+Iteration 0: Residual max G: 1.06e+05, frequence: 4.005356672620116
+2025-08-16 18:55:50
+Iteration 1: Residual max G: 1.63e+01, frequence: 4.006099106868618
+2025-08-16 18:57:46
+Iteration 2: Residual max G: 9.08e+01, frequence: 4.0054187536543475
+2025-08-16 18:59:42
+Iteration 3: Residual max G: 1.87e+00, frequence: 4.005414727802524
+2025-08-16 19:01:34
+Iteration 4: Residual max G: 6.29e+00, frequence: 4.005421011809083
+2025-08-16 19:03:31
+Iteration 5: Residual max G: 9.77e-03, frequence: 4.00542616670636
+2025-08-16 19:05:26
+Iteration 6: Residual max G: 1.72e-03, frequence: 4.005428761141861
+2025-08-16 19:07:24
+Iteration 7: Residual max G: 6.07e-03, frequence: 4.005430247220059
+2025-08-16 19:09:22
+Iteration 8: Residual max G: 9.31e-04, frequence: 4.005421986953776
+2025-08-16 19:11:20
+Iteration 9: Residual max G: 2.40e-05, frequence: 4.005427009005069
+2025-08-16 19:11:20
+Second value f:4.005427009005069,u:0.2814295154237596
+2025-08-16 19:11:20
+################## New Iteration ##################
+2025-08-16 19:12:59
+Theta  :1.2163231738534135 [°]
+2025-08-16 19:12:59
+s_change : 0.9918716283991923
+2025-08-16 19:12:59
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 19:13:14
+Iteration 0: Residual max G: 1.04e+05, frequence: 4.004622167676665
+2025-08-16 19:15:09
+Iteration 1: Residual max G: 1.73e+01, frequence: 4.005357924824221
+2025-08-16 19:17:05
+Iteration 2: Residual max G: 1.09e+02, frequence: 4.004673444555685
+2025-08-16 19:18:58
+Iteration 3: Residual max G: 1.96e+00, frequence: 4.004668657431081
+2025-08-16 19:20:53
+Iteration 4: Residual max G: 9.37e+00, frequence: 4.0046867465485825
+2025-08-16 19:22:50
+Iteration 5: Residual max G: 1.08e-02, frequence: 4.004678691706786
+2025-08-16 19:24:48
+Iteration 6: Residual max G: 2.62e-05, frequence: 4.004682369840885
+2025-08-16 19:24:48
+Second value f:4.004682369840885,u:0.2908775216158318
+2025-08-16 19:24:48
+################## New Iteration ##################
+2025-08-16 19:26:20
+Theta  :1.220863768726472 [°]
+2025-08-16 19:26:20
+s_change : 0.989622339027935
+2025-08-16 19:26:20
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 19:26:35
+Iteration 0: Residual max G: 1.02e+05, frequence: 4.004003954116657
+2025-08-16 19:28:32
+Iteration 1: Residual max G: 2.26e+01, frequence: 4.004747053266516
+2025-08-16 19:30:29
+Iteration 2: Residual max G: 1.82e+02, frequence: 4.004044081309515
+2025-08-16 19:32:26
+Iteration 3: Residual max G: 2.11e+00, frequence: 4.00403851666322
+2025-08-16 19:34:20
+Iteration 4: Residual max G: 2.97e+01, frequence: 4.004056118782881
+2025-08-16 19:36:18
+Iteration 5: Residual max G: 4.65e-01, frequence: 4.0040561254685745
+2025-08-16 19:38:10
+Iteration 6: Residual max G: 1.84e-01, frequence: 4.004058111242313
+2025-08-16 19:40:08
+Iteration 7: Residual max G: 7.73e-04, frequence: 4.004059592333696
+2025-08-16 19:42:06
+Iteration 8: Residual max G: 7.42e-04, frequence: 4.00406090700196
+2025-08-16 19:43:58
+Iteration 9: Residual max G: 4.26e-04, frequence: 4.004062249615935
+2025-08-16 19:43:58
+Second value f:4.004062249615935,u:0.30010044098201305
+2025-08-16 19:43:58
+################## New Iteration ##################
+2025-08-16 19:45:40
+Theta  :1.2098961101541847 [°]
+2025-08-16 19:45:40
+s_change : 0.995064166381638
+2025-08-16 19:45:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 19:45:55
+Iteration 0: Residual max G: 1.01e+05, frequence: 4.003495278605713
+2025-08-16 19:47:46
+Iteration 1: Residual max G: 3.12e+01, frequence: 4.004255388245533
+2025-08-16 19:49:42
+Iteration 2: Residual max G: 3.31e+02, frequence: 4.0035121722479685
+2025-08-16 19:51:40
+Iteration 3: Residual max G: 1.78e+00, frequence: 4.003498082866504
+2025-08-16 19:53:33
+Iteration 4: Residual max G: 8.79e+01, frequence: 4.0035479072825355
+2025-08-16 19:55:30
+Iteration 5: Residual max G: 2.17e-01, frequence: 4.003541383563491
+2025-08-16 19:57:26
+Iteration 6: Residual max G: 8.66e-01, frequence: 4.0035425521858095
+2025-08-16 19:59:17
+Iteration 7: Residual max G: 7.36e-04, frequence: 4.003544155475278
+2025-08-16 20:01:13
+Iteration 8: Residual max G: 2.11e-04, frequence: 4.00354510960228
+2025-08-16 20:01:13
+Second value f:4.00354510960228,u:0.30914664120062424
+2025-08-16 20:01:13
+################## New Iteration ##################
+2025-08-16 20:02:50
+Theta  :1.1900996722691881 [°]
+2025-08-16 20:02:50
+s_change : 1.0049624361681668
+2025-08-16 20:02:50
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 20:03:06
+Iteration 0: Residual max G: 1.03e+05, frequence: 4.003069637259873
+2025-08-16 20:05:03
+Iteration 1: Residual max G: 2.53e+01, frequence: 4.003822396701645
+2025-08-16 20:07:00
+Iteration 2: Residual max G: 2.28e+02, frequence: 4.003095425932725
+2025-08-16 20:08:57
+Iteration 3: Residual max G: 1.84e+00, frequence: 4.003084376415286
+2025-08-16 20:10:54
+Iteration 4: Residual max G: 4.32e+01, frequence: 4.0031051576014995
+2025-08-16 20:12:47
+Iteration 5: Residual max G: 5.57e+01, frequence: 4.003086310839426
+2025-08-16 20:14:44
+Iteration 6: Residual max G: 8.93e+02, frequence: 4.0029488669647115
+2025-08-16 20:16:40
+Iteration 7: Residual max G: 3.87e+00, frequence: 4.002941071513948
+2025-08-16 20:18:37
+Iteration 8: Residual max G: 1.83e+03, frequence: 4.003129287433335
+2025-08-16 20:20:33
+Iteration 9: Residual max G: 1.51e-02, frequence: 4.00312831658676
+2025-08-16 20:22:27
+Iteration 10: Residual max G: 1.51e+01, frequence: 4.0031104734672995
+2025-08-16 20:24:24
+Iteration 11: Residual max G: 8.63e-05, frequence: 4.003111387987685
+2025-08-16 20:24:25
+Second value f:4.003111387987685,u:0.3181015220159344
+2025-08-16 20:24:25
+################## New Iteration ##################
+2025-08-16 20:26:06
+Theta  :1.1921650474322827 [°]
+2025-08-16 20:26:06
+s_change : 1.0039251596239005
+2025-08-16 20:26:06
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 20:26:22
+Iteration 0: Residual max G: 1.04e+05, frequence: 4.002724869456621
+2025-08-16 20:28:19
+Iteration 1: Residual max G: 2.31e+01, frequence: 4.003481234754197
+2025-08-16 20:30:13
+Iteration 2: Residual max G: 1.94e+02, frequence: 4.002746787375533
+2025-08-16 20:32:11
+Iteration 3: Residual max G: 1.82e+00, frequence: 4.002736579048743
+2025-08-16 20:33:59
+Iteration 4: Residual max G: 3.17e+01, frequence: 4.002765960134984
+2025-08-16 20:35:56
+Iteration 5: Residual max G: 1.14e+00, frequence: 4.0027609698958395
+2025-08-16 20:37:44
+Iteration 6: Residual max G: 6.71e-01, frequence: 4.002759390975028
+2025-08-16 20:39:41
+Iteration 7: Residual max G: 3.90e-03, frequence: 4.002758382704201
+2025-08-16 20:41:28
+Iteration 8: Residual max G: 3.59e-03, frequence: 4.00275757252703
+2025-08-16 20:43:17
+Iteration 9: Residual max G: 1.72e-03, frequence: 4.002759569188343
+2025-08-16 20:45:07
+Iteration 10: Residual max G: 8.13e-05, frequence: 4.0027583869968835
+2025-08-16 20:45:07
+Second value f:4.0027583869968835,u:0.32695215070654043
+2025-08-16 20:45:07
+################## New Iteration ##################
+2025-08-16 20:46:48
+Theta  :1.2199702948226956 [°]
+2025-08-16 20:46:48
+s_change : 0.9900645386612966
+2025-08-16 20:46:48
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 20:47:04
+Iteration 0: Residual max G: 1.02e+05, frequence: 4.00245080305009
+2025-08-16 20:49:00
+Iteration 1: Residual max G: 4.24e+01, frequence: 4.0032647438136335
+2025-08-16 20:50:53
+Iteration 2: Residual max G: 7.90e+02, frequence: 4.002418816684212
+2025-08-16 20:52:50
+Iteration 3: Residual max G: 1.12e+00, frequence: 4.002412222331359
+2025-08-16 20:54:46
+Iteration 4: Residual max G: 3.40e+02, frequence: 4.002489942152432
+2025-08-16 20:56:43
+Iteration 5: Residual max G: 5.76e-03, frequence: 4.002499386444975
+2025-08-16 20:58:39
+Iteration 6: Residual max G: 3.04e-01, frequence: 4.00249258140864
+2025-08-16 21:00:30
+Iteration 7: Residual max G: 4.24e-03, frequence: 4.002489516293783
+2025-08-16 21:02:28
+Iteration 8: Residual max G: 6.11e-04, frequence: 4.002496015694672
+2025-08-16 21:04:18
+Iteration 9: Residual max G: 4.80e-03, frequence: 4.002492270774256
+2025-08-16 21:06:16
+Iteration 10: Residual max G: 3.48e-03, frequence: 4.00248929409867
+2025-08-16 21:08:14
+Iteration 11: Residual max G: 7.36e-05, frequence: 4.0024961487993
+2025-08-16 21:08:14
+Second value f:4.0024961487993,u:0.33557083645759994
+2025-08-16 21:08:14
+################## New Iteration ##################
+2025-08-16 21:09:55
+Theta  :1.204069470090366 [°]
+2025-08-16 21:09:55
+s_change : 0.997967333624866
+2025-08-16 21:09:55
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 21:10:11
+Iteration 0: Residual max G: 1.01e+05, frequence: 4.002257847810658
+2025-08-16 21:12:10
+Iteration 1: Residual max G: 5.49e+01, frequence: 4.003096226389257
+2025-08-16 21:14:03
+Iteration 2: Residual max G: 2.87e+03, frequence: 4.002093721801774
+2025-08-16 21:15:55
+Iteration 3: Residual max G: 4.77e-01, frequence: 4.002092353603895
+2025-08-16 21:17:46
+Iteration 4: Residual max G: 1.86e+03, frequence: 4.002281999305485
+2025-08-16 21:19:43
+Iteration 5: Residual max G: 5.15e-03, frequence: 4.002283576969879
+2025-08-16 21:21:41
+Iteration 6: Residual max G: 4.31e-01, frequence: 4.002281800871909
+2025-08-16 21:23:38
+Iteration 7: Residual max G: 1.47e-03, frequence: 4.0022803028985345
+2025-08-16 21:25:36
+Iteration 8: Residual max G: 7.28e-03, frequence: 4.002279184605593
+2025-08-16 21:27:29
+Iteration 9: Residual max G: 4.11e-03, frequence: 4.002278268745074
+2025-08-16 21:29:27
+Iteration 10: Residual max G: 4.36e-03, frequence: 4.002277676961548
+2025-08-16 21:31:24
+Iteration 11: Residual max G: 2.14e-03, frequence: 4.002286554023123
+2025-08-16 21:33:21
+Iteration 12: Residual max G: 2.11e-03, frequence: 4.002281949453068
+2025-08-16 21:35:18
+Iteration 13: Residual max G: 9.67e-04, frequence: 4.002280776416355
+2025-08-16 21:37:12
+Iteration 14: Residual max G: 1.20e-03, frequence: 4.00227952553284
+2025-08-16 21:38:53
+################## New Iteration ##################
+2025-08-16 21:38:53
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 21:39:08
+Iteration 0: Residual max G: 1.23e+05, frequence: 4.002234017711793
+2025-08-16 21:41:05
+Iteration 1: Residual max G: 2.08e+01, frequence: 4.003157073235971
+2025-08-16 21:43:01
+Iteration 2: Residual max G: 1.04e+02, frequence: 4.002267352486272
+2025-08-16 21:44:55
+Iteration 3: Residual max G: 6.43e-01, frequence: 4.002254906931849
+2025-08-16 21:46:51
+Iteration 4: Residual max G: 3.60e+00, frequence: 4.002266056015011
+2025-08-16 21:48:46
+Iteration 5: Residual max G: 6.46e-03, frequence: 4.002261487904566
+2025-08-16 21:50:41
+Iteration 6: Residual max G: 3.74e-04, frequence: 4.0022688904923
+2025-08-16 21:50:41
+Second value f:4.0022688904923,u:0.3448641628034827
+2025-08-16 21:50:41
+################## New Iteration ##################
+2025-08-16 21:52:23
+Theta  :1.3338430899283742 [°]
+2025-08-16 21:52:23
+s_change : 0.9352685749880181
+2025-08-16 21:52:23
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 21:52:39
+Iteration 0: Residual max G: 1.07e+05, frequence: 4.00209593271331
+2025-08-16 21:54:37
+Iteration 1: Residual max G: 1.98e+01, frequence: 4.002873379016397
+2025-08-16 21:56:35
+Iteration 2: Residual max G: 1.50e+02, frequence: 4.002115701450032
+2025-08-16 21:58:32
+Iteration 3: Residual max G: 1.40e+00, frequence: 4.002106474571381
+2025-08-16 22:00:30
+Iteration 4: Residual max G: 1.51e+01, frequence: 4.002126391393261
+2025-08-16 22:02:27
+Iteration 5: Residual max G: 1.19e-02, frequence: 4.002119658221849
+2025-08-16 22:04:25
+Iteration 6: Residual max G: 1.04e-02, frequence: 4.002125108896255
+2025-08-16 22:06:21
+Iteration 7: Residual max G: 6.21e-04, frequence: 4.002118944084877
+2025-08-16 22:08:18
+Iteration 8: Residual max G: 6.41e-04, frequence: 4.002124366544262
+2025-08-16 22:10:15
+Iteration 9: Residual max G: 1.22e-02, frequence: 4.002118773098098
+2025-08-16 22:12:11
+Iteration 10: Residual max G: 6.55e-03, frequence: 4.002124322340076
+2025-08-16 22:14:10
+Iteration 11: Residual max G: 3.30e-03, frequence: 4.002118555082516
+2025-08-16 22:16:08
+Iteration 12: Residual max G: 3.51e-03, frequence: 4.002123850537339
+2025-08-16 22:18:06
+Iteration 13: Residual max G: 5.49e-04, frequence: 4.0021178030315685
+2025-08-16 22:20:03
+Iteration 14: Residual max G: 1.87e-02, frequence: 4.0021259962990365
+2025-08-16 22:21:44
+################## New Iteration ##################
+2025-08-16 22:21:44
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 22:22:00
+Iteration 0: Residual max G: 1.30e+05, frequence: 4.002078636935411
+2025-08-16 22:23:58
+Iteration 1: Residual max G: 2.32e+01, frequence: 4.003111616879116
+2025-08-16 22:25:52
+Iteration 2: Residual max G: 1.14e+02, frequence: 4.002113852625021
+2025-08-16 22:27:48
+Iteration 3: Residual max G: 5.29e-01, frequence: 4.00210286789266
+2025-08-16 22:29:43
+Iteration 4: Residual max G: 3.34e+00, frequence: 4.002114248092309
+2025-08-16 22:31:39
+Iteration 5: Residual max G: 5.59e-04, frequence: 4.002111954350004
+2025-08-16 22:33:35
+Iteration 6: Residual max G: 7.64e-04, frequence: 4.002109676415166
+2025-08-16 22:35:30
+Iteration 7: Residual max G: 3.68e-05, frequence: 4.002117220603859
+2025-08-16 22:35:30
+Second value f:4.002117220603859,u:0.3542341680222461
+2025-08-16 22:35:30
+################## New Iteration ##################
+2025-08-16 22:37:09
+Theta  :1.3746165704031876 [°]
+2025-08-16 22:37:09
+s_change : 0.9163945412058407
+2025-08-16 22:37:09
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 22:37:24
+Iteration 0: Residual max G: 1.09e+05, frequence: 4.002005805169204
+2025-08-16 22:39:23
+Iteration 1: Residual max G: 1.94e+01, frequence: 4.002808646151817
+2025-08-16 22:41:21
+Iteration 2: Residual max G: 1.44e+02, frequence: 4.002013033830461
+2025-08-16 22:43:12
+Iteration 3: Residual max G: 1.45e+00, frequence: 4.002014390153264
+2025-08-16 22:45:11
+Iteration 4: Residual max G: 1.49e+01, frequence: 4.002033299170226
+2025-08-16 22:47:11
+Iteration 5: Residual max G: 2.46e-02, frequence: 4.002025746403928
+2025-08-16 22:48:58
+Iteration 6: Residual max G: 1.85e-03, frequence: 4.002030311240646
+2025-08-16 22:50:54
+Iteration 7: Residual max G: 2.45e-04, frequence: 4.0020236423703155
+2025-08-16 22:50:54
+Second value f:4.0020236423703155,u:0.3626471754306388
+2025-08-16 22:50:54
+################## New Iteration ##################
+2025-08-16 22:52:36
+Theta  :1.2816588567807823 [°]
+2025-08-16 22:52:36
+s_change : 0.9599928635111953
+2025-08-16 22:52:36
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 22:52:51
+Iteration 0: Residual max G: 1.01e+05, frequence: 4.001967583930424
+2025-08-16 22:54:47
+Iteration 1: Residual max G: 1.32e+02, frequence: 4.00303732559889
+2025-08-16 22:56:45
+Iteration 2: Residual max G: 8.36e+02, frequence: 4.002188253812562
+2025-08-16 22:58:37
+Iteration 3: Residual max G: 5.60e+00, frequence: 4.002204149961707
+2025-08-16 23:00:35
+Iteration 4: Residual max G: 2.52e+03, frequence: 4.001967604935079
+2025-08-16 23:02:32
+Iteration 5: Residual max G: 2.58e-02, frequence: 4.0019682281369935
+2025-08-16 23:04:29
+Iteration 6: Residual max G: 4.30e+01, frequence: 4.002000076536263
+2025-08-16 23:06:23
+Iteration 7: Residual max G: 3.35e+01, frequence: 4.0019616758136225
+2025-08-16 23:08:20
+Iteration 8: Residual max G: 6.20e+02, frequence: 4.00208986939927
+2025-08-16 23:10:16
+Iteration 9: Residual max G: 2.10e+00, frequence: 4.002087340167134
+2025-08-16 23:12:13
+Iteration 10: Residual max G: 4.71e+02, frequence: 4.001989500584285
+2025-08-16 23:14:11
+Iteration 11: Residual max G: 1.48e-02, frequence: 4.001986518124987
+2025-08-16 23:16:08
+Iteration 12: Residual max G: 1.80e+00, frequence: 4.001993210531251
+2025-08-16 23:18:04
+Iteration 13: Residual max G: 3.48e-02, frequence: 4.001995600744803
+2025-08-16 23:20:01
+Iteration 14: Residual max G: 4.13e-03, frequence: 4.00198834003634
+2025-08-16 23:21:42
+################## New Iteration ##################
+2025-08-16 23:21:42
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 23:21:57
+Iteration 0: Residual max G: 1.22e+05, frequence: 4.001961978086435
+2025-08-16 23:23:53
+Iteration 1: Residual max G: 2.07e+01, frequence: 4.002917962034368
+2025-08-16 23:25:46
+Iteration 2: Residual max G: 1.17e+02, frequence: 4.001989325292592
+2025-08-16 23:27:45
+Iteration 3: Residual max G: 8.16e-01, frequence: 4.001980335583603
+2025-08-16 23:29:36
+Iteration 4: Residual max G: 6.09e+00, frequence: 4.001997404422653
+2025-08-16 23:31:28
+Iteration 5: Residual max G: 2.39e-02, frequence: 4.00198871169033
+2025-08-16 23:33:25
+Iteration 6: Residual max G: 1.86e-02, frequence: 4.00199114043794
+2025-08-16 23:35:22
+Iteration 7: Residual max G: 1.63e-02, frequence: 4.001992640578904
+2025-08-16 23:37:17
+Iteration 8: Residual max G: 1.12e-02, frequence: 4.001993873915104
+2025-08-16 23:39:13
+Iteration 9: Residual max G: 2.31e-02, frequence: 4.0019858665579875
+2025-08-16 23:41:09
+Iteration 10: Residual max G: 2.99e-05, frequence: 4.001991093398759
+2025-08-16 23:41:10
+Second value f:4.001991093398759,u:0.3713455226115143
+2025-08-16 23:41:10
+################## New Iteration ##################
+2025-08-16 23:42:51
+Theta  :1.3458189082433125 [°]
+2025-08-16 23:42:51
+s_change : 0.9296850053602638
+2025-08-16 23:42:51
+################## Newthon predictor-corecteur solveur ##################
+2025-08-16 23:43:07
+Iteration 0: Residual max G: 1.05e+05, frequence: 4.00198213162026
+2025-08-16 23:45:05
+Iteration 1: Residual max G: 3.06e+01, frequence: 4.002820406321531
+2025-08-16 23:47:02
+Iteration 2: Residual max G: 3.59e+02, frequence: 4.0019680422325425
+2025-08-16 23:48:58
+Iteration 3: Residual max G: 1.46e+00, frequence: 4.001963883556196
+2025-08-16 23:50:55
+Iteration 4: Residual max G: 9.44e+01, frequence: 4.002007793530886
+2025-08-16 23:52:52
+Iteration 5: Residual max G: 5.80e-02, frequence: 4.002009039630937
+2025-08-16 23:54:46
+Iteration 6: Residual max G: 3.30e-01, frequence: 4.002007100420287
+2025-08-16 23:56:43
+Iteration 7: Residual max G: 2.26e-03, frequence: 4.002005657964694
+2025-08-16 23:58:38
+Iteration 8: Residual max G: 2.07e-03, frequence: 4.002004335092936
+2025-08-17 00:00:36
+Iteration 9: Residual max G: 5.96e-03, frequence: 4.002002665604485
+2025-08-17 00:02:34
+Iteration 10: Residual max G: 3.68e-05, frequence: 4.002001509475975
+2025-08-17 00:02:34
+Second value f:4.002001509475975,u:0.3792530435433302
+2025-08-17 00:02:34
+################## New Iteration ##################
+2025-08-17 00:04:13
+Theta  :1.2205415497542245 [°]
+2025-08-17 00:04:13
+s_change : 0.9897817894185726
+2025-08-17 00:04:13
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 00:04:29
+Iteration 0: Residual max G: 1.03e+05, frequence: 4.002031951429603
+2025-08-17 00:06:24
+Iteration 1: Residual max G: 5.58e+01, frequence: 4.002956214849017
+2025-08-17 00:08:14
+Iteration 2: Residual max G: 3.39e+03, frequence: 4.001817942373994
+2025-08-17 00:10:12
+Iteration 3: Residual max G: 4.24e-01, frequence: 4.001819477292311
+2025-08-17 00:12:00
+Iteration 4: Residual max G: 2.24e+03, frequence: 4.002058060330402
+2025-08-17 00:13:59
+Iteration 5: Residual max G: 6.86e-03, frequence: 4.0020584515231015
+2025-08-17 00:15:46
+Iteration 6: Residual max G: 6.59e-02, frequence: 4.002057067308908
+2025-08-17 00:17:47
+Iteration 7: Residual max G: 1.19e-02, frequence: 4.002056050332515
+2025-08-17 00:19:47
+Iteration 8: Residual max G: 7.03e-03, frequence: 4.0020547738196
+2025-08-17 00:21:39
+Iteration 9: Residual max G: 7.29e-04, frequence: 4.002054283022469
+2025-08-17 00:23:36
+Iteration 10: Residual max G: 1.74e-02, frequence: 4.0020533791713175
+2025-08-17 00:25:35
+Iteration 11: Residual max G: 6.65e-04, frequence: 4.0020527086362145
+2025-08-17 00:27:33
+Iteration 12: Residual max G: 5.95e-03, frequence: 4.002052370433224
+2025-08-17 00:29:30
+Iteration 13: Residual max G: 1.79e-04, frequence: 4.0020518022228115
+2025-08-17 00:29:30
+Second value f:4.0020518022228115,u:0.38691636743445995
+2025-08-17 00:29:30
+################## New Iteration ##################
+2025-08-17 00:31:14
+Theta  :1.2521781531564007 [°]
+2025-08-17 00:31:14
+s_change : 0.9742483030383292
+2025-08-17 00:31:14
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 00:31:30
+Iteration 0: Residual max G: 9.81e+04, frequence: 4.00211513946482
+2025-08-17 00:33:31
+Iteration 1: Residual max G: 1.04e+04, frequence: 3.9974436583956097
+2025-08-17 00:35:30
+Iteration 2: Residual max G: 9.59e+03, frequence: 4.001496104601241
+2025-08-17 00:37:30
+Iteration 3: Residual max G: 1.06e+03, frequence: 4.001396990354743
+2025-08-17 00:39:27
+Iteration 4: Residual max G: 5.39e+01, frequence: 4.001490931894226
+2025-08-17 00:41:25
+Iteration 5: Residual max G: 7.63e+05, frequence: 4.005925630965312
+2025-08-17 00:43:24
+Iteration 6: Residual max G: 7.82e+02, frequence: 4.011248317340864
+2025-08-17 00:45:22
+Iteration 7: Residual max G: 2.70e+03, frequence: 4.006366322067356
+2025-08-17 00:47:15
+Iteration 8: Residual max G: 2.07e+02, frequence: 4.006485276000817
+2025-08-17 00:49:12
+Iteration 9: Residual max G: 5.77e+04, frequence: 4.007705708973488
+2025-08-17 00:51:09
+Iteration 10: Residual max G: 2.05e+01, frequence: 4.004929283856903
+2025-08-17 00:53:05
+Iteration 11: Residual max G: 1.97e+06, frequence: 4.000068410594509
+2025-08-17 00:55:01
+Iteration 12: Residual max G: 5.26e+03, frequence: 4.03092655360904
+2025-08-17 00:56:53
+Iteration 13: Residual max G: 2.17e+01, frequence: 4.000619180876169
+2025-08-17 00:58:48
+Iteration 14: Residual max G: 4.36e+05, frequence: 4.003057115012582
+2025-08-17 01:00:28
+################## New Iteration ##################
+2025-08-17 01:00:28
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 01:00:42
+Iteration 0: Residual max G: 1.19e+05, frequence: 4.002121473189021
+2025-08-17 01:02:33
+Iteration 1: Residual max G: 2.05e+01, frequence: 4.003063518415367
+2025-08-17 01:04:26
+Iteration 2: Residual max G: 1.34e+02, frequence: 4.002135813392703
+2025-08-17 01:06:19
+Iteration 3: Residual max G: 7.90e-01, frequence: 4.00211855509674
+2025-08-17 01:08:14
+Iteration 4: Residual max G: 6.63e+00, frequence: 4.002139780477615
+2025-08-17 01:10:12
+Iteration 5: Residual max G: 6.94e-05, frequence: 4.002134955288028
+2025-08-17 01:10:12
+Second value f:4.002134955288028,u:0.39493236998878056
+2025-08-17 01:10:12
+################## New Iteration ##################
+2025-08-17 01:11:51
+Theta  :1.3058570887453071 [°]
+2025-08-17 01:11:51
+s_change : 0.9484477819922805
+2025-08-17 01:11:51
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 01:12:06
+Iteration 0: Residual max G: 1.07e+05, frequence: 4.002233766118661
+2025-08-17 01:14:03
+Iteration 1: Residual max G: 3.34e+01, frequence: 4.003137520112139
+2025-08-17 01:15:57
+Iteration 2: Residual max G: 4.19e+02, frequence: 4.002195456771185
+2025-08-17 01:17:53
+Iteration 3: Residual max G: 1.42e+00, frequence: 4.002195831019535
+2025-08-17 01:19:45
+Iteration 4: Residual max G: 1.20e+02, frequence: 4.002253891358656
+2025-08-17 01:21:41
+Iteration 5: Residual max G: 7.30e-02, frequence: 4.002261609223813
+2025-08-17 01:23:38
+Iteration 6: Residual max G: 5.06e-01, frequence: 4.0022521314277775
+2025-08-17 01:25:32
+Iteration 7: Residual max G: 1.25e-04, frequence: 4.002256105984347
+2025-08-17 01:25:32
+Second value f:4.002256105984347,u:0.40234824186237605
+2025-08-17 01:25:32
+################## New Iteration ##################
+2025-08-17 01:27:05
+Theta  :1.212824500233343 [°]
+2025-08-17 01:27:05
+s_change : 0.9936082644874298
+2025-08-17 01:27:05
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 01:27:20
+Iteration 0: Residual max G: 1.05e+05, frequence: 4.002379811730834
+2025-08-17 01:29:10
+Iteration 1: Residual max G: 4.81e+01, frequence: 4.0033459229012065
+2025-08-17 01:31:06
+Iteration 2: Residual max G: 1.32e+03, frequence: 4.0022607718687295
+2025-08-17 01:32:51
+Iteration 3: Residual max G: 7.95e-01, frequence: 4.002251515741926
+2025-08-17 01:34:46
+Iteration 4: Residual max G: 6.67e+02, frequence: 4.002393994429768
+2025-08-17 01:36:33
+Iteration 5: Residual max G: 2.47e-03, frequence: 4.002394792313821
+2025-08-17 01:38:22
+Iteration 6: Residual max G: 3.71e-01, frequence: 4.002392271547525
+2025-08-17 01:40:17
+Iteration 7: Residual max G: 3.03e-03, frequence: 4.002390675255636
+2025-08-17 01:42:04
+Iteration 8: Residual max G: 6.44e-03, frequence: 4.00238875810402
+2025-08-17 01:43:50
+Iteration 9: Residual max G: 7.86e-03, frequence: 4.002390030513498
+2025-08-17 01:45:44
+Iteration 10: Residual max G: 8.38e-03, frequence: 4.002390984769515
+2025-08-17 01:47:30
+Iteration 11: Residual max G: 5.47e-03, frequence: 4.00238932661729
+2025-08-17 01:49:23
+Iteration 12: Residual max G: 4.53e-03, frequence: 4.002390792243448
+2025-08-17 01:51:09
+Iteration 13: Residual max G: 3.04e-04, frequence: 4.002389348515673
+2025-08-17 01:51:09
+Second value f:4.002389348515673,u:0.40953897196720457
+2025-08-17 01:51:09
+################## New Iteration ##################
+2025-08-17 01:52:42
+Theta  :1.2481551057458853 [°]
+2025-08-17 01:52:42
+s_change : 0.9762099989321387
+2025-08-17 01:52:42
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 01:52:57
+Iteration 0: Residual max G: 1.00e+05, frequence: 4.002533248515454
+2025-08-17 01:54:52
+Iteration 1: Residual max G: 6.80e+02, frequence: 4.004540206358219
+2025-08-17 01:56:41
+Iteration 2: Residual max G: 5.97e+02, frequence: 4.00274471039887
+2025-08-17 01:58:33
+Iteration 3: Residual max G: 2.70e+01, frequence: 4.002792743410082
+2025-08-17 02:00:24
+Iteration 4: Residual max G: 1.09e+04, frequence: 4.002202247064186
+2025-08-17 02:02:19
+Iteration 5: Residual max G: 2.66e-01, frequence: 4.002216380983407
+2025-08-17 02:04:08
+Iteration 6: Residual max G: 3.76e+03, frequence: 4.002546143861227
+2025-08-17 02:06:01
+Iteration 7: Residual max G: 1.92e-02, frequence: 4.002545958052667
+2025-08-17 02:07:55
+Iteration 8: Residual max G: 4.57e-01, frequence: 4.002541412424625
+2025-08-17 02:09:42
+Iteration 9: Residual max G: 2.56e-03, frequence: 4.002540409186387
+2025-08-17 02:11:36
+Iteration 10: Residual max G: 5.39e-03, frequence: 4.002539713891651
+2025-08-17 02:13:31
+Iteration 11: Residual max G: 1.68e-02, frequence: 4.002538662329583
+2025-08-17 02:15:23
+Iteration 12: Residual max G: 8.14e-04, frequence: 4.002537663174346
+2025-08-17 02:17:16
+Iteration 13: Residual max G: 1.41e-04, frequence: 4.002546356699123
+2025-08-17 02:17:16
+Second value f:4.002546356699123,u:0.41638316102118605
+2025-08-17 02:17:16
+################## New Iteration ##################
+2025-08-17 02:18:53
+Theta  :1.2070182933394715 [°]
+2025-08-17 02:18:53
+s_change : 0.9964970031897497
+2025-08-17 02:18:53
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 02:19:08
+Iteration 0: Residual max G: 9.97e+04, frequence: 4.002707875221448
+2025-08-17 02:21:01
+Iteration 1: Residual max G: 3.74e+03, frequence: 4.006759572449609
+2025-08-17 02:22:53
+Iteration 2: Residual max G: 2.84e+03, frequence: 4.003098567926098
+2025-08-17 02:24:45
+Iteration 3: Residual max G: 7.82e+01, frequence: 4.003159000356977
+2025-08-17 02:26:30
+Iteration 4: Residual max G: 8.97e+04, frequence: 4.004804816096924
+2025-08-17 02:28:19
+Iteration 5: Residual max G: 1.09e+01, frequence: 4.004684985848404
+2025-08-17 02:30:07
+Iteration 6: Residual max G: 2.21e+05, frequence: 4.0021670532780345
+2025-08-17 02:31:57
+Iteration 7: Residual max G: 6.63e+01, frequence: 4.0025819234203
+2025-08-17 02:33:46
+Iteration 8: Residual max G: 7.81e+04, frequence: 4.0006045784482565
+2025-08-17 02:35:38
+Iteration 9: Residual max G: 8.53e+00, frequence: 4.000413951088726
+2025-08-17 02:37:36
+Iteration 10: Residual max G: 2.16e+05, frequence: 4.003209223331449
+2025-08-17 02:39:33
+Iteration 11: Residual max G: 6.30e+01, frequence: 4.003602393038158
+2025-08-17 02:41:28
+Iteration 12: Residual max G: 1.52e+05, frequence: 4.005468265724758
+2025-08-17 02:43:23
+Iteration 13: Residual max G: 3.12e+01, frequence: 4.005601869029083
+2025-08-17 02:45:12
+Iteration 14: Residual max G: 1.27e+06, frequence: 3.998873403436836
+2025-08-17 02:46:51
+################## New Iteration ##################
+2025-08-17 02:46:51
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 02:47:06
+Iteration 0: Residual max G: 1.21e+05, frequence: 4.002724027073681
+2025-08-17 02:49:01
+Iteration 1: Residual max G: 2.22e+01, frequence: 4.003745227951382
+2025-08-17 02:50:51
+Iteration 2: Residual max G: 1.57e+02, frequence: 4.002712449560657
+2025-08-17 02:52:43
+Iteration 3: Residual max G: 1.02e+00, frequence: 4.0027049512038735
+2025-08-17 02:54:35
+Iteration 4: Residual max G: 1.09e+01, frequence: 4.00272000669992
+2025-08-17 02:56:27
+Iteration 5: Residual max G: 1.68e-03, frequence: 4.0027300179287115
+2025-08-17 02:58:20
+Iteration 6: Residual max G: 3.52e-04, frequence: 4.00272657546055
+2025-08-17 02:58:20
+Second value f:4.00272657546055,u:0.42368461820700837
+2025-08-17 02:58:20
+################## New Iteration ##################
+2025-08-17 02:59:56
+Theta  :1.3542497336790644 [°]
+2025-08-17 02:59:56
+s_change : 0.9257742478845313
+2025-08-17 02:59:56
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 03:00:11
+Iteration 0: Residual max G: 1.03e+05, frequence: 4.002907584369414
+2025-08-17 03:02:05
+Iteration 1: Residual max G: 1.37e+02, frequence: 4.004195486681483
+2025-08-17 03:03:58
+Iteration 2: Residual max G: 9.57e+02, frequence: 4.003167857142648
+2025-08-17 03:05:54
+Iteration 3: Residual max G: 5.49e+00, frequence: 4.003181889154223
+2025-08-17 03:07:43
+Iteration 4: Residual max G: 2.72e+03, frequence: 4.00287656204746
+2025-08-17 03:09:37
+Iteration 5: Residual max G: 2.43e-02, frequence: 4.00288057729765
+2025-08-17 03:11:29
+Iteration 6: Residual max G: 3.50e+01, frequence: 4.002917787639759
+2025-08-17 03:13:23
+Iteration 7: Residual max G: 1.64e-01, frequence: 4.002923468844549
+2025-08-17 03:15:09
+Iteration 8: Residual max G: 2.71e-01, frequence: 4.002916219043006
+2025-08-17 03:17:04
+Iteration 9: Residual max G: 2.71e-03, frequence: 4.002919619518044
+2025-08-17 03:18:59
+Iteration 10: Residual max G: 9.58e-04, frequence: 4.00291342934784
+2025-08-17 03:20:55
+Iteration 11: Residual max G: 3.86e-04, frequence: 4.002917524731464
+2025-08-17 03:20:55
+Second value f:4.002917524731464,u:0.43024464967790943
+2025-08-17 03:20:55
+################## New Iteration ##################
+2025-08-17 03:22:30
+Theta  :1.1991105477857358 [°]
+2025-08-17 03:22:30
+s_change : 1.0004448250124487
+2025-08-17 03:22:30
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 03:22:45
+Iteration 0: Residual max G: 1.03e+05, frequence: 4.003111535091354
+2025-08-17 03:24:42
+Iteration 1: Residual max G: 1.58e+02, frequence: 4.004459561777474
+2025-08-17 03:26:31
+Iteration 2: Residual max G: 7.25e+02, frequence: 4.003344150101213
+2025-08-17 03:28:27
+Iteration 3: Residual max G: 8.96e+00, frequence: 4.003378408936619
+2025-08-17 03:30:14
+Iteration 4: Residual max G: 2.78e+03, frequence: 4.003052220113457
+2025-08-17 03:32:07
+Iteration 5: Residual max G: 4.52e-02, frequence: 4.003057704019363
+2025-08-17 03:34:01
+Iteration 6: Residual max G: 9.63e+01, frequence: 4.003117212430129
+2025-08-17 03:36:00
+Iteration 7: Residual max G: 4.64e-02, frequence: 4.003113416157259
+2025-08-17 03:37:46
+Iteration 8: Residual max G: 1.81e-01, frequence: 4.003112799434017
+2025-08-17 03:39:33
+Iteration 9: Residual max G: 1.48e-04, frequence: 4.003114916135438
+2025-08-17 03:39:33
+Second value f:4.003114916135438,u:0.43662899614920697
+2025-08-17 03:39:33
+################## New Iteration ##################
+2025-08-17 03:41:09
+Theta  :1.2336305938853445 [°]
+2025-08-17 03:41:09
+s_change : 0.9833252910503679
+2025-08-17 03:41:09
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 03:41:24
+Iteration 0: Residual max G: 9.99e+04, frequence: 4.003314884217102
+2025-08-17 03:43:16
+Iteration 1: Residual max G: 1.69e+04, frequence: 4.01214445310378
+2025-08-17 03:45:08
+Iteration 2: Residual max G: 1.78e+04, frequence: 4.003947559385085
+2025-08-17 03:46:54
+Iteration 3: Residual max G: 3.90e+03, frequence: 4.0046538464758035
+2025-08-17 03:48:46
+Iteration 4: Residual max G: 1.40e+02, frequence: 4.004456339536229
+2025-08-17 03:50:32
+Iteration 5: Residual max G: 1.10e+05, frequence: 4.00647436544157
+2025-08-17 03:52:27
+Iteration 6: Residual max G: 1.66e+01, frequence: 4.006438732251075
+2025-08-17 03:54:20
+Iteration 7: Residual max G: 5.17e+05, frequence: 4.002062761179604
+2025-08-17 03:56:11
+Iteration 8: Residual max G: 3.61e+02, frequence: 4.004488895668443
+2025-08-17 03:57:58
+Iteration 9: Residual max G: 1.12e+03, frequence: 4.001913599233672
+2025-08-17 03:59:50
+Iteration 10: Residual max G: 1.00e+02, frequence: 4.001882456315063
+2025-08-17 04:01:38
+Iteration 11: Residual max G: 4.63e+04, frequence: 4.000563046675574
+2025-08-17 04:03:27
+Iteration 12: Residual max G: 3.27e+00, frequence: 4.000867591336916
+2025-08-17 04:05:15
+Iteration 13: Residual max G: 2.49e+05, frequence: 4.003543516099962
+2025-08-17 04:07:07
+Iteration 14: Residual max G: 8.37e+01, frequence: 4.00408573310052
+2025-08-17 04:08:43
+################## New Iteration ##################
+2025-08-17 04:08:43
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 04:08:58
+Iteration 0: Residual max G: 1.21e+05, frequence: 4.0033348810252685
+2025-08-17 04:10:51
+Iteration 1: Residual max G: 2.40e+01, frequence: 4.004427310243056
+2025-08-17 04:12:36
+Iteration 2: Residual max G: 1.90e+02, frequence: 4.003317064166287
+2025-08-17 04:14:24
+Iteration 3: Residual max G: 1.30e+00, frequence: 4.0033099688726805
+2025-08-17 04:16:14
+Iteration 4: Residual max G: 2.13e+01, frequence: 4.003333758378933
+2025-08-17 04:18:04
+Iteration 5: Residual max G: 3.45e-02, frequence: 4.0033379559064475
+2025-08-17 04:19:48
+Iteration 6: Residual max G: 9.92e-03, frequence: 4.003341205358307
+2025-08-17 04:21:40
+Iteration 7: Residual max G: 1.71e-02, frequence: 4.00334184512488
+2025-08-17 04:23:27
+Iteration 8: Residual max G: 2.45e-03, frequence: 4.003341947225519
+2025-08-17 04:25:18
+Iteration 9: Residual max G: 1.88e-03, frequence: 4.003341895772981
+2025-08-17 04:27:05
+Iteration 10: Residual max G: 2.98e-05, frequence: 4.003341878194742
+2025-08-17 04:27:05
+Second value f:4.003341878194742,u:0.44332368501524394
+2025-08-17 04:27:05
+################## New Iteration ##################
+2025-08-17 04:28:35
+Theta  :1.3211580240357792 [°]
+2025-08-17 04:28:35
+s_change : 0.9412193984364121
+2025-08-17 04:28:35
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 04:28:50
+Iteration 0: Residual max G: 1.07e+05, frequence: 4.0035565853921815
+2025-08-17 04:30:48
+Iteration 1: Residual max G: 6.99e+01, frequence: 4.004742061114404
+2025-08-17 04:32:39
+Iteration 2: Residual max G: 1.05e+04, frequence: 4.002997783691274
+2025-08-17 04:34:35
+Iteration 3: Residual max G: 4.10e-01, frequence: 4.003000587666215
+2025-08-17 04:36:33
+Iteration 4: Residual max G: 8.26e+03, frequence: 4.003559950193017
+2025-08-17 04:38:28
+Iteration 5: Residual max G: 9.18e-02, frequence: 4.003557355337466
+2025-08-17 04:40:25
+Iteration 6: Residual max G: 7.08e-01, frequence: 4.003554965245583
+2025-08-17 04:42:22
+Iteration 7: Residual max G: 1.58e-02, frequence: 4.003553361507035
+2025-08-17 04:44:16
+Iteration 8: Residual max G: 7.84e-03, frequence: 4.003552376007596
+2025-08-17 04:46:07
+Iteration 9: Residual max G: 3.18e-02, frequence: 4.0035510130764305
+2025-08-17 04:48:04
+Iteration 10: Residual max G: 1.56e-02, frequence: 4.003552773617556
+2025-08-17 04:49:57
+Iteration 11: Residual max G: 2.18e-03, frequence: 4.003551615198292
+2025-08-17 04:51:53
+Iteration 12: Residual max G: 4.87e-03, frequence: 4.003553135400796
+2025-08-17 04:53:45
+Iteration 13: Residual max G: 1.99e-02, frequence: 4.003552328353253
+2025-08-17 04:55:41
+Iteration 14: Residual max G: 3.29e-03, frequence: 4.003551434383813
+2025-08-17 04:57:21
+################## New Iteration ##################
+2025-08-17 04:57:21
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 04:57:36
+Iteration 0: Residual max G: 1.29e+05, frequence: 4.003578056111926
+2025-08-17 04:59:31
+Iteration 1: Residual max G: 2.50e+01, frequence: 4.0047950663607494
+2025-08-17 05:01:27
+Iteration 2: Residual max G: 1.68e+02, frequence: 4.003553868587614
+2025-08-17 05:03:21
+Iteration 3: Residual max G: 7.63e-01, frequence: 4.0035568402119655
+2025-08-17 05:05:15
+Iteration 4: Residual max G: 8.95e+00, frequence: 4.003577501912013
+2025-08-17 05:07:07
+Iteration 5: Residual max G: 1.79e-02, frequence: 4.003580418020282
+2025-08-17 05:09:01
+Iteration 6: Residual max G: 2.16e-01, frequence: 4.003581123085104
+2025-08-17 05:10:52
+Iteration 7: Residual max G: 1.02e-02, frequence: 4.003582097232317
+2025-08-17 05:12:47
+Iteration 8: Residual max G: 2.59e-03, frequence: 4.003573649997994
+2025-08-17 05:14:43
+Iteration 9: Residual max G: 6.71e-02, frequence: 4.003579095531095
+2025-08-17 05:16:34
+Iteration 10: Residual max G: 1.17e-01, frequence: 4.003579765983213
+2025-08-17 05:18:30
+Iteration 11: Residual max G: 1.80e-02, frequence: 4.003580819599095
+2025-08-17 05:20:26
+Iteration 12: Residual max G: 2.10e-03, frequence: 4.003581562420378
+2025-08-17 05:22:22
+Iteration 13: Residual max G: 4.54e-05, frequence: 4.003573022622838
+2025-08-17 05:22:22
+Second value f:4.003573022622838,u:0.4500150241087122
+2025-08-17 05:22:22
+################## New Iteration ##################
+2025-08-17 05:23:52
+Theta  :1.3268263942405125 [°]
+2025-08-17 05:23:52
+s_change : 0.9385555850924657
+2025-08-17 05:23:52
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 05:24:07
+Iteration 0: Residual max G: 1.14e+05, frequence: 4.0038000898291335
+2025-08-17 05:26:02
+Iteration 1: Residual max G: 3.31e+01, frequence: 4.004914108391693
+2025-08-17 05:27:57
+Iteration 2: Residual max G: 3.26e+02, frequence: 4.003757503690702
+2025-08-17 05:29:44
+Iteration 3: Residual max G: 1.86e+00, frequence: 4.003749294300796
+2025-08-17 05:31:39
+Iteration 4: Residual max G: 7.70e+01, frequence: 4.003799900144477
+2025-08-17 05:33:34
+Iteration 5: Residual max G: 4.80e-01, frequence: 4.003807534594954
+2025-08-17 05:35:22
+Iteration 6: Residual max G: 1.21e+00, frequence: 4.003804188791979
+2025-08-17 05:37:16
+Iteration 7: Residual max G: 4.02e-02, frequence: 4.0038018813606415
+2025-08-17 05:39:10
+Iteration 8: Residual max G: 3.43e-02, frequence: 4.003799757500115
+2025-08-17 05:40:58
+Iteration 9: Residual max G: 3.34e-02, frequence: 4.003800784242655
+2025-08-17 05:42:52
+Iteration 10: Residual max G: 3.65e-05, frequence: 4.003799326586698
+2025-08-17 05:42:53
+Second value f:4.003799326586698,u:0.4560980990665207
+2025-08-17 05:42:53
+################## New Iteration ##################
+2025-08-17 05:44:22
+Theta  :1.34735224926467 [°]
+2025-08-17 05:44:22
+s_change : 0.9289725164394553
+2025-08-17 05:44:22
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 05:44:36
+Iteration 0: Residual max G: 9.81e+04, frequence: 4.004012225638765
+2025-08-17 05:46:31
+Iteration 1: Residual max G: 7.06e+02, frequence: 4.002696975111067
+2025-08-17 05:48:23
+Iteration 2: Residual max G: 5.77e+02, frequence: 4.003837101324735
+2025-08-17 05:50:08
+Iteration 3: Residual max G: 2.05e+01, frequence: 4.00380512195818
+2025-08-17 05:51:59
+Iteration 4: Residual max G: 2.48e+03, frequence: 4.004140677073252
+2025-08-17 05:53:49
+Iteration 5: Residual max G: 1.88e-01, frequence: 4.004149745358885
+2025-08-17 05:55:40
+Iteration 6: Residual max G: 4.04e+02, frequence: 4.00402118946369
+2025-08-17 05:57:26
+Iteration 7: Residual max G: 4.80e-04, frequence: 4.004011151764048
+2025-08-17 05:57:26
+Second value f:4.004011151764048,u:0.46154071612020875
+2025-08-17 05:57:26
+################## New Iteration ##################
+2025-08-17 05:59:06
+Theta  :1.118485778560231 [°]
+2025-08-17 05:59:06
+s_change : 1.0415990815672267
+2025-08-17 05:59:06
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 05:59:20
+Iteration 0: Residual max G: 1.06e+05, frequence: 4.004230558696315
+2025-08-17 06:01:11
+Iteration 1: Residual max G: 1.16e+02, frequence: 4.005651534652431
+2025-08-17 06:03:06
+Iteration 2: Residual max G: 3.87e+03, frequence: 4.0047257357358115
+2025-08-17 06:04:59
+Iteration 3: Residual max G: 1.22e+00, frequence: 4.004754104356629
+2025-08-17 06:06:50
+Iteration 4: Residual max G: 6.06e+03, frequence: 4.004222679830877
+2025-08-17 06:08:45
+Iteration 5: Residual max G: 4.94e-02, frequence: 4.004222919439417
+2025-08-17 06:10:42
+Iteration 6: Residual max G: 1.47e+00, frequence: 4.004228714985695
+2025-08-17 06:12:34
+Iteration 7: Residual max G: 1.06e-04, frequence: 4.004230613434749
+2025-08-17 06:12:34
+Second value f:4.004230613434749,u:0.4670229241997961
+2025-08-17 06:12:34
+################## New Iteration ##################
+2025-08-17 06:14:04
+Theta  :1.2145103458478845 [°]
+2025-08-17 06:14:04
+s_change : 0.9927710823093461
+2025-08-17 06:14:04
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 06:14:19
+Iteration 0: Residual max G: 1.05e+05, frequence: 4.004447052925806
+2025-08-17 06:16:07
+Iteration 1: Residual max G: 2.25e+02, frequence: 4.006155263468544
+2025-08-17 06:18:00
+Iteration 2: Residual max G: 6.04e+02, frequence: 4.0047094158326955
+2025-08-17 06:19:48
+Iteration 3: Residual max G: 1.93e+01, frequence: 4.004750464135093
+2025-08-17 06:21:42
+Iteration 4: Residual max G: 4.27e+03, frequence: 4.004288007363839
+2025-08-17 06:23:38
+Iteration 5: Residual max G: 1.27e-01, frequence: 4.004296381747176
+2025-08-17 06:25:35
+Iteration 6: Residual max G: 5.37e+02, frequence: 4.004450038266788
+2025-08-17 06:27:29
+Iteration 7: Residual max G: 5.13e-04, frequence: 4.004447207371656
+2025-08-17 06:29:24
+Iteration 8: Residual max G: 1.57e-02, frequence: 4.004445634479392
+2025-08-17 06:31:21
+Iteration 9: Residual max G: 3.36e-02, frequence: 4.0044537989745015
+2025-08-17 06:33:16
+Iteration 10: Residual max G: 1.59e-01, frequence: 4.004448688177957
+2025-08-17 06:35:10
+Iteration 11: Residual max G: 1.02e-02, frequence: 4.004447352206954
+2025-08-17 06:37:05
+Iteration 12: Residual max G: 5.35e-04, frequence: 4.004446221244991
+2025-08-17 06:39:03
+Iteration 13: Residual max G: 8.64e-03, frequence: 4.0044445329131975
+2025-08-17 06:40:56
+Iteration 14: Residual max G: 1.12e-03, frequence: 4.0044533543338385
+2025-08-17 06:42:37
+################## New Iteration ##################
+2025-08-17 06:42:37
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 06:42:52
+Iteration 0: Residual max G: 1.27e+05, frequence: 4.004468696874912
+2025-08-17 06:44:45
+Iteration 1: Residual max G: 2.74e+01, frequence: 4.005752204030401
+2025-08-17 06:46:40
+Iteration 2: Residual max G: 2.05e+02, frequence: 4.004444407644868
+2025-08-17 06:48:31
+Iteration 3: Residual max G: 1.70e+00, frequence: 4.004442454388949
+2025-08-17 06:50:21
+Iteration 4: Residual max G: 2.56e+01, frequence: 4.004474463679732
+2025-08-17 06:52:16
+Iteration 5: Residual max G: 4.14e-01, frequence: 4.004472306174701
+2025-08-17 06:54:10
+Iteration 6: Residual max G: 2.33e-01, frequence: 4.004473335063255
+2025-08-17 06:56:02
+Iteration 7: Residual max G: 4.08e-04, frequence: 4.004474149394094
+2025-08-17 06:56:03
+Second value f:4.004474149394094,u:0.4727992906809864
+2025-08-17 06:56:03
+################## New Iteration ##################
+2025-08-17 06:57:36
+Theta  :1.3796324801683322 [°]
+2025-08-17 06:57:36
+s_change : 0.9140991446205369
+2025-08-17 06:57:36
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 06:57:51
+Iteration 0: Residual max G: 1.06e+05, frequence: 4.004687892533523
+2025-08-17 06:59:47
+Iteration 1: Residual max G: 1.83e+02, frequence: 4.006334877623625
+2025-08-17 07:01:37
+Iteration 2: Residual max G: 9.22e+02, frequence: 4.004982244637145
+2025-08-17 07:03:24
+Iteration 3: Residual max G: 9.73e+00, frequence: 4.0050160668546475
+2025-08-17 07:05:12
+Iteration 4: Residual max G: 3.28e+03, frequence: 4.004609720450823
+2025-08-17 07:06:59
+Iteration 5: Residual max G: 5.15e-02, frequence: 4.004609298740869
+2025-08-17 07:08:49
+Iteration 6: Residual max G: 1.01e+02, frequence: 4.004678433483211
+2025-08-17 07:10:35
+Iteration 7: Residual max G: 1.33e-01, frequence: 4.004685803508012
+2025-08-17 07:12:22
+Iteration 8: Residual max G: 3.83e-01, frequence: 4.004677205824762
+2025-08-17 07:14:08
+Iteration 9: Residual max G: 1.51e-02, frequence: 4.004679562499002
+2025-08-17 07:15:56
+Iteration 10: Residual max G: 8.86e-04, frequence: 4.004681804537709
+2025-08-17 07:17:43
+Iteration 11: Residual max G: 4.62e-03, frequence: 4.004683299635781
+2025-08-17 07:19:30
+Iteration 12: Residual max G: 3.40e-03, frequence: 4.0046745619788675
+2025-08-17 07:21:24
+Iteration 13: Residual max G: 1.60e-02, frequence: 4.004680339962299
+2025-08-17 07:23:10
+Iteration 14: Residual max G: 7.65e-03, frequence: 4.004682060674783
+2025-08-17 07:24:40
+################## New Iteration ##################
+2025-08-17 07:24:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 07:24:55
+Iteration 0: Residual max G: 1.28e+05, frequence: 4.004709266847466
+2025-08-17 07:26:49
+Iteration 1: Residual max G: 2.83e+01, frequence: 4.006043719455676
+2025-08-17 07:28:36
+Iteration 2: Residual max G: 2.24e+02, frequence: 4.00468043935395
+2025-08-17 07:30:30
+Iteration 3: Residual max G: 1.29e+00, frequence: 4.004672697732025
+2025-08-17 07:32:23
+Iteration 4: Residual max G: 1.96e+01, frequence: 4.004700230365212
+2025-08-17 07:34:17
+Iteration 5: Residual max G: 1.15e-02, frequence: 4.004697146501032
+2025-08-17 07:36:08
+Iteration 6: Residual max G: 8.64e-03, frequence: 4.004695421598186
+2025-08-17 07:38:03
+Iteration 7: Residual max G: 9.73e-03, frequence: 4.004693587077233
+2025-08-17 07:39:57
+Iteration 8: Residual max G: 1.09e-02, frequence: 4.004701422587674
+2025-08-17 07:41:45
+Iteration 9: Residual max G: 4.05e-05, frequence: 4.004696351411798
+2025-08-17 07:41:45
+Second value f:4.004696351411798,u:0.478351132212399
+2025-08-17 07:41:45
+################## New Iteration ##################
+2025-08-17 07:43:18
+Theta  :1.274440621579135 [°]
+2025-08-17 07:43:18
+s_change : 0.9634638504839691
+2025-08-17 07:43:18
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 07:43:33
+Iteration 0: Residual max G: 1.19e+05, frequence: 4.004913333570602
+2025-08-17 07:45:29
+Iteration 1: Residual max G: 3.63e+01, frequence: 4.006218534215957
+2025-08-17 07:47:21
+Iteration 2: Residual max G: 3.51e+02, frequence: 4.004859529656742
+2025-08-17 07:49:07
+Iteration 3: Residual max G: 2.07e+00, frequence: 4.004860861525761
+2025-08-17 07:51:01
+Iteration 4: Residual max G: 7.36e+01, frequence: 4.004913936339698
+2025-08-17 07:52:56
+Iteration 5: Residual max G: 1.56e+00, frequence: 4.004927809408238
+2025-08-17 07:54:44
+Iteration 6: Residual max G: 2.94e+00, frequence: 4.004912105726084
+2025-08-17 07:56:38
+Iteration 7: Residual max G: 4.13e-03, frequence: 4.00491457340648
+2025-08-17 07:58:32
+Iteration 8: Residual max G: 1.73e-02, frequence: 4.004914734730172
+2025-08-17 08:00:19
+Iteration 9: Residual max G: 3.18e-04, frequence: 4.00491463102984
+2025-08-17 08:00:19
+Second value f:4.00491463102984,u:0.4834818042105743
+2025-08-17 08:00:19
+################## New Iteration ##################
+2025-08-17 08:01:58
+Theta  :1.2717630027151536 [°]
+2025-08-17 08:01:58
+s_change : 0.9647546088212999
+2025-08-17 08:01:58
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 08:02:13
+Iteration 0: Residual max G: 1.10e+05, frequence: 4.005116020763506
+2025-08-17 08:04:07
+Iteration 1: Residual max G: 8.41e+01, frequence: 4.00656284763028
+2025-08-17 08:06:07
+Iteration 2: Residual max G: 9.67e+03, frequence: 4.004492840545325
+2025-08-17 08:07:59
+Iteration 3: Residual max G: 5.28e-01, frequence: 4.004488327340976
+2025-08-17 08:09:51
+Iteration 4: Residual max G: 7.47e+03, frequence: 4.005117429226378
+2025-08-17 08:11:43
+Iteration 5: Residual max G: 7.43e-02, frequence: 4.005118265769997
+2025-08-17 08:13:33
+Iteration 6: Residual max G: 8.20e-01, frequence: 4.005109447068231
+2025-08-17 08:15:28
+Iteration 7: Residual max G: 1.94e-02, frequence: 4.0051149081550665
+2025-08-17 08:17:23
+Iteration 8: Residual max G: 7.98e-03, frequence: 4.005109087011357
+2025-08-17 08:19:14
+Iteration 9: Residual max G: 2.49e-04, frequence: 4.005114377515038
+2025-08-17 08:19:15
+Second value f:4.005114377515038,u:0.4882215313876687
+2025-08-17 08:19:15
+################## New Iteration ##################
+2025-08-17 08:20:45
+Theta  :1.195120574588147 [°]
+2025-08-17 08:20:45
+s_change : 1.0024426912267226
+2025-08-17 08:20:45
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 08:21:00
+Iteration 0: Residual max G: 1.10e+05, frequence: 4.005304666915049
+2025-08-17 08:22:54
+Iteration 1: Residual max G: 8.79e+01, frequence: 4.006804382938698
+2025-08-17 08:24:40
+Iteration 2: Residual max G: 1.09e+04, frequence: 4.0046286401706555
+2025-08-17 08:26:34
+Iteration 3: Residual max G: 5.63e-01, frequence: 4.004611367419006
+2025-08-17 08:28:24
+Iteration 4: Residual max G: 8.63e+03, frequence: 4.005306809956006
+2025-08-17 08:30:20
+Iteration 5: Residual max G: 9.93e-02, frequence: 4.00531050097891
+2025-08-17 08:32:11
+Iteration 6: Residual max G: 2.18e+00, frequence: 4.005296928549922
+2025-08-17 08:34:08
+Iteration 7: Residual max G: 9.28e-03, frequence: 4.0052982907384465
+2025-08-17 08:35:59
+Iteration 8: Residual max G: 9.59e-05, frequence: 4.005299552480808
+2025-08-17 08:35:59
+Second value f:4.005299552480808,u:0.49276895276886484
+2025-08-17 08:35:59
+################## New Iteration ##################
+2025-08-17 08:37:40
+Theta  :1.196216711714166 [°]
+2025-08-17 08:37:40
+s_change : 1.001893434430383
+2025-08-17 08:37:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 08:37:55
+Iteration 0: Residual max G: 1.11e+05, frequence: 4.005478367295149
+2025-08-17 08:39:51
+Iteration 1: Residual max G: 9.36e+01, frequence: 4.007019148172486
+2025-08-17 08:41:47
+Iteration 2: Residual max G: 1.67e+04, frequence: 4.00459416649372
+2025-08-17 08:43:46
+Iteration 3: Residual max G: 7.08e-01, frequence: 4.004579166134277
+2025-08-17 08:45:41
+Iteration 4: Residual max G: 1.40e+04, frequence: 4.005479401372493
+2025-08-17 08:47:36
+Iteration 5: Residual max G: 2.62e-01, frequence: 4.005498477213979
+2025-08-17 08:49:32
+Iteration 6: Residual max G: 5.85e+00, frequence: 4.005467868071104
+2025-08-17 08:51:27
+Iteration 7: Residual max G: 3.85e-04, frequence: 4.005469610466456
+2025-08-17 08:51:28
+Second value f:4.005469610466456,u:0.49711656627096706
+2025-08-17 08:51:28
+################## New Iteration ##################
+2025-08-17 08:53:07
+Theta  :1.2237920636053143 [°]
+2025-08-17 08:53:07
+s_change : 0.9881744462371715
+2025-08-17 08:53:07
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 08:53:22
+Iteration 0: Residual max G: 1.08e+05, frequence: 4.005633577064902
+2025-08-17 08:55:16
+Iteration 1: Residual max G: 1.76e+02, frequence: 4.007451868847161
+2025-08-17 08:57:08
+Iteration 2: Residual max G: 1.98e+03, frequence: 4.00607748497939
+2025-08-17 08:59:01
+Iteration 3: Residual max G: 4.79e+00, frequence: 4.00611813587889
+2025-08-17 09:00:53
+Iteration 4: Residual max G: 4.26e+03, frequence: 4.00558600194165
+2025-08-17 09:02:48
+Iteration 5: Residual max G: 3.31e-02, frequence: 4.005586341745402
+2025-08-17 09:04:44
+Iteration 6: Residual max G: 2.19e+01, frequence: 4.005622184848374
+2025-08-17 09:06:40
+Iteration 7: Residual max G: 1.64e-03, frequence: 4.0056255014238715
+2025-08-17 09:08:34
+Iteration 8: Residual max G: 3.81e-02, frequence: 4.005626516277097
+2025-08-17 09:10:28
+Iteration 9: Residual max G: 3.32e-02, frequence: 4.005626623686345
+2025-08-17 09:12:19
+Iteration 10: Residual max G: 1.29e-04, frequence: 4.005626696135493
+2025-08-17 09:12:19
+Second value f:4.005626696135493,u:0.5012171747731196
+2025-08-17 09:12:19
+################## New Iteration ##################
+2025-08-17 09:13:55
+Theta  :1.2251580437813039 [°]
+2025-08-17 09:13:55
+s_change : 0.987499763312284
+2025-08-17 09:13:55
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 09:14:09
+Iteration 0: Residual max G: 1.05e+05, frequence: 4.005774081237161
+2025-08-17 09:16:02
+Iteration 1: Residual max G: 5.47e+02, frequence: 4.008441971999498
+2025-08-17 09:17:49
+Iteration 2: Residual max G: 6.46e+02, frequence: 4.006095879896848
+2025-08-17 09:19:39
+Iteration 3: Residual max G: 5.34e+01, frequence: 4.006186278978306
+2025-08-17 09:21:38
+Iteration 4: Residual max G: 3.74e+04, frequence: 4.004574509822104
+2025-08-17 09:23:33
+Iteration 5: Residual max G: 1.99e+00, frequence: 4.004697811573887
+2025-08-17 09:25:22
+Iteration 6: Residual max G: 2.25e+04, frequence: 4.00579221279598
+2025-08-17 09:27:13
+Iteration 7: Residual max G: 6.73e-01, frequence: 4.005832471731783
+2025-08-17 09:29:11
+Iteration 8: Residual max G: 2.32e+01, frequence: 4.005758456234925
+2025-08-17 09:31:02
+Iteration 9: Residual max G: 1.27e-02, frequence: 4.005770065208484
+2025-08-17 09:32:53
+Iteration 10: Residual max G: 1.03e-01, frequence: 4.005766617978935
+2025-08-17 09:34:41
+Iteration 11: Residual max G: 2.07e-02, frequence: 4.005767021260781
+2025-08-17 09:36:35
+Iteration 12: Residual max G: 9.23e-03, frequence: 4.005765290825894
+2025-08-17 09:38:22
+Iteration 13: Residual max G: 1.18e-02, frequence: 4.00576578677893
+2025-08-17 09:40:10
+Iteration 14: Residual max G: 1.62e-03, frequence: 4.005766458047421
+2025-08-17 09:41:43
+################## New Iteration ##################
+2025-08-17 09:41:43
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 09:41:59
+Iteration 0: Residual max G: 1.27e+05, frequence: 4.005788819747328
+2025-08-17 09:43:52
+Iteration 1: Residual max G: 3.67e+01, frequence: 4.007308592282537
+2025-08-17 09:45:39
+Iteration 2: Residual max G: 2.95e+02, frequence: 4.005731077944866
+2025-08-17 09:47:34
+Iteration 3: Residual max G: 2.69e+00, frequence: 4.005723671956976
+2025-08-17 09:49:21
+Iteration 4: Residual max G: 4.74e+01, frequence: 4.005783113061378
+2025-08-17 09:51:12
+Iteration 5: Residual max G: 6.85e-01, frequence: 4.005773351367471
+2025-08-17 09:53:00
+Iteration 6: Residual max G: 3.09e-01, frequence: 4.005773436761005
+2025-08-17 09:54:56
+Iteration 7: Residual max G: 1.22e-02, frequence: 4.005773408494306
+2025-08-17 09:56:43
+Iteration 8: Residual max G: 1.37e-02, frequence: 4.005773075256661
+2025-08-17 09:58:39
+Iteration 9: Residual max G: 3.35e-03, frequence: 4.005772618864837
+2025-08-17 10:00:29
+Iteration 10: Residual max G: 3.77e-04, frequence: 4.005782062892324
+2025-08-17 10:00:29
+Second value f:4.005782062892324,u:0.5054362717160558
+2025-08-17 10:00:29
+################## New Iteration ##################
+2025-08-17 10:02:05
+Theta  :1.2604074707775703 [°]
+2025-08-17 10:02:05
+s_change : 0.9702478395897475
+2025-08-17 10:02:05
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 10:02:20
+Iteration 0: Residual max G: 1.19e+05, frequence: 4.005921445976352
+2025-08-17 10:04:06
+Iteration 1: Residual max G: 5.17e+01, frequence: 4.007465307541618
+2025-08-17 10:06:02
+Iteration 2: Residual max G: 5.42e+02, frequence: 4.005823993274666
+2025-08-17 10:08:00
+Iteration 3: Residual max G: 3.15e+00, frequence: 4.005801368211184
+2025-08-17 10:09:52
+Iteration 4: Residual max G: 1.66e+02, frequence: 4.005916006192569
+2025-08-17 10:11:46
+Iteration 5: Residual max G: 2.89e-01, frequence: 4.005912793027135
+2025-08-17 10:13:43
+Iteration 6: Residual max G: 1.24e+00, frequence: 4.005909809869256
+2025-08-17 10:15:34
+Iteration 7: Residual max G: 9.61e-03, frequence: 4.0059073730760995
+2025-08-17 10:17:27
+Iteration 8: Residual max G: 1.12e-04, frequence: 4.005908055868204
+2025-08-17 10:17:27
+Second value f:4.005908055868204,u:0.5093072733019072
+2025-08-17 10:17:27
+################## New Iteration ##################
+2025-08-17 10:19:09
+Theta  :1.2406255400953579 [°]
+2025-08-17 10:19:09
+s_change : 0.9798921444599902
+2025-08-17 10:19:09
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 10:19:24
+Iteration 0: Residual max G: 1.15e+05, frequence: 4.006024828679133
+2025-08-17 10:21:19
+Iteration 1: Residual max G: 8.25e+01, frequence: 4.007682453108604
+2025-08-17 10:23:11
+Iteration 2: Residual max G: 1.79e+03, frequence: 4.0057738992897205
+2025-08-17 10:25:05
+Iteration 3: Residual max G: 1.81e+00, frequence: 4.005751046385538
+2025-08-17 10:26:56
+Iteration 4: Residual max G: 9.55e+02, frequence: 4.006024263833372
+2025-08-17 10:28:48
+Iteration 5: Residual max G: 1.34e-02, frequence: 4.006020406256684
+2025-08-17 10:30:36
+Iteration 6: Residual max G: 1.52e+00, frequence: 4.006014351936499
+2025-08-17 10:32:29
+Iteration 7: Residual max G: 4.28e-03, frequence: 4.00601174936395
+2025-08-17 10:34:22
+Iteration 8: Residual max G: 2.10e-03, frequence: 4.006010039111766
+2025-08-17 10:36:18
+Iteration 9: Residual max G: 2.92e-03, frequence: 4.006008456850008
+2025-08-17 10:38:12
+Iteration 10: Residual max G: 1.77e-04, frequence: 4.00601655941017
+2025-08-17 10:38:12
+Second value f:4.00601655941017,u:0.51288238303474
+2025-08-17 10:38:12
+################## New Iteration ##################
+2025-08-17 10:39:46
+Theta  :1.180956109808072 [°]
+2025-08-17 10:39:46
+s_change : 1.009567423046742
+2025-08-17 10:39:46
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 10:40:01
+Iteration 0: Residual max G: 1.17e+05, frequence: 4.006115488979856
+2025-08-17 10:41:56
+Iteration 1: Residual max G: 7.35e+01, frequence: 4.007803744230674
+2025-08-17 10:43:52
+Iteration 2: Residual max G: 9.65e+02, frequence: 4.005943014258683
+2025-08-17 10:45:45
+Iteration 3: Residual max G: 2.93e+00, frequence: 4.005932618307831
+2025-08-17 10:47:39
+Iteration 4: Residual max G: 4.00e+02, frequence: 4.00610387839794
+2025-08-17 10:49:26
+Iteration 5: Residual max G: 3.33e-02, frequence: 4.006114553902542
+2025-08-17 10:51:21
+Iteration 6: Residual max G: 7.55e-01, frequence: 4.0061026246900715
+2025-08-17 10:53:08
+Iteration 7: Residual max G: 9.69e-03, frequence: 4.006105045518908
+2025-08-17 10:55:02
+Iteration 8: Residual max G: 2.02e-03, frequence: 4.006097674120844
+2025-08-17 10:56:50
+Iteration 9: Residual max G: 3.55e-04, frequence: 4.006103867749322
+2025-08-17 10:56:50
+Second value f:4.006103867749322,u:0.5162866527843667
+2025-08-17 10:56:50
+################## New Iteration ##################
+2025-08-17 10:58:24
+Theta  :1.2465291275965478 [°]
+2025-08-17 10:58:24
+s_change : 0.9770039696969003
+2025-08-17 10:58:24
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 10:58:39
+Iteration 0: Residual max G: 1.11e+05, frequence: 4.006179656275761
+2025-08-17 11:00:34
+Iteration 1: Residual max G: 1.55e+02, frequence: 4.008171169722521
+2025-08-17 11:02:25
+Iteration 2: Residual max G: 7.87e+04, frequence: 4.008839359638428
+2025-08-17 11:04:18
+Iteration 3: Residual max G: 1.10e+01, frequence: 4.008334811007207
+2025-08-17 11:06:11
+Iteration 4: Residual max G: 1.08e+05, frequence: 4.005855487215218
+2025-08-17 11:08:05
+Iteration 5: Residual max G: 1.55e+01, frequence: 4.0057818413981625
+2025-08-17 11:09:54
+Iteration 6: Residual max G: 1.59e+03, frequence: 4.006229409785168
+2025-08-17 11:11:51
+Iteration 7: Residual max G: 1.49e-01, frequence: 4.006235736003886
+2025-08-17 11:13:40
+Iteration 8: Residual max G: 4.86e+01, frequence: 4.006167244037562
+2025-08-17 11:15:38
+Iteration 9: Residual max G: 2.88e-02, frequence: 4.006164589961584
+2025-08-17 11:17:31
+Iteration 10: Residual max G: 7.64e-03, frequence: 4.006162055673973
+2025-08-17 11:19:28
+Iteration 11: Residual max G: 3.49e-03, frequence: 4.0061685309448025
+2025-08-17 11:21:20
+Iteration 12: Residual max G: 1.02e-02, frequence: 4.006165095872019
+2025-08-17 11:23:13
+Iteration 13: Residual max G: 6.75e-03, frequence: 4.006162264313515
+2025-08-17 11:25:08
+Iteration 14: Residual max G: 1.90e-04, frequence: 4.006168429267037
+2025-08-17 11:25:08
+Second value f:4.006168429267037,u:0.5194093686392556
+2025-08-17 11:25:08
+################## New Iteration ##################
+2025-08-17 11:26:46
+Theta  :1.2145992355132713 [°]
+2025-08-17 11:26:46
+s_change : 0.9927269597452072
+2025-08-17 11:26:46
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 11:27:01
+Iteration 0: Residual max G: 1.09e+05, frequence: 4.006222503086054
+2025-08-17 11:28:59
+Iteration 1: Residual max G: 2.48e+02, frequence: 4.008530416034453
+2025-08-17 11:30:50
+Iteration 2: Residual max G: 2.26e+03, frequence: 4.006796369825435
+2025-08-17 11:32:37
+Iteration 3: Residual max G: 8.31e+00, frequence: 4.006867920919622
+2025-08-17 11:34:23
+Iteration 4: Residual max G: 5.19e+03, frequence: 4.00614671558424
+2025-08-17 11:36:14
+Iteration 5: Residual max G: 5.47e-02, frequence: 4.006153258983374
+2025-08-17 11:38:05
+Iteration 6: Residual max G: 3.91e+01, frequence: 4.006207087148445
+2025-08-17 11:39:53
+Iteration 7: Residual max G: 4.17e-02, frequence: 4.006211518986122
+2025-08-17 11:41:46
+Iteration 8: Residual max G: 1.35e-02, frequence: 4.006205305719729
+2025-08-17 11:43:34
+Iteration 9: Residual max G: 9.73e-03, frequence: 4.006209339331136
+2025-08-17 11:45:24
+Iteration 10: Residual max G: 7.89e-04, frequence: 4.006212264971662
+2025-08-17 11:47:14
+Iteration 11: Residual max G: 3.01e-03, frequence: 4.006206224859668
+2025-08-17 11:49:03
+Iteration 12: Residual max G: 8.25e-03, frequence: 4.006210036604039
+2025-08-17 11:50:54
+Iteration 13: Residual max G: 4.64e-03, frequence: 4.00621263620343
+2025-08-17 11:52:40
+Iteration 14: Residual max G: 3.22e-03, frequence: 4.00620627400286
+2025-08-17 11:54:19
+################## New Iteration ##################
+2025-08-17 11:54:19
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 11:54:34
+Iteration 0: Residual max G: 1.32e+05, frequence: 4.006227910467956
+2025-08-17 11:56:28
+Iteration 1: Residual max G: 4.34e+01, frequence: 4.008056593510156
+2025-08-17 11:58:21
+Iteration 2: Residual max G: 3.36e+02, frequence: 4.006162023554848
+2025-08-17 12:00:13
+Iteration 3: Residual max G: 4.73e+00, frequence: 4.006142810116475
+2025-08-17 12:02:08
+Iteration 4: Residual max G: 6.29e+01, frequence: 4.0062176036289
+2025-08-17 12:04:02
+Iteration 5: Residual max G: 2.07e-01, frequence: 4.006208064488577
+2025-08-17 12:05:56
+Iteration 6: Residual max G: 4.38e-02, frequence: 4.006214224539581
+2025-08-17 12:07:46
+Iteration 7: Residual max G: 1.54e-03, frequence: 4.006210388895084
+2025-08-17 12:09:37
+Iteration 8: Residual max G: 3.27e-04, frequence: 4.006216134609313
+2025-08-17 12:09:37
+Second value f:4.006216134609313,u:0.5225843326245964
+2025-08-17 12:09:37
+################## New Iteration ##################
+2025-08-17 12:11:14
+Theta  :1.3008360036164885 [°]
+2025-08-17 12:11:14
+s_change : 0.9508318919716637
+2025-08-17 12:11:15
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 12:11:29
+Iteration 0: Residual max G: 1.19e+05, frequence: 4.006247957726619
+2025-08-17 12:13:19
+Iteration 1: Residual max G: 7.45e+01, frequence: 4.008062537498704
+2025-08-17 12:15:10
+Iteration 2: Residual max G: 7.98e+02, frequence: 4.00610078267563
+2025-08-17 12:17:04
+Iteration 3: Residual max G: 4.35e+00, frequence: 4.006073753977501
+2025-08-17 12:18:56
+Iteration 4: Residual max G: 2.82e+02, frequence: 4.006235484895638
+2025-08-17 12:20:49
+Iteration 5: Residual max G: 4.53e-02, frequence: 4.006238575305743
+2025-08-17 12:22:40
+Iteration 6: Residual max G: 4.06e-01, frequence: 4.006234630305036
+2025-08-17 12:24:32
+Iteration 7: Residual max G: 3.27e-03, frequence: 4.006231627025543
+2025-08-17 12:26:27
+Iteration 8: Residual max G: 2.83e-04, frequence: 4.006237966401046
+2025-08-17 12:26:27
+Second value f:4.006237966401046,u:0.5253754905627284
+2025-08-17 12:26:27
+################## New Iteration ##################
+2025-08-17 12:28:04
+Theta  :1.2138508443441707 [°]
+2025-08-17 12:28:04
+s_change : 0.9930985033008516
+2025-08-17 12:28:04
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 12:28:18
+Iteration 0: Residual max G: 1.18e+05, frequence: 4.006244549568099
+2025-08-17 12:30:09
+Iteration 1: Residual max G: 9.28e+01, frequence: 4.008180513563012
+2025-08-17 12:31:57
+Iteration 2: Residual max G: 1.15e+03, frequence: 4.0060406732929446
+2025-08-17 12:33:52
+Iteration 3: Residual max G: 4.07e+00, frequence: 4.006010737206385
+2025-08-17 12:35:46
+Iteration 4: Residual max G: 4.73e+02, frequence: 4.00622887674264
+2025-08-17 12:37:40
+Iteration 5: Residual max G: 1.28e-02, frequence: 4.006234781374435
+2025-08-17 12:39:32
+Iteration 6: Residual max G: 1.61e-01, frequence: 4.006225712175446
+2025-08-17 12:41:25
+Iteration 7: Residual max G: 6.16e-02, frequence: 4.006228734174684
+2025-08-17 12:43:13
+Iteration 8: Residual max G: 1.96e-02, frequence: 4.0062290850257885
+2025-08-17 12:45:07
+Iteration 9: Residual max G: 4.46e-03, frequence: 4.006229301806032
+2025-08-17 12:47:00
+Iteration 10: Residual max G: 2.37e-03, frequence: 4.00622970841138
+2025-08-17 12:48:55
+Iteration 11: Residual max G: 1.36e-03, frequence: 4.006229893159934
+2025-08-17 12:50:46
+Iteration 12: Residual max G: 3.49e-03, frequence: 4.006230460005281
+2025-08-17 12:52:40
+Iteration 13: Residual max G: 2.49e-03, frequence: 4.006230502538205
+2025-08-17 12:54:31
+Iteration 14: Residual max G: 3.15e-05, frequence: 4.006230479903675
+2025-08-17 12:54:31
+Second value f:4.006230479903675,u:0.5279304438283503
+2025-08-17 12:54:31
+################## New Iteration ##################
+2025-08-17 12:56:08
+Theta  :1.1973694138112365 [°]
+2025-08-17 12:56:08
+s_change : 1.0013161584717105
+2025-08-17 12:56:08
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 12:56:23
+Iteration 0: Residual max G: 1.18e+05, frequence: 4.006211254693703
+2025-08-17 12:58:18
+Iteration 1: Residual max G: 1.00e+02, frequence: 4.008206386393427
+2025-08-17 13:00:10
+Iteration 2: Residual max G: 1.27e+03, frequence: 4.005966112032209
+2025-08-17 13:02:05
+Iteration 3: Residual max G: 4.57e+00, frequence: 4.005942125724164
+2025-08-17 13:03:58
+Iteration 4: Residual max G: 5.81e+02, frequence: 4.006208906526397
+2025-08-17 13:05:52
+Iteration 5: Residual max G: 4.38e-02, frequence: 4.006206894819346
+2025-08-17 13:07:48
+Iteration 6: Residual max G: 1.21e+00, frequence: 4.006193766105233
+2025-08-17 13:09:41
+Iteration 7: Residual max G: 3.84e-05, frequence: 4.006195659992068
+2025-08-17 13:09:41
+Second value f:4.006195659992068,u:0.5302801348775141
+2025-08-17 13:09:41
+################## New Iteration ##################
+2025-08-17 13:11:21
+Theta  :1.2220538761314066 [°]
+2025-08-17 13:11:21
+s_change : 0.9890336357634517
+2025-08-17 13:11:21
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 13:11:36
+Iteration 0: Residual max G: 1.15e+05, frequence: 4.006150282097328
+2025-08-17 13:13:31
+Iteration 1: Residual max G: 1.46e+02, frequence: 4.008382508018784
+2025-08-17 13:15:24
+Iteration 2: Residual max G: 4.17e+03, frequence: 4.005605889080923
+2025-08-17 13:17:20
+Iteration 3: Residual max G: 2.53e+00, frequence: 4.005557688733346
+2025-08-17 13:19:15
+Iteration 4: Residual max G: 2.65e+03, frequence: 4.006148718628333
+2025-08-17 13:21:10
+Iteration 5: Residual max G: 1.43e-02, frequence: 4.006153844075091
+2025-08-17 13:23:01
+Iteration 6: Residual max G: 1.74e+00, frequence: 4.006133113836493
+2025-08-17 13:24:55
+Iteration 7: Residual max G: 5.47e-04, frequence: 4.006139477613725
+2025-08-17 13:26:49
+Iteration 8: Residual max G: 2.34e-04, frequence: 4.0061418403237266
+2025-08-17 13:26:49
+Second value f:4.0061418403237266,u:0.5323892173649034
+2025-08-17 13:26:49
+################## New Iteration ##################
+2025-08-17 13:28:27
+Theta  :1.1560320170712741 [°]
+2025-08-17 13:28:27
+s_change : 1.022227419975371
+2025-08-17 13:28:27
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 13:28:43
+Iteration 0: Residual max G: 1.20e+05, frequence: 4.006069185303843
+2025-08-17 13:30:31
+Iteration 1: Residual max G: 1.01e+02, frequence: 4.008204423032958
+2025-08-17 13:32:27
+Iteration 2: Residual max G: 8.78e+02, frequence: 4.005883569958554
+2025-08-17 13:34:19
+Iteration 3: Residual max G: 7.96e+00, frequence: 4.005835126240721
+2025-08-17 13:36:14
+Iteration 4: Residual max G: 3.40e+02, frequence: 4.006056066975691
+2025-08-17 13:38:07
+Iteration 5: Residual max G: 5.39e-01, frequence: 4.006074322658477
+2025-08-17 13:40:01
+Iteration 6: Residual max G: 3.91e+00, frequence: 4.006044530632492
+2025-08-17 13:41:54
+Iteration 7: Residual max G: 3.20e-02, frequence: 4.006054090967691
+2025-08-17 13:43:45
+Iteration 8: Residual max G: 1.96e-03, frequence: 4.006050370292036
+2025-08-17 13:45:41
+Iteration 9: Residual max G: 4.72e-03, frequence: 4.006049910097538
+2025-08-17 13:47:39
+Iteration 10: Residual max G: 2.27e-03, frequence: 4.006049701475921
+2025-08-17 13:49:32
+Iteration 11: Residual max G: 1.62e-03, frequence: 4.006049475106931
+2025-08-17 13:51:30
+Iteration 12: Residual max G: 1.32e-03, frequence: 4.006049510153012
+2025-08-17 13:53:19
+Iteration 13: Residual max G: 3.95e-05, frequence: 4.006049249210921
+2025-08-17 13:53:20
+Second value f:4.006049249210921,u:0.534336490102268
+2025-08-17 13:53:20
+################## New Iteration ##################
+2025-08-17 13:54:55
+Theta  :1.2198506321199576 [°]
+2025-08-17 13:54:55
+s_change : 0.9901237773327345
+2025-08-17 13:54:55
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 13:55:10
+Iteration 0: Residual max G: 1.18e+05, frequence: 4.0059485807463036
+2025-08-17 13:57:02
+Iteration 1: Residual max G: 1.38e+02, frequence: 4.008308035814339
+2025-08-17 13:58:54
+Iteration 2: Residual max G: 1.70e+03, frequence: 4.005607996586949
+2025-08-17 14:00:43
+Iteration 3: Residual max G: 6.52e+00, frequence: 4.00557562950533
+2025-08-17 14:02:36
+Iteration 4: Residual max G: 8.57e+02, frequence: 4.005950092060055
+2025-08-17 14:04:28
+Iteration 5: Residual max G: 1.01e-01, frequence: 4.005962974144422
+2025-08-17 14:06:19
+Iteration 6: Residual max G: 3.25e+00, frequence: 4.005928604695038
+2025-08-17 14:08:08
+Iteration 7: Residual max G: 2.30e-03, frequence: 4.005927170618817
+2025-08-17 14:09:56
+Iteration 8: Residual max G: 6.70e-03, frequence: 4.005926264650609
+2025-08-17 14:11:49
+Iteration 9: Residual max G: 1.05e-02, frequence: 4.0059336127233784
+2025-08-17 14:13:41
+Iteration 10: Residual max G: 4.50e-03, frequence: 4.005928974906372
+2025-08-17 14:15:36
+Iteration 11: Residual max G: 3.64e-05, frequence: 4.005927539981443
+2025-08-17 14:15:36
+Second value f:4.005927539981443,u:0.5360522806964336
+2025-08-17 14:15:36
+################## New Iteration ##################
+2025-08-17 14:17:17
+Theta  :1.2042701341140598 [°]
+2025-08-17 14:17:17
+s_change : 0.9978672105773834
+2025-08-17 14:17:17
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 14:17:33
+Iteration 0: Residual max G: 1.17e+05, frequence: 4.005798456510701
+2025-08-17 14:19:23
+Iteration 1: Residual max G: 1.68e+02, frequence: 4.008361821906912
+2025-08-17 14:21:17
+Iteration 2: Residual max G: 2.43e+03, frequence: 4.0053502899605
+2025-08-17 14:23:13
+Iteration 3: Residual max G: 6.25e+00, frequence: 4.005301696343976
+2025-08-17 14:25:08
+Iteration 4: Residual max G: 1.35e+03, frequence: 4.005804127733315
+2025-08-17 14:27:03
+Iteration 5: Residual max G: 6.24e-02, frequence: 4.005819173859499
+2025-08-17 14:28:56
+Iteration 6: Residual max G: 3.90e+00, frequence: 4.005791516899884
+2025-08-17 14:30:49
+Iteration 7: Residual max G: 8.71e-04, frequence: 4.005783901094137
+2025-08-17 14:32:47
+Iteration 8: Residual max G: 1.46e-03, frequence: 4.005788679555586
+2025-08-17 14:34:40
+Iteration 9: Residual max G: 1.69e-03, frequence: 4.005783991443966
+2025-08-17 14:36:37
+Iteration 10: Residual max G: 3.65e-03, frequence: 4.00578886735012
+2025-08-17 14:38:30
+Iteration 11: Residual max G: 2.06e-03, frequence: 4.005784245430465
+2025-08-17 14:40:26
+Iteration 12: Residual max G: 1.66e-03, frequence: 4.005789099058088
+2025-08-17 14:42:21
+Iteration 13: Residual max G: 3.84e-03, frequence: 4.005784342143679
+2025-08-17 14:44:20
+Iteration 14: Residual max G: 1.42e-04, frequence: 4.005789111293595
+2025-08-17 14:44:20
+Second value f:4.005789111293595,u:0.5375497384165521
+2025-08-17 14:44:20
+################## New Iteration ##################
+2025-08-17 14:46:03
+Theta  :1.161450277487466 [°]
+2025-08-17 14:46:03
+s_change : 1.0194618206681683
+2025-08-17 14:46:03
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 14:46:19
+Iteration 0: Residual max G: 1.21e+05, frequence: 4.00562810224774
+2025-08-17 14:48:17
+Iteration 1: Residual max G: 1.30e+02, frequence: 4.008183560848424
+2025-08-17 14:50:09
+Iteration 2: Residual max G: 8.97e+02, frequence: 4.005406704326171
+2025-08-17 14:52:04
+Iteration 3: Residual max G: 1.55e+01, frequence: 4.005342089228111
+2025-08-17 14:53:57
+Iteration 4: Residual max G: 3.72e+02, frequence: 4.005637152334621
+2025-08-17 14:55:52
+Iteration 5: Residual max G: 2.72e+00, frequence: 4.005657847778748
+2025-08-17 14:57:44
+Iteration 6: Residual max G: 1.09e+01, frequence: 4.005611925631266
+2025-08-17 14:59:39
+Iteration 7: Residual max G: 2.14e-02, frequence: 4.00561485112911
+2025-08-17 15:01:30
+Iteration 8: Residual max G: 7.56e-04, frequence: 4.00561471492182
+2025-08-17 15:03:25
+Iteration 9: Residual max G: 3.58e-05, frequence: 4.005614649740137
+2025-08-17 15:03:25
+Second value f:4.005614649740137,u:0.5388732371432432
+2025-08-17 15:03:25
+################## New Iteration ##################
+2025-08-17 15:04:58
+Theta  :1.2559098599250786 [°]
+2025-08-17 15:04:58
+s_change : 0.97243219336899
+2025-08-17 15:04:58
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 15:05:13
+Iteration 0: Residual max G: 1.15e+05, frequence: 4.005426133175122
+2025-08-17 15:07:02
+Iteration 1: Residual max G: 3.23e+02, frequence: 4.008728065899827
+2025-08-17 15:08:56
+Iteration 2: Residual max G: 6.15e+04, frequence: 4.001740836718172
+2025-08-17 15:10:48
+Iteration 3: Residual max G: 3.62e+01, frequence: 4.001025574528144
+2025-08-17 15:12:36
+Iteration 4: Residual max G: 6.30e+04, frequence: 4.005779176200407
+2025-08-17 15:14:30
+Iteration 5: Residual max G: 1.14e+01, frequence: 4.004901935673315
+2025-08-17 15:16:19
+Iteration 6: Residual max G: 5.10e+02, frequence: 4.005398921804209
+2025-08-17 15:18:11
+Iteration 7: Residual max G: 5.77e-01, frequence: 4.005377111747455
+2025-08-17 15:20:04
+Iteration 8: Residual max G: 2.84e+00, frequence: 4.005409773420509
+2025-08-17 15:21:56
+Iteration 9: Residual max G: 8.02e-03, frequence: 4.005403944734195
+2025-08-17 15:23:47
+Iteration 10: Residual max G: 1.75e-04, frequence: 4.005407822550282
+2025-08-17 15:23:47
+Second value f:4.005407822550282,u:0.5399429779694854
+2025-08-17 15:23:47
+################## New Iteration ##################
+2025-08-17 15:25:24
+Theta  :1.1532409205471488 [°]
+2025-08-17 15:25:24
+s_change : 1.023654983560002
+2025-08-17 15:25:24
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 15:25:39
+Iteration 0: Residual max G: 1.20e+05, frequence: 4.005185834750901
+2025-08-17 15:27:34
+Iteration 1: Residual max G: 2.15e+02, frequence: 4.008384899834045
+2025-08-17 15:29:29
+Iteration 2: Residual max G: 1.76e+03, frequence: 4.004739511192643
+2025-08-17 15:31:20
+Iteration 3: Residual max G: 1.76e+01, frequence: 4.004659836130253
+2025-08-17 15:33:12
+Iteration 4: Residual max G: 8.71e+02, frequence: 4.005209770778408
+2025-08-17 15:35:08
+Iteration 5: Residual max G: 8.44e-01, frequence: 4.005226359966679
+2025-08-17 15:36:59
+Iteration 6: Residual max G: 9.52e+00, frequence: 4.0051658791825515
+2025-08-17 15:38:52
+Iteration 7: Residual max G: 2.73e-04, frequence: 4.005166806425186
+2025-08-17 15:38:53
+Second value f:4.005166806425186,u:0.5408269223964219
+2025-08-17 15:38:53
+################## New Iteration ##################
+2025-08-17 15:40:25
+Theta  :1.1961039257360047 [°]
+2025-08-17 15:40:25
+s_change : 1.001949935789016
+2025-08-17 15:40:25
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 15:40:39
+Iteration 0: Residual max G: 1.21e+05, frequence: 4.004910307745581
+2025-08-17 15:42:28
+Iteration 1: Residual max G: 2.85e+02, frequence: 4.008619355969027
+2025-08-17 15:44:19
+Iteration 2: Residual max G: 2.77e+03, frequence: 4.0042529314783435
+2025-08-17 15:46:07
+Iteration 3: Residual max G: 1.90e+01, frequence: 4.004099326511717
+2025-08-17 15:47:57
+Iteration 4: Residual max G: 1.55e+03, frequence: 4.004954923759861
+2025-08-17 15:49:48
+Iteration 5: Residual max G: 4.07e-01, frequence: 4.0049717545225425
+2025-08-17 15:51:41
+Iteration 6: Residual max G: 9.68e+00, frequence: 4.004894307873659
+2025-08-17 15:53:27
+Iteration 7: Residual max G: 1.50e-03, frequence: 4.004893221546989
+2025-08-17 15:55:15
+Iteration 8: Residual max G: 3.40e-05, frequence: 4.004892868725789
+2025-08-17 15:55:15
+Second value f:4.004892868725789,u:0.5415026604533455
+2025-08-17 15:55:15
+################## New Iteration ##################
+2025-08-17 15:56:51
+Theta  :1.209709397212195 [°]
+2025-08-17 15:56:51
+s_change : 0.9951570663969661
+2025-08-17 15:56:51
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 15:57:06
+Iteration 0: Residual max G: 1.19e+05, frequence: 4.004604919226952
+2025-08-17 15:58:57
+Iteration 1: Residual max G: 5.39e+02, frequence: 4.009554604758452
+2025-08-17 16:00:48
+Iteration 2: Residual max G: 2.91e+04, frequence: 4.000915267379854
+2025-08-17 16:02:40
+Iteration 3: Residual max G: 1.18e+01, frequence: 4.000583750369205
+2025-08-17 16:04:30
+Iteration 4: Residual max G: 2.35e+04, frequence: 4.00472265749624
+2025-08-17 16:06:20
+Iteration 5: Residual max G: 7.41e-01, frequence: 4.004746166746865
+2025-08-17 16:08:09
+Iteration 6: Residual max G: 1.96e+01, frequence: 4.004587765400325
+2025-08-17 16:10:06
+Iteration 7: Residual max G: 2.34e-03, frequence: 4.004595209495589
+2025-08-17 16:11:59
+Iteration 8: Residual max G: 1.38e-03, frequence: 4.004589249506631
+2025-08-17 16:13:54
+Iteration 9: Residual max G: 9.35e-05, frequence: 4.004586839452806
+2025-08-17 16:13:54
+Second value f:4.004586839452806,u:0.5419619145372928
+2025-08-17 16:13:54
+################## New Iteration ##################
+2025-08-17 16:15:28
+Theta  :1.2204577772840797 [°]
+2025-08-17 16:15:28
+s_change : 0.9898232485195514
+2025-08-17 16:15:28
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 16:15:43
+Iteration 0: Residual max G: 1.17e+05, frequence: 4.004268338571851
+2025-08-17 16:17:36
+Iteration 1: Residual max G: 3.00e+03, frequence: 4.015301491773785
+2025-08-17 16:19:30
+Iteration 2: Residual max G: 4.42e+03, frequence: 4.007554827892097
+2025-08-17 16:21:21
+Iteration 3: Residual max G: 3.97e+02, frequence: 4.008916611108969
+2025-08-17 16:23:16
+Iteration 4: Residual max G: 1.38e+05, frequence: 3.995113673004266
+2025-08-17 16:25:09
+Iteration 5: Residual max G: 2.68e+01, frequence: 3.9951247413326865
+2025-08-17 16:27:04
+Iteration 6: Residual max G: 7.37e+04, frequence: 4.004853594556624
+2025-08-17 16:28:58
+Iteration 7: Residual max G: 6.92e+00, frequence: 4.0046397797922
+2025-08-17 16:30:51
+Iteration 8: Residual max G: 2.72e+02, frequence: 4.004251167336413
+2025-08-17 16:32:46
+Iteration 9: Residual max G: 1.13e-01, frequence: 4.004263305414665
+2025-08-17 16:34:41
+Iteration 10: Residual max G: 2.33e-02, frequence: 4.004254838068315
+2025-08-17 16:36:34
+Iteration 11: Residual max G: 6.18e-04, frequence: 4.004260073798263
+2025-08-17 16:38:30
+Iteration 12: Residual max G: 1.10e-03, frequence: 4.004254628194533
+2025-08-17 16:40:21
+Iteration 13: Residual max G: 1.33e-03, frequence: 4.00426014499649
+2025-08-17 16:42:17
+Iteration 14: Residual max G: 1.13e-03, frequence: 4.004254760464282
+2025-08-17 16:43:53
+################## New Iteration ##################
+2025-08-17 16:43:53
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 16:44:08
+Iteration 0: Residual max G: 1.41e+05, frequence: 4.004236488483755
+2025-08-17 16:46:04
+Iteration 1: Residual max G: 2.61e+02, frequence: 4.009747919818465
+2025-08-17 16:47:57
+Iteration 2: Residual max G: 1.00e+03, frequence: 4.003885774745069
+2025-08-17 16:49:47
+Iteration 3: Residual max G: 2.46e+02, frequence: 4.0033560800991985
+2025-08-17 16:51:39
+Iteration 4: Residual max G: 2.23e+03, frequence: 4.004980426922755
+2025-08-17 16:53:30
+Iteration 5: Residual max G: 4.80e+01, frequence: 4.005204287786577
+2025-08-17 16:55:23
+Iteration 6: Residual max G: 9.59e+02, frequence: 4.004129681202087
+2025-08-17 16:57:20
+Iteration 7: Residual max G: 1.24e+01, frequence: 4.004001279289882
+2025-08-17 16:59:13
+Iteration 8: Residual max G: 3.99e+01, frequence: 4.004231725384168
+2025-08-17 17:01:06
+Iteration 9: Residual max G: 1.98e-02, frequence: 4.004220179202776
+2025-08-17 17:03:01
+Iteration 10: Residual max G: 9.99e-05, frequence: 4.0042225740753405
+2025-08-17 17:03:01
+Second value f:4.0042225740753405,u:0.5422203779745692
+2025-08-17 17:03:01
+################## New Iteration ##################
+2025-08-17 17:04:39
+Theta  :1.2871817887451484 [°]
+2025-08-17 17:04:39
+s_change : 0.9573455328146128
+2025-08-17 17:04:39
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 17:04:54
+Iteration 0: Residual max G: 1.30e+05, frequence: 4.003852376594246
+2025-08-17 17:06:50
+Iteration 1: Residual max G: 2.90e+03, frequence: 4.018873726732018
+2025-08-17 17:08:47
+Iteration 2: Residual max G: 1.24e+04, frequence: 4.011453914730359
+2025-08-17 17:10:42
+Iteration 3: Residual max G: 2.77e+02, frequence: 4.01353173169153
+2025-08-17 17:12:38
+Iteration 4: Residual max G: 4.39e+04, frequence: 4.0010462525928405
+2025-08-17 17:14:31
+Iteration 5: Residual max G: 8.63e+00, frequence: 4.000688547483821
+2025-08-17 17:16:26
+Iteration 6: Residual max G: 2.49e+03, frequence: 4.003873515228342
+2025-08-17 17:18:22
+Iteration 7: Residual max G: 1.18e-01, frequence: 4.003881424812674
+2025-08-17 17:20:17
+Iteration 8: Residual max G: 6.69e-01, frequence: 4.003829124477508
+2025-08-17 17:22:13
+Iteration 9: Residual max G: 6.55e-04, frequence: 4.003834532221706
+2025-08-17 17:24:06
+Iteration 10: Residual max G: 9.55e-05, frequence: 4.003828974366247
+2025-08-17 17:24:06
+Second value f:4.003828974366247,u:0.5422335871870394
+2025-08-17 17:24:06
+################## New Iteration ##################
+2025-08-17 17:25:48
+Theta  :1.2595189049280553 [°]
+2025-08-17 17:25:48
+s_change : 0.9706789999091517
+2025-08-17 17:25:48
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 17:26:03
+Iteration 0: Residual max G: 1.22e+05, frequence: 4.003429470711247
+2025-08-17 17:27:56
+Iteration 1: Residual max G: 6.33e+02, frequence: 3.9973845116966915
+2025-08-17 17:29:53
+Iteration 2: Residual max G: 4.98e+02, frequence: 4.003934612914443
+2025-08-17 17:31:45
+Iteration 3: Residual max G: 1.69e+01, frequence: 4.003360496681018
+2025-08-17 17:33:39
+Iteration 4: Residual max G: 1.70e-01, frequence: 4.003413832368773
+2025-08-17 17:35:31
+Iteration 5: Residual max G: 6.10e-03, frequence: 4.003415428526237
+2025-08-17 17:37:26
+Iteration 6: Residual max G: 7.49e-05, frequence: 4.003416646283349
+2025-08-17 17:37:26
+Second value f:4.003416646283349,u:0.5420265027547442
+2025-08-17 17:37:26
+################## New Iteration ##################
+2025-08-17 17:38:58
+Theta  :1.1891568214433463 [°]
+2025-08-17 17:38:58
+s_change : 1.0054363126895485
+2025-08-17 17:38:58
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 17:39:13
+Iteration 0: Residual max G: 1.23e+05, frequence: 4.0029838456574485
+2025-08-17 17:41:07
+Iteration 1: Residual max G: 7.86e+01, frequence: 4.000741502116389
+2025-08-17 17:43:02
+Iteration 2: Residual max G: 2.86e+01, frequence: 4.002975851119087
+2025-08-17 17:44:56
+Iteration 3: Residual max G: 5.08e-02, frequence: 4.002964654803486
+2025-08-17 17:46:52
+Iteration 4: Residual max G: 3.07e-03, frequence: 4.002966874638218
+2025-08-17 17:48:39
+Iteration 5: Residual max G: 1.21e-03, frequence: 4.002960405080067
+2025-08-17 17:50:36
+Iteration 6: Residual max G: 1.27e-03, frequence: 4.002963753756763
+2025-08-17 17:52:30
+Iteration 7: Residual max G: 8.80e-04, frequence: 4.002966427828197
+2025-08-17 17:54:22
+Iteration 8: Residual max G: 6.87e-05, frequence: 4.002959838172725
+2025-08-17 17:54:22
+Second value f:4.002959838172725,u:0.5416007606144597
+2025-08-17 17:54:22
+################## New Iteration ##################
+2025-08-17 17:56:00
+Theta  :1.226076582418015 [°]
+2025-08-17 17:56:00
+s_change : 0.9870463390989959
+2025-08-17 17:56:00
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 17:56:15
+Iteration 0: Residual max G: 1.20e+05, frequence: 4.002493191493538
+2025-08-17 17:58:09
+Iteration 1: Residual max G: 2.12e+01, frequence: 4.001700504908543
+2025-08-17 18:00:06
+Iteration 2: Residual max G: 3.34e+01, frequence: 4.002466459559546
+2025-08-17 18:02:04
+Iteration 3: Residual max G: 4.65e-05, frequence: 4.002477885702825
+2025-08-17 18:02:05
+Second value f:4.002477885702825,u:0.5409660852614503
+2025-08-17 18:02:05
+################## New Iteration ##################
+2025-08-17 18:03:41
+Theta  :1.1965900987689242 [°]
+2025-08-17 18:03:41
+s_change : 1.0017064048701987
+2025-08-17 18:03:41
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 18:03:56
+Iteration 0: Residual max G: 1.21e+05, frequence: 4.001973746618587
+2025-08-17 18:05:48
+Iteration 1: Residual max G: 1.93e+01, frequence: 4.001729724754504
+2025-08-17 18:07:46
+Iteration 2: Residual max G: 5.06e+01, frequence: 4.001958048473637
+2025-08-17 18:09:46
+Iteration 3: Residual max G: 8.26e-03, frequence: 4.001956563666357
+2025-08-17 18:11:42
+Iteration 4: Residual max G: 5.06e-04, frequence: 4.001954559779097
+2025-08-17 18:13:34
+Iteration 5: Residual max G: 6.52e-03, frequence: 4.001954126638887
+2025-08-17 18:15:30
+Iteration 6: Residual max G: 1.53e-03, frequence: 4.001953870925266
+2025-08-17 18:17:25
+Iteration 7: Residual max G: 5.99e-04, frequence: 4.00195333407033
+2025-08-17 18:19:23
+Iteration 8: Residual max G: 6.65e-04, frequence: 4.001953258672615
+2025-08-17 18:21:17
+Iteration 9: Residual max G: 4.65e-04, frequence: 4.00195285672919
+2025-08-17 18:21:17
+Second value f:4.00195285672919,u:0.5401205632838124
+2025-08-17 18:21:17
+################## New Iteration ##################
+2025-08-17 18:23:00
+Theta  :1.2486223163874115 [°]
+2025-08-17 18:23:00
+s_change : 0.9759819777167276
+2025-08-17 18:23:00
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 18:23:15
+Iteration 0: Residual max G: 1.15e+05, frequence: 4.0014253526029435
+2025-08-17 18:25:07
+Iteration 1: Residual max G: 1.75e+01, frequence: 4.001536909465492
+2025-08-17 18:27:00
+Iteration 2: Residual max G: 6.02e+01, frequence: 4.001414727947102
+2025-08-17 18:28:59
+Iteration 3: Residual max G: 8.23e-04, frequence: 4.001408895336454
+2025-08-17 18:30:56
+Iteration 4: Residual max G: 1.89e-03, frequence: 4.0014135251151535
+2025-08-17 18:32:52
+Iteration 5: Residual max G: 2.08e-03, frequence: 4.001407938710114
+2025-08-17 18:34:48
+Iteration 6: Residual max G: 3.81e-04, frequence: 4.00141333289255
+2025-08-17 18:34:48
+Second value f:4.00141333289255,u:0.5390809305708877
+2025-08-17 18:34:48
+################## New Iteration ##################
+2025-08-17 18:36:28
+Theta  :1.1540887626577414 [°]
+2025-08-17 18:36:28
+s_change : 1.0232211266261537
+2025-08-17 18:36:28
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 18:36:43
+Iteration 0: Residual max G: 1.20e+05, frequence: 4.000842732281257
+2025-08-17 18:38:37
+Iteration 1: Residual max G: 1.93e+01, frequence: 4.001157151550757
+2025-08-17 18:40:34
+Iteration 2: Residual max G: 7.48e+01, frequence: 4.0008200381172605
+2025-08-17 18:42:28
+Iteration 3: Residual max G: 8.75e-03, frequence: 4.000818360830744
+2025-08-17 18:44:24
+Iteration 4: Residual max G: 2.63e-03, frequence: 4.000816537461785
+2025-08-17 18:46:19
+Iteration 5: Residual max G: 4.67e-05, frequence: 4.000815854917579
+2025-08-17 18:46:19
+Second value f:4.000815854917579,u:0.5378079190990228
+2025-08-17 18:46:19
+################## New Iteration ##################
+2025-08-17 18:47:49
+Theta  :1.2095039781141448 [°]
+2025-08-17 18:47:49
+s_change : 0.9952592837797257
+2025-08-17 18:47:49
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 18:48:04
+Iteration 0: Residual max G: 1.19e+05, frequence: 4.000206329400786
+2025-08-17 18:49:57
+Iteration 1: Residual max G: 1.96e+01, frequence: 4.000685404491283
+2025-08-17 18:51:56
+Iteration 2: Residual max G: 8.46e+01, frequence: 4.000190881416704
+2025-08-17 18:53:51
+Iteration 3: Residual max G: 3.03e-03, frequence: 4.00019157736389
+2025-08-17 18:55:48
+Iteration 4: Residual max G: 8.02e-05, frequence: 4.000183682833048
+2025-08-17 18:55:48
+Second value f:4.000183682833048,u:0.536326685498843
+2025-08-17 18:55:48
+################## New Iteration ##################
+2025-08-17 18:57:27
+Theta  :1.2165983876820439 [°]
+2025-08-17 18:57:27
+s_change : 0.9917351493954542
+2025-08-17 18:57:27
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 18:57:42
+Iteration 0: Residual max G: 1.18e+05, frequence: 3.999540451993091
+2025-08-17 18:59:38
+Iteration 1: Residual max G: 2.04e+01, frequence: 4.000136199312213
+2025-08-17 19:01:25
+Iteration 2: Residual max G: 8.77e+01, frequence: 3.9995241503071806
+2025-08-17 19:03:15
+Iteration 3: Residual max G: 2.44e-02, frequence: 3.999529838170597
+2025-08-17 19:05:09
+Iteration 4: Residual max G: 6.94e-04, frequence: 3.9995262032719925
+2025-08-17 19:07:03
+Iteration 5: Residual max G: 4.97e-04, frequence: 3.9995317257393173
+2025-08-17 19:07:03
+Second value f:3.9995317257393173,u:0.5346480801043506
+2025-08-17 19:07:03
+################## New Iteration ##################
+2025-08-17 19:08:36
+Theta  :1.2175901288691178 [°]
+2025-08-17 19:08:36
+s_change : 0.9912434990058514
+2025-08-17 19:08:36
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 19:08:51
+Iteration 0: Residual max G: 1.16e+05, frequence: 3.998857445554798
+2025-08-17 19:10:47
+Iteration 1: Residual max G: 2.20e+01, frequence: 3.9995149352951014
+2025-08-17 19:12:33
+Iteration 2: Residual max G: 9.07e+01, frequence: 3.998839349235307
+2025-08-17 19:14:30
+Iteration 3: Residual max G: 2.22e-01, frequence: 3.9988360187992975
+2025-08-17 19:16:18
+Iteration 4: Residual max G: 3.22e-02, frequence: 3.998843573647811
+2025-08-17 19:18:12
+Iteration 5: Residual max G: 1.21e-03, frequence: 3.998840580876188
+2025-08-17 19:20:06
+Iteration 6: Residual max G: 1.43e-03, frequence: 3.9988383013829982
+2025-08-17 19:22:00
+Iteration 7: Residual max G: 5.11e-03, frequence: 3.9988444604845874
+2025-08-17 19:23:48
+Iteration 8: Residual max G: 5.22e-03, frequence: 3.9988410026661825
+2025-08-17 19:25:43
+Iteration 9: Residual max G: 5.47e-03, frequence: 3.998839006114879
+2025-08-17 19:27:30
+Iteration 10: Residual max G: 1.38e-02, frequence: 3.9988453113715963
+2025-08-17 19:29:27
+Iteration 11: Residual max G: 9.07e-03, frequence: 3.998839978906271
+2025-08-17 19:31:11
+Iteration 12: Residual max G: 1.60e-03, frequence: 3.998838061121379
+2025-08-17 19:33:03
+Iteration 13: Residual max G: 6.69e-03, frequence: 3.99884423575775
+2025-08-17 19:34:47
+Iteration 14: Residual max G: 6.76e-04, frequence: 3.9988404794592927
+2025-08-17 19:36:25
+################## New Iteration ##################
+2025-08-17 19:36:25
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 19:36:40
+Iteration 0: Residual max G: 1.40e+05, frequence: 3.998790017536346
+2025-08-17 19:38:38
+Iteration 1: Residual max G: 2.63e+01, frequence: 3.9995725210413733
+2025-08-17 19:40:34
+Iteration 2: Residual max G: 1.01e+02, frequence: 3.9987643661301746
+2025-08-17 19:42:28
+Iteration 3: Residual max G: 1.49e-01, frequence: 3.9987654791760034
+2025-08-17 19:44:22
+Iteration 4: Residual max G: 2.44e-02, frequence: 3.99876723593816
+2025-08-17 19:46:16
+Iteration 5: Residual max G: 4.52e-03, frequence: 3.9987694505367224
+2025-08-17 19:48:09
+Iteration 6: Residual max G: 5.09e-05, frequence: 3.998762635200774
+2025-08-17 19:48:09
+Second value f:3.998762635200774,u:0.5325711206237099
+2025-08-17 19:48:09
+################## New Iteration ##################
+2025-08-17 19:49:40
+Theta  :1.257327430237955 [°]
+2025-08-17 19:49:40
+s_change : 0.9717431920704789
+2025-08-17 19:49:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 19:49:55
+Iteration 0: Residual max G: 1.32e+05, frequence: 3.998001627677671
+2025-08-17 19:51:53
+Iteration 1: Residual max G: 2.42e+01, frequence: 3.998803801766432
+2025-08-17 19:53:48
+Iteration 2: Residual max G: 1.00e+02, frequence: 3.9979843203108114
+2025-08-17 19:55:36
+Iteration 3: Residual max G: 2.49e-02, frequence: 3.9979923361835223
+2025-08-17 19:57:32
+Iteration 4: Residual max G: 2.59e-01, frequence: 3.99798581505925
+2025-08-17 19:59:24
+Iteration 5: Residual max G: 1.60e-01, frequence: 3.9979848719776228
+2025-08-17 20:01:21
+Iteration 6: Residual max G: 7.84e-03, frequence: 3.997992322695908
+2025-08-17 20:03:08
+Iteration 7: Residual max G: 9.95e-02, frequence: 3.9979856951333774
+2025-08-17 20:05:03
+Iteration 8: Residual max G: 1.82e-01, frequence: 3.9979851326187474
+2025-08-17 20:06:50
+Iteration 9: Residual max G: 1.76e-02, frequence: 3.997983715424434
+2025-08-17 20:08:44
+Iteration 10: Residual max G: 1.89e-03, frequence: 3.9979913201447674
+2025-08-17 20:10:31
+Iteration 11: Residual max G: 1.04e-01, frequence: 3.9979848153380715
+2025-08-17 20:12:27
+Iteration 12: Residual max G: 1.87e-01, frequence: 3.99799307955851
+2025-08-17 20:14:11
+Iteration 13: Residual max G: 2.30e-01, frequence: 3.9979860335542368
+2025-08-17 20:16:07
+Iteration 14: Residual max G: 1.93e-01, frequence: 3.9979854304273794
+2025-08-17 20:17:40
+################## New Iteration ##################
+2025-08-17 20:17:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 20:17:55
+Iteration 0: Residual max G: 1.60e+05, frequence: 3.9979255269253606
+2025-08-17 20:19:51
+Iteration 1: Residual max G: 3.41e+01, frequence: 3.998950507754698
+2025-08-17 20:21:38
+Iteration 2: Residual max G: 1.29e+02, frequence: 3.9978973476490762
+2025-08-17 20:23:34
+Iteration 3: Residual max G: 3.31e-02, frequence: 3.9979058779653505
+2025-08-17 20:25:19
+Iteration 4: Residual max G: 1.25e-02, frequence: 3.9979033148506016
+2025-08-17 20:27:15
+Iteration 5: Residual max G: 6.79e-04, frequence: 3.9979016633565454
+2025-08-17 20:29:09
+Iteration 6: Residual max G: 8.88e-03, frequence: 3.9979090605939156
+2025-08-17 20:31:05
+Iteration 7: Residual max G: 2.63e-02, frequence: 3.9979038351172544
+2025-08-17 20:32:52
+Iteration 8: Residual max G: 2.58e-02, frequence: 3.9979010936881747
+2025-08-17 20:34:46
+Iteration 9: Residual max G: 2.16e-04, frequence: 3.997908626595643
+2025-08-17 20:34:46
+Second value f:3.997908626595643,u:0.5300810711340365
+2025-08-17 20:34:46
+################## New Iteration ##################
+2025-08-17 20:36:18
+Theta  :1.417640861830121 [°]
+2025-08-17 20:36:18
+s_change : 0.8968914570171698
+2025-08-17 20:36:18
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 20:36:33
+Iteration 0: Residual max G: 1.29e+05, frequence: 3.9971107614203834
+2025-08-17 20:38:27
+Iteration 1: Residual max G: 2.38e+01, frequence: 3.9979430542673846
+2025-08-17 20:40:23
+Iteration 2: Residual max G: 1.06e+02, frequence: 3.997081723508889
+2025-08-17 20:42:09
+Iteration 3: Residual max G: 2.07e-02, frequence: 3.9970907640042443
+2025-08-17 20:44:04
+Iteration 4: Residual max G: 6.27e-03, frequence: 3.9970868939235324
+2025-08-17 20:46:00
+Iteration 5: Residual max G: 3.76e-05, frequence: 3.997086337804962
+2025-08-17 20:46:01
+Second value f:3.997086337804962,u:0.5275969616542084
+2025-08-17 20:46:01
+################## New Iteration ##################
+2025-08-17 20:47:40
+Theta  :1.260093386589188 [°]
+2025-08-17 20:47:40
+s_change : 0.9704002213072199
+2025-08-17 20:47:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 20:47:55
+Iteration 0: Residual max G: 1.21e+05, frequence: 3.9962696786130656
+2025-08-17 20:49:51
+Iteration 1: Residual max G: 2.34e+01, frequence: 3.9971013249722125
+2025-08-17 20:51:37
+Iteration 2: Residual max G: 9.32e+01, frequence: 3.9962464878872628
+2025-08-17 20:53:32
+Iteration 3: Residual max G: 2.43e-01, frequence: 3.9962497673726163
+2025-08-17 20:55:23
+Iteration 4: Residual max G: 1.38e-01, frequence: 3.996250107483967
+2025-08-17 20:57:18
+Iteration 5: Residual max G: 2.50e-04, frequence: 3.996250484301364
+2025-08-17 20:57:18
+Second value f:3.996250484301364,u:0.5249623801251951
+2025-08-17 20:57:18
+################## New Iteration ##################
+2025-08-17 20:58:56
+Theta  :1.2414976747621629 [°]
+2025-08-17 20:58:56
+s_change : 0.9794649386575506
+2025-08-17 20:58:56
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 20:59:11
+Iteration 0: Residual max G: 1.17e+05, frequence: 3.9954111394633083
+2025-08-17 21:00:59
+Iteration 1: Residual max G: 2.54e+01, frequence: 3.996254688284327
+2025-08-17 21:02:53
+Iteration 2: Residual max G: 9.35e+01, frequence: 3.9953922228556693
+2025-08-17 21:04:39
+Iteration 3: Residual max G: 1.62e-01, frequence: 3.9953928530418388
+2025-08-17 21:06:38
+Iteration 4: Residual max G: 1.08e-01, frequence: 3.9953933661388326
+2025-08-17 21:08:25
+Iteration 5: Residual max G: 4.84e-03, frequence: 3.9953943589776197
+2025-08-17 21:10:21
+Iteration 6: Residual max G: 3.60e-05, frequence: 3.9953953416318684
+2025-08-17 21:10:21
+Second value f:3.9953953416318684,u:0.5221789860325399
+2025-08-17 21:10:21
+################## New Iteration ##################
+2025-08-17 21:11:54
+Theta  :1.315287936553584 [°]
+2025-08-17 21:11:54
+s_change : 0.9439859765686555
+2025-08-17 21:11:54
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 21:12:08
+Iteration 0: Residual max G: 1.04e+05, frequence: 3.994565806798424
+2025-08-17 21:13:55
+Iteration 1: Residual max G: 8.67e+01, frequence: 3.9956014093943883
+2025-08-17 21:15:49
+Iteration 2: Residual max G: 1.03e+02, frequence: 3.99454437251704
+2025-08-17 21:17:46
+Iteration 3: Residual max G: 1.19e+01, frequence: 3.9945419436929424
+2025-08-17 21:19:30
+Iteration 4: Residual max G: 3.56e+00, frequence: 3.994550738516578
+2025-08-17 21:21:27
+Iteration 5: Residual max G: 1.54e-02, frequence: 3.9945469299346055
+2025-08-17 21:23:23
+Iteration 6: Residual max G: 5.68e-03, frequence: 3.99454618650273
+2025-08-17 21:25:19
+Iteration 7: Residual max G: 8.47e-03, frequence: 3.994544958907192
+2025-08-17 21:27:05
+Iteration 8: Residual max G: 8.55e-04, frequence: 3.9945440996303736
+2025-08-17 21:29:02
+Iteration 9: Residual max G: 2.45e-03, frequence: 3.99454389371725
+2025-08-17 21:30:49
+Iteration 10: Residual max G: 5.86e-05, frequence: 3.994543779343475
+2025-08-17 21:30:49
+Second value f:3.994543779343475,u:0.5193315798510497
+2025-08-17 21:30:49
+################## New Iteration ##################
+2025-08-17 21:32:32
+Theta  :1.0264017795258298 [°]
+2025-08-17 21:32:32
+s_change : 1.0906775517539438
+2025-08-17 21:32:32
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 21:32:47
+Iteration 0: Residual max G: 1.24e+05, frequence: 3.993612644417625
+2025-08-17 21:34:45
+Iteration 1: Residual max G: 2.38e+01, frequence: 3.9945091698424755
+2025-08-17 21:36:41
+Iteration 2: Residual max G: 9.28e+01, frequence: 3.99359074697319
+2025-08-17 21:38:38
+Iteration 3: Residual max G: 1.55e-01, frequence: 3.993592914531869
+2025-08-17 21:40:34
+Iteration 4: Residual max G: 8.58e-02, frequence: 3.9935867230269038
+2025-08-17 21:42:32
+Iteration 5: Residual max G: 1.26e-02, frequence: 3.9935920916774847
+2025-08-17 21:44:30
+Iteration 6: Residual max G: 8.07e-04, frequence: 3.9935933341752152
+2025-08-17 21:46:27
+Iteration 7: Residual max G: 1.26e-03, frequence: 3.9935859909630573
+2025-08-17 21:48:26
+Iteration 8: Residual max G: 2.19e-03, frequence: 3.993591738680464
+2025-08-17 21:50:24
+Iteration 9: Residual max G: 1.29e-03, frequence: 3.9935934875072867
+2025-08-17 21:52:22
+Iteration 10: Residual max G: 3.35e-03, frequence: 3.993586508269307
+2025-08-17 21:54:18
+Iteration 11: Residual max G: 2.19e-02, frequence: 3.99359163563946
+2025-08-17 21:56:14
+Iteration 12: Residual max G: 3.65e-02, frequence: 3.9935940034019075
+2025-08-17 21:58:09
+Iteration 13: Residual max G: 2.93e-02, frequence: 3.9935864407133588
+2025-08-17 22:00:05
+Iteration 14: Residual max G: 3.70e-03, frequence: 3.9935919629935634
+2025-08-17 22:01:45
+################## New Iteration ##################
+2025-08-17 22:01:45
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 22:02:00
+Iteration 0: Residual max G: 1.50e+05, frequence: 3.9935195309250404
+2025-08-17 22:03:56
+Iteration 1: Residual max G: 3.06e+01, frequence: 3.9946611705297013
+2025-08-17 22:05:52
+Iteration 2: Residual max G: 1.18e+02, frequence: 3.99349562182134
+2025-08-17 22:07:48
+Iteration 3: Residual max G: 1.05e-01, frequence: 3.9934928747404133
+2025-08-17 22:09:47
+Iteration 4: Residual max G: 1.37e-01, frequence: 3.993491188194419
+2025-08-17 22:11:42
+Iteration 5: Residual max G: 1.82e-02, frequence: 3.99349291292523
+2025-08-17 22:13:40
+Iteration 6: Residual max G: 9.48e-04, frequence: 3.9934923120001535
+2025-08-17 22:15:38
+Iteration 7: Residual max G: 2.98e-03, frequence: 3.993490999135682
+2025-08-17 22:17:36
+Iteration 8: Residual max G: 4.11e-03, frequence: 3.9934929061612263
+2025-08-17 22:19:32
+Iteration 9: Residual max G: 2.55e-02, frequence: 3.9934911205022057
+2025-08-17 22:21:30
+Iteration 10: Residual max G: 1.26e-02, frequence: 3.9934928113655017
+2025-08-17 22:23:25
+Iteration 11: Residual max G: 5.60e-03, frequence: 3.9934911639858983
+2025-08-17 22:25:15
+Iteration 12: Residual max G: 8.46e-04, frequence: 3.993492317691829
+2025-08-17 22:27:08
+Iteration 13: Residual max G: 2.64e-02, frequence: 3.9934916560064346
+2025-08-17 22:29:00
+Iteration 14: Residual max G: 1.12e-02, frequence: 3.9934928632577558
+2025-08-17 22:30:39
+################## New Iteration ##################
+2025-08-17 22:30:39
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 22:30:54
+Iteration 0: Residual max G: 1.82e+05, frequence: 3.993417106083197
+2025-08-17 22:32:45
+Iteration 1: Residual max G: 4.41e+01, frequence: 3.9949217367437417
+2025-08-17 22:34:40
+Iteration 2: Residual max G: 1.67e+02, frequence: 3.993377841419509
+2025-08-17 22:36:38
+Iteration 3: Residual max G: 6.96e-02, frequence: 3.993388697865011
+2025-08-17 22:38:36
+Iteration 4: Residual max G: 2.23e-01, frequence: 3.9933858615487963
+2025-08-17 22:40:33
+Iteration 5: Residual max G: 4.35e-03, frequence: 3.993383685069139
+2025-08-17 22:42:27
+Iteration 6: Residual max G: 3.62e-02, frequence: 3.9933852724515537
+2025-08-17 22:44:23
+Iteration 7: Residual max G: 1.42e-02, frequence: 3.9933836573919255
+2025-08-17 22:46:16
+Iteration 8: Residual max G: 2.13e-02, frequence: 3.993385309733654
+2025-08-17 22:48:11
+Iteration 9: Residual max G: 3.42e-02, frequence: 3.9933832469317485
+2025-08-17 22:50:08
+Iteration 10: Residual max G: 1.12e-01, frequence: 3.9933861034958302
+2025-08-17 22:52:04
+Iteration 11: Residual max G: 1.11e-01, frequence: 3.993384043569261
+2025-08-17 22:54:01
+Iteration 12: Residual max G: 4.72e-03, frequence: 3.993385008573153
+2025-08-17 22:55:57
+Iteration 13: Residual max G: 3.89e-03, frequence: 3.9933837524824654
+2025-08-17 22:57:48
+Iteration 14: Residual max G: 2.36e-03, frequence: 3.9933853242238873
+2025-08-17 22:59:28
+################## New Iteration ##################
+2025-08-17 22:59:28
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 22:59:43
+Iteration 0: Residual max G: 2.20e+05, frequence: 3.993304438757169
+2025-08-17 23:01:35
+Iteration 1: Residual max G: 6.43e+01, frequence: 3.9953120155673445
+2025-08-17 23:03:29
+Iteration 2: Residual max G: 2.05e+02, frequence: 3.9932552396077745
+2025-08-17 23:05:22
+Iteration 3: Residual max G: 3.40e-01, frequence: 3.9932598714165577
+2025-08-17 23:07:17
+Iteration 4: Residual max G: 8.31e-01, frequence: 3.993265819463499
+2025-08-17 23:09:11
+Iteration 5: Residual max G: 1.31e-03, frequence: 3.993261511334267
+2025-08-17 23:11:06
+Iteration 6: Residual max G: 5.73e-03, frequence: 3.9932585104583116
+2025-08-17 23:13:00
+Iteration 7: Residual max G: 8.90e-04, frequence: 3.9932646208149487
+2025-08-17 23:14:55
+Iteration 8: Residual max G: 4.42e-05, frequence: 3.9932602964132458
+2025-08-17 23:14:55
+Second value f:3.9932602964132458,u:0.5148847216750492
+2025-08-17 23:14:55
+################## New Iteration ##################
+2025-08-17 23:16:34
+Theta  :1.6901778742433997 [°]
+2025-08-17 23:16:34
+s_change : 0.7826349298485265
+2025-08-17 23:16:34
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 23:16:49
+Iteration 0: Residual max G: 1.35e+05, frequence: 3.9922326120752336
+2025-08-17 23:18:37
+Iteration 1: Residual max G: 2.57e+01, frequence: 3.993221060785492
+2025-08-17 23:20:31
+Iteration 2: Residual max G: 1.03e+02, frequence: 3.9922001925232227
+2025-08-17 23:22:20
+Iteration 3: Residual max G: 2.08e-01, frequence: 3.992207278347352
+2025-08-17 23:24:17
+Iteration 4: Residual max G: 2.40e-01, frequence: 3.992203270232042
+2025-08-17 23:26:11
+Iteration 5: Residual max G: 2.50e-02, frequence: 3.992201252872577
+2025-08-17 23:28:08
+Iteration 6: Residual max G: 3.06e-02, frequence: 3.9922083199692504
+2025-08-17 23:30:05
+Iteration 7: Residual max G: 1.46e-02, frequence: 3.9922047036760313
+2025-08-17 23:32:02
+Iteration 8: Residual max G: 2.10e-03, frequence: 3.992201731256919
+2025-08-17 23:33:59
+Iteration 9: Residual max G: 1.92e-04, frequence: 3.992209122973731
+2025-08-17 23:33:59
+Second value f:3.992209122973731,u:0.5111139532365042
+2025-08-17 23:33:59
+################## New Iteration ##################
+2025-08-17 23:35:38
+Theta  :1.3042365553725248 [°]
+2025-08-17 23:35:38
+s_change : 0.9492165890611263
+2025-08-17 23:35:38
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 23:35:53
+Iteration 0: Residual max G: 1.22e+05, frequence: 3.991184104345668
+2025-08-17 23:37:51
+Iteration 1: Residual max G: 2.38e+01, frequence: 3.9920761893953496
+2025-08-17 23:39:48
+Iteration 2: Residual max G: 8.64e+01, frequence: 3.9911547565345113
+2025-08-17 23:41:44
+Iteration 3: Residual max G: 2.62e-01, frequence: 3.991163525582049
+2025-08-17 23:43:38
+Iteration 4: Residual max G: 1.45e-01, frequence: 3.9911587064329774
+2025-08-17 23:45:32
+Iteration 5: Residual max G: 9.18e-04, frequence: 3.991157309548055
+2025-08-17 23:47:23
+Iteration 6: Residual max G: 6.10e-03, frequence: 3.991155584782728
+2025-08-17 23:49:16
+Iteration 7: Residual max G: 4.10e-03, frequence: 3.9911644415866236
+2025-08-17 23:51:11
+Iteration 8: Residual max G: 6.88e-03, frequence: 3.991158875258358
+2025-08-17 23:53:01
+Iteration 9: Residual max G: 4.62e-05, frequence: 3.9911570978724416
+2025-08-17 23:53:01
+Second value f:3.9911570978724416,u:0.5073173858045801
+2025-08-17 23:53:01
+################## New Iteration ##################
+2025-08-17 23:54:39
+Theta  :1.3460566354749346 [°]
+2025-08-17 23:54:39
+s_change : 0.9295745062062559
+2025-08-17 23:54:39
+################## Newthon predictor-corecteur solveur ##################
+2025-08-17 23:54:54
+Iteration 0: Residual max G: 1.05e+05, frequence: 3.990172767754236
+2025-08-17 23:56:50
+Iteration 1: Residual max G: 6.10e+01, frequence: 3.991121092113105
+2025-08-17 23:58:45
+Iteration 2: Residual max G: 8.44e+01, frequence: 3.990152851568075
+2025-08-18 00:00:40
+Iteration 3: Residual max G: 8.09e+00, frequence: 3.990150305153789
+2025-08-18 00:02:34
+Iteration 4: Residual max G: 3.64e+00, frequence: 3.990149812716798
+2025-08-18 00:04:28
+Iteration 5: Residual max G: 1.56e-02, frequence: 3.9901495815727728
+2025-08-18 00:06:24
+Iteration 6: Residual max G: 1.70e-03, frequence: 3.9901501484674484
+2025-08-18 00:08:18
+Iteration 7: Residual max G: 3.47e-05, frequence: 3.9901501910464066
+2025-08-18 00:08:19
+Second value f:3.9901501910464066,u:0.5035687183525377
+2025-08-18 00:08:19
+################## New Iteration ##################
+2025-08-18 00:09:57
+Theta  :1.1176445543950222 [°]
+2025-08-18 00:09:57
+s_change : 1.0420372828760858
+2025-08-18 00:09:57
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 00:10:12
+Iteration 0: Residual max G: 1.15e+05, frequence: 3.9890793154885293
+2025-08-18 00:12:07
+Iteration 1: Residual max G: 2.55e+01, frequence: 3.9899253128075642
+2025-08-18 00:14:03
+Iteration 2: Residual max G: 7.99e+01, frequence: 3.9890596537148717
+2025-08-18 00:16:00
+Iteration 3: Residual max G: 9.78e-01, frequence: 3.9890611413314954
+2025-08-18 00:17:55
+Iteration 4: Residual max G: 8.69e-01, frequence: 3.989061992362858
+2025-08-18 00:19:47
+Iteration 5: Residual max G: 7.76e-03, frequence: 3.9890627381351957
+2025-08-18 00:21:43
+Iteration 6: Residual max G: 1.34e-03, frequence: 3.989063281757197
+2025-08-18 00:23:38
+Iteration 7: Residual max G: 9.20e-03, frequence: 3.9890644077771005
+2025-08-18 00:25:31
+Iteration 8: Residual max G: 3.06e-03, frequence: 3.9890650217143087
+2025-08-18 00:27:26
+Iteration 9: Residual max G: 6.70e-05, frequence: 3.9890555996863455
+2025-08-18 00:27:26
+Second value f:3.9890555996863455,u:0.4994680520413982
+2025-08-18 00:27:26
+################## New Iteration ##################
+2025-08-18 00:29:06
+Theta  :1.2400818300141163 [°]
+2025-08-18 00:29:06
+s_change : 0.9801585692915522
+2025-08-18 00:29:06
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 00:29:20
+Iteration 0: Residual max G: 1.10e+05, frequence: 3.9879678265358685
+2025-08-18 00:31:15
+Iteration 1: Residual max G: 3.03e+01, frequence: 3.988814153194453
+2025-08-18 00:33:08
+Iteration 2: Residual max G: 8.72e+01, frequence: 3.987959546056906
+2025-08-18 00:35:04
+Iteration 3: Residual max G: 1.32e+00, frequence: 3.9879523164725907
+2025-08-18 00:36:58
+Iteration 4: Residual max G: 1.50e+00, frequence: 3.9879569154175294
+2025-08-18 00:38:54
+Iteration 5: Residual max G: 8.13e-05, frequence: 3.987957904644451
+2025-08-18 00:38:54
+Second value f:3.987957904644451,u:0.4952284715705344
+2025-08-18 00:38:54
+################## New Iteration ##################
+2025-08-18 00:40:33
+Theta  :1.0972732989281109 [°]
+2025-08-18 00:40:33
+s_change : 1.0527053248446139
+2025-08-18 00:40:33
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 00:40:48
+Iteration 0: Residual max G: 1.22e+05, frequence: 3.986774788329581
+2025-08-18 00:42:43
+Iteration 1: Residual max G: 2.26e+01, frequence: 3.98764121104553
+2025-08-18 00:44:40
+Iteration 2: Residual max G: 9.02e+01, frequence: 3.9867457303273652
+2025-08-18 00:46:36
+Iteration 3: Residual max G: 3.85e-01, frequence: 3.9867410024143455
+2025-08-18 00:48:32
+Iteration 4: Residual max G: 5.06e-01, frequence: 3.9867458551857093
+2025-08-18 00:50:26
+Iteration 5: Residual max G: 2.14e-02, frequence: 3.986741551135285
+2025-08-18 00:52:22
+Iteration 6: Residual max G: 1.34e-02, frequence: 3.9867463080646606
+2025-08-18 00:54:16
+Iteration 7: Residual max G: 1.14e-03, frequence: 3.9867413694980796
+2025-08-18 00:56:11
+Iteration 8: Residual max G: 1.71e-02, frequence: 3.986745678960567
+2025-08-18 00:58:06
+Iteration 9: Residual max G: 4.11e-02, frequence: 3.9867413538165852
+2025-08-18 00:59:58
+Iteration 10: Residual max G: 3.81e-02, frequence: 3.986745648373839
+2025-08-18 01:01:47
+Iteration 11: Residual max G: 1.40e-02, frequence: 3.9867406356105524
+2025-08-18 01:03:39
+Iteration 12: Residual max G: 1.83e-03, frequence: 3.9867455797569895
+2025-08-18 01:05:32
+Iteration 13: Residual max G: 8.24e-03, frequence: 3.9867412957165804
+2025-08-18 01:07:28
+Iteration 14: Residual max G: 4.09e-04, frequence: 3.986746638779546
+2025-08-18 01:07:28
+Second value f:3.986746638779546,u:0.4905557682033717
+2025-08-18 01:07:28
+################## New Iteration ##################
+2025-08-18 01:09:02
+Theta  :1.21994960630798 [°]
+2025-08-18 01:09:02
+s_change : 0.9900747801966558
+2025-08-18 01:09:02
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 01:09:17
+Iteration 0: Residual max G: 1.20e+05, frequence: 3.9855345829660602
+2025-08-18 01:11:08
+Iteration 1: Residual max G: 2.22e+01, frequence: 3.986376398268065
+2025-08-18 01:13:03
+Iteration 2: Residual max G: 9.08e+01, frequence: 3.9855134967975596
+2025-08-18 01:14:53
+Iteration 3: Residual max G: 3.46e-01, frequence: 3.985511106248221
+2025-08-18 01:16:50
+Iteration 4: Residual max G: 5.69e-01, frequence: 3.9855084468138444
+2025-08-18 01:18:40
+Iteration 5: Residual max G: 1.01e-02, frequence: 3.9855061609670743
+2025-08-18 01:20:32
+Iteration 6: Residual max G: 3.61e-04, frequence: 3.9855130861717276
+2025-08-18 01:20:32
+Second value f:3.9855130861717276,u:0.4856983018560353
+2025-08-18 01:20:32
+################## New Iteration ##################
+2025-08-18 01:22:13
+Theta  :1.201759298041025 [°]
+2025-08-18 01:22:13
+s_change : 0.9991207377572693
+2025-08-18 01:22:13
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 01:22:27
+Iteration 0: Residual max G: 1.20e+05, frequence: 3.984260655035632
+2025-08-18 01:24:24
+Iteration 1: Residual max G: 2.19e+01, frequence: 3.985087918358139
+2025-08-18 01:26:18
+Iteration 2: Residual max G: 8.45e+01, frequence: 3.984237015197961
+2025-08-18 01:28:12
+Iteration 3: Residual max G: 3.46e-01, frequence: 3.984241156798229
+2025-08-18 01:30:04
+Iteration 4: Residual max G: 4.44e-01, frequence: 3.984241641804791
+2025-08-18 01:31:59
+Iteration 5: Residual max G: 2.27e-03, frequence: 3.984242414538968
+2025-08-18 01:33:53
+Iteration 6: Residual max G: 1.14e-03, frequence: 3.9842434097624455
+2025-08-18 01:35:44
+Iteration 7: Residual max G: 3.63e-03, frequence: 3.9842435901212436
+2025-08-18 01:37:39
+Iteration 8: Residual max G: 2.50e-03, frequence: 3.9842433402606203
+2025-08-18 01:39:31
+Iteration 9: Residual max G: 1.41e-03, frequence: 3.9842433488888114
+2025-08-18 01:41:25
+Iteration 10: Residual max G: 1.70e-02, frequence: 3.984244080870341
+2025-08-18 01:43:14
+Iteration 11: Residual max G: 2.73e-02, frequence: 3.984243568832501
+2025-08-18 01:45:05
+Iteration 12: Residual max G: 4.38e-03, frequence: 3.9842438293231415
+2025-08-18 01:47:00
+Iteration 13: Residual max G: 4.42e-03, frequence: 3.9842435616124705
+2025-08-18 01:48:53
+Iteration 14: Residual max G: 2.74e-03, frequence: 3.9842436556978105
+2025-08-18 01:50:31
+################## New Iteration ##################
+2025-08-18 01:50:31
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 01:50:46
+Iteration 0: Residual max G: 1.45e+05, frequence: 3.9841354119220225
+2025-08-18 01:52:36
+Iteration 1: Residual max G: 2.87e+01, frequence: 3.9852160330189297
+2025-08-18 01:54:29
+Iteration 2: Residual max G: 1.07e+02, frequence: 3.9841056577138727
+2025-08-18 01:56:22
+Iteration 3: Residual max G: 2.85e-01, frequence: 3.9841081297157452
+2025-08-18 01:58:14
+Iteration 4: Residual max G: 3.01e-01, frequence: 3.9841105448926095
+2025-08-18 02:00:10
+Iteration 5: Residual max G: 4.27e-02, frequence: 3.984108958119846
+2025-08-18 02:02:03
+Iteration 6: Residual max G: 8.36e-03, frequence: 3.9841079330966624
+2025-08-18 02:03:57
+Iteration 7: Residual max G: 3.50e-05, frequence: 3.9841096549135537
+2025-08-18 02:03:57
+Second value f:3.9841096549135537,u:0.48010484304581513
+2025-08-18 02:03:57
+################## New Iteration ##################
+2025-08-18 02:05:36
+Theta  :1.3961366616748456 [°]
+2025-08-18 02:05:36
+s_change : 0.9065869537916494
+2025-08-18 02:05:36
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 02:05:51
+Iteration 0: Residual max G: 1.20e+05, frequence: 3.9828148109075445
+2025-08-18 02:07:47
+Iteration 1: Residual max G: 2.16e+01, frequence: 3.983634886123788
+2025-08-18 02:09:40
+Iteration 2: Residual max G: 8.13e+01, frequence: 3.9827944856326165
+2025-08-18 02:11:36
+Iteration 3: Residual max G: 2.31e-01, frequence: 3.9827866491864694
+2025-08-18 02:13:31
+Iteration 4: Residual max G: 2.53e-01, frequence: 3.9827919184252276
+2025-08-18 02:15:26
+Iteration 5: Residual max G: 6.85e-05, frequence: 3.9827934699900536
+2025-08-18 02:15:26
+Second value f:3.9827934699900536,u:0.47480827722519253
+2025-08-18 02:15:26
+################## New Iteration ##################
+2025-08-18 02:17:07
+Theta  :1.335276747680812 [°]
+2025-08-18 02:17:07
+s_change : 0.9345983876999444
+2025-08-18 02:17:07
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 02:17:23
+Iteration 0: Residual max G: 1.05e+05, frequence: 3.9815445974459807
+2025-08-18 02:19:20
+Iteration 1: Residual max G: 4.12e+01, frequence: 3.982344649003752
+2025-08-18 02:21:19
+Iteration 2: Residual max G: 7.76e+01, frequence: 3.981528216640092
+2025-08-18 02:23:16
+Iteration 3: Residual max G: 3.24e+00, frequence: 3.981531153123319
+2025-08-18 02:25:13
+Iteration 4: Residual max G: 3.96e+00, frequence: 3.9815213522579818
+2025-08-18 02:27:08
+Iteration 5: Residual max G: 3.73e-02, frequence: 3.981526453350366
+2025-08-18 02:29:06
+Iteration 6: Residual max G: 3.59e-02, frequence: 3.981529015472656
+2025-08-18 02:31:00
+Iteration 7: Residual max G: 1.26e-03, frequence: 3.9815307441711596
+2025-08-18 02:32:55
+Iteration 8: Residual max G: 1.01e-01, frequence: 3.9815217464984474
+2025-08-18 02:34:53
+Iteration 9: Residual max G: 6.14e-02, frequence: 3.981527148765247
+2025-08-18 02:36:46
+Iteration 10: Residual max G: 2.27e-02, frequence: 3.9815301586435985
+2025-08-18 02:38:44
+Iteration 11: Residual max G: 2.98e-01, frequence: 3.9815297838457617
+2025-08-18 02:40:42
+Iteration 12: Residual max G: 5.13e-03, frequence: 3.981529351332314
+2025-08-18 02:42:39
+Iteration 13: Residual max G: 1.10e-01, frequence: 3.9815307255680503
+2025-08-18 02:44:37
+Iteration 14: Residual max G: 6.59e-02, frequence: 3.981521621153222
+2025-08-18 02:46:17
+################## New Iteration ##################
+2025-08-18 02:46:17
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 02:46:33
+Iteration 0: Residual max G: 1.27e+05, frequence: 3.9814197101915734
+2025-08-18 02:48:32
+Iteration 1: Residual max G: 2.26e+01, frequence: 3.9822782904471765
+2025-08-18 02:50:24
+Iteration 2: Residual max G: 9.17e+01, frequence: 3.9813922742329315
+2025-08-18 02:52:16
+Iteration 3: Residual max G: 1.15e-01, frequence: 3.981397075143468
+2025-08-18 02:54:08
+Iteration 4: Residual max G: 2.13e-01, frequence: 3.9813978436339528
+2025-08-18 02:56:05
+Iteration 5: Residual max G: 5.24e-03, frequence: 3.981397934468402
+2025-08-18 02:58:00
+Iteration 6: Residual max G: 1.27e-02, frequence: 3.9813987407388947
+2025-08-18 02:59:55
+Iteration 7: Residual max G: 1.97e-03, frequence: 3.981399336245456
+2025-08-18 03:01:54
+Iteration 8: Residual max G: 5.31e-03, frequence: 3.981389097493768
+2025-08-18 03:03:40
+Iteration 9: Residual max G: 2.23e-02, frequence: 3.9813945401962374
+2025-08-18 03:05:30
+Iteration 10: Residual max G: 4.49e-03, frequence: 3.981396111561676
+2025-08-18 03:07:26
+Iteration 11: Residual max G: 3.63e-03, frequence: 3.9813977600182877
+2025-08-18 03:09:23
+Iteration 12: Residual max G: 2.35e-03, frequence: 3.981399236922174
+2025-08-18 03:11:19
+Iteration 13: Residual max G: 3.20e-02, frequence: 3.981399539127115
+2025-08-18 03:13:14
+Iteration 14: Residual max G: 5.25e-03, frequence: 3.981389835812147
+2025-08-18 03:14:53
+################## New Iteration ##################
+2025-08-18 03:14:53
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 03:15:08
+Iteration 0: Residual max G: 1.53e+05, frequence: 3.981282334211725
+2025-08-18 03:17:05
+Iteration 1: Residual max G: 3.17e+01, frequence: 3.982437852630715
+2025-08-18 03:19:04
+Iteration 2: Residual max G: 1.12e+02, frequence: 3.981253251741961
+2025-08-18 03:20:53
+Iteration 3: Residual max G: 2.40e-01, frequence: 3.9812545172718696
+2025-08-18 03:22:52
+Iteration 4: Residual max G: 6.93e-01, frequence: 3.9812546387278145
+2025-08-18 03:24:51
+Iteration 5: Residual max G: 7.71e-04, frequence: 3.981255217045378
+2025-08-18 03:26:49
+Iteration 6: Residual max G: 4.33e-03, frequence: 3.981255437539806
+2025-08-18 03:28:45
+Iteration 7: Residual max G: 5.87e-05, frequence: 3.9812554103174693
+2025-08-18 03:28:46
+Second value f:3.9812554103174693,u:0.4685253994233091
+2025-08-18 03:28:46
+################## New Iteration ##################
+2025-08-18 03:30:18
+Theta  :1.2923022380134706 [°]
+2025-08-18 03:30:18
+s_change : 0.9548976481025733
+2025-08-18 03:30:18
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 03:30:33
+Iteration 0: Residual max G: 1.40e+05, frequence: 3.979749632976408
+2025-08-18 03:32:19
+Iteration 1: Residual max G: 2.66e+01, frequence: 3.9807419462185667
+2025-08-18 03:34:16
+Iteration 2: Residual max G: 1.04e+02, frequence: 3.9797344114830295
+2025-08-18 03:36:01
+Iteration 3: Residual max G: 1.15e-01, frequence: 3.9797314528958525
+2025-08-18 03:37:46
+Iteration 4: Residual max G: 6.94e-01, frequence: 3.979727367023503
+2025-08-18 03:39:29
+Iteration 5: Residual max G: 8.53e-05, frequence: 3.979733979926701
+2025-08-18 03:39:29
+Second value f:3.979733979926701,u:0.4622740705590162
+2025-08-18 03:39:29
+################## New Iteration ##################
+2025-08-18 03:41:11
+Theta  :1.3951624630156387 [°]
+2025-08-18 03:41:11
+s_change : 0.9070286592575533
+2025-08-18 03:41:11
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 03:41:26
+Iteration 0: Residual max G: 1.15e+05, frequence: 3.9783361944177096
+2025-08-18 03:43:13
+Iteration 1: Residual max G: 2.03e+01, frequence: 3.979073084563245
+2025-08-18 03:45:11
+Iteration 2: Residual max G: 7.74e+01, frequence: 3.9783137434151827
+2025-08-18 03:47:06
+Iteration 3: Residual max G: 2.49e-01, frequence: 3.9783070258776534
+2025-08-18 03:49:04
+Iteration 4: Residual max G: 5.43e-01, frequence: 3.978309360099839
+2025-08-18 03:51:02
+Iteration 5: Residual max G: 2.96e-03, frequence: 3.9783116082625947
+2025-08-18 03:53:00
+Iteration 6: Residual max G: 6.24e-05, frequence: 3.978313505480978
+2025-08-18 03:53:00
+Second value f:3.978313505480978,u:0.45637984720610664
+2025-08-18 03:53:00
+################## New Iteration ##################
+2025-08-18 03:54:42
+Theta  :1.2744091718128543 [°]
+2025-08-18 03:54:42
+s_change : 0.9634790009595473
+2025-08-18 03:54:42
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 03:54:57
+Iteration 0: Residual max G: 1.07e+05, frequence: 3.976928297187725
+2025-08-18 03:56:46
+Iteration 1: Residual max G: 2.41e+01, frequence: 3.9776334448190642
+2025-08-18 03:58:41
+Iteration 2: Residual max G: 7.22e+01, frequence: 3.9769044392069697
+2025-08-18 04:00:37
+Iteration 3: Residual max G: 9.98e-01, frequence: 3.9769135901918164
+2025-08-18 04:02:36
+Iteration 4: Residual max G: 1.03e+00, frequence: 3.9769085523299696
+2025-08-18 04:04:35
+Iteration 5: Residual max G: 3.28e-05, frequence: 3.9769068331641186
+2025-08-18 04:04:35
+Second value f:3.9769068331641186,u:0.4505009637155237
+2025-08-18 04:04:35
+################## New Iteration ##################
+2025-08-18 04:06:17
+Theta  :1.2789194463711329 [°]
+2025-08-18 04:06:17
+s_change : 0.9613086716618626
+2025-08-18 04:06:17
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 04:06:32
+Iteration 0: Residual max G: 9.91e+04, frequence: 3.9755383692442665
+2025-08-18 04:08:20
+Iteration 1: Residual max G: 1.22e+02, frequence: 3.9764613750821196
+2025-08-18 04:10:19
+Iteration 2: Residual max G: 6.38e+01, frequence: 3.975528548074889
+2025-08-18 04:12:17
+Iteration 3: Residual max G: 4.28e+01, frequence: 3.9755233772946936
+2025-08-18 04:14:17
+Iteration 4: Residual max G: 4.83e+00, frequence: 3.9755199027621173
+2025-08-18 04:16:16
+Iteration 5: Residual max G: 2.71e+00, frequence: 3.9755243666050393
+2025-08-18 04:18:14
+Iteration 6: Residual max G: 5.67e-02, frequence: 3.975517970157458
+2025-08-18 04:20:13
+Iteration 7: Residual max G: 4.99e-03, frequence: 3.9755221610816815
+2025-08-18 04:22:10
+Iteration 8: Residual max G: 2.12e-03, frequence: 3.9755164872138766
+2025-08-18 04:24:08
+Iteration 9: Residual max G: 1.33e-02, frequence: 3.975520556681394
+2025-08-18 04:26:06
+Iteration 10: Residual max G: 2.75e-02, frequence: 3.975524596079274
+2025-08-18 04:28:03
+Iteration 11: Residual max G: 4.42e-05, frequence: 3.9755185348902504
+2025-08-18 04:28:03
+Second value f:3.9755185348902504,u:0.444657362096625
+2025-08-18 04:28:03
+################## New Iteration ##################
+2025-08-18 04:29:33
+Theta  :1.2122578268578066 [°]
+2025-08-18 04:29:33
+s_change : 0.9938898300490719
+2025-08-18 04:29:33
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 04:29:47
+Iteration 0: Residual max G: 9.80e+04, frequence: 3.9741239821766388
+2025-08-18 04:31:42
+Iteration 1: Residual max G: 1.99e+02, frequence: 3.9751567516204895
+2025-08-18 04:33:39
+Iteration 2: Residual max G: 7.88e+01, frequence: 3.974117528759811
+2025-08-18 04:35:28
+Iteration 3: Residual max G: 7.11e+01, frequence: 3.9741048527476694
+2025-08-18 04:37:26
+Iteration 4: Residual max G: 7.58e+00, frequence: 3.9741051155960325
+2025-08-18 04:39:24
+Iteration 5: Residual max G: 1.07e+01, frequence: 3.974102428185825
+2025-08-18 04:41:09
+Iteration 6: Residual max G: 1.21e-01, frequence: 3.974100568053342
+2025-08-18 04:43:08
+Iteration 7: Residual max G: 3.55e-02, frequence: 3.9741085554907847
+2025-08-18 04:45:06
+Iteration 8: Residual max G: 4.40e-03, frequence: 3.9741025323215813
+2025-08-18 04:46:54
+Iteration 9: Residual max G: 2.19e-03, frequence: 3.9741000401727367
+2025-08-18 04:48:53
+Iteration 10: Residual max G: 1.70e-03, frequence: 3.974108444632353
+2025-08-18 04:50:48
+Iteration 11: Residual max G: 3.83e-05, frequence: 3.974102500015125
+2025-08-18 04:50:48
+Second value f:3.974102500015125,u:0.43867202938342414
+2025-08-18 04:50:48
+################## New Iteration ##################
+2025-08-18 04:52:30
+Theta  :1.172358229631229 [°]
+2025-08-18 04:52:30
+s_change : 1.0139168351462462
+2025-08-18 04:52:30
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 04:52:45
+Iteration 0: Residual max G: 1.01e+05, frequence: 3.9726546968544016
+2025-08-18 04:54:44
+Iteration 1: Residual max G: 4.70e+01, frequence: 3.9733789233402224
+2025-08-18 04:56:38
+Iteration 2: Residual max G: 6.56e+01, frequence: 3.972642079659986
+2025-08-18 04:58:36
+Iteration 3: Residual max G: 6.90e+00, frequence: 3.9726347087425595
+2025-08-18 05:00:28
+Iteration 4: Residual max G: 4.19e+00, frequence: 3.972629495357451
+2025-08-18 05:02:24
+Iteration 5: Residual max G: 1.48e-01, frequence: 3.9726334637745113
+2025-08-18 05:04:18
+Iteration 6: Residual max G: 7.72e-03, frequence: 3.9726278455174726
+2025-08-18 05:06:14
+Iteration 7: Residual max G: 3.92e-03, frequence: 3.972632203622267
+2025-08-18 05:08:09
+Iteration 8: Residual max G: 2.05e-04, frequence: 3.9726357860306485
+2025-08-18 05:08:09
+Second value f:3.9726357860306485,u:0.4324165249760642
+2025-08-18 05:08:09
+################## New Iteration ##################
+2025-08-18 05:09:47
+Theta  :1.1663608469121083 [°]
+2025-08-18 05:09:47
+s_change : 1.0169618220052563
+2025-08-18 05:09:47
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 05:10:02
+Iteration 0: Residual max G: 1.04e+05, frequence: 3.971124023321044
+2025-08-18 05:11:58
+Iteration 1: Residual max G: 2.32e+01, frequence: 3.9717581921062024
+2025-08-18 05:13:54
+Iteration 2: Residual max G: 6.57e+01, frequence: 3.971103354353522
+2025-08-18 05:15:50
+Iteration 3: Residual max G: 1.20e+00, frequence: 3.971105603874185
+2025-08-18 05:17:47
+Iteration 4: Residual max G: 1.03e+00, frequence: 3.97109776402613
+2025-08-18 05:19:44
+Iteration 5: Residual max G: 3.61e-03, frequence: 3.9711027536042547
+2025-08-18 05:21:41
+Iteration 6: Residual max G: 3.90e-04, frequence: 3.9711043090102645
+2025-08-18 05:21:41
+Second value f:3.9711043090102645,u:0.42587769819121063
+2025-08-18 05:21:41
+################## New Iteration ##################
+2025-08-18 05:23:21
+Theta  :1.2215097837247226 [°]
+2025-08-18 05:23:21
+s_change : 0.9893027352111206
+2025-08-18 05:23:21
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 05:23:35
+Iteration 0: Residual max G: 1.02e+05, frequence: 3.9695765833725827
+2025-08-18 05:25:32
+Iteration 1: Residual max G: 2.78e+01, frequence: 3.9701935878973504
+2025-08-18 05:27:24
+Iteration 2: Residual max G: 6.95e+01, frequence: 3.9695495669343197
+2025-08-18 05:29:18
+Iteration 3: Residual max G: 1.64e+00, frequence: 3.969559265781986
+2025-08-18 05:31:05
+Iteration 4: Residual max G: 2.14e+00, frequence: 3.9695540180177535
+2025-08-18 05:33:03
+Iteration 5: Residual max G: 5.83e-04, frequence: 3.9695521218375203
+2025-08-18 05:34:47
+Iteration 6: Residual max G: 4.81e-04, frequence: 3.969550933623087
+2025-08-18 05:34:47
+Second value f:3.969550933623087,u:0.4192218243215328
+2025-08-18 05:34:47
+################## New Iteration ##################
+2025-08-18 05:36:27
+Theta  :1.3154635975530833 [°]
+2025-08-18 05:36:27
+s_change : 0.9439030694495169
+2025-08-18 05:36:27
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 05:36:42
+Iteration 0: Residual max G: 9.12e+04, frequence: 3.9680713143545714
+2025-08-18 05:38:38
+Iteration 1: Residual max G: 4.55e+01, frequence: 3.9681101884092973
+2025-08-18 05:40:32
+Iteration 2: Residual max G: 2.16e+01, frequence: 3.968056696468885
+2025-08-18 05:42:27
+Iteration 3: Residual max G: 1.06e-01, frequence: 3.968052135484884
+2025-08-18 05:44:24
+Iteration 4: Residual max G: 2.77e-02, frequence: 3.9680483938941706
+2025-08-18 05:46:21
+Iteration 5: Residual max G: 5.18e-03, frequence: 3.968047721802425
+2025-08-18 05:48:19
+Iteration 6: Residual max G: 2.08e-04, frequence: 3.968047294541514
+2025-08-18 05:48:19
+Second value f:3.968047294541514,u:0.41277004344777996
+2025-08-18 05:48:19
+################## New Iteration ##################
+2025-08-18 05:50:00
+Theta  :1.1190384242571156 [°]
+2025-08-18 05:50:00
+s_change : 1.0413113037037036
+2025-08-18 05:50:00
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 05:50:15
+Iteration 0: Residual max G: 9.89e+04, frequence: 3.9664703080141273
+2025-08-18 05:52:11
+Iteration 1: Residual max G: 4.96e+01, frequence: 3.9671176738911478
+2025-08-18 05:54:06
+Iteration 2: Residual max G: 6.21e+01, frequence: 3.9664619947926716
+2025-08-18 05:56:02
+Iteration 3: Residual max G: 8.03e+00, frequence: 3.966455172291783
+2025-08-18 05:57:58
+Iteration 4: Residual max G: 4.11e+00, frequence: 3.966450594420546
+2025-08-18 05:59:53
+Iteration 5: Residual max G: 1.40e-01, frequence: 3.9664570499519427
+2025-08-18 06:01:44
+Iteration 6: Residual max G: 1.50e-03, frequence: 3.9664517949394344
+2025-08-18 06:03:43
+Iteration 7: Residual max G: 4.86e-03, frequence: 3.9664576970317933
+2025-08-18 06:05:38
+Iteration 8: Residual max G: 3.07e-03, frequence: 3.9664523863475325
+2025-08-18 06:07:34
+Iteration 9: Residual max G: 8.08e-04, frequence: 3.9664589861665838
+2025-08-18 06:09:31
+Iteration 10: Residual max G: 1.97e-03, frequence: 3.9664535389761046
+2025-08-18 06:11:25
+Iteration 11: Residual max G: 3.46e-03, frequence: 3.966459390730597
+2025-08-18 06:13:19
+Iteration 12: Residual max G: 2.59e-04, frequence: 3.966453514476227
+2025-08-18 06:13:20
+Second value f:3.966453514476227,u:0.40588509503902515
+2025-08-18 06:13:20
+################## New Iteration ##################
+2025-08-18 06:15:00
+Theta  :1.2533430764282654 [°]
+2025-08-18 06:15:00
+s_change : 0.9736810060083537
+2025-08-18 06:15:00
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 06:15:15
+Iteration 0: Residual max G: 9.38e+04, frequence: 3.964869379296523
+2025-08-18 06:17:12
+Iteration 1: Residual max G: 1.73e+03, frequence: 3.9636951283424824
+2025-08-18 06:19:08
+Iteration 2: Residual max G: 1.15e+03, frequence: 3.964824145679004
+2025-08-18 06:21:04
+Iteration 3: Residual max G: 7.75e+00, frequence: 3.964858212430557
+2025-08-18 06:23:00
+Iteration 4: Residual max G: 1.11e+03, frequence: 3.9648655406129922
+2025-08-18 06:24:55
+Iteration 5: Residual max G: 1.66e-02, frequence: 3.964861606710013
+2025-08-18 06:26:50
+Iteration 6: Residual max G: 7.62e+00, frequence: 3.9648688961097536
+2025-08-18 06:28:46
+Iteration 7: Residual max G: 5.58e-03, frequence: 3.9648660446225215
+2025-08-18 06:30:43
+Iteration 8: Residual max G: 1.94e-04, frequence: 3.9648637826108253
+2025-08-18 06:30:43
+Second value f:3.9648637826108253,u:0.3990159491741697
+2025-08-18 06:30:43
+################## New Iteration ##################
+2025-08-18 06:32:26
+Theta  :1.1827987263445319 [°]
+2025-08-18 06:32:26
+s_change : 1.0086377285659207
+2025-08-18 06:32:26
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 06:32:40
+Iteration 0: Residual max G: 9.54e+04, frequence: 3.963248067624726
+2025-08-18 06:34:39
+Iteration 1: Residual max G: 3.82e+02, frequence: 3.964277468769496
+2025-08-18 06:36:33
+Iteration 2: Residual max G: 1.75e+02, frequence: 3.9632394730707365
+2025-08-18 06:38:25
+Iteration 3: Residual max G: 5.28e+01, frequence: 3.9632262879762257
+2025-08-18 06:40:23
+Iteration 4: Residual max G: 5.17e+01, frequence: 3.963228261713386
+2025-08-18 06:42:16
+Iteration 5: Residual max G: 1.50e+01, frequence: 3.963227476997412
+2025-08-18 06:44:12
+Iteration 6: Residual max G: 1.01e+01, frequence: 3.9632254706060195
+2025-08-18 06:46:09
+Iteration 7: Residual max G: 7.98e-01, frequence: 3.9632232533893195
+2025-08-18 06:48:03
+Iteration 8: Residual max G: 2.89e-02, frequence: 3.963221170529925
+2025-08-18 06:49:59
+Iteration 9: Residual max G: 7.01e-03, frequence: 3.963219251742564
+2025-08-18 06:51:55
+Iteration 10: Residual max G: 6.84e-03, frequence: 3.963217874881737
+2025-08-18 06:53:48
+Iteration 11: Residual max G: 3.67e-05, frequence: 3.963219330459046
+2025-08-18 06:53:48
+Second value f:3.963219330459046,u:0.39192496929088827
+2025-08-18 06:53:48
+################## New Iteration ##################
+2025-08-18 06:55:29
+Theta  :1.1687806913569863 [°]
+2025-08-18 06:55:29
+s_change : 1.0157321213685182
+2025-08-18 06:55:29
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 06:55:44
+Iteration 0: Residual max G: 9.84e+04, frequence: 3.961540963017594
+2025-08-18 06:57:42
+Iteration 1: Residual max G: 3.57e+01, frequence: 3.962097262149165
+2025-08-18 06:59:39
+Iteration 2: Residual max G: 6.16e+01, frequence: 3.961518957318119
+2025-08-18 07:01:35
+Iteration 3: Residual max G: 3.86e+00, frequence: 3.9615181755064937
+2025-08-18 07:03:28
+Iteration 4: Residual max G: 2.62e+00, frequence: 3.961519763105223
+2025-08-18 07:05:26
+Iteration 5: Residual max G: 1.10e-02, frequence: 3.961518700194316
+2025-08-18 07:07:23
+Iteration 6: Residual max G: 7.60e-03, frequence: 3.9615175725550382
+2025-08-18 07:09:21
+Iteration 7: Residual max G: 2.97e-03, frequence: 3.96151898489372
+2025-08-18 07:11:18
+Iteration 8: Residual max G: 1.16e-02, frequence: 3.9615172874447633
+2025-08-18 07:13:16
+Iteration 9: Residual max G: 8.23e-03, frequence: 3.9615186633236106
+2025-08-18 07:15:12
+Iteration 10: Residual max G: 4.02e-03, frequence: 3.961517556114398
+2025-08-18 07:17:10
+Iteration 11: Residual max G: 2.67e-02, frequence: 3.961518829885527
+2025-08-18 07:19:07
+Iteration 12: Residual max G: 3.48e-02, frequence: 3.961517571550077
+2025-08-18 07:21:03
+Iteration 13: Residual max G: 2.52e-03, frequence: 3.9615192983618246
+2025-08-18 07:22:59
+Iteration 14: Residual max G: 6.49e-03, frequence: 3.9615177477346424
+2025-08-18 07:24:40
+################## New Iteration ##################
+2025-08-18 07:24:40
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 07:24:55
+Iteration 0: Residual max G: 1.19e+05, frequence: 3.9613731262734486
+2025-08-18 07:26:46
+Iteration 1: Residual max G: 1.94e+01, frequence: 3.9620078473778593
+2025-08-18 07:28:39
+Iteration 2: Residual max G: 6.90e+01, frequence: 3.9613435200076474
+2025-08-18 07:30:35
+Iteration 3: Residual max G: 1.11e-01, frequence: 3.9613442270727934
+2025-08-18 07:32:31
+Iteration 4: Residual max G: 1.64e-01, frequence: 3.9613451970920286
+2025-08-18 07:34:27
+Iteration 5: Residual max G: 2.09e-02, frequence: 3.9613357459110365
+2025-08-18 07:36:22
+Iteration 6: Residual max G: 4.25e-03, frequence: 3.961340430533179
+2025-08-18 07:38:20
+Iteration 7: Residual max G: 4.15e-03, frequence: 3.9613417909054705
+2025-08-18 07:40:15
+Iteration 8: Residual max G: 1.27e-03, frequence: 3.9613432644467323
+2025-08-18 07:42:11
+Iteration 9: Residual max G: 1.47e-03, frequence: 3.961344121683754
+2025-08-18 07:44:06
+Iteration 10: Residual max G: 1.91e-03, frequence: 3.9613448115758967
+2025-08-18 07:46:02
+Iteration 11: Residual max G: 2.99e-03, frequence: 3.9613454395117516
+2025-08-18 07:47:56
+Iteration 12: Residual max G: 2.67e-03, frequence: 3.9613364288491133
+2025-08-18 07:49:47
+Iteration 13: Residual max G: 1.75e-03, frequence: 3.9613410673184415
+2025-08-18 07:51:37
+Iteration 14: Residual max G: 1.33e-02, frequence: 3.961341822695774
+2025-08-18 07:53:09
+################## New Iteration ##################
+2025-08-18 07:53:09
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 07:53:24
+Iteration 0: Residual max G: 1.44e+05, frequence: 3.961188505854889
+2025-08-18 07:55:18
+Iteration 1: Residual max G: 2.83e+01, frequence: 3.9620970049167124
+2025-08-18 07:57:07
+Iteration 2: Residual max G: 8.53e+01, frequence: 3.961151641690983
+2025-08-18 07:58:59
+Iteration 3: Residual max G: 1.45e-01, frequence: 3.961153708014606
+2025-08-18 08:00:50
+Iteration 4: Residual max G: 6.57e-01, frequence: 3.9611455487850495
+2025-08-18 08:02:43
+Iteration 5: Residual max G: 7.17e-04, frequence: 3.961150754492808
+2025-08-18 08:04:33
+Iteration 6: Residual max G: 1.42e-02, frequence: 3.961152407270691
+2025-08-18 08:06:25
+Iteration 7: Residual max G: 2.53e-03, frequence: 3.9611540742323292
+2025-08-18 08:08:12
+Iteration 8: Residual max G: 4.11e-05, frequence: 3.9611458660727403
+2025-08-18 08:08:13
+Second value f:3.9611458660727403,u:0.38298783903697614
+2025-08-18 08:08:13
+################## New Iteration ##################
+2025-08-18 08:09:55
+Theta  :1.4142266536654342 [°]
+2025-08-18 08:09:55
+s_change : 0.8984238516913221
+2025-08-18 08:09:55
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 08:10:10
+Iteration 0: Residual max G: 1.16e+05, frequence: 3.959266033000867
+2025-08-18 08:12:07
+Iteration 1: Residual max G: 1.86e+01, frequence: 3.959871023199598
+2025-08-18 08:14:05
+Iteration 2: Residual max G: 6.77e+01, frequence: 3.9592461694317636
+2025-08-18 08:16:02
+Iteration 3: Residual max G: 6.41e-02, frequence: 3.959241091731802
+2025-08-18 08:17:59
+Iteration 4: Residual max G: 9.85e-02, frequence: 3.9592397451803145
+2025-08-18 08:19:56
+Iteration 5: Residual max G: 3.04e-03, frequence: 3.9592387216506966
+2025-08-18 08:21:53
+Iteration 6: Residual max G: 2.61e-05, frequence: 3.9592378916625024
+2025-08-18 08:21:53
+Second value f:3.9592378916625024,u:0.37476206650905713
+2025-08-18 08:21:53
+################## New Iteration ##################
+2025-08-18 08:23:34
+Theta  :1.3598905065422358 [°]
+2025-08-18 08:23:34
+s_change : 0.9231668853703875
+2025-08-18 08:23:34
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 08:23:49
+Iteration 0: Residual max G: 9.91e+04, frequence: 3.9574570174115875
+2025-08-18 08:25:40
+Iteration 1: Residual max G: 2.16e+01, frequence: 3.957955230155257
+2025-08-18 08:27:37
+Iteration 2: Residual max G: 6.18e+01, frequence: 3.95743963405782
+2025-08-18 08:29:31
+Iteration 3: Residual max G: 9.46e-01, frequence: 3.957435650248806
+2025-08-18 08:31:27
+Iteration 4: Residual max G: 1.06e+00, frequence: 3.9574416531293375
+2025-08-18 08:33:21
+Iteration 5: Residual max G: 1.37e-03, frequence: 3.957437691999435
+2025-08-18 08:35:15
+Iteration 6: Residual max G: 1.75e-03, frequence: 3.957443520420181
+2025-08-18 08:37:02
+Iteration 7: Residual max G: 5.45e-02, frequence: 3.957438157398167
+2025-08-18 08:38:53
+Iteration 8: Residual max G: 2.50e-02, frequence: 3.9574438429714203
+2025-08-18 08:40:43
+Iteration 9: Residual max G: 3.62e-03, frequence: 3.9574387712861396
+2025-08-18 08:42:35
+Iteration 10: Residual max G: 2.10e-03, frequence: 3.9574441954157282
+2025-08-18 08:44:25
+Iteration 11: Residual max G: 4.70e-04, frequence: 3.9574388408334378
+2025-08-18 08:44:25
+Second value f:3.9574388408334378,u:0.3669959414658342
+2025-08-18 08:44:25
+################## New Iteration ##################
+2025-08-18 08:46:05
+Theta  :1.2205338488978297 [°]
+2025-08-18 08:46:05
+s_change : 0.989785600509621
+2025-08-18 08:46:05
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 08:46:20
+Iteration 0: Residual max G: 9.70e+04, frequence: 3.9556175324716394
+2025-08-18 08:48:13
+Iteration 1: Residual max G: 3.26e+01, frequence: 3.9561241835719754
+2025-08-18 08:50:05
+Iteration 2: Residual max G: 5.98e+01, frequence: 3.955603521807933
+2025-08-18 08:51:55
+Iteration 3: Residual max G: 3.25e+00, frequence: 3.955604466046472
+2025-08-18 08:53:50
+Iteration 4: Residual max G: 2.20e+00, frequence: 3.955605196639156
+2025-08-18 08:55:41
+Iteration 5: Residual max G: 1.04e-03, frequence: 3.955606012207314
+2025-08-18 08:57:38
+Iteration 6: Residual max G: 7.04e-03, frequence: 3.9556068397441946
+2025-08-18 08:59:35
+Iteration 7: Residual max G: 1.76e-03, frequence: 3.9556072838022334
+2025-08-18 09:01:33
+Iteration 8: Residual max G: 6.99e-04, frequence: 3.9556079836130027
+2025-08-18 09:03:31
+Iteration 9: Residual max G: 1.80e-03, frequence: 3.9556084302000896
+2025-08-18 09:05:24
+Iteration 10: Residual max G: 5.75e-04, frequence: 3.955608687508728
+2025-08-18 09:07:22
+Iteration 11: Residual max G: 6.56e-03, frequence: 3.95560907423658
+2025-08-18 09:09:17
+Iteration 12: Residual max G: 9.30e-03, frequence: 3.955609058668754
+2025-08-18 09:11:16
+Iteration 13: Residual max G: 5.63e-03, frequence: 3.9556091993881384
+2025-08-18 09:13:12
+Iteration 14: Residual max G: 1.20e-04, frequence: 3.9556093539027786
+2025-08-18 09:13:12
+Second value f:3.9556093539027786,u:0.35915483491234196
+2025-08-18 09:13:12
+################## New Iteration ##################
+2025-08-18 09:14:51
+Theta  :1.1529092449667975 [°]
+2025-08-18 09:14:51
+s_change : 1.023824758317524
+2025-08-18 09:14:51
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 09:15:06
+Iteration 0: Residual max G: 1.02e+05, frequence: 3.953719033595012
+2025-08-18 09:16:56
+Iteration 1: Residual max G: 1.55e+01, frequence: 3.9541698847211446
+2025-08-18 09:18:50
+Iteration 2: Residual max G: 6.09e+01, frequence: 3.9536848967203038
+2025-08-18 09:20:44
+Iteration 3: Residual max G: 1.71e-01, frequence: 3.9536832678333704
+2025-08-18 09:22:37
+Iteration 4: Residual max G: 1.63e-01, frequence: 3.953682116100197
+2025-08-18 09:24:30
+Iteration 5: Residual max G: 1.42e-02, frequence: 3.953681180770943
+2025-08-18 09:26:24
+Iteration 6: Residual max G: 7.91e-03, frequence: 3.9536804584195484
+2025-08-18 09:28:19
+Iteration 7: Residual max G: 6.48e-05, frequence: 3.953679991546105
+2025-08-18 09:28:20
+Second value f:3.953679991546105,u:0.35097447571686713
+2025-08-18 09:28:20
+################## New Iteration ##################
+2025-08-18 09:30:01
+Theta  :1.2568068467353228 [°]
+2025-08-18 09:30:01
+s_change : 0.9719961617293019
+2025-08-18 09:30:01
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 09:30:15
+Iteration 0: Residual max G: 9.59e+04, frequence: 3.951802149892947
+2025-08-18 09:32:05
+Iteration 1: Residual max G: 3.46e+01, frequence: 3.952254804120848
+2025-08-18 09:33:58
+Iteration 2: Residual max G: 6.06e+01, frequence: 3.951772119376295
+2025-08-18 09:35:50
+Iteration 3: Residual max G: 3.41e+00, frequence: 3.9517716696050953
+2025-08-18 09:37:45
+Iteration 4: Residual max G: 2.76e+00, frequence: 3.951771108845411
+2025-08-18 09:39:36
+Iteration 5: Residual max G: 1.70e-02, frequence: 3.9517735490198684
+2025-08-18 09:41:31
+Iteration 6: Residual max G: 4.57e-04, frequence: 3.9517730712783026
+2025-08-18 09:41:31
+Second value f:3.9517730712783026,u:0.34287131605581433
+2025-08-18 09:41:31
+################## New Iteration ##################
+2025-08-18 09:43:12
+Theta  :1.12517921325709 [°]
+2025-08-18 09:43:12
+s_change : 1.0381189705730098
+2025-08-18 09:43:12
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 09:43:27
+Iteration 0: Residual max G: 1.03e+05, frequence: 3.9497552921385615
+2025-08-18 09:45:20
+Iteration 1: Residual max G: 1.50e+01, frequence: 3.9502044747456946
+2025-08-18 09:47:16
+Iteration 2: Residual max G: 5.93e+01, frequence: 3.949729426363191
+2025-08-18 09:49:10
+Iteration 3: Residual max G: 5.99e-02, frequence: 3.9497266413482475
+2025-08-18 09:51:05
+Iteration 4: Residual max G: 2.30e-01, frequence: 3.949723857192086
+2025-08-18 09:53:00
+Iteration 5: Residual max G: 1.70e-02, frequence: 3.9497327077459814
+2025-08-18 09:54:57
+Iteration 6: Residual max G: 4.13e-04, frequence: 3.949726785418369
+2025-08-18 09:54:57
+Second value f:3.949726785418369,u:0.3343108884317744
+2025-08-18 09:54:57
+################## New Iteration ##################
+2025-08-18 09:56:35
+Theta  :1.2645352176806102 [°]
+2025-08-18 09:56:35
+s_change : 0.9682474358323994
+2025-08-18 09:56:35
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 09:56:50
+Iteration 0: Residual max G: 9.67e+04, frequence: 3.9477328725362955
+2025-08-18 09:58:47
+Iteration 1: Residual max G: 1.84e+01, frequence: 3.94813450108609
+2025-08-18 10:00:43
+Iteration 2: Residual max G: 5.74e+01, frequence: 3.9476965127589714
+2025-08-18 10:02:39
+Iteration 3: Residual max G: 5.70e-01, frequence: 3.947696391737257
+2025-08-18 10:04:38
+Iteration 4: Residual max G: 5.41e-01, frequence: 3.9476963002610788
+2025-08-18 10:06:30
+Iteration 5: Residual max G: 2.38e-05, frequence: 3.947696503589445
+2025-08-18 10:06:30
+Second value f:3.947696503589445,u:0.3258809137287762
+2025-08-18 10:06:30
+################## New Iteration ##################
+2025-08-18 10:08:10
+Theta  :1.1949235105035032 [°]
+2025-08-18 10:08:10
+s_change : 1.0025414688186989
+2025-08-18 10:08:10
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 10:08:24
+Iteration 0: Residual max G: 9.71e+04, frequence: 3.9456437567582103
+2025-08-18 10:10:15
+Iteration 1: Residual max G: 1.57e+01, frequence: 3.9460247919308475
+2025-08-18 10:12:11
+Iteration 2: Residual max G: 5.82e+01, frequence: 3.9455997653200154
+2025-08-18 10:14:02
+Iteration 3: Residual max G: 3.00e-01, frequence: 3.9456016287615046
+2025-08-18 10:15:53
+Iteration 4: Residual max G: 3.66e-01, frequence: 3.945603381614457
+2025-08-18 10:17:49
+Iteration 5: Residual max G: 3.09e-03, frequence: 3.945595247765568
+2025-08-18 10:19:41
+Iteration 6: Residual max G: 4.27e-03, frequence: 3.9456004487386185
+2025-08-18 10:21:36
+Iteration 7: Residual max G: 2.35e-03, frequence: 3.9456023461607312
+2025-08-18 10:23:30
+Iteration 8: Residual max G: 1.90e-03, frequence: 3.945604070520326
+2025-08-18 10:25:23
+Iteration 9: Residual max G: 1.88e-04, frequence: 3.945595876065013
+2025-08-18 10:25:23
+Second value f:3.945595876065013,u:0.31728924305975426
+2025-08-18 10:25:23
+################## New Iteration ##################
+2025-08-18 10:26:56
+Theta  :1.1092585499265257 [°]
+2025-08-18 10:26:56
+s_change : 1.0464157205158864
+2025-08-18 10:26:56
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 10:27:11
+Iteration 0: Residual max G: 1.06e+05, frequence: 3.9433650754623875
+2025-08-18 10:29:05
+Iteration 1: Residual max G: 1.56e+01, frequence: 3.943824085404017
+2025-08-18 10:31:02
+Iteration 2: Residual max G: 5.56e+01, frequence: 3.9433394544937226
+2025-08-18 10:32:58
+Iteration 3: Residual max G: 4.99e-02, frequence: 3.9433433886209226
+2025-08-18 10:34:58
+Iteration 4: Residual max G: 5.47e-02, frequence: 3.9433371874206675
+2025-08-18 10:37:01
+Iteration 5: Residual max G: 6.42e-03, frequence: 3.943341948462071
+2025-08-18 10:38:57
+Iteration 6: Residual max G: 7.39e-03, frequence: 3.9433457368748486
+2025-08-18 10:40:58
+Iteration 7: Residual max G: 2.48e-03, frequence: 3.9433391284808645
+2025-08-18 10:42:46
+Iteration 8: Residual max G: 1.90e-03, frequence: 3.943343195019431
+2025-08-18 10:44:36
+Iteration 9: Residual max G: 1.26e-03, frequence: 3.943337086322636
+2025-08-18 10:46:32
+Iteration 10: Residual max G: 6.60e-04, frequence: 3.9433416166369484
+2025-08-18 10:48:28
+Iteration 11: Residual max G: 7.63e-04, frequence: 3.9433455326925517
+2025-08-18 10:50:19
+Iteration 12: Residual max G: 4.96e-03, frequence: 3.9433391589753257
+2025-08-18 10:52:16
+Iteration 13: Residual max G: 2.98e-04, frequence: 3.943343353845297
+2025-08-18 10:52:17
+Second value f:3.943343353845297,u:0.3081611726537493
+2025-08-18 10:52:17
+################## New Iteration ##################
+2025-08-18 10:53:48
+Theta  :1.2979161899149487 [°]
+2025-08-18 10:53:48
+s_change : 0.9522210317252792
+2025-08-18 10:53:48
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 10:54:02
+Iteration 0: Residual max G: 9.61e+04, frequence: 3.941171878490792
+2025-08-18 10:55:57
+Iteration 1: Residual max G: 1.48e+01, frequence: 3.9415192486563897
+2025-08-18 10:57:50
+Iteration 2: Residual max G: 5.27e+01, frequence: 3.9411229604560933
+2025-08-18 10:59:37
+Iteration 3: Residual max G: 2.47e-01, frequence: 3.941120473243799
+2025-08-18 11:01:32
+Iteration 4: Residual max G: 1.67e-01, frequence: 3.9411214368900063
+2025-08-18 11:03:19
+Iteration 5: Residual max G: 7.41e-04, frequence: 3.941122601842092
+2025-08-18 11:05:15
+Iteration 6: Residual max G: 8.97e-05, frequence: 3.9411205419873387
+2025-08-18 11:05:15
+Second value f:3.9411205419873387,u:0.2993369745653924
+2025-08-18 11:05:15
+################## New Iteration ##################
+2025-08-18 11:06:44
+Theta  :1.1635793516189035 [°]
+2025-08-18 11:06:44
+s_change : 1.0183771432150917
+2025-08-18 11:06:44
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 11:06:59
+Iteration 0: Residual max G: 9.95e+04, frequence: 3.9388159119496207
+2025-08-18 11:08:53
+Iteration 1: Residual max G: 1.38e+01, frequence: 3.93919215445251
+2025-08-18 11:10:46
+Iteration 2: Residual max G: 4.90e+01, frequence: 3.938780311441587
+2025-08-18 11:12:33
+Iteration 3: Residual max G: 5.83e-02, frequence: 3.9387848749604135
+2025-08-18 11:14:27
+Iteration 4: Residual max G: 7.89e-02, frequence: 3.9387891199593725
+2025-08-18 11:16:19
+Iteration 5: Residual max G: 7.62e-04, frequence: 3.938790012730681
+2025-08-18 11:18:13
+Iteration 6: Residual max G: 6.09e-04, frequence: 3.938790730573569
+2025-08-18 11:20:13
+Iteration 7: Residual max G: 3.21e-04, frequence: 3.938791665268907
+2025-08-18 11:20:13
+Second value f:3.938791665268907,u:0.29022413053250684
+2025-08-18 11:20:13
+################## New Iteration ##################
+2025-08-18 11:21:58
+Theta  :1.1816252363178865 [°]
+2025-08-18 11:21:58
+s_change : 1.0092297153790775
+2025-08-18 11:21:58
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 11:22:14
+Iteration 0: Residual max G: 1.01e+05, frequence: 3.9363842609731674
+2025-08-18 11:24:13
+Iteration 1: Residual max G: 1.42e+01, frequence: 3.936751117126398
+2025-08-18 11:26:10
+Iteration 2: Residual max G: 4.71e+01, frequence: 3.9363365833355517
+2025-08-18 11:28:07
+Iteration 3: Residual max G: 3.61e-02, frequence: 3.9363376578746085
+2025-08-18 11:30:04
+Iteration 4: Residual max G: 4.83e-02, frequence: 3.9363389991723103
+2025-08-18 11:32:00
+Iteration 5: Residual max G: 5.52e-04, frequence: 3.9363399604703995
+2025-08-18 11:33:55
+Iteration 6: Residual max G: 3.61e-05, frequence: 3.9363408732590837
+2025-08-18 11:33:55
+Second value f:3.9363408732590837,u:0.2809035251484816
+2025-08-18 11:33:55
+################## New Iteration ##################
+2025-08-18 11:35:32
+Theta  :1.2090687252843402 [°]
+2025-08-18 11:35:32
+s_change : 0.9954759020596278
+2025-08-18 11:35:32
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 11:35:47
+Iteration 0: Residual max G: 1.00e+05, frequence: 3.933844384126888
+2025-08-18 11:37:42
+Iteration 1: Residual max G: 1.39e+01, frequence: 3.9342019066143545
+2025-08-18 11:39:37
+Iteration 2: Residual max G: 4.55e+01, frequence: 3.933805922779837
+2025-08-18 11:41:34
+Iteration 3: Residual max G: 3.31e-02, frequence: 3.9338008680763203
+2025-08-18 11:43:25
+Iteration 4: Residual max G: 2.65e-02, frequence: 3.9338062060731698
+2025-08-18 11:45:22
+Iteration 5: Residual max G: 3.43e-03, frequence: 3.933801064163244
+2025-08-18 11:47:20
+Iteration 6: Residual max G: 6.31e-03, frequence: 3.933806649616117
+2025-08-18 11:49:16
+Iteration 7: Residual max G: 9.04e-04, frequence: 3.933801319397793
+2025-08-18 11:51:11
+Iteration 8: Residual max G: 9.90e-05, frequence: 3.933806727825217
+2025-08-18 11:51:11
+Second value f:3.933806727825217,u:0.2715055984909691
+2025-08-18 11:51:11
+################## New Iteration ##################
+2025-08-18 11:52:53
+Theta  :1.1741499052786952 [°]
+2025-08-18 11:52:53
+s_change : 1.01300893682075
+2025-08-18 11:52:53
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 11:53:08
+Iteration 0: Residual max G: 1.03e+05, frequence: 3.9312122014836706
+2025-08-18 11:55:03
+Iteration 1: Residual max G: 1.46e+01, frequence: 3.931548330653677
+2025-08-18 11:56:56
+Iteration 2: Residual max G: 4.69e+01, frequence: 3.9311305765724787
+2025-08-18 11:58:54
+Iteration 3: Residual max G: 3.14e-02, frequence: 3.9311329201589844
+2025-08-18 12:00:52
+Iteration 4: Residual max G: 2.11e-02, frequence: 3.9311323116142742
+2025-08-18 12:02:48
+Iteration 5: Residual max G: 2.51e-05, frequence: 3.93113156682019
+2025-08-18 12:02:48
+Second value f:3.93113156682019,u:0.2618677104356616
+2025-08-18 12:02:48
+################## New Iteration ##################
+2025-08-18 12:04:27
+Theta  :1.1808231293786862 [°]
+2025-08-18 12:04:27
+s_change : 1.0096345516331198
+2025-08-18 12:04:27
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 12:04:42
+Iteration 0: Residual max G: 1.04e+05, frequence: 3.928356507428116
+2025-08-18 12:06:38
+Iteration 1: Residual max G: 1.51e+01, frequence: 3.9287182406438066
+2025-08-18 12:08:37
+Iteration 2: Residual max G: 4.60e+01, frequence: 3.928301951091063
+2025-08-18 12:10:31
+Iteration 3: Residual max G: 2.80e-02, frequence: 3.9282946699242998
+2025-08-18 12:12:27
+Iteration 4: Residual max G: 1.31e-02, frequence: 3.928301482788214
+2025-08-18 12:14:22
+Iteration 5: Residual max G: 1.87e-03, frequence: 3.9282949369827205
+2025-08-18 12:16:19
+Iteration 6: Residual max G: 3.72e-03, frequence: 3.9283017761402013
+2025-08-18 12:18:18
+Iteration 7: Residual max G: 2.34e-04, frequence: 3.928294653547964
+2025-08-18 12:18:18
+Second value f:3.928294653547964,u:0.25202340007302754
+2025-08-18 12:18:18
+################## New Iteration ##################
+2025-08-18 12:20:01
+Theta  :1.210623718902411 [°]
+2025-08-18 12:20:01
+s_change : 0.9947022235275739
+2025-08-18 12:20:01
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 12:20:16
+Iteration 0: Residual max G: 1.03e+05, frequence: 3.925402644499014
+2025-08-18 12:22:08
+Iteration 1: Residual max G: 1.48e+01, frequence: 3.9257403922059053
+2025-08-18 12:24:04
+Iteration 2: Residual max G: 4.32e+01, frequence: 3.925339654550858
+2025-08-18 12:25:59
+Iteration 3: Residual max G: 3.41e-02, frequence: 3.925347578369722
+2025-08-18 12:27:52
+Iteration 4: Residual max G: 1.40e-02, frequence: 3.9253405571612916
+2025-08-18 12:29:48
+Iteration 5: Residual max G: 7.21e-05, frequence: 3.9253482704530316
+2025-08-18 12:29:48
+Second value f:3.9253482704530316,u:0.2421218820924971
+2025-08-18 12:29:48
+################## New Iteration ##################
+2025-08-18 12:31:20
+Theta  :1.166559685089169 [°]
+2025-08-18 12:31:20
+s_change : 1.0168607216135799
+2025-08-18 12:31:20
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 12:31:35
+Iteration 0: Residual max G: 1.06e+05, frequence: 3.922261595694541
+2025-08-18 12:33:29
+Iteration 1: Residual max G: 1.58e+01, frequence: 3.9225920008342814
+2025-08-18 12:35:18
+Iteration 2: Residual max G: 4.57e+01, frequence: 3.922162726507957
+2025-08-18 12:37:07
+Iteration 3: Residual max G: 2.99e-02, frequence: 3.922157576837276
+2025-08-18 12:39:05
+Iteration 4: Residual max G: 1.33e-02, frequence: 3.9221632896196708
+2025-08-18 12:40:56
+Iteration 5: Residual max G: 6.31e-05, frequence: 3.922158121532905
+2025-08-18 12:40:56
+Second value f:3.922158121532905,u:0.2319473068761003
+2025-08-18 12:40:56
+################## New Iteration ##################
+2025-08-18 12:42:38
+Theta  :1.2000360276824158 [°]
+2025-08-18 12:42:38
+s_change : 0.9999819863210403
+2025-08-18 12:42:38
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 12:42:53
+Iteration 0: Residual max G: 1.06e+05, frequence: 3.918890138071906
+2025-08-18 12:44:50
+Iteration 1: Residual max G: 1.57e+01, frequence: 3.919217620284821
+2025-08-18 12:46:43
+Iteration 2: Residual max G: 4.35e+01, frequence: 3.9187846870007483
+2025-08-18 12:48:36
+Iteration 3: Residual max G: 2.03e-02, frequence: 3.9187863035910646
+2025-08-18 12:50:33
+Iteration 4: Residual max G: 1.04e-02, frequence: 3.918788342431395
+2025-08-18 12:52:28
+Iteration 5: Residual max G: 7.67e-05, frequence: 3.918789871513093
+2025-08-18 12:52:29
+Second value f:3.918789871513093,u:0.2216718226806116
+2025-08-18 12:52:29
+################## New Iteration ##################
+2025-08-18 12:54:12
+Theta  :1.1846639521934892 [°]
+2025-08-18 12:54:12
+s_change : 1.0076974984876532
+2025-08-18 12:54:12
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 12:54:27
+Iteration 0: Residual max G: 1.07e+05, frequence: 3.9152745064532066
+2025-08-18 12:56:24
+Iteration 1: Residual max G: 1.62e+01, frequence: 3.915579311950441
+2025-08-18 12:58:22
+Iteration 2: Residual max G: 4.45e+01, frequence: 3.915148081169386
+2025-08-18 13:00:20
+Iteration 3: Residual max G: 2.05e-02, frequence: 3.91514544731638
+2025-08-18 13:02:16
+Iteration 4: Residual max G: 1.28e-02, frequence: 3.9151458936217596
+2025-08-18 13:04:10
+Iteration 5: Residual max G: 1.62e-05, frequence: 3.9151462681939067
+2025-08-18 13:04:10
+Second value f:3.9151462681939067,u:0.211219668135344
+2025-08-18 13:04:10
+################## New Iteration ##################
+2025-08-18 13:05:42
+Theta  :1.2166312884099855 [°]
+2025-08-18 13:05:42
+s_change : 0.9917188351254722
+2025-08-18 13:05:42
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 13:05:57
+Iteration 0: Residual max G: 1.05e+05, frequence: 3.9114462385938915
+2025-08-18 13:07:53
+Iteration 1: Residual max G: 1.56e+01, frequence: 3.911684647403907
+2025-08-18 13:09:51
+Iteration 2: Residual max G: 4.04e+01, frequence: 3.911268639061614
+2025-08-18 13:11:37
+Iteration 3: Residual max G: 1.97e-02, frequence: 3.911263119968668
+2025-08-18 13:13:35
+Iteration 4: Residual max G: 8.23e-03, frequence: 3.9112614398800782
+2025-08-18 13:15:26
+Iteration 5: Residual max G: 1.92e-04, frequence: 3.911270308790857
+2025-08-18 13:15:27
+Second value f:3.911270308790857,u:0.20076280919931783
+2025-08-18 13:15:27
+################## New Iteration ##################
+2025-08-18 13:17:06
+Theta  :1.184270022417038 [°]
+2025-08-18 13:17:06
+s_change : 1.007895999060988
+2025-08-18 13:17:06
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 13:17:22
+Iteration 0: Residual max G: 1.07e+05, frequence: 3.9072210982788227
+2025-08-18 13:19:17
+Iteration 1: Residual max G: 1.60e+01, frequence: 3.907461222098576
+2025-08-18 13:21:12
+Iteration 2: Residual max G: 4.10e+01, frequence: 3.9070273621234306
+2025-08-18 13:23:12
+Iteration 3: Residual max G: 2.19e-02, frequence: 3.90702240682847
+2025-08-18 13:25:10
+Iteration 4: Residual max G: 1.11e-02, frequence: 3.9070297837511094
+2025-08-18 13:27:01
+Iteration 5: Residual max G: 2.61e-04, frequence: 3.90702502333666
+2025-08-18 13:27:01
+Second value f:3.90702502333666,u:0.19013742493975277
+2025-08-18 13:27:01
+################## New Iteration ##################
+2025-08-18 13:28:43
+Theta  :1.1951308460010586 [°]
+2025-08-18 13:28:43
+s_change : 1.0024375429885417
+2025-08-18 13:28:43
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 13:28:58
+Iteration 0: Residual max G: 1.07e+05, frequence: 3.9025603902155725
+2025-08-18 13:30:54
+Iteration 1: Residual max G: 1.61e+01, frequence: 3.902796637822082
+2025-08-18 13:32:52
+Iteration 2: Residual max G: 4.06e+01, frequence: 3.9023811418967975
+2025-08-18 13:34:48
+Iteration 3: Residual max G: 2.14e-02, frequence: 3.902375707277869
+2025-08-18 13:36:44
+Iteration 4: Residual max G: 6.21e-03, frequence: 3.9023744935391202
+2025-08-18 13:38:39
+Iteration 5: Residual max G: 3.19e-05, frequence: 3.902372807034392
+2025-08-18 13:38:39
+Second value f:3.902372807034392,u:0.17940449419068702
+2025-08-18 13:38:39
+################## New Iteration ##################
+2025-08-18 13:40:21
+Theta  :1.180125427269801 [°]
+2025-08-18 13:40:21
+s_change : 1.0099868251529804
+2025-08-18 13:40:21
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 13:40:37
+Iteration 0: Residual max G: 1.09e+05, frequence: 3.8974664773305965
+2025-08-18 13:42:35
+Iteration 1: Residual max G: 1.67e+01, frequence: 3.8976373837058476
+2025-08-18 13:44:34
+Iteration 2: Residual max G: 4.23e+01, frequence: 3.8971964850444643
+2025-08-18 13:46:24
+Iteration 3: Residual max G: 1.93e-02, frequence: 3.897199527889228
+2025-08-18 13:48:19
+Iteration 4: Residual max G: 5.57e-03, frequence: 3.8971992770332635
+2025-08-18 13:50:12
+Iteration 5: Residual max G: 4.45e-05, frequence: 3.897199263610952
+2025-08-18 13:50:12
+Second value f:3.897199263610952,u:0.16848687252104894
+2025-08-18 13:50:12
+################## New Iteration ##################
+2025-08-18 13:51:52
+Theta  :1.1833001609536256 [°]
+2025-08-18 13:51:52
+s_change : 1.0083848773317647
+2025-08-18 13:51:52
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 13:52:07
+Iteration 0: Residual max G: 1.11e+05, frequence: 3.8916654170980456
+2025-08-18 13:54:05
+Iteration 1: Residual max G: 1.72e+01, frequence: 3.891808980146812
+2025-08-18 13:55:57
+Iteration 2: Residual max G: 4.30e+01, frequence: 3.891365405665032
+2025-08-18 13:57:53
+Iteration 3: Residual max G: 1.99e-02, frequence: 3.891358806869415
+2025-08-18 13:59:51
+Iteration 4: Residual max G: 6.47e-03, frequence: 3.8913562643288997
+2025-08-18 14:01:48
+Iteration 5: Residual max G: 5.57e-05, frequence: 3.8913657201222516
+2025-08-18 14:01:48
+Second value f:3.8913657201222516,u:0.15740466122769114
+2025-08-18 14:01:48
+################## New Iteration ##################
+2025-08-18 14:03:31
+Theta  :1.194251356646969 [°]
+2025-08-18 14:03:31
+s_change : 1.0028784564997204
+2025-08-18 14:03:31
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 14:03:46
+Iteration 0: Residual max G: 1.11e+05, frequence: 3.885194054333947
+2025-08-18 14:05:44
+Iteration 1: Residual max G: 1.74e+01, frequence: 3.8852297240033287
+2025-08-18 14:07:35
+Iteration 2: Residual max G: 4.21e+01, frequence: 3.884736527347284
+2025-08-18 14:09:31
+Iteration 3: Residual max G: 1.92e-02, frequence: 3.884732049014774
+2025-08-18 14:11:20
+Iteration 4: Residual max G: 4.80e-03, frequence: 3.88473891985052
+2025-08-18 14:13:19
+Iteration 5: Residual max G: 1.28e-05, frequence: 3.8847346424097684
+2025-08-18 14:13:19
+Second value f:3.8847346424097684,u:0.1462231904840973
+2025-08-18 14:13:19
+################## New Iteration ##################
+2025-08-18 14:14:59
+Theta  :1.1953101953842677 [°]
+2025-08-18 14:14:59
+s_change : 1.0023476537414768
+2025-08-18 14:14:59
+################## Newthon predictor-corecteur solveur ##################
+2025-08-18 14:15:14
+Iteration 0: Residual max G: 1.11e+05, frequence: 3.877697582212521

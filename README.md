@@ -1,8 +1,6 @@
 # Continuation Sparselizard
 
-### Academic Year 2024 – 2025
-
-#### Author: Victor Renkin s2306326
+#### Author: Victor Renkin
 
 ## Table of Contents
 
@@ -36,7 +34,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-For all computations, it is essential to precisely define the **physical regions** of the system. This includes the entire volume, any clamped surfaces, and the specific point (or surface) of excitation.
+The physical regions of the system must be clearly defined, including the full volume, clamped surfaces, excitation and measurement regions, together with the relevant material properties. For rotational effects, the distance to the axis of rotation must also be specified.
 
 ### Nonlinear Frequency Response (NLFR) Computation
 
@@ -45,7 +43,7 @@ To compute the nonlinear frequency response of the system, execute the following
 ```bash
 python3 src/main_NLFR.py
 ```
-### Nonlinear Normal Mode (NNM) / Frequency Response Function (FRF) Computation
+### Nonlinear Normal Mode (NNM) Computation
 
 To compute the Nonlinear Normal Mode (NNM) run:
 ```bash

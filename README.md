@@ -1,7 +1,5 @@
 # Continuation Sparselizard
 
-#### Author: Victor Renkin
-
 ## Table of Contents
 
 * [Introduction](#introduction)

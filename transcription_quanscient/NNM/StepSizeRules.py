@@ -99,7 +99,6 @@ class AngleBasedStepSizer(AbstractStepSize):
             raise ValueError("Step size rule not initialized with iteration.")
         elif self.iter == self.MAX_ITER:
             if self.length_s < self.MIN_LENGTH_S:
-                print("self.length_s", self.length_s)
                 raise ValueError("Step size is less than minimum allowed length.")
             else:
                 self.length_s = self.length_s * self.S_DOWN

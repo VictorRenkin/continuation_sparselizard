@@ -185,10 +185,8 @@ class PredictorTangent(AbstractPredictor):
 
         vec_0 = qs.vec(elasticity)
         tan_u, tan_w, tan_mu = ss.get_bordering_algorithm_3x3(prev_point['Jac'], grad_u_p, self.tan_u, grad_w_G, grad_w_p, self.tan_w, grad_mu_G, grad_mu_p, self.tan_mu, vec_0, 0, 1, clk_solver)
-        print("self.tan_w", self.tan_w)
         self.tan_u = tan_u
         self.tan_w = tan_w
-        print("After tan w", tan_w)
         self.tan_mu = tan_mu
         return tan_u, tan_w, tan_mu
     

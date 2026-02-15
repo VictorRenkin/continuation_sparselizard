@@ -58,19 +58,20 @@ The core of the code follows the **continuation loop**, which is represented by 
 
 All numerical results obtained with this implementation are fully reported and analysed in:
 
-Renkin, V. (2026). *Master thesis and internship*. Faculty of Applied Sciences, Université de Liège.  
+Renkin, V. (2026). *Parallel HarmonicBalance Method for the Analysis of
+Nonlinear Mechanical Systems*. Faculty of Applied Sciences, Université de Liège.  
 http://hdl.handle.net/2268.2/25188
 
 ```bash
 @mastersthesis{renkin2026,
   author  = {Renkin, Victor},
-  title   = {Master thesis and internship},
-  school  = {Universit\'e de Li\`ege},
+  title   = {Parallel Harmonic Balance Method for the Analysis of Nonlinear Mechanical Systems},
+  school  = {Université de Liège},
   year    = {2026},
   month   = jan,
-  url     = {http://hdl.handle.net/2268.2/25188},
-  address = {Li\`ege, Belgium}
+  url     = {http://hdl.handle.net/2268.2/25188}
 }
+
 ```
 
 

@@ -10,7 +10,7 @@
 
 * [Project Structure](#project-structure)
 
-* [AI Integration](#ai-integration)
+* [Reported Results](#reported-results)
 
 ## Introduction
 
@@ -54,9 +54,23 @@ The codebase is predominantly organized around a **class-based architecture**, d
 
 The core of the code follows the **continuation loop**, which is represented by the `continuation_loop_NNM` and `continuation_loop_NLFR` functions. The adaptive adjustment of the predictor step size is managed by the `StepSizeRule` function, enabling efficient convergence. Furthermore, a dedicated function is implemented to **store previous solutions**, typically maintaining a history equivalent to the predictor's order plus one, which is crucial for the continuation process.
 
-## AI Integration
+## Reported Results
 
-Artificial intelligence tools are utilized periodically throughout this project. Their primary roles include **code correction** and **rephrasing sentences** within the accompanying report to enhance clarity and conciseness.
+All numerical results obtained with this implementation are fully reported and analysed in:
+
+Renkin, V. (2026). *Master thesis and internship*. Faculty of Applied Sciences, Université de Liège.  
+http://hdl.handle.net/2268.2/25188
+
+@mastersthesis{renkin2026,
+  author  = {Renkin, Victor},
+  title   = {Master thesis and internship},
+  school  = {Universit\'e de Li\`ege},
+  year    = {2026},
+  month   = jan,
+  url     = {http://hdl.handle.net/2268.2/25188},
+  address = {Li\`ege, Belgium}
+}
+
 
 
 

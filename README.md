@@ -61,6 +61,7 @@ All numerical results obtained with this implementation are fully reported and a
 Renkin, V. (2026). *Master thesis and internship*. Faculty of Applied Sciences, Université de Liège.  
 http://hdl.handle.net/2268.2/25188
 
+```bash
 @mastersthesis{renkin2026,
   author  = {Renkin, Victor},
   title   = {Master thesis and internship},
@@ -70,6 +71,8 @@ http://hdl.handle.net/2268.2/25188
   url     = {http://hdl.handle.net/2268.2/25188},
   address = {Li\`ege, Belgium}
 }
+```
+
 
 
 
